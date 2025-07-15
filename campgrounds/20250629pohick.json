@@ -1,24 +1,40 @@
-[{
-    "Campground Name": " Pohick Bay Regional Park ",
-    "Address": "6501 Pohick Bay Dr, Lorton, VA 22079",
-    "Website": "https://www.novaparks.com/cabins-camping/camping/camping-family-0",
-    "Star Rating": "4",
-     "Electric": "50/30/20",
-     "Water": "Many Sites, Potable Fill Station Available", 
-     "Sewer": "Some Sites, Dump Station Available",
-     "Pets Welcome": Yes",
-     "Dog Park": "No",
-     "Camp Store": "Yes",
-     "Propane Refill": "No",
-     "Sites": "Shaded, Mostly Level, Fire ring with Grill, Picnic Table",
-     "Waterfront": "Yes",
-     "Hiking": "Yes",
-     "Biking": "Yes",
-     "Other Activities": "Fishing, Mini-Golf, Disc Golf, Waterpark",
-     "Shopping Nearby": "Yes",
-     "Distance to Nearest Emergency Medical": "15 minutes",
-     "Favorite Sites": "40,50",
-     "Review": "Pohick Bay Regional Park is a clean, family-friendly campground just 40 minutes from Washington, D.C., offering wooded campsites, hiking trails, and access to a marina. Highlights include the Pirate’s Cove waterpark, playgrounds, and friendly staff. Some campsites can be uneven or close together, but overall, it's a great spot for families and outdoor lovers looking for a convenient escape."
-     "YouTube Video": "https://youtu.be/10_B0CbGo4s?si=9ynCX_4GLFf_kXWY"
-
-}]
+{"campgrounds": [
+    {"id": "pohick-bay-regional-park-06-2025",
+      "name": "Pohick Bay Regional Park",
+      "address": "6501 Pohick Bay Dr, Lorton, VA 22079",
+      "website": "https://www.novaparks.com/cabins-camping/camping/camping-family-0",
+      "overallStarRating": 4,
+      "amenities": {
+        "electric": "50/30/20",
+        "water": "Many Sites, Potable Fill Station Available",
+        "sewer": "Some Sites, Dump Station Available",
+        "petsWelcome": true,
+        "dogPark": false,
+        "campStore": true,
+        "propaneRefill": false
+      },
+      "siteFeatures": "Shaded, Mostly Level, Fire ring with Grill, Picnic Table",
+      "activities": {
+        "waterfront": true,
+        "hiking": true,
+        "biking": true,
+        "other": ["Fishing", "Mini-Golf", "Disc Golf", "Waterpark"]
+      },
+      "nearby": {
+        "shopping": true,
+        "emergencyMedicalDistance": "15 minutes"
+      },
+      "favoriteSites": ["40", "50"],
+      "reviews": [
+        {
+          "reviewId": "pohick-review-2025-06-29-01",
+          "reviewer": "HubbardsOnTheHitch",
+          "date": "2025-06-29",
+          "starRating": 4,
+          "text": "Pohick Bay Regional Park is a clean, family-friendly campground just 40 minutes from Washington, D.C., offering wooded campsites, hiking trails, and access to a marina. Highlights include the Pirate’s Cove waterpark, playgrounds, and friendly staff. Some campsites can be uneven or close together, but overall, it's a great spot for families and outdoor lovers looking for a convenient escape.",
+          "youtubeVideoUrl": "https://youtu.be/10_B0CbGo4s?si=9ynCX_4GLFf_kXWY"
+        },
+      ]
+    }
+  ]
+}
