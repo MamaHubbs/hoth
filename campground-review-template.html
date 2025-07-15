@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campground Review</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        h2 {
+            color: #34495e;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+            margin-top: 25px;
+        }
+        p {
+            margin-bottom: 10px;
+        }
+        strong {
+            color: #555;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            background: #e9ecef;
+            margin-bottom: 5px;
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .rating {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #ff9800; /* Star color */
+        }
+        .section-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .section-grid div {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #eee;
+        }
+        .review-card {
+            background-color: #e6f7ff;
+            padding: 15px;
+            border-left: 5px solid #2196f3;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        .review-meta {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            margin-top: 20px;
+            overflow: hidden;
+            background-color: #000; /* Placeholder background for video */
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="campgroundName">Loading Campground Review...</h1>
+
+        <div class="section-grid">
+            <div>
+                <h2>General Info</h2>
+                <p><strong>Address:</strong> <span id="address"></span></p>
+                <p><strong>Website:</strong> <a id="website" href="#" target="_blank">View Website</a></p>
+                <p><strong>Overall Rating:</strong> <span id="overallStarRating" class="rating"></span></p>
+            </div>
+            <div>
+                <h2>Amenities</h2>
+                <p><strong>Electric:</strong> <span id="electric"></span></p>
+                <p><strong>Water:</strong> <span id="water"></span></p>
+                <p><strong>Sewer:</strong> <span id="sewer"></span></p>
+                <p><strong>Pets Welcome:</strong> <span id="petsWelcome"></span></p>
+                <p><strong>Dog Park:</strong> <span id="dogPark"></span></p>
+                <p><strong>Camp Store:</strong> <span id="campStore"></span></p>
+                <p><strong>Propane Refill:</strong> <span id="propaneRefill"></span></p>
+            </div>
+        </div>
+
+        <h2>Site Features</h2>
+        <p id="siteFeatures"></p>
+
+        <h2>Activities</h2>
+        <div class="section-grid">
+            <div>
+                <p><strong>Waterfront:</strong> <span id="waterfront"></span></p>
+                <p><strong>Hiking:</strong> <span id="hiking"></span></p>
+                <p><strong>Biking:</strong> <span id="biking"></span></p>
+            </div>
+            <div>
+                <p><strong>Other Activities:</strong> <span id="otherActivities"></span></p>
+            </div>
+        </div>
+
+        <h2>Nearby Essentials</h2>
+        <div class="section-grid">
+            <div>
+                <p><strong>Shopping Nearby:</strong> <span id="shoppingNearby"></span></p>
+                <p><strong>Nearest Emergency Medical:</strong> <span id="emergencyMedicalDistance"></span></p>
+            </div>
+            <div>
+                <p><strong>Favorite Sites:</strong> <span id="favoriteSites"></span></p>
+            </div>
+        </div>
+
+        <h2>Reviews</h2>
+        <div id="reviewsContainer">
+            <p>No reviews available.</p>
+        </div>
+
+    </div>
+
+    <script src="shared.js"></script> 
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get the campground filename from the URL query parameter (e.g., ?campground=20250629pohick)
+            const campgroundFileName = getQueryParameter('campground'); 
+
+            if (!campgroundFileName) {
+                document.getElementById('campgroundName').textContent = "Error: Campground ID not specified in URL.";
+                console.error("No 'campground' query parameter found in the URL.");
+                return; // Stop execution if no campground ID
+            }
+
+            // Construct the full JSON URL using the function from shared.js
+            const jsonUrl = getCampgroundJsonUrl(campgroundFileName);
+
+            fetch(jsonUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Access the first campground object from the "campgrounds" array
+                    const campground = data.campgrounds && data.campgrounds.length > 0 ? data.campgrounds[0] : null; 
+
+                    if (campground) {
+                        // General Info
+                        document.getElementById('campgroundName').textContent = campground.name;
+                        document.getElementById('address').textContent = campground.address;
+                        document.getElementById('website').href = campground.website;
+                        document.getElementById('overallStarRating').textContent = "⭐".repeat(parseInt(campground.overallStarRating));
+                        
+                        // Amenities
+                        document.getElementById('electric').textContent = campground.amenities.electric;
+                        document.getElementById('water').textContent = campground.amenities.water;
+                        document.getElementById('sewer').textContent = campground.amenities.sewer;
+                        document.getElementById('petsWelcome').textContent = campground.amenities.petsWelcome ? "Yes" : "No";
+                        document.getElementById('dogPark').textContent = campground.amenities.dogPark ? "Yes" : "No";
+                        document.getElementById('campStore').textContent = campground.amenities.campStore ? "Yes" : "No";
+                        document.getElementById('propaneRefill').textContent = campground.amenities.propaneRefill ? "Yes" : "No";
+
+                        // Site Features
+                        document.getElementById('siteFeatures').textContent = campground.siteFeatures;
+
+                        // Activities
+                        document.getElementById('waterfront').textContent = campground.activities.waterfront ? "Yes" : "No";
+                        document.getElementById('hiking').textContent = campground.activities.hiking ? "Yes" : "No";
+                        document.getElementById('biking').textContent = campground.activities.biking ? "Yes" : "No";
+                        document.getElementById('otherActivities').textContent = campground.activities.other.join(', ');
+
+                        // Nearby Essentials
+                        document.getElementById('shoppingNearby').textContent = campground.nearby.shopping ? "Yes" : "No";
+                        document.getElementById('emergencyMedicalDistance').textContent = campground.nearby.emergencyMedicalDistance;
+                        document.getElementById('favoriteSites').textContent = campground.favoriteSites.join(', ');
+                        
+                        // Reviews
+                        const reviewsContainer = document.getElementById('reviewsContainer');
+                        reviewsContainer.innerHTML = ''; // Clear "No reviews available."
+                        if (campground.reviews && campground.reviews.length > 0) {
+                            campground.reviews.forEach(review => {
+                                const reviewCard = document.createElement('div');
+                                reviewCard.className = 'review-card';
+                                reviewCard.innerHTML = `
+                                    <p class="review-meta">
+                                        <strong>Reviewer:</strong> ${review.reviewer} | 
+                                        <strong>Date:</strong> ${review.date} | 
+                                        <strong>Rating:</strong> ${"⭐".repeat(parseInt(review.starRating))}
+                                    </p>
+                                    <p>${review.text}</p>
+                                `;
+
+                                if (review.youtubeVideoUrl) {
+                                    const videoIdMatch = review.youtubeVideoUrl.match(/(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
+                                    if (videoIdMatch && videoIdMatch[1]) {
+                                        const videoId = videoIdMatch[1];
+                                        const videoContainer = document.createElement('div');
+                                        videoContainer.className = 'video-container';
+                                        videoContainer.innerHTML = `<iframe src="http://googleusercontent.com/youtube.com/embed/${videoId}" allowfullscreen></iframe>`;
+                                        reviewCard.appendChild(videoContainer);
+                                    }
+                                }
+                                reviewsContainer.appendChild(reviewCard);
+                            });
+                        } else {
+                            reviewsContainer.innerHTML = '<p>No reviews available for this campground.</p>';
+                        }
+
+                    } else {
+                        document.getElementById('campgroundName').textContent = "Campground data not found or invalid.";
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching the JSON data:', error);
+                    document.getElementById('campgroundName').textContent = "Failed to load campground review.";
+                });
+        });
+    </script>
+</body>
+</html>
