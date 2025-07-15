@@ -19,8 +19,8 @@ function getQueryParameter(name) {
 function getCampgroundJsonUrl(fileName) {
     // Assuming JSON files are in a 'campgrounds' folder
     // And your repo is YOUR_REPO under YOUR_USERNAME, on YOUR_BRANCH (e.g., 'main')
-    const username = 'YOUR_USERNAME'; // <<< Replace this
-    const repo = 'YOUR_REPO';         // <<< Replace this
-    const branch = 'YOUR_BRANCH';     // <<< Replace this (commonly 'main' or 'master')
+    const username = 'mamahubbs'; // <<< Replace this
+    const repo = 'hoth';         // <<< Replace this
+    const branch = 'main';     // <<< Replace this (commonly 'main' or 'master')
     return `https://raw.githubusercontent.com/${username}/${repo}/${branch}/campgrounds/${fileName}.json`;
 }
