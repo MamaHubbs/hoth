@@ -168,7 +168,7 @@
 
     </div>
 
-    <script src="shared.js"></script> 
+<script src="shared.js"></script> 
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -193,12 +193,37 @@
                 const campground = data.campgrounds && data.campgrounds.length > 0 ? data.campgrounds[0] : null; 
 
                 if (campground) {
+                    // Calculate Overall Star Rating dynamically
+                    let totalStars = 0;
+                    let numberOfReviews = 0;
+
+                    if (campground.reviews && campground.reviews.length > 0) {
+                        campground.reviews.forEach(review => {
+                            if (typeof review.starRating === 'number') { // Ensure it's a number
+                                totalStars += review.starRating;
+                                numberOfReviews++;
+                            } else if (typeof review.starRating === 'string') { // If it's a string, try parsing
+                                const parsedRating = parseInt(review.starRating);
+                                if (!isNaN(parsedRating)) {
+                                    totalStars += parsedRating;
+                                    numberOfReviews++;
+                                }
+                            }
+                        });
+                    }
+
+                    let overallAverageRating = 0;
+                    if (numberOfReviews > 0) {
+                        overallAverageRating = totalStars / numberOfReviews;
+                    }
+                    
                     // General Info
                     document.getElementById('campgroundName').textContent = campground.name;
                     document.getElementById('address').textContent = campground.address;
                     document.getElementById('website').href = campground.website;
-                    document.getElementById('overallStarRating').textContent = "⭐".repeat(parseInt(campground.overallStarRating));
-                    document.getElementById('favoriteSites').textContent = campground.favoriteSites.join(', '); 
+                    // Update Overall Rating with calculated average, rounded to one decimal
+                    document.getElementById('overallStarRating').textContent = "⭐".repeat(Math.round(overallAverageRating)) + ` (${overallAverageRating.toFixed(1)})`;
+                    document.getElementById('favoriteSites').textContent = campground.favoriteSites.join(', ');
 
                     // Amenities
                     document.getElementById('electric').textContent = campground.amenities.electric;
@@ -216,21 +241,13 @@
                     document.getElementById('waterfront').textContent = campground.activities.waterfront ? "Yes" : "No";
                     document.getElementById('hiking').textContent = campground.activities.hiking ? "Yes" : "No";
                     document.getElementById('biking').textContent = campground.activities.biking ? "Yes" : "No";
-                    // Activities
-                    document.getElementById('waterfront').textContent = campground.activities.waterfront ? "Yes" : "No";
-                    document.getElementById('hiking').textContent = campground.activities.hiking ? "Yes" : "No";
-                    document.getElementById('biking').textContent = campground.activities.biking ? "Yes" : "No";
                     
-                    // --- OLD LINE (REMOVE OR COMMENT OUT) ---
-                    // document.getElementById('otherActivities').textContent = campground.activities.other.join(', ');
-
-                    // --- NEW CODE TO DISPLAY OTHER ACTIVITIES ON SEPARATE LINES ---
                     const otherActivitiesContainer = document.getElementById('otherActivities');
-                    otherActivitiesContainer.innerHTML = ''; // Clear existing content
+                    otherActivitiesContainer.innerHTML = ''; 
                     if (campground.activities.other && campground.activities.other.length > 0) {
                         const ul = document.createElement('ul');
-                        ul.style.listStyleType = 'disc'; // Add a disc bullet, or set to 'none' if you prefer no bullet
-                        ul.style.paddingLeft = '20px'; // Add some left padding for the list
+                        ul.style.listStyleType = 'disc'; 
+                        ul.style.paddingLeft = '20px'; 
                         campground.activities.other.forEach(activity => {
                             const li = document.createElement('li');
                             li.textContent = activity;
@@ -238,8 +255,9 @@
                         });
                         otherActivitiesContainer.appendChild(ul);
                     } else {
-                        otherActivitiesContainer.textContent = 'N/A'; // Or leave blank, or "No other activities"
+                        otherActivitiesContainer.textContent = 'N/A';
                     }
+
                     // Nearby Essentials
                     document.getElementById('shoppingNearby').textContent = campground.nearby.shopping ? "Yes" : "No";
                     document.getElementById('emergencyMedicalDistance').textContent = campground.nearby.emergencyMedicalDistance;
@@ -282,5 +300,6 @@
             });
     });
 </script>
+    
 </body>
 </html>
