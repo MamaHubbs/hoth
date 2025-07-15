@@ -216,8 +216,30 @@
                     document.getElementById('waterfront').textContent = campground.activities.waterfront ? "Yes" : "No";
                     document.getElementById('hiking').textContent = campground.activities.hiking ? "Yes" : "No";
                     document.getElementById('biking').textContent = campground.activities.biking ? "Yes" : "No";
-                    document.getElementById('otherActivities').textContent = campground.activities.other.join(', ');
+                    // Activities
+                    document.getElementById('waterfront').textContent = campground.activities.waterfront ? "Yes" : "No";
+                    document.getElementById('hiking').textContent = campground.activities.hiking ? "Yes" : "No";
+                    document.getElementById('biking').textContent = campground.activities.biking ? "Yes" : "No";
+                    
+                    // --- OLD LINE (REMOVE OR COMMENT OUT) ---
+                    // document.getElementById('otherActivities').textContent = campground.activities.other.join(', ');
 
+                    // --- NEW CODE TO DISPLAY OTHER ACTIVITIES ON SEPARATE LINES ---
+                    const otherActivitiesContainer = document.getElementById('otherActivities');
+                    otherActivitiesContainer.innerHTML = ''; // Clear existing content
+                    if (campground.activities.other && campground.activities.other.length > 0) {
+                        const ul = document.createElement('ul');
+                        ul.style.listStyleType = 'disc'; // Add a disc bullet, or set to 'none' if you prefer no bullet
+                        ul.style.paddingLeft = '20px'; // Add some left padding for the list
+                        campground.activities.other.forEach(activity => {
+                            const li = document.createElement('li');
+                            li.textContent = activity;
+                            ul.appendChild(li);
+                        });
+                        otherActivitiesContainer.appendChild(ul);
+                    } else {
+                        otherActivitiesContainer.textContent = 'N/A'; // Or leave blank, or "No other activities"
+                    }
                     // Nearby Essentials
                     document.getElementById('shoppingNearby').textContent = campground.nearby.shopping ? "Yes" : "No";
                     document.getElementById('emergencyMedicalDistance').textContent = campground.nearby.emergencyMedicalDistance;
