@@ -5,102 +5,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Campground Review</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        h1 {
-            color: #2c3e50;
-            text-align: center;
-            margin-bottom: 25px;
-        }
-        h2 {
-            color: #34495e;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 5px;
-            margin-top: 25px;
-        }
-        p {
-            margin-bottom: 10px;
-        }
-        strong {
-            color: #555;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        ul li {
-            background: #e9ecef;
-            margin-bottom: 5px;
-            padding: 8px 12px;
-            border-radius: 4px;
-        }
-        a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .rating {
-            font-size: 1.2em;
-            font-weight: bold;
-            color: #ff9800; /* Star color */
-        }
-        .section-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-        .section-grid div {
-            background-color: #f9f9f9;
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #eee;
-        }
-        .review-card {
-            background-color: #e6f7ff;
-            padding: 15px;
-            border-left: 5px solid #2196f3;
-            margin-top: 20px;
-            border-radius: 5px;
-        }
-        .review-meta {
-            font-size: 0.9em;
-            color: #666;
-            margin-bottom: 10px;
-        }
-        .video-container {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            height: 0;
-            margin-top: 20px;
-            overflow: hidden;
-            background-color: #000; /* Placeholder background for video */
-        }
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-    </style>
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 20px;
+        background-color: #f4f4f4; /* Keeping light background for readability */
+        color: #333;
+    }
+    .container {
+        max-width: 800px;
+        margin: auto;
+        background: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    h1 {
+        color: #133b66; /* Main color for primary heading */
+        text-align: center;
+        margin-bottom: 25px;
+    }
+    h2 {
+        color: #2d7cbc; /* Secondary color for section headings */
+        border-bottom: 1px solid #eee; /* Keeping light border, but could use secondary color too */
+        padding-bottom: 5px;
+        margin-top: 25px;
+    }
+    p {
+        margin-bottom: 10px;
+    }
+    strong {
+        color: #555; /* Keeping strong text dark for readability */
+    }
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    ul li {
+        background: #e9ecef;
+        margin-bottom: 5px;
+        padding: 8px 12px;
+        border-radius: 4px;
+    }
+    a {
+        color: #2d7cbc; /* Secondary color for links */
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    .rating {
+        font-size: 1.2em;
+        font-weight: bold;
+        color: #ff9800; /* Keeping star color as it is standard */
+    }
+    .section-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+    .section-grid div {
+        background-color: #f9f9f9; /* Keeping light background for grid sections */
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #eee;
+    }
+    .review-card {
+        background-color: #e6f7ff; /* Keeping light blue for review card background */
+        padding: 15px;
+        border-left: 5px solid #2196f3; /* Keeping blue border for reviews */
+        margin-top: 20px;
+        border-radius: 5px;
+    }
+    .review-meta {
+        font-size: 0.9em;
+        color: #666;
+        margin-bottom: 10px;
+    }
+    .video-container {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        height: 0;
+        margin-top: 20px;
+        overflow: hidden;
+        background-color: #000; /* Placeholder background for video */
+    }
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+    /* Custom style for the Favorite Sites box */
+    .favorite-sites-box {
+        border: 1px solid #133b66; /* Main color for border */
+        background-color: #f0f8ff; /* A very light blue that complements */
+        padding: 8px;
+        margin-top: 15px;
+        border-radius: 5px;
+    }
+</style>
 </head>
 <body>
     <div class="container">
