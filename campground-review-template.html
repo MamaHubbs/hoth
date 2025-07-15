@@ -4,135 +4,164 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Campground Review</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        margin: 20px;
-        background-color: #f4f4f4;
-        color: #333;
-    }
-    .container {
-        max-width: 800px;
-        margin: auto;
-        background: #fff;
-        padding: 30px;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    h1 {
-        color: #133b66; /* Main color for primary heading */
-        text-align: center;
-        margin-bottom: 25px;
-    }
-    h2 {
-        color: #2d7cbc; /* Secondary color for section headings */
-        border-bottom: 1px solid #eee;
-        padding-bottom: 5px;
-        margin-top: 25px;
-    }
-    p {
-        margin-bottom: 10px;
-    }
-    strong {
-        color: #555;
-    }
-    ul {
-        list-style-type: none;
-        padding: 0;
-    }
-    ul li {
-        margin-bottom: 5px;
-        padding: 8px 12px;
-        border-radius: 4px;
-    }
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #133b66; /* Main color for primary heading */
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        h2 {
+            color: #2d7cbc; /* Secondary color for section headings */
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+            margin-top: 25px;
+        }
+        p {
+            margin-bottom: 10px;
+        }
+        strong {
+            color: #555;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            margin-bottom: 5px;
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+        a {
+            color: #2d7cbc; /* Secondary color for links */
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .rating {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #ff9800; /* Keeping star color as it is standard */
+        }
+        /* Adjusted section-grid for 2 columns where relevant */
+        .section-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .section-grid div {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #eee;
+        }
+        .review-card {
+            background-color: #e6f7ff;
+            padding: 15px;
+            border-left: 5px solid #2196f3;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        .review-meta {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            margin-top: 20px;
+            overflow: hidden;
+            background-color: #000;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        /* Custom style for the Favorite Sites box */
+        .favorite-sites-box {
+            border: 1px solid #2d7cbc; /* Using secondary color for border */
+            background-color: #5c9ad5; /* Your requested background color */
+            padding: 8px;
+            margin-top: 15px;
+            border-radius: 5px;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+
+        /* Specific styles for Other Activities list items (transparent background) */
         #otherActivities ul li {
-        background-color: transparent; /* Makes the background blend with its parent */
-        /* You might want to adjust padding here if transparent makes it look odd */
-        padding: 0; /* Remove padding if you want text only */
-        margin-bottom: 0; /* Remove margin if you want lines closer */
-    }
-    a {
-        color: #2d7cbc; /* Secondary color for links */
-        text-decoration: none;
-    }
-    a:hover {
-        text-decoration: underline;
-    }
-    .rating {
-        font-size: 1.2em;
-        font-weight: bold;
-        color: #ff9800; /* Keeping star color as it is standard */
-    }
-    .section-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 15px;
-        margin-bottom: 20px;
-    }
-    .section-grid div {
-        background-color: #f9f9f9;
-        padding: 10px;
-        border-radius: 5px;
-        border: 1px solid #eee;
-    }
-    .review-card {
-        background-color: #e6f7ff;
-        padding: 15px;
-        border-left: 5px solid #2196f3;
-        margin-top: 20px;
-        border-radius: 5px;
-    }
-    .review-meta {
-        font-size: 0.9em;
-        color: #666;
-        margin-bottom: 10px;
-    }
-    .video-container {
-        position: relative;
-        width: 100%;
-        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-        height: 0;
-        margin-top: 20px;
-        overflow: hidden;
-        background-color: #000;
-    }
-    .video-container iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border: none;
-    }
-    /* Updated style for the Favorite Sites box */
-    .favorite-sites-box {
-        border: 1px solid #2d7cbc; /* Using secondary color for border */
-        background-color: #5c9ad5; /* Your requested background color */
-        padding: 8px;
-        margin-top: 15px;
-        border-radius: 5px;
-        margin-left: 10%;   /* Adds space on the left */
-        margin-right: 10%;  /* Adds space on the right, making it narrower */
-    }
-</style>
+            background-color: transparent;
+            padding: 0;
+            margin-bottom: 0;
+        }
+
+        /* NEW: Map container styling */
+        .map-container {
+            overflow: hidden; /* Ensures map doesn't spill out */
+            padding-bottom: 75%; /* 4:3 Aspect Ratio for map. Adjust as needed. */
+            position: relative;
+            height: 0;
+            margin-top: 15px; /* Spacing below address/website */
+            border-radius: 5px; /* Match container border-radius */
+        }
+        .map-container iframe {
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            border: 0;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <h1 id="campgroundName">Loading Campground Review...</h1>
 
         <div class="section-grid">
-<div>
+            <div>
                 <h2>General Info</h2>
-                <p><strong>Address:</strong> <span id="address"></span></p>
                 <p><strong>Website:</strong> <a id="website" href="#" target="_blank">View Website</a></p>
+                <p><strong>Address:</strong> <span id="address"></span></p>
+                <div class="map-container">
+                    <iframe id="googleMap" frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+            </div>
+
+            <div>
+                <h2>Ratings & Favorites</h2>
                 <p><strong>Overall Rating:</strong> <span id="overallStarRating" class="rating"></span></p>
-                <div style="border: 1px solid #cce5ff; background-color: #e6f7ff; padding: 8px; margin-top: 15px; border-radius: 5px;">
+                <div class="favorite-sites-box">
                     <p style="margin-bottom: 0;"><strong>Favorite Sites:</strong> <span id="favoriteSites"></span></p>
                 </div>
             </div>
+        </div>
+        <h2>Amenities</h2>
+        <div class="section-grid">
             <div>
-                <h2>Amenities</h2>
                 <p><strong>Electric:</strong> <span id="electric"></span></p>
                 <p><strong>Water:</strong> <span id="water"></span></p>
                 <p><strong>Sewer:</strong> <span id="sewer"></span></p>
@@ -142,7 +171,7 @@
                 <p><strong>Propane Refill:</strong> <span id="propaneRefill"></span></p>
             </div>
         </div>
-
+        
         <h2>Site Features</h2>
         <p id="siteFeatures"></p>
 
@@ -173,138 +202,144 @@
 
     </div>
 
-<script src="shared.js"></script> 
+    <script src="shared.js"></script> 
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const campgroundFileName = getQueryParameter('campground'); 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const campgroundFileName = getQueryParameter('campground'); 
 
-        if (!campgroundFileName) {
-            document.getElementById('campgroundName').textContent = "Error: Campground ID not specified in URL.";
-            console.error("No 'campground' query parameter found in the URL.");
-            return;
-        }
+            if (!campgroundFileName) {
+                document.getElementById('campgroundName').textContent = "Error: Campground ID not specified in URL.";
+                console.error("No 'campground' query parameter found in the URL.");
+                return;
+            }
 
-        const jsonUrl = getCampgroundJsonUrl(campgroundFileName);
+            const jsonUrl = getCampgroundJsonUrl(campgroundFileName);
 
-        fetch(jsonUrl)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                return response.json();
-            })
-            .then(data => {
-                const campground = data.campgrounds && data.campgrounds.length > 0 ? data.campgrounds[0] : null; 
+            fetch(jsonUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const campground = data.campgrounds && data.campgrounds.length > 0 ? data.campgrounds[0] : null; 
 
-                if (campground) {
-                    // Calculate Overall Star Rating dynamically
-                    let totalStars = 0;
-                    let numberOfReviews = 0;
+                    if (campground) {
+                        // Calculate Overall Star Rating dynamically
+                        let totalStars = 0;
+                        let numberOfReviews = 0;
 
-                    if (campground.reviews && campground.reviews.length > 0) {
-                        campground.reviews.forEach(review => {
-                            if (typeof review.starRating === 'number') { // Ensure it's a number
-                                totalStars += review.starRating;
-                                numberOfReviews++;
-                            } else if (typeof review.starRating === 'string') { // If it's a string, try parsing
-                                const parsedRating = parseInt(review.starRating);
-                                if (!isNaN(parsedRating)) {
-                                    totalStars += parsedRating;
+                        if (campground.reviews && campground.reviews.length > 0) {
+                            campground.reviews.forEach(review => {
+                                if (typeof review.starRating === 'number') { 
+                                    totalStars += review.starRating;
                                     numberOfReviews++;
+                                } else if (typeof review.starRating === 'string') {
+                                    const parsedRating = parseInt(review.starRating);
+                                    if (!isNaN(parsedRating)) {
+                                        totalStars += parsedRating;
+                                        numberOfReviews++;
+                                    }
                                 }
-                            }
-                        });
-                    }
+                            });
+                        }
 
-                    let overallAverageRating = 0;
-                    if (numberOfReviews > 0) {
-                        overallAverageRating = totalStars / numberOfReviews;
-                    }
-                    
-                    // General Info
-                    document.getElementById('campgroundName').textContent = campground.name;
-                    document.getElementById('address').textContent = campground.address;
-                    document.getElementById('website').href = campground.website;
-                    // Update Overall Rating with calculated average, rounded to one decimal
-                    document.getElementById('overallStarRating').textContent = "⭐".repeat(Math.round(overallAverageRating)) + ` (${overallAverageRating.toFixed(1)})`;
-                    document.getElementById('favoriteSites').textContent = campground.favoriteSites.join(', ');
+                        let overallAverageRating = 0;
+                        if (numberOfReviews > 0) {
+                            overallAverageRating = totalStars / numberOfReviews;
+                        }
+                        
+                        // General Info - Populating the first box
+                        document.getElementById('campgroundName').textContent = campground.name;
+                        document.getElementById('address').textContent = campground.address;
+                        document.getElementById('website').href = campground.website;
+                        
+                        // Google Map Embedding - NOW POINTS TO THE IFRAME ELEMENT YOU JUST ADDED!
+                        const googleMapIframe = document.getElementById('googleMap');
+                        // Use latitude and longitude for more precise map pin
+                        googleMapIframe.src = `http://googleusercontent.com/maps/embed/v1/place?key=YOUR_Maps_API_KEY&q=${campground.latitude},${campground.longitude}`;
+                        // ^^^ IMPORTANT: Replace YOUR_Maps_API_KEY with your actual Google Maps API Key!
 
-                    // Amenities
-                    document.getElementById('electric').textContent = campground.amenities.electric;
-                    document.getElementById('water').textContent = campground.amenities.water;
-                    document.getElementById('sewer').textContent = campground.amenities.sewer;
-                    document.getElementById('petsWelcome').textContent = campground.amenities.petsWelcome ? "Yes" : "No";
-                    document.getElementById('dogPark').textContent = campground.amenities.dogPark ? "Yes" : "No";
-                    document.getElementById('campStore').textContent = campground.amenities.campStore ? "Yes" : "No";
-                    document.getElementById('propaneRefill').textContent = campground.amenities.propaneRefill ? "Yes" : "No";
+                        // Ratings & Favorites - Populating the second box
+                        document.getElementById('overallStarRating').textContent = "⭐".repeat(Math.round(overallAverageRating)) + ` (${overallAverageRating.toFixed(1)})`;
+                        document.getElementById('favoriteSites').textContent = campground.favoriteSites.join(', ');
 
-                    // Site Features
-                    document.getElementById('siteFeatures').textContent = campground.siteFeatures;
+                        // Amenities
+                        document.getElementById('electric').textContent = campground.amenities.electric;
+                        document.getElementById('water').textContent = campground.amenities.water;
+                        document.getElementById('sewer').textContent = campground.amenities.sewer;
+                        document.getElementById('petsWelcome').textContent = campground.amenities.petsWelcome ? "Yes" : "No";
+                        document.getElementById('dogPark').textContent = campground.amenities.dogPark ? "Yes" : "No";
+                        document.getElementById('campStore').textContent = campground.amenities.campStore ? "Yes" : "No";
+                        document.getElementById('propaneRefill').textContent = campground.amenities.propaneRefill ? "Yes" : "No";
 
-                    // Activities
-                    document.getElementById('waterfront').textContent = campground.activities.waterfront ? "Yes" : "No";
-                    document.getElementById('hiking').textContent = campground.activities.hiking ? "Yes" : "No";
-                    document.getElementById('biking').textContent = campground.activities.biking ? "Yes" : "No";
-                    
-                    const otherActivitiesContainer = document.getElementById('otherActivities');
-                    otherActivitiesContainer.innerHTML = ''; 
-                    if (campground.activities.other && campground.activities.other.length > 0) {
-                        const ul = document.createElement('ul');
-                        ul.style.listStyleType = 'disc'; 
-                        ul.style.paddingLeft = '20px'; 
-                        campground.activities.other.forEach(activity => {
-                            const li = document.createElement('li');
-                            li.textContent = activity;
-                            ul.appendChild(li);
-                        });
-                        otherActivitiesContainer.appendChild(ul);
+                        // Site Features
+                        document.getElementById('siteFeatures').textContent = campground.siteFeatures;
+
+                        // Activities
+                        document.getElementById('waterfront').textContent = campground.activities.waterfront ? "Yes" : "No";
+                        document.getElementById('hiking').textContent = campground.activities.hiking ? "Yes" : "No";
+                        document.getElementById('biking').textContent = campground.activities.biking ? "Yes" : "No";
+                        
+                        const otherActivitiesContainer = document.getElementById('otherActivities');
+                        otherActivitiesContainer.innerHTML = ''; 
+                        if (campground.activities.other && campground.activities.other.length > 0) {
+                            const ul = document.createElement('ul');
+                            ul.style.listStyleType = 'disc'; 
+                            ul.style.paddingLeft = '20px'; 
+                            campground.activities.other.forEach(activity => {
+                                const li = document.createElement('li');
+                                li.textContent = activity;
+                                ul.appendChild(li);
+                            });
+                            otherActivitiesContainer.appendChild(ul);
+                        } else {
+                            otherActivitiesContainer.textContent = 'N/A';
+                        }
+
+                        // Nearby Essentials
+                        document.getElementById('shoppingNearby').textContent = campground.nearby.shopping ? "Yes" : "No";
+                        document.getElementById('emergencyMedicalDistance').textContent = campground.nearby.emergencyMedicalDistance;
+                        
+                        // Reviews
+                        const reviewsContainer = document.getElementById('reviewsContainer');
+                        reviewsContainer.innerHTML = '';
+                        if (campground.reviews && campground.reviews.length > 0) {
+                            campground.reviews.forEach(review => {
+                                const reviewCard = document.createElement('div');
+                                reviewCard.className = 'review-card';
+                                reviewCard.innerHTML = `
+                                    <p class="review-meta">
+                                        <strong>Visit Date:</strong> ${review.visitDate} | 
+                                        <strong>Review Date:</strong> ${review.reviewDate} | 
+                                        <strong>Rating:</strong> ${"⭐".repeat(parseInt(review.starRating))}
+                                    </p>
+                                    <p>${review.text}</p>
+                                `;
+
+                                if (review.youtubeVideoUrl) {
+                                    const videoContainer = document.createElement('div');
+                                    videoContainer.className = 'video-container';
+                                    videoContainer.innerHTML = `<iframe src="${review.youtubeVideoUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
+                                    reviewCard.appendChild(videoContainer);
+                                }
+                                reviewsContainer.appendChild(reviewCard);
+                            });
+                        } else {
+                            reviewsContainer.innerHTML = '<p>No reviews available for this campground.</p>';
+                        }
+
                     } else {
-                        otherActivitiesContainer.textContent = 'N/A';
+                        document.getElementById('campgroundName').textContent = "Campground data not found or invalid.";
                     }
-
-                    // Nearby Essentials
-                    document.getElementById('shoppingNearby').textContent = campground.nearby.shopping ? "Yes" : "No";
-                    document.getElementById('emergencyMedicalDistance').textContent = campground.nearby.emergencyMedicalDistance;
-                    
-                    // Reviews
-                    const reviewsContainer = document.getElementById('reviewsContainer');
-                    reviewsContainer.innerHTML = '';
-                    if (campground.reviews && campground.reviews.length > 0) {
-                        campground.reviews.forEach(review => {
-                            const reviewCard = document.createElement('div');
-                            reviewCard.className = 'review-card';
-                            reviewCard.innerHTML = `
-                                <p class="review-meta">
-                                    <strong>Visit Date:</strong> ${review.visitDate} | 
-                                    <strong>Review Date:</strong> ${review.reviewDate} | 
-                                    <strong>Rating:</strong> ${"⭐".repeat(parseInt(review.starRating))}
-                                </p>
-                                <p>${review.text}</p>
-                            `;
-
-                            if (review.youtubeVideoUrl) {
-                                const videoContainer = document.createElement('div');
-                                videoContainer.className = 'video-container';
-                                videoContainer.innerHTML = `<iframe src="${review.youtubeVideoUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
-                                reviewCard.appendChild(videoContainer);
-                            }
-                            reviewsContainer.appendChild(reviewCard);
-                        });
-                    } else {
-                        reviewsContainer.innerHTML = '<p>No reviews available for this campground.</p>';
-                    }
-
-                } else {
-                    document.getElementById('campgroundName').textContent = "Campground data not found or invalid.";
-                }
-            })
-            .catch(error => {
-                console.error('Error fetching the JSON data:', error);
-                document.getElementById('campgroundName').textContent = "Failed to load campground review.";
-            });
-    });
-</script>
-    
+                })
+                .catch(error => {
+                    console.error('Error fetching the JSON data:', error);
+                    document.getElementById('campgroundName').textContent = "Failed to load campground review.";
+                });
+        });
+    </script>
 </body>
 </html>
