@@ -231,15 +231,12 @@
                                     <p>${review.text}</p>
                                 `;
 
+                 /
                                 if (review.youtubeVideoUrl) {
-                                    const videoIdMatch = review.youtubeVideoUrl.match(/(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
-                                    if (videoIdMatch && videoIdMatch[1]) {
-                                        const videoId = videoIdMatch[1];
-                                        const videoContainer = document.createElement('div');
-                                        videoContainer.className = 'video-container';
-                                        videoContainer.innerHTML = `<iframe src="http://googleusercontent.com/youtube.com/embed/${videoId}" allowfullscreen></iframe>`;
-                                        reviewCard.appendChild(videoContainer);
-                                    }
+                                    const videoContainer = document.createElement('div');
+                                    videoContainer.className = 'video-container';
+                                    videoContainer.innerHTML = `<iframe src="${review.youtubeVideoUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
+                                    reviewCard.appendChild(videoContainer);
                                 }
                                 reviewsContainer.appendChild(reviewCard);
                             });
