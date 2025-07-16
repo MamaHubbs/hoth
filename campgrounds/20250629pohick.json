@@ -27,11 +27,11 @@
       },
       "favoriteSites": ["40", "50"],
 
-            // Photo Gallery Array ---
+
       "photoGallery": [
 
         {
-          "url": "https://thumbnails-photos.amazon.com/v1/thumbnail/INF_4lg4RzqNGHhVEbV2tQ?viewBox=2916%2C1640&ownerId=A2KR48AMJY2WUF",
+          "url": "https://",
           "caption": "Site 50"
         },
         {
