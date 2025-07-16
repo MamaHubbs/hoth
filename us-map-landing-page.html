@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camping Travels: US Map</title>
+    <style>
+        body {
+            font-family: Helvetica, sans-serif;
+            line-height: 1.4;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 960px; /* Wider for map */
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            font-family: Arial, sans-serif;
+            color: #133b66;
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 2.2em; /* A bit larger for the main heading */
+        }
+        p {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        /* SVG Map Styling */
+        #us-map-svg {
+            width: 100%;
+            height: auto;
+            max-width: 900px; /* Max width for the SVG map */
+            display: block;
+            margin: 0 auto;
+        }
+        #us-map-svg .state-path { /* Styling for all state paths */
+            fill: #c0d9ed; /* Light blue/grey for states */
+            stroke: #fff; /* White border between states */
+            stroke-width: 1px;
+            cursor: pointer;
+            transition: fill 0.2s ease-in-out;
+        }
+        #us-map-svg .state-path:hover {
+            fill: #2d7cbc; /* Your secondary color on hover */
+        }
+        /* Highlight states that have campgrounds */
+        #us-map-svg .state-path.visited {
+            fill: #a7bed3; /* Your chosen color for favorite sites or a distinct color for visited states */
+        }
+        #us-map-svg .state-path.visited:hover {
+            fill: #2d7cbc; /* Secondary color for hover */
+        }
+
+        .map-note {
+            text-align: center;
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Explore My Camping Travels Across the US!</h1>
+        <p>Click on a state to see all the campgrounds I've visited there.</p>
+
+        <svg id="us-map-svg" viewBox="0 0 960 600">
+            </svg>
+        <p class="map-note">States are clickable if I have visited campgrounds there.</p>
+
+    </div>
+
+    <script src="shared.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const usMapSvg = document.getElementById('us-map-svg');
+            
+            // Fetch the central index file to know which states have campgrounds
+            const indexJsonUrl = getCampgroundJsonUrl('campground_index'); 
+
+            fetch(indexJsonUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const allCampgrounds = data.campgrounds || [];
+                    const visitedStates = new Set(); // Use a Set to store unique state codes
+
+                    allCampgrounds.forEach(camp => {
+                        if (camp.state_code) {
+                            visitedStates.add(camp.state_code.toUpperCase()); // Add state codes to the set
+                        }
+                    });
+
+                    // Add click listeners to each state path
+                    const statePaths = usMapSvg.querySelectorAll('.state-path'); // Select paths with the class
+                    statePaths.forEach(path => {
+                        const stateCode = path.id; // Get the state code from the path's ID (e.g., "VA")
+
+                        if (stateCode && visitedStates.has(stateCode)) { // Only if a valid stateCode ID exists
+                            path.classList.add('visited'); // Add 'visited' class to highlight states with data
+                            path.addEventListener('click', function() {
+                                // Redirect to the state-page-template with the clicked state's code
+                                window.location.href = `state-page-template.html?state=${stateCode}`;
+                            });
+                        } else {
+                            // Optional: Make unvisited states less interactive or visually distinct
+                            path.style.cursor = 'default';
+                            path.style.opacity = '0.7'; // Dim unvisited states
+                        }
+                    });
+
+                })
+                .catch(error => {
+                    console.error('Error fetching the campground index for map:', error);
+                    // Optionally display an error message on the page if the map data fails to load
+                });
+        });
+    </script>
+</body>
+</html>
