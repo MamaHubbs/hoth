@@ -244,111 +244,110 @@
 
     </div>
 
-    <script src="shared.js"></script> 
+<script src="shared.js"></script> 
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const campgroundFileName = getQueryParameter('campground'); 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const campgroundFileName = getQueryParameter('campground'); 
 
-            if (!campgroundFileName) {
-                document.getElementById('campgroundName').textContent = "Error: Campground ID not specified in URL.";
-                console.error("No 'campground' query parameter found in the URL.");
-                return;
-            }
+        if (!campgroundFileName) {
+            document.getElementById('campgroundName').textContent = "Error: Campground ID not specified in URL.";
+            console.error("No 'campground' query parameter found in the URL.");
+            return;
+        }
 
-            const jsonUrl = getCampgroundJsonUrl(campgroundFileName);
+        const jsonUrl = getCampgroundJsonUrl(campgroundFileName);
 
-            fetch(jsonUrl)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    const campground = data.campgrounds && data.campgrounds.length > 0 ? data.campgrounds[0] : null; 
+        fetch(jsonUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                const campground = data.campgrounds && data.campgrounds.length > 0 ? data.campgrounds[0] : null; 
 
-                    if (campground) {
-                        // Calculate Overall Star Rating dynamically
-                        let totalStars = 0;
-                        let numberOfReviews = 0;
+                if (campground) {
+                    // Calculate Overall Star Rating dynamically
+                    let totalStars = 0;
+                    let numberOfReviews = 0;
 
-                        if (campground.reviews && campground.reviews.length > 0) {
-                            campground.reviews.forEach(review => {
-                                if (typeof review.starRating === 'number') { 
-                                    totalStars += review.starRating;
+                    if (campground.reviews && campground.reviews.length > 0) {
+                        campground.reviews.forEach(review => {
+                            if (typeof review.starRating === 'number') { 
+                                totalStars += review.starRating;
+                                numberOfReviews++;
+                            } else if (typeof review.starRating === 'string') {
+                                const parsedRating = parseInt(review.starRating);
+                                if (!isNaN(parsedRating)) {
+                                    totalStars += parsedRating;
                                     numberOfReviews++;
-                                } else if (typeof review.starRating === 'string') {
-                                    const parsedRating = parseInt(review.starRating);
-                                    if (!isNaN(parsedRating)) {
-                                        totalStars += parsedRating;
-                                        numberOfReviews++;
-                                    }
                                 }
-                            });
-                        }
+                            }
+                        });
+                    }
 
-                        let overallAverageRating = 0;
-                        if (numberOfReviews > 0) {
-                            overallAverageRating = totalStars / numberOfReviews;
-                        }
-                        
-                        // General Info - Populating the first box
-                        document.getElementById('campgroundName').textContent = campground.name;
-                        document.getElementById('address').textContent = campground.address;
-                        document.getElementById('website').href = campground.website;
-                        
-                        // Google Map Embedding - NOW POINTS TO THE IFRAME ELEMENT YOU JUST ADDED!
-                        const googleMapIframe = document.getElementById('googleMap');
-                        // Use latitude and longitude for more precise map pin
-                        googleMapIframe.src = `https://googleusercontent.com/maps/embed/v1/place?key=AIzaSyCHRZV34isMvcYfcGXIOJP4VfXAidppNuk&q=${campground.latitude},${campground.longitude}`;
-                        // ^^^ IMPORTANT: Replace YOUR_Maps_API_KEY with your actual Google Maps API Key!
+                    let overallAverageRating = 0;
+                    if (numberOfReviews > 0) {
+                        overallAverageRating = totalStars / numberOfReviews;
+                    }
+                    
+                    // General Info - Populating the first box
+                    document.getElementById('campgroundName').textContent = campground.name;
+                    document.getElementById('address').textContent = campground.address;
+                    document.getElementById('website').href = campground.website;
+                    
+                    // --- NEW: OpenStreetMap Embedding ---
+                    const googleMapIframe = document.getElementById('googleMap'); // Reusing the ID 'googleMap'
+                    const zoomLevel = 15; // You can adjust this zoom level (e.g., 10 for wider view, 18 for closer)
+                    googleMapIframe.src = `https://www.openstreetmap.org/export/embed.html?bbox=${campground.longitude - 0.005},${campground.latitude - 0.002},${campground.longitude + 0.005},${campground.latitude + 0.002}&marker=${campground.latitude},${campground.longitude}&zoom=${zoomLevel}&layer=mapnik`;
+                    // --- END NEW OpenStreetMap Embedding ---
 
-                        // Ratings & Favorites - Populating the second box
-                        document.getElementById('overallStarRating').textContent = "⭐".repeat(Math.round(overallAverageRating)) + ` (${overallAverageRating.toFixed(1)})`;
-                        document.getElementById('favoriteSites').textContent = campground.favoriteSites.join(', ');
+                    // Ratings & Favorites - Populating the second box
+                    document.getElementById('overallStarRating').textContent = "⭐".repeat(Math.round(overallAverageRating)) + ` (${overallAverageRating.toFixed(1)})`;
+                    document.getElementById('favoriteSites').textContent = campground.favoriteSites.join(', ');
 
-                        // Amenities
-                        document.getElementById('electric').textContent = campground.amenities.electric;
-                        document.getElementById('water').textContent = campground.amenities.water;
-                        document.getElementById('sewer').textContent = campground.amenities.sewer;
-                        document.getElementById('petsWelcome').textContent = campground.amenities.petsWelcome ? "Yes" : "No";
-                        document.getElementById('dogPark').textContent = campground.amenities.dogPark ? "Yes" : "No";
-                        document.getElementById('campStore').textContent = campground.amenities.campStore ? "Yes" : "No";
-                        document.getElementById('propaneRefill').textContent = campground.amenities.propaneRefill ? "Yes" : "No";
+                    // Amenities
+                    document.getElementById('electric').textContent = campground.amenities.electric;
+                    document.getElementById('water').textContent = campground.amenities.water;
+                    document.getElementById('sewer').textContent = campground.amenities.sewer;
+                    document.getElementById('petsWelcome').textContent = campground.amenities.petsWelcome ? "Yes" : "No";
+                    document.getElementById('dogPark').textContent = campground.amenities.dogPark ? "Yes" : "No";
+                    document.getElementById('campStore').textContent = campground.amenities.campStore ? "Yes" : "No";
+                    document.getElementById('propaneRefill').textContent = campground.amenities.propaneRefill ? "Yes" : "No";
 
-                        // Site Features
-                        document.getElementById('siteFeatures').textContent = campground.siteFeatures;
+                    // Site Features
+                    document.getElementById('siteFeatures').textContent = campground.siteFeatures;
 
-                        // Activities
-                        document.getElementById('waterfront').textContent = campground.activities.waterfront ? "Yes" : "No";
-                        document.getElementById('hiking').textContent = campground.activities.hiking ? "Yes" : "No";
-                        document.getElementById('biking').textContent = campground.activities.biking ? "Yes" : "No";
-                        
-                        const otherActivitiesContainer = document.getElementById('otherActivities');
-                        otherActivitiesContainer.innerHTML = ''; 
-                        if (campground.activities.other && campground.activities.other.length > 0) {
-                            const ul = document.createElement('ul');
-                            ul.style.listStyleType = 'disc'; 
-                            ul.style.paddingLeft = '20px'; 
-                            campground.activities.other.forEach(activity => {
-                                const li = document.createElement('li');
-                                li.textContent = activity;
-                                ul.appendChild(li);
-                            });
-                            otherActivitiesContainer.appendChild(ul);
-                        } else {
-                            otherActivitiesContainer.textContent = 'N/A';
-                        }
+                    // Activities
+                    document.getElementById('waterfront').textContent = campground.activities.waterfront ? "Yes" : "No";
+                    document.getElementById('hiking').textContent = campground.activities.hiking ? "Yes" : "No";
+                    document.getElementById('biking').textContent = campground.activities.biking ? "Yes" : "No";
+                    
+                    const otherActivitiesContainer = document.getElementById('otherActivities');
+                    otherActivitiesContainer.innerHTML = ''; 
+                    if (campground.activities.other && campground.activities.other.length > 0) {
+                        const ul = document.createElement('ul');
+                        ul.style.listStyleType = 'disc'; 
+                        ul.style.paddingLeft = '20px'; 
+                        campground.activities.other.forEach(activity => {
+                            const li = document.createElement('li');
+                            li.textContent = activity;
+                            ul.appendChild(li);
+                        });
+                        otherActivitiesContainer.appendChild(ul);
+                    } else {
+                        otherActivitiesContainer.textContent = 'N/A';
+                    }
 
-                        // Nearby Essentials
-                        document.getElementById('shoppingNearby').textContent = campground.nearby.shopping ? "Yes" : "No";
-                        document.getElementById('emergencyMedicalDistance').textContent = campground.nearby.emergencyMedicalDistance;
-
-
-// --- NEW: Populate Photo Gallery ---
+                    // Nearby Essentials
+                    document.getElementById('shoppingNearby').textContent = campground.nearby.shopping ? "Yes" : "No";
+                    document.getElementById('emergencyMedicalDistance').textContent = campground.nearby.emergencyMedicalDistance;
+                    
+                    // Photo Gallery
                     const photoGalleryContainer = document.getElementById('photoGalleryContainer');
-                    photoGalleryContainer.innerHTML = ''; // Clear "No photos available."
+                    photoGalleryContainer.innerHTML = ''; 
                     if (campground.photoGallery && campground.photoGallery.length > 0) {
                         campground.photoGallery.forEach(photo => {
                             const photoItem = document.createElement('div');
@@ -362,46 +361,44 @@
                     } else {
                         photoGalleryContainer.innerHTML = '<p>No photos available for this campground.</p>';
                     }
-                    // --- END NEW Photo Gallery ---
 
-                        
-                        // Reviews
-                        const reviewsContainer = document.getElementById('reviewsContainer');
-                        reviewsContainer.innerHTML = '';
-                        if (campground.reviews && campground.reviews.length > 0) {
-                            campground.reviews.forEach(review => {
-                                const reviewCard = document.createElement('div');
-                                reviewCard.className = 'review-card';
-                                reviewCard.innerHTML = `
-                                    <p class="review-meta">
-                                        <strong>Visit Date:</strong> ${review.visitDate} | 
-                                        <strong>Review Date:</strong> ${review.reviewDate} | 
-                                        <strong>Rating:</strong> ${"⭐".repeat(parseInt(review.starRating))}
-                                    </p>
-                                    <p>${review.text}</p>
-                                `;
+                    // Reviews
+                    const reviewsContainer = document.getElementById('reviewsContainer');
+                    reviewsContainer.innerHTML = '';
+                    if (campground.reviews && campground.reviews.length > 0) {
+                        campground.reviews.forEach(review => {
+                            const reviewCard = document.createElement('div');
+                            reviewCard.className = 'review-card';
+                            reviewCard.innerHTML = `
+                                <p class="review-meta">
+                                    <strong>Visit Date:</strong> ${review.visitDate} | 
+                                    <strong>Review Date:</strong> ${review.reviewDate} | 
+                                    <strong>Rating:</strong> ${"⭐".repeat(parseInt(review.starRating))}
+                                </p>
+                                <p>${review.text}</p>
+                            `;
 
-                                if (review.youtubeVideoUrl) {
-                                    const videoContainer = document.createElement('div');
-                                    videoContainer.className = 'video-container';
-                                    videoContainer.innerHTML = `<iframe src="${review.youtubeVideoUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
-                                    reviewCard.appendChild(videoContainer);
-                                }
-                                reviewsContainer.appendChild(reviewCard);
-                            });
-                        } else {
-                            reviewsContainer.innerHTML = '<p>No reviews available for this campground.</p>';
-                        }
-
+                            if (review.youtubeVideoUrl) {
+                                const videoContainer = document.createElement('div');
+                                videoContainer.className = 'video-container';
+                                videoContainer.innerHTML = `<iframe src="${review.youtubeVideoUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
+                                reviewCard.appendChild(videoContainer);
+                            }
+                            reviewsContainer.appendChild(reviewCard);
+                        });
                     } else {
-                        document.getElementById('campgroundName').textContent = "Campground data not found or invalid.";
+                        reviewsContainer.innerHTML = '<p>No reviews available for this campground.</p>';
                     }
-                })
-                .catch(error => {
-                    console.error('Error fetching the JSON data:', error);
-                    document.getElementById('campgroundName').textContent = "Failed to load campground review.";
-                });
-        });
-    </script>
+
+                } else {
+                    document.getElementById('campgroundName').textContent = "Campground data not found or invalid.";
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching the JSON data:', error);
+                document.getElementById('campgroundName').textContent = "Failed to load campground review.";
+            });
+    });
+</script>
 </body>
 </html>
