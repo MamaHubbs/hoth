@@ -9,26 +9,50 @@
       "reservations": "https://www.reserveamerica.com/explore/pohick-bay-regional-park-lorton/NOVA/1020012/overview",  
       "latitude": 38.66900304609987,   
       "longitude": -77.16827128793001,
-      "amenities": {
+     "amenities": {
         "electric": "50/30/20",
-        "water": "Many Sites, Potable Fill Station Available",
-        "sewer": "Some Sites, Dump Station Available",
+        "wateratsite": "Many Sites",
+       "potablefill": true
+        "sewer": "Some Sites",
+      "dumpstation": true,
+        "bathhouse": true,
+        "laundryfacilities": true
         "petsWelcome": true,
         "dogPark": false,
         "campStore": true,
         "propaneRefill": false
+        "playground": true,
+        "swimmingpool": false,
+       "otheramenities": ["N/A"]
       },
-      "siteFeatures": "Shaded, Mostly Level, Fire Ring with Grill, Picnic Table",
+      "siteFeatures": {
+        "level": "Many sites, some are on a grade so be prepared with leveling blocks",
+      "dirt": "Most",
+      "gravel": "Some",
+      "paved": false,
+          "patio": false,
+          "shade": true,
+        "firering": true
+      "picnictable": true,
+        "grill": "Attached to Fire Ring",
+            "othernotes": ["Lots of tree cover makes use of Starlink difficult"]
+      },        
+        
       "activities": {
-        "waterfront": true,
+        "boatinglaunch": true,
+      "fishing": true,
         "hiking": true,
         "biking": true,
-        "other": ["Fishing", "Mini-Golf", "Disc Golf", "Waterpark"]
+      "gameroom": false,
+        "otheractivities": ["Mini-Golf", "Disc Golf", "Waterpark"]
       },
+
       "nearby": {
-        "shopping": true,
+        "shopping": true, ["Grocery Store", "Pharmacy"],
+      "food": true, ["Restaurants"],
         "emergencyMedicalDistance": "15 minutes"
       },
+        
       "favoriteSites": ["40", "50"],
 
 
