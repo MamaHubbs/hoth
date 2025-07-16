@@ -17,6 +17,9 @@
       "dumpstation": true,
         "bathhouse": true,
         "laundryfacilities": true
+        "cellservice": ["Fair"],
+        "wifi": false,
+        "tvcable": false,
         "petsWelcome": true,
         "dogPark": false,
         "campStore": true,
@@ -27,14 +30,14 @@
       },
       "siteFeatures": {
         "level": "Many sites, some are on a grade so be prepared with leveling blocks",
-      "dirt": "Most",
-      "gravel": "Some",
+      "dirt": ["Most"],
+      "gravel": ["Some"],
       "paved": false,
           "patio": false,
           "shade": true,
         "firering": true
       "picnictable": true,
-        "grill": "Attached to Fire Ring",
+        "grill": ["Attached to Fire Ring"],
             "othernotes": ["Lots of tree cover makes use of Starlink difficult"]
       },        
         
