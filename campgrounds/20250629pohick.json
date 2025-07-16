@@ -31,11 +31,11 @@
       "photoGallery": [
 
         {
-          "url": "image/pohick00.jpg",
+          "url": "https://raw.githubusercontent.com/MamaHubbs/hoth/main/image/pohick00.jpg",
           "caption": "Site 50"
         },
         {
-          "url": "https://github.com/MamaHubbs/hoth/blob/05001996430b02162d5ef181f7cf5f70c026b8a6/image/pohick01.jpg",
+          "url": "https://raw.githubusercontent.com/MamaHubbs/hoth/main/image/pohick01.jpg",
           "caption": "Pohick Bay"
         }
       ],
