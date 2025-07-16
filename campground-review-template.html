@@ -6,7 +6,7 @@
     <title>Campground Review</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Helvetica, sans-serif; /* Helvetica for body text, fallback to sans-serif */
             line-height: 1.6;
             margin: 20px;
             background-color: #f4f4f4;
@@ -21,11 +21,13 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         h1 {
+            font-family: Arial, sans-serif; /* Arial for h1 */
             color: #133b66; /* Main color for primary heading */
             text-align: center;
             margin-bottom: 5px;
+            font-size: 2em; /* Slightly smaller h1 */
         }
-        /* Style for the top overall rating - Remains at the very top of the page content */
+        /* Style for the top overall rating */
         .top-overall-rating {
             text-align: center;
             font-size: 1.5em; /* Larger size */
@@ -33,20 +35,13 @@
             color: #ff9800; /* Star color */
             font-weight: bold;
         }
-        /* NEW: Style for the overall rating when it's INSIDE the general info column */
-        .overall-rating-in-column {
-            text-align: left; /* Aligns to the left within its column */
-            font-size: 1.2em; /* Slightly smaller than top, but still prominent */
-            margin-bottom: 15px; /* Space below rating in column */
-            color: #ff9800;
-            font-weight: bold;
-        }
-
         h2 {
+            font-family: Arial, sans-serif; /* Arial for h2 */
             color: #2d7cbc; /* Secondary color for section headings */
             border-bottom: 1px solid #eee;
             padding-bottom: 5px;
             margin-top: 25px;
+            font-size: 1.3em; /* Slightly smaller h2 */
         }
         p {
             margin-bottom: 10px;
@@ -133,16 +128,9 @@
             height: 100%;
             border: none;
         }
-        /* Custom style for the Favorite Sites box */
-        .favorite-sites-box {
-            border: 1px solid #2d7cbc; /* Using secondary color for border */
-            background-color: #5c9ad5; /* Your requested background color */
-            padding: 8px;
-            margin-top: 15px;
-            border-radius: 5px;
-            margin-left: 10%;
-            margin-right: 10%;
-        }
+        /* Removed .favorite-sites-box custom style as it's now integrated */
+        /* .favorite-sites-box { ... } */
+
 
         /* Specific styles for Other Activities list items (transparent background) */
         #otherActivities ul li {
@@ -241,8 +229,9 @@
                 <h2>Site Features</h2>
                 <p id="siteFeatures"></p>
 
-                <div class="favorite-sites-box">
-                    <p style="margin-bottom: 0;"><strong>Favorite Sites:</strong> <span id="favoriteSites"></span></p>
+                <div class="nested-box" style="background-color: #a7bed3; margin-top: 25px;">
+                    <h2>Favorite Sites</h2>
+                    <p style="margin-bottom: 0;"><span id="favoriteSites"></span></p>
                 </div>
             </div>
         </div>
