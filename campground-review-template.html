@@ -158,6 +158,43 @@
             margin-bottom: 5px;
         }
 
+        /* Photo Gallery Styling - ENSURE THESE ARE PRESENT */
+    .photo-gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid columns */
+        gap: 15px; /* Space between photos */
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+    .photo-gallery-item {
+        background-color: #f9f9f9;
+        border: 1px solid #eee;
+        border-radius: 5px;
+        overflow: hidden; /* Ensures image respects border-radius */
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        display: flex; /* For caption positioning */
+        flex-direction: column;
+    }
+    .photo-gallery-item img {
+        width: 100%;
+        height: 150px; /* Fixed height for consistency */
+        object-fit: cover; /* Crops image to fit without distortion */
+        display: block;
+    }
+    .photo-gallery-item .caption {
+        padding: 8px;
+        font-size: 0.9em;
+        color: #555;
+        text-align: center;
+        background-color: #fff;
+        border-top: 1px solid #eee;
+        flex-grow: 1; /* Makes caption take available space */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+        
+
     </style>
 </head>
 <body>
