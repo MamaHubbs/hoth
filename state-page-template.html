@@ -1,1 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State Campground Reviews</title>
+    <style>
+        body {
+            font-family: Helvetica, sans-serif;
+            line-height: 1.4;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            font-family: Arial, sans-serif;
+            color: #133b66;
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 2em;
+        }
+        h2 {
+            font-family: Arial, sans-serif;
+            color: #2d7cbc;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+            margin-top: 25px;
+            font-size: 1.2em;
+        }
+        .map-container {
+            overflow: hidden;
+            height: 400px; /* Taller map for state view */
+            position: relative;
+            margin-top: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+        .map-container iframe {
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            border: 0;
+        }
+        .campground-list ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .campground-list li {
+            background-color: #f9f9f9;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+        }
+        .campground-list li a {
+            font-weight: bold;
+            color: #133b66; /* Use your main color for links */
+            text-decoration: none;
+            font-size: 1.1em;
+        }
+        .campground-list li a:hover {
+            text-decoration: underline;
+        }
+        .campground-list li p {
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 5px;
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="stateNameHeading">Loading State Campgrounds...</h1>
 
+        <h2>Map of Campgrounds</h2>
+        <div id="stateMapContainer" class="map-container">
+            <iframe id="stateMapIframe" frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+
+        <h2>Campgrounds in This State</h2>
+        <div id="campgroundsList" class="campground-list">
+            <ul>
+                <li>No campgrounds found for this state.</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script src="shared.js"></script> 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const stateCode = getQueryParameter('state'); // e.g., "VA"
+
+            if (!stateCode) {
+                document.getElementById('stateNameHeading').textContent = "Error: State code not specified in URL.";
+                console.error("No 'state' query parameter found in the URL.");
+                return;
+            }
+
+            // Fetch the central index file
+            const indexJsonUrl = getCampgroundJsonUrl('campground_index'); // Assumes campground_index.json is in 'campgrounds' folder
+
+            fetch(indexJsonUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const allCampgrounds = data.campgrounds || [];
+                    const campgroundsInState = allCampgrounds.filter(camp => camp.state_code === stateCode.toUpperCase());
+
+                    if (campgroundsInState.length > 0) {
+                        document.getElementById('stateNameHeading').textContent = `${campgroundsInState[0].state} Campgrounds`; // Use full state name from first campground
+
+                        // Populate Map
+                        const stateMapIframe = document.getElementById('stateMapIframe');
+                        const zoomLevel = 7; // Good general zoom for a state
+                        
+                        // Calculate center of all campgrounds in state for better map centering
+                        let avgLat = 0;
+                        let avgLon = 0;
+                        campgroundsInState.forEach(camp => {
+                            avgLat += camp.latitude;
+                            avgLon += camp.longitude;
+                        });
+                        avgLat /= campgroundsInState.length;
+                        avgLon /= campgroundsInState.length;
+
+                        // Build bbox to encompass all points roughly
+                        let minLat = Infinity, maxLat = -Infinity, minLon = Infinity, maxLon = -Infinity;
+                        campgroundsInState.forEach(camp => {
+                            minLat = Math.min(minLat, camp.latitude);
+                            maxLat = Math.max(maxLat, camp.latitude);
+                            minLon = Math.min(minLon, camp.longitude);
+                            maxLon = Math.max(maxLon, camp.longitude);
+                        });
+
+                        // Add a small buffer to the bbox
+                        const latBuffer = (maxLat - minLat) * 0.1 || 0.05; // 10% buffer or a small default
+                        const lonBuffer = (maxLon - minLon) * 0.1 || 0.05;
+
+                        // Create markers string
+                        let markers = [];
+                        campgroundsInState.forEach(camp => {
+                            // Link to the individual campground review page
+                            const reviewPageUrl = `campground-review-template.html?campground=${camp.id}`; 
+                            markers.push(`${camp.latitude},${camp.longitude},${encodeURIComponent(camp.name)}`); // Marker format: lat,lon,name
+                        });
+
+                        // Note: OpenStreetMap's embed.html doesn't directly support multiple custom markers with click links in the iframe src.
+                        // For a fully interactive map with clickable custom pins, you'd typically need a JavaScript mapping library (e.g., Leaflet.js or OpenLayers)
+                        // implemented directly on this page, which is more complex.
+                        // The current OpenStreetMap embed.html allows ONE marker (the 'marker' param)
+                        // For now, we'll center the map and just use the bounding box.
+                        // A better approach for multiple clickable markers is discussed below this code block.
+
+                        // For embed.html, the 'marker' param only takes one.
+                        // To show all, we can calculate the bbox for all and just center the map.
+                        // If you need *clickable pins*, we would switch to a Leaflet.js setup here.
+                        stateMapIframe.src = `https://www.openstreetmap.org/export/embed.html?bbox=${minLon - lonBuffer},${minLat - latBuffer},${maxLon + lonBuffer},${maxLat + latBuffer}&marker=${avgLat},${avgLon}&zoom=${zoomLevel}&layer=mapnik`;
+
+
+                        // Populate List of Campgrounds
+                        const campgroundsListUl = document.querySelector('#campgroundsList ul');
+                        campgroundsListUl.innerHTML = ''; // Clear default "No campgrounds..."
+                        campgroundsInState.forEach(camp => {
+                            const li = document.createElement('li');
+                            const link = document.createElement('a');
+                            link.href = `campground-review-template.html?campground=${camp.id}`; // Link to individual review page
+                            link.textContent = camp.name;
+                            link.target = "_parent"; // Or "_top" if iframe breaks things, or leave it for default behavior
+
+                            li.appendChild(link);
+                            if (camp.summary_text) {
+                                const summaryP = document.createElement('p');
+                                summaryP.textContent = camp.summary_text;
+                                li.appendChild(summaryP);
+                            }
+                            campgroundsListUl.appendChild(li);
+                        });
+
+                    } else {
+                        document.getElementById('stateNameHeading').textContent = `No Campgrounds Found for ${stateCode.toUpperCase()}`;
+                        document.querySelector('#campgroundsList ul').innerHTML = `<li>No campgrounds available for ${stateCode.toUpperCase()} yet.</li>`;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching the campground index:', error);
+                    document.getElementById('stateNameHeading').textContent = "Failed to load state campgrounds.";
+                    document.querySelector('#campgroundsList ul').innerHTML = `<li>Error loading campgrounds. Please try again later.</li>`;
+                });
+        });
+    </script>
+</body>
+</html>
