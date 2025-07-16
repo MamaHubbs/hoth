@@ -135,6 +135,43 @@
             position: absolute;
             border: 0;
         }
+
+        /* NEW: Photo Gallery Styling */
+    .photo-gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid columns */
+        gap: 15px; /* Space between photos */
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+    .photo-gallery-item {
+        background-color: #f9f9f9;
+        border: 1px solid #eee;
+        border-radius: 5px;
+        overflow: hidden; /* Ensures image respects border-radius */
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        display: flex; /* For caption positioning */
+        flex-direction: column;
+    }
+    .photo-gallery-item img {
+        width: 100%;
+        height: 150px; /* Fixed height for consistency */
+        object-fit: cover; /* Crops image to fit without distortion */
+        display: block;
+    }
+    .photo-gallery-item .caption {
+        padding: 8px;
+        font-size: 0.9em;
+        color: #555;
+        text-align: center;
+        background-color: #fff;
+        border-top: 1px solid #eee;
+        flex-grow: 1; /* Makes caption take available space */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+        
     </style>
 </head>
 <body>
@@ -195,6 +232,11 @@
             </div>
         </div>
 
+        <h2>Photo Gallery</h2>
+        <div id="photoGalleryContainer" class="photo-gallery-grid">
+            <p>No photos available.</p>
+        </div>
+        
         <h2>Reviews</h2>
         <div id="reviewsContainer">
             <p>No reviews available.</p>
@@ -302,6 +344,26 @@
                         // Nearby Essentials
                         document.getElementById('shoppingNearby').textContent = campground.nearby.shopping ? "Yes" : "No";
                         document.getElementById('emergencyMedicalDistance').textContent = campground.nearby.emergencyMedicalDistance;
+
+
+// --- NEW: Populate Photo Gallery ---
+                    const photoGalleryContainer = document.getElementById('photoGalleryContainer');
+                    photoGalleryContainer.innerHTML = ''; // Clear "No photos available."
+                    if (campground.photoGallery && campground.photoGallery.length > 0) {
+                        campground.photoGallery.forEach(photo => {
+                            const photoItem = document.createElement('div');
+                            photoItem.className = 'photo-gallery-item';
+                            photoItem.innerHTML = `
+                                <img src="${photo.url}" alt="${photo.caption || 'Campground Photo'}">
+                                ${photo.caption ? `<div class="caption">${photo.caption}</div>` : ''}
+                            `;
+                            photoGalleryContainer.appendChild(photoItem);
+                        });
+                    } else {
+                        photoGalleryContainer.innerHTML = '<p>No photos available for this campground.</p>';
+                    }
+                    // --- END NEW Photo Gallery ---
+
                         
                         // Reviews
                         const reviewsContainer = document.getElementById('reviewsContainer');
