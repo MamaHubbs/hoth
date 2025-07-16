@@ -202,14 +202,28 @@
             justify-content: center;
         }
 
-            .favorite-sites-box {
+    .favorite-sites-box {
         border: 1px solid #2d7cbc; /* Using secondary color for border */
-        background-color: #e5f2ff; /* Your new requested background color */
+        background-color: #e5f2ff; /* Your desired background color */
         padding: 8px;
-        margin-top: 5px;
+        margin-top: 5px; /* Spacing from Site Features */
         border-radius: 5px;
-        margin-left: 10%;
-        margin-right: 10%;
+        margin-left: 0;
+        margin-right: 0;
+        /* NEW: Styles for elements INSIDE the favorite-sites-box */
+        padding-top: 5px; /* Reduce space at the top of the box */
+    }
+
+    .favorite-sites-box h2 {
+        margin-top: 0; /* Remove top margin from the h2 */
+        margin-bottom: 5px; /* Reduce bottom margin on the h2 to bring text closer */
+        border-bottom: none; /* Remove border if you want a cleaner look here */
+        padding-bottom: 0;
+    }
+
+    .favorite-sites-box p {
+        margin-top: 0; /* Remove top margin from the paragraph */
+        margin-bottom: 0; /* Ensure no bottom margin if it's the last element */
     }
 
     </style>
