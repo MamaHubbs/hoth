@@ -23,9 +23,9 @@
         h1 {
             color: #133b66; /* Main color for primary heading */
             text-align: center;
-            margin-bottom: 5px; /* Reduced margin for closer rating */
+            margin-bottom: 5px;
         }
-        /* NEW: Style for the top overall rating */
+        /* Style for the top overall rating - Remains at the very top of the page content */
         .top-overall-rating {
             text-align: center;
             font-size: 1.5em; /* Larger size */
@@ -33,6 +33,15 @@
             color: #ff9800; /* Star color */
             font-weight: bold;
         }
+        /* NEW: Style for the overall rating when it's INSIDE the general info column */
+        .overall-rating-in-column {
+            text-align: left; /* Aligns to the left within its column */
+            font-size: 1.2em; /* Slightly smaller than top, but still prominent */
+            margin-bottom: 15px; /* Space below rating in column */
+            color: #ff9800;
+            font-weight: bold;
+        }
+
         h2 {
             color: #2d7cbc; /* Secondary color for section headings */
             border-bottom: 1px solid #eee;
@@ -62,7 +71,7 @@
             text-decoration: underline;
         }
         .rating {
-            /* This style is now mainly for the individual review ratings, not the top one */
+            /* This style is now mainly for the individual review ratings, not the top ones */
             font-size: 1.2em;
             font-weight: bold;
             color: #ff9800;
@@ -88,7 +97,7 @@
             padding: 10px;
             border-radius: 5px;
             border: 1px solid #eee;
-            margin-bottom: 15px; /* Space between the general info box and the ratings box */
+            margin-bottom: 15px; /* Space between nested boxes */
         }
         .nested-box:last-child {
             margin-bottom: 0; /* No margin for the last nested box */
@@ -208,6 +217,7 @@
 <body>
     <div class="container">
         <h1 id="campgroundName">Loading Campground Review...</h1>
+        
         <p id="overallStarRating" class="top-overall-rating"></p>
 
 
@@ -215,7 +225,7 @@
             <div>
                 <div class="nested-box">
                     <h2>General Info</h2>
-                    <p><strong>Website:</strong> <a id="website" href="#" target="_blank">View Website</a></p>
+                    <p><strong>Website:</strong> <a id="website" href="#" target="_blank">Visit Campground Website</a></p>
                     <p><strong>Address:</strong> <span id="address"></span></p>
                     <div class="map-container">
                         <iframe id="googleMap" frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
@@ -317,11 +327,11 @@
                             overallAverageRating = totalStars / numberOfReviews;
                         }
                         
-                        // General Info - Populating the first box
-                        document.getElementById('campgroundName').textContent = campground.name;
-                        // Overall Rating moved to top, so populate it directly
+                        // Populate Overall Rating at the top
                         document.getElementById('overallStarRating').textContent = "⭐".repeat(Math.round(overallAverageRating)) + ` (${overallAverageRating.toFixed(1)})`;
 
+                        // General Info - Populating the box now just contains address/website/map
+                        document.getElementById('campgroundName').textContent = campground.name;
                         document.getElementById('address').textContent = campground.address;
                         document.getElementById('website').href = campground.website;
                         
