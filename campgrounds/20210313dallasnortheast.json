@@ -12,32 +12,32 @@
       "amenities": {
         "electric": "50/30/20",
         "wateratsite": "Many Sites",
-       "potablefill": true
+       "potablefill": true,
         "sewer": "Some Sites",
       "dumpstation": true,
         "bathhouse": true,
-        "laundryfacilities": true
+        "laundryfacilities": true,
+        "cellservice": ["Good"],
+        "wifi": true, ["Fair"],
+        "tvcable": true,
         "petsWelcome": true,
         "dogPark": true,
         "campStore": true,
-        "propaneRefill": false
+        "propaneRefill": false,
         "playground": true,
         "swimmingpool": true,
-        "dogPark": true,
-        "campStore": true,
-        "propaneRefill": false
        "otheramenities": ["Fitness Center/Gym", "1/4 Mile from I-30"]
       },
       "siteFeatures": {
-        "level": true
-      "dirt": true,
-      "gravel": true
-      "paved": true,
-          "patio": "Some Sites"
-          "shade": false,
+        "level": true,
+      "dirt": false,
+      "gravel": true,
+      "paved": ["Some"],
+          "patio": ["Some Sites"],
+          "shade": ["Some Sites"],
         "firering": true
       "picnictable": true,
-        "firering": true
+        "grill": true
             "othernotes": ["Pull-Through Sites Available"]
       },
       "activities": {
@@ -45,7 +45,7 @@
       "fishing": true,
         "hiking": true,
         "biking": false,
-      "gameroom": true
+      "gameroom": true,
         "otheractivities": ["Pool with Splash Pad", "5-Acre Fishing Lake"]
       },
       "nearby": {
@@ -53,18 +53,18 @@
       "food": true, ["Restaurants"],
         "emergencyMedicalDistance": "15 minutes"
       },
-      "favoriteSites": ["40", "50"],
+      "favoriteSites": ["N/A"],
 
 
       "photoGallery": [
 
         {
           "url": "https://raw.githubusercontent.com/MamaHubbs/hoth/main/image/dallasne01.JPG",
-          "caption": "Site 50"
+          "caption": "Site"
         },
         {
           "url": "https://raw.githubusercontent.com/MamaHubbs/hoth/main/image/dallasne02.JPG",
-          "caption": "Pohick Bay"
+          "caption": "Relaxing by the Fire"
         }
       ],
       "reviews": [
