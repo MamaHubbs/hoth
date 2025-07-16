@@ -1,7 +1,10 @@
 {"campgrounds": [
     {"id": "pohick-bay-regional-park-06-2025",
       "name": "Pohick Bay Regional Park",
-      "address": "6501 Pohick Bay Dr, Lorton, VA 22079",
+           "state": "Virginia", // NEW FIELD
+      "state_code": "VA", // NEW FIELD
+      "summary_text": "Pohick Bay Regional Park offers family-friendly camping with easy access to water activities and historical sites near Washington, D.C.", // NEW FIELD
+        "address": "6501 Pohick Bay Dr, Lorton, VA 22079",
       "website": "https://www.novaparks.com/cabins-camping/camping/camping-family-0",
       "reservations": "https://www.reserveamerica.com/explore/pohick-bay-regional-park-lorton/NOVA/1020012/overview",  
       "latitude": 38.66900304609987,   
