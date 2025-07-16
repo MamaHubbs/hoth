@@ -43,7 +43,7 @@
             border-bottom: 1px solid #eee;
             padding-bottom: 5px;
             margin-top: 15px;
-            font-size: 1.15em; /* ADJUSTED: All h2s are now 1.15em (smaller) */
+            font-size: 1.2em; /* All h2s are now 1.2em (smaller than 1.3em) */
         }
 
         h2#siteFeaturesHeading { 
@@ -172,7 +172,7 @@
         /* Photo Gallery Styling */
         .photo-gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minminmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 15px;
             margin-top: 20px;
             margin-bottom: 30px;
@@ -226,7 +226,7 @@
 
         .favorite-sites-box p {
             margin-top: 0px; /* Ensure top margin is 0 */
-            margin-bottom: 0px; /* IMPORTANT: Changed from '5' to '0px' to eliminate space */
+            margin-bottom: 0px; /* CORRECTED: Changed from '5' to '0px' to eliminate space */
         }
 
     </style>
@@ -244,6 +244,7 @@
                     <h2>General Info</h2>
                     <p id="overallStarRating" class="overall-rating-general-info"></p>
                     <p><strong>Website:</strong> <a id="website" href="#" target="_blank">Visit Campground Website</a></p>
+                    <p><strong>Reservations:</strong> <a id="reservations" href="#" target="_blank">Click Here</a></p>
                     <p><strong>Address:</strong> <span id="address"></span></p>
                     <div class="map-container">
                         <iframe id="googleMap" frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
@@ -261,7 +262,7 @@
                 <p id="siteFeatures"></p>
 
                 <div class="nested-box favorite-sites-box"> <h2>Favorite Sites</h2>
-                    <p style="margin-bottom: 0;"><span id="favoriteSites"></span></p>
+                    <p><span id="favoriteSites"></span></p> 
                 </div>
             </div>
         </div>
@@ -354,6 +355,17 @@
                         document.getElementById('address').textContent = campground.address;
                         document.getElementById('website').href = campground.website;
                         
+                        // NEW: Populate Reservations Link
+                        const reservationsLink = document.getElementById('reservations');
+                        if (campground.reservations) {
+                            reservationsLink.href = campground.reservations;
+                            reservationsLink.textContent = "Click Here"; // Ensure link text is set
+                        } else {
+                            reservationsLink.textContent = "N/A"; // Or hide the paragraph
+                            reservationsLink.removeAttribute('href'); // Remove link if no URL
+                        }
+
+
                         // OpenStreetMap Embedding
                         const googleMapIframe = document.getElementById('googleMap'); 
                         const zoomLevel = 15; 
