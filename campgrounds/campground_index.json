@@ -7,6 +7,16 @@
       "state_code": "VA",
       "latitude": 38.66900304609987,
       "longitude": -77.16827128793001
+    },
+        {
+      "id": "dallas-northeast-campground-rv-park-03-2021",
+      "name": "Dallas Northeast Campground & RV Park",
+      "state": "Texas",
+      "state_code": "TX",
+      "latitude": 33.02367531550495,
+      "longitude": -96.20705659831987
     }
   ]
 }
+
+
