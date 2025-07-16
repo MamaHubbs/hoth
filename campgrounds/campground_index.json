@@ -1,0 +1,12 @@
+{
+  "campgrounds": [
+    {
+      "id": "pohick-bay-regional-park-06-2025",
+      "name": "Pohick Bay Regional Park",
+      "state": "Virginia",
+      "state_code": "VA",
+      "latitude": 38.66900304609987,
+      "longitude": -77.16827128793001
+    }
+  ]
+}
