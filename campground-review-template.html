@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Campground Review</title>
     <style>
-<style>
         body {
             font-family: Helvetica, sans-serif; /* Helvetica for body text, fallback to sans-serif */
-            line-height: 1.6;
+            line-height: 1.4; /* ADJUSTED: Reduced line height for closer text */
             margin: 20px;
             background-color: #f4f4f4;
             color: #333;
@@ -52,7 +51,7 @@
         }
         
         p {
-            margin-bottom: 10px;
+            margin-bottom: 10px; /* Keep standard paragraph spacing */
         }
         strong {
             color: #555;
@@ -62,7 +61,7 @@
             padding: 0;
         }
         ul li {
-            margin-bottom: 5px;
+            margin-bottom: 5px; /* Keep standard list item spacing */
             padding: 8px 12px;
             border-radius: 4px;
         }
@@ -91,17 +90,17 @@
             background-color: #f9f9f9;
             padding: 10px;
             border-radius: 5px;
-            border: 1px solid #eee;
+            border: 1px solid #eee; /* This provides the outer border */
         }
 
         /* Styling for the nested boxes within the main left column */
-    .nested-box {
-        background-color: #f9f9f9; /* Same as other grid boxes */
-        padding: 10px;
-        border-radius: 5px;
-        /* REMOVED: border: 1px solid #eee; */ /* This was the inner border */
-        margin-bottom: 15px; /* Space between nested boxes */
-        
+        .nested-box {
+            background-color: #f9f9f9; /* Same as other grid boxes */
+            padding: 10px;
+            border-radius: 5px;
+            /* Border removed from here to prevent double border */
+            margin-bottom: 15px; /* Space between nested boxes */
+        }
         .nested-box:last-child {
             margin-bottom: 0; /* No margin for the last nested box */
         }
@@ -206,15 +205,16 @@
             justify-content: center;
         }
 
+        /* Custom style for the Favorite Sites box - NOW SELF-CONTAINED */
         .favorite-sites-box {
-            border: 1px solid #2d7cbc; /* Using secondary color for border */
-            background-color: #e5f2ff; /* Your desired background color */
-            padding: 10px; /* Adjusted padding to match nested-box */
-            margin-top: 25px; /* Restored margin for spacing from Site Features */
-            border-radius: 5px;
-            margin-left: 0;
-            margin-right: 0;
-            padding-top: 5px; /* Reduce space at the top of the box */
+            border: 1px solid #2d7cbc; /* Explicit border */
+            background-color: #e5f2ff; /* Explicit desired background color */
+            padding: 10px; /* Explicit padding */
+            margin-top: 25px; /* Spacing from Site Features */
+            border-radius: 5px; /* Explicit border-radius */
+            margin-left: 0; /* Explicit margin */
+            margin-right: 0; /* Explicit margin */
+            padding-top: 5px; /* Specific padding adjustment */
         }
 
         .favorite-sites-box h2 {
@@ -226,8 +226,8 @@
         }
 
         .favorite-sites-box p {
-            margin-top: 0px; /* Ensure top margin is 0 */
-            margin-bottom: 0px; /* CORRECTED: Changed from '5' to '0px' to eliminate space */
+            margin-top: 0px; 
+            margin-bottom: 0px; /* Ensure 0px for tight spacing */
         }
 
     </style>
@@ -235,7 +235,6 @@
 <body>
     <div class="container">
         <h1 id="campgroundName">Loading Campground Review...</h1>
-        
         
         <div class="section-grid">
             
@@ -262,7 +261,7 @@
                 <h2 id="siteFeaturesHeading">Site Features</h2>
                 <p id="siteFeatures"></p>
 
-                <div class="nested-box favorite-sites-box"> <h2>Favorite Sites</h2>
+                <div class="favorite-sites-box"> <h2>Favorite Sites</h2>
                     <p><span id="favoriteSites"></span></p> 
                 </div>
             </div>
@@ -356,14 +355,15 @@
                         document.getElementById('address').textContent = campground.address;
                         document.getElementById('website').href = campground.website;
                         
-                        // NEW: Populate Reservations Link
+                        // Populate Reservations Link
                         const reservationsLink = document.getElementById('reservations');
                         if (campground.reservations) {
                             reservationsLink.href = campground.reservations;
-                            reservationsLink.textContent = "Click Here"; // Ensure link text is set
+                            reservationsLink.textContent = "Click Here";
                         } else {
-                            reservationsLink.textContent = "N/A"; // Or hide the paragraph
-                            reservationsLink.removeAttribute('href'); // Remove link if no URL
+                            // If no reservation URL, display N/A and not a clickable link
+                            reservationsLink.textContent = "N/A"; 
+                            reservationsLink.removeAttribute('href'); 
                         }
 
 
