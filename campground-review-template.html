@@ -118,23 +118,24 @@
             margin-bottom: 0;
         }
 
-        /* NEW: Map container styling */
-        .map-container {
-            overflow: hidden; /* Ensures map doesn't spill out */
-            padding-bottom: 75%; /* 4:3 Aspect Ratio for map. Adjust as needed. */
-            position: relative;
-            height: 0;
-            margin-top: 15px; /* Spacing below address/website */
-            border-radius: 5px; /* Match container border-radius */
-        }
-        .map-container iframe {
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 100%;
-            position: absolute;
-            border: 0;
-        }
+.map-container {
+        overflow: hidden;
+        /* padding-bottom: 75%; /* 4:3 Aspect Ratio for map. Adjust as needed. - Keep this if you want fixed aspect ratio */
+        height: 300px; /* NEW: Set a fixed height in pixels as a fallback or primary height */
+        position: relative;
+        /* height: 0; REMOVE THIS LINE if you're setting a fixed height above */
+        margin-top: 15px;
+        border-radius: 5px;
+        border: 1px solid #eee; /* Added a subtle border for definition */
+    }
+    .map-container iframe {
+        left: 0;
+        top: 0;
+        height: 100%; /* Make iframe fill the map-container's height */
+        width: 100%; /* Make iframe fill the map-container's width */
+        position: absolute; /* Allows it to fill the container, if using padding-bottom trick */
+        border: 0;
+    }
 
         /* NEW: Photo Gallery Styling */
     .photo-gallery-grid {
