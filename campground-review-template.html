@@ -24,17 +24,21 @@
             font-family: Arial, sans-serif; /* Arial for h1 */
             color: #133b66; /* Main color for primary heading */
             text-align: center;
-            margin-bottom: 5px;
+            margin-bottom: 25px; /* Restored margin for spacing below title, above general info */
             font-size: 2em; /* Slightly smaller h1 */
         }
-        /* Style for the top overall rating */
-        .top-overall-rating {
-            text-align: center;
+        /* Removed .top-overall-rating as it's no longer at the very top */
+        /* .top-overall-rating { ... } */
+
+        /* NEW: Style for the overall rating when it's INSIDE the general info column */
+        .overall-rating-in-column {
+            text-align: left; /* Aligns to the left within its column */
             font-size: 1.5em; /* Larger size */
-            margin-bottom: 25px; /* Space below rating */
-            color: #ff9800; /* Star color */
+            margin-bottom: 15px; /* Space below rating in column */
+            color: #ff9800;
             font-weight: bold;
         }
+
         h2 {
             font-family: Arial, sans-serif; /* Arial for h2 */
             color: #2d7cbc; /* Secondary color for section headings */
@@ -66,7 +70,7 @@
             text-decoration: underline;
         }
         .rating {
-            /* This style is now mainly for the individual review ratings, not the top ones */
+            /* This style is now mainly for the individual review ratings, not the overall one */
             font-size: 1.2em;
             font-weight: bold;
             color: #ff9800;
@@ -128,8 +132,6 @@
             height: 100%;
             border: none;
         }
-        /* Removed .favorite-sites-box custom style as it's now integrated */
-        /* .favorite-sites-box { ... } */
 
 
         /* Specific styles for Other Activities list items (transparent background) */
@@ -200,17 +202,27 @@
             justify-content: center;
         }
 
+            .favorite-sites-box {
+        border: 1px solid #2d7cbc; /* Using secondary color for border */
+        background-color: #e5f2ff; /* Your new requested background color */
+        padding: 8px;
+        margin-top: 15px;
+        border-radius: 5px;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+
     </style>
 </head>
 <body>
     <div class="container">
         <h1 id="campgroundName">Loading Campground Review...</h1>
         
-        <p id="overallStarRating" class="top-overall-rating"></p>
-
-
         <div class="section-grid">
             <div>
+                <p id="overallStarRating" class="overall-rating-in-column"></p>
+
                 <div class="nested-box">
                     <h2>General Info</h2>
                     <p><strong>Website:</strong> <a id="website" href="#" target="_blank">Visit Campground Website</a></p>
@@ -316,7 +328,7 @@
                             overallAverageRating = totalStars / numberOfReviews;
                         }
                         
-                        // Populate Overall Rating at the top
+                        // Populate Overall Rating at the top of the left column
                         document.getElementById('overallStarRating').textContent = "⭐".repeat(Math.round(overallAverageRating)) + ` (${overallAverageRating.toFixed(1)})`;
 
                         // General Info - Populating the box now just contains address/website/map
