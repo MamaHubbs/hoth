@@ -51,29 +51,29 @@
 
         /* Styles that *will* apply to paths inside the SVG, even when loaded via <object> */
         /* These should be consistent with your .state-path styling from previous attempts */
-   #us-map-svg {
+#us-map-svg {
         width: 100%;
         height: auto;
         max-width: 900px;
         display: block;
         margin: 0 auto;
     }
-    #us-map-svg .state-path { /* Styling for all state paths (default) */
-        fill: #5c9ad5; /* ADJUSTED: Default state color */
-        stroke: #fff;
-        stroke-width: 1px;
+    #us-map-svg path {
+        fill: #5c9ad5 !important;
+        stroke: #fff !important;
+        stroke-width: 1px !important;
         cursor: pointer;
         transition: fill 0.2s ease-in-out;
     }
-    #us-map-svg .state-path:hover {
-        fill: #2d7cbc; /* Keep secondary color on hover */
+    #us-map-svg path:hover {
+        fill: #2d7cbc !important;
     }
-    /* Highlight states that have campgrounds */
-    #us-map-svg .state-path.visited {
-        fill: #133b66; /* ADJUSTED: Visited state color (your main color) */
+
+    #us-map-svg path.visited {
+        fill: #133b66 !important;
     }
-    #us-map-svg .state-path.visited:hover {
-        fill: #2d7cbc; /* Keep secondary color for hover */
+    #us-map-svg path.visited:hover {
+        fill: #2d7cbc !important;
     }
 
 
