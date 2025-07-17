@@ -153,24 +153,8 @@
                         const latBuffer = (maxLat - minLat) * 0.1 || 0.05; // 10% buffer or a small default
                         const lonBuffer = (maxLon - minLon) * 0.1 || 0.05;
 
-                        // Create markers string
-                        let markers = [];
-                        campgroundsInState.forEach(camp => {
-                            // Link to the individual campground review page
-                            const reviewPageUrl = `campground-review-template.html?campground=${camp.id}`; 
-                            markers.push(`${camp.latitude},${camp.longitude},${encodeURIComponent(camp.name)}`); // Marker format: lat,lon,name
-                        });
-
-                        // Note: OpenStreetMap's embed.html doesn't directly support multiple custom markers with click links in the iframe src.
-                        // For a fully interactive map with clickable custom pins, you'd typically need a JavaScript mapping library (e.g., Leaflet.js or OpenLayers)
-                        // implemented directly on this page, which is more complex.
-                        // The current OpenStreetMap embed.html allows ONE marker (the 'marker' param)
-                        // For now, we'll center the map and just use the bounding box.
-                        // A better approach for multiple clickable markers is discussed below this code block.
-
                         // For embed.html, the 'marker' param only takes one.
                         // To show all, we can calculate the bbox for all and just center the map.
-                        // If you need *clickable pins*, we would switch to a Leaflet.js setup here.
                         stateMapIframe.src = `https://www.openstreetmap.org/export/embed.html?bbox=${minLon - lonBuffer},${minLat - latBuffer},${maxLon + lonBuffer},${maxLat + latBuffer}&marker=${avgLat},${avgLon}&zoom=${zoomLevel}&layer=mapnik`;
 
 
@@ -180,7 +164,8 @@
                         campgroundsInState.forEach(camp => {
                             const li = document.createElement('li');
                             const link = document.createElement('a');
-                            link.href = `campground-review-template.html?campground=${camp.id}`; // Link to individual review page
+                            // ADJUSTED: Use camp.filename for the link to the individual review page
+                            link.href = `campground-review-template.html?campground=${camp.filename}`; 
                             link.textContent = camp.name;
                             link.target = "_parent"; // Or "_top" if iframe breaks things, or leave it for default behavior
 
