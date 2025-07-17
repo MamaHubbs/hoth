@@ -205,16 +205,15 @@
             justify-content: center;
         }
 
-        /* Custom style for the Favorite Sites box - NOW SELF-CONTAINED */
         .favorite-sites-box {
-            border: 1px solid #2d7cbc; /* Explicit border */
-            background-color: #e5f2ff; /* Explicit desired background color */
-            padding: 10px; /* Explicit padding */
-            margin-top: 25px; /* Spacing from Site Features */
-            border-radius: 5px; /* Explicit border-radius */
-            margin-left: 0; /* Explicit margin */
-            margin-right: 0; /* Explicit margin */
-            padding-top: 5px; /* Specific padding adjustment */
+            border: 1px solid #2d7cbc; /* Using secondary color for border */
+            background-color: #e5f2ff; /* Your desired background color */
+            padding: 10px; /* Adjusted padding to match nested-box */
+            margin-top: 25px; /* Restored margin for spacing from Site Features */
+            border-radius: 5px;
+            margin-left: 0;
+            margin-right: 0;
+            padding-top: 5px; /* Reduce space at the top of the box */
         }
 
         .favorite-sites-box h2 {
@@ -261,7 +260,7 @@
                 <h2 id="siteFeaturesHeading">Site Features</h2>
                 <p id="siteFeatures"></p>
 
-                <div class="favorite-sites-box"> 
+                <div class="nested-box favorite-sites-box"> 
                     <h2>Favorite Sites</h2>
                     <p><span id="favoriteSites"></span></p> 
                 </div>
@@ -303,16 +302,17 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const campgroundId = getQueryParameter('campground'); 
+            const campgroundFilename = getQueryParameter('campground'); // Now this is the FILENAME (e.g., "20250629pohick")
 
-            if (!campgroundId) {
-                document.getElementById('campgroundName').textContent = "Error: Campground ID not specified in URL.";
+            if (!campgroundFilename) {
+                document.getElementById('campgroundName').textContent = "Error: Campground filename not specified in URL.";
                 console.error("No 'campground' query parameter found in the URL.");
                 return;
             }
 
-            // Now, the jsonUrl points to the specific campground's JSON file in the 'campgrounds' folder
-            const jsonUrl = getCampgroundJsonUrl(campgroundId); // e.g., campgrounds/pohick-bay-regional-park-06-2025.json
+            // Directly construct the JSON URL using the filename from the URL parameter
+            // shared.js handles placing it in the 'campgrounds/' folder
+            const jsonUrl = getCampgroundJsonUrl(campgroundFilename); 
 
             fetch(jsonUrl)
                 .then(response => {
@@ -322,7 +322,7 @@
                     return response.json();
                 })
                 .then(data => {
-                    // Now, 'data' IS the campground object directly, no need for data.campgrounds[0]
+                    // 'data' is now the individual campground object directly (since you removed the outer array)
                     const campground = data; 
 
                     if (campground) {
@@ -379,10 +379,9 @@
 
                         // Amenities - Dynamic Population from the new structure
                         const amenitiesList = document.getElementById('amenitiesList');
-                        amenitiesList.innerHTML = ''; // Clear previous content
+                        amenitiesList.innerHTML = ''; 
                         const amenities = campground.amenities;
                         if (amenities) {
-                            // Order of keys for display (optional, otherwise it's insertion order or alphabetical)
                             const amenityOrder = [
                                 "electric", "waterAtSite", "potableFill", "sewer", "dumpStation", "bathhouse",
                                 "laundryFacilities", "cellService", "wifi", "tvCable", "petsWelcome", "dogPark",
@@ -398,7 +397,7 @@
                                     if (typeof value === 'boolean') {
                                         value = value ? "Yes" : "No";
                                     } else if (Array.isArray(value)) {
-                                        value = value.join(', '); // Join array items
+                                        value = value.join(', '); 
                                     }
                                     
                                     li.innerHTML = `<strong>${displayKey}:</strong> ${value}`;
@@ -408,52 +407,46 @@
                         } else {
                             amenitiesList.innerHTML = '<li>No amenities information available.</li>';
                         }
-                        // END Amenities
 
                         // Site Features - Dynamic Population
-                        document.getElementById('siteFeatures').innerHTML = ''; // Clear existing content
+                        document.getElementById('siteFeatures').innerHTML = ''; 
                         const siteFeaturesP = document.createElement('p');
                         const siteFeatures = campground.siteFeatures;
                         if (siteFeatures) {
                             const featuresArray = [];
-                            // Handle 'level' as a string, others as booleans/arrays
-                            if (siteFeatures.level) featuresArray.push(`<strong>Level:</strong> ${siteFeatures.level}`);
-                            if (typeof siteFeatures.dirt === 'boolean') featuresArray.push(`<strong>Dirt:</strong> ${siteFeatures.dirt ? "Yes" : "No"}`);
-                            else if (Array.isArray(siteFeatures.dirt)) featuresArray.push(`<strong>Dirt:</strong> ${siteFeatures.dirt.join(', ')}`);
-                            else if (siteFeatures.dirt) featuresArray.push(`<strong>Dirt:</strong> ${siteFeatures.dirt}`); // If it's a string
+                            
+                            const featureKeys = [
+                                "level", "dirt", "gravel", "paved", "patio", "shade", "fireRing", 
+                                "picnicTable", "grill", "otherNotes"
+                            ];
 
-                            if (typeof siteFeatures.gravel === 'boolean') featuresArray.push(`<strong>Gravel:</strong> ${siteFeatures.gravel ? "Yes" : "No"}`);
-                            else if (Array.isArray(siteFeatures.gravel)) featuresArray.push(`<strong>Gravel:</strong> ${siteFeatures.gravel.join(', ')}`);
-                            else if (siteFeatures.gravel) featuresArray.push(`<strong>Gravel:</strong> ${siteFeatures.gravel}`); // If it's a string
+                            featureKeys.forEach(key => {
+                                if (siteFeatures.hasOwnProperty(key) && siteFeatures[key] !== null && siteFeatures[key] !== undefined) {
+                                    let value = siteFeatures[key];
+                                    let displayKey = key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase());
 
-                            if (typeof siteFeatures.paved === 'boolean') featuresArray.push(`<strong>Paved:</strong> ${siteFeatures.paved ? "Yes" : "No"}`);
-                            else if (Array.isArray(siteFeatures.paved)) featuresArray.push(`<strong>Paved:</strong> ${siteFeatures.paved.join(', ')}`);
-                            else if (siteFeatures.paved) featuresArray.push(`<strong>Paved:</strong> ${siteFeatures.paved}`); // If it's a string
+                                    if (typeof value === 'boolean') {
+                                        value = value ? "Yes" : "No";
+                                    } else if (Array.isArray(value)) {
+                                        value = value.join(', ');
+                                    }
+                                    featuresArray.push(`<strong>${displayKey}:</strong> ${value}`);
+                                }
+                            });
 
-
-                            if (typeof siteFeatures.patio === 'boolean') featuresArray.push(`<strong>Patio:</strong> ${siteFeatures.patio ? "Yes" : "No"}`);
-                            else if (siteFeatures.patio) featuresArray.push(`<strong>Patio:</strong> ${siteFeatures.patio}`);
-
-                            if (typeof siteFeatures.shade === 'boolean') featuresArray.push(`<strong>Shade:</strong> ${siteFeatures.shade ? "Yes" : "No"}`);
-                            else if (siteFeatures.shade) featuresArray.push(`<strong>Shade:</strong> ${siteFeatures.shade}`);
-
-                            if (siteFeatures.fireRing) featuresArray.push(`<strong>Fire Ring:</strong> ${typeof siteFeatures.fireRing === 'boolean' ? (siteFeatures.fireRing ? "Yes" : "No") : siteFeatures.fireRing}`);
-                            if (siteFeatures.picnicTable) featuresArray.push(`<strong>Picnic Table:</strong> ${typeof siteFeatures.picnicTable === 'boolean' ? (siteFeatures.picnicTable ? "Yes" : "No") : siteFeatures.picnicTable}`);
-                            if (siteFeatures.grill) featuresArray.push(`<strong>Grill:</strong> ${typeof siteFeatures.grill === 'boolean' ? (siteFeatures.grill ? "Yes" : "No") : siteFeatures.grill}`);
-
-                            if (siteFeatures.otherNotes && siteFeatures.otherNotes.length > 0) {
-                                featuresArray.push(`<strong>Other Notes:</strong> ${siteFeatures.otherNotes.join(', ')}`);
+                            if (featuresArray.length > 0) {
+                                siteFeaturesP.innerHTML = featuresArray.join('<br>');
+                                document.getElementById('siteFeatures').appendChild(siteFeaturesP);
+                            } else {
+                                document.getElementById('siteFeatures').textContent = 'N/A';
                             }
-                            siteFeaturesP.innerHTML = featuresArray.join('<br>'); // Join with <br> for separate lines
-                            document.getElementById('siteFeatures').appendChild(siteFeaturesP);
                         } else {
                             document.getElementById('siteFeatures').textContent = 'N/A';
                         }
-                        // END Site Features
 
                         // Activities - Dynamic Population
-                        const activitiesContainer = document.getElementById('otherActivities').parentNode; // Get parent div for cleaner list styling
-                        activitiesContainer.innerHTML = '<h2>Activities</h2>'; // Re-add heading
+                        const activitiesContainer = document.getElementById('otherActivities').parentNode; 
+                        activitiesContainer.innerHTML = '<h2>Activities</h2>'; 
                         const activitiesListUl = document.createElement('ul');
                         activitiesListUl.style.listStyleType = 'disc';
                         activitiesListUl.style.paddingLeft = '20px';
@@ -481,31 +474,30 @@
                         } else {
                             activitiesContainer.innerHTML += '<p>No activities information available.</p>';
                         }
-                        // END Activities
 
                         // Nearby Essentials - Dynamic Population
-                        const nearbyDiv = document.getElementById('shoppingNearby').parentNode.parentNode; // Get the grid div
-                        nearbyDiv.innerHTML = '<h2>Nearby Essentials</h2>'; // Re-add heading
+                        const nearbyDiv = document.getElementById('shoppingNearby').parentNode.parentNode; 
+                        nearbyDiv.innerHTML = '<h2>Nearby Essentials</h2>'; 
                         const nearbyUl = document.createElement('ul');
                         nearbyUl.style.listStyleType = 'none';
                         nearbyUl.style.padding = '0';
                         const nearby = campground.nearby;
                         if (nearby) {
-                            if (nearby.shopping) {
+                            if (nearby.shopping) { 
                                 const li = document.createElement('li');
                                 if (Array.isArray(nearby.shopping)) {
                                     li.innerHTML = `<strong>Shopping:</strong> ${nearby.shopping.join(', ')}`;
-                                } else {
-                                    li.innerHTML = `<strong>Shopping:</strong> ${nearby.shopping ? "Yes" : "No"}`;
+                                } else { 
+                                    li.innerHTML = `<strong>Shopping:</strong> ${typeof nearby.shopping === 'boolean' ? (nearby.shopping ? "Yes" : "No") : nearby.shopping}`;
                                 }
                                 nearbyUl.appendChild(li);
                             }
-                            if (nearby.food) {
+                            if (nearby.food) { 
                                 const li = document.createElement('li');
                                 if (Array.isArray(nearby.food)) {
                                     li.innerHTML = `<strong>Food:</strong> ${nearby.food.join(', ')}`;
-                                } else {
-                                    li.innerHTML = `<strong>Food:</strong> ${nearby.food ? "Yes" : "No"}`;
+                                } else { 
+                                    li.innerHTML = `<strong>Food:</strong> ${typeof nearby.food === 'boolean' ? (nearby.food ? "Yes" : "No") : nearby.food}`;
                                 }
                                 nearbyUl.appendChild(li);
                             }
@@ -518,7 +510,6 @@
                         } else {
                             nearbyDiv.innerHTML += '<p>No nearby essentials information available.</p>';
                         }
-                        // END Nearby Essentials
 
                         // Photo Gallery
                         const photoGalleryContainer = document.getElementById('photoGalleryContainer');
@@ -566,11 +557,12 @@
                         }
 
                     } else {
-                        document.getElementById('campgroundName').textContent = "Campground data not found or invalid.";
+                        document.getElementById('campgroundName').textContent = `Campground data for filename '${campgroundFilename}' not found.`;
+                        console.error(`Campground data for filename '${campgroundFilename}' could not be loaded.`);
                     }
                 })
                 .catch(error => {
-                    console.error('Error fetching the JSON data:', error);
+                    console.error('Error fetching campground data:', error);
                     document.getElementById('campgroundName').textContent = "Failed to load campground review.";
                 });
         });
