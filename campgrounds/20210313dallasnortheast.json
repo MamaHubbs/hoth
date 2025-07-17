@@ -11,46 +11,46 @@
   "longitude": -96.20705659831987,
   "amenities": {
     "electric": "50/30/20",
-    "waterAtSite": "Many Sites",   /* Changed to camelCase for consistency */
-    "potableFill": true,           /* Changed to camelCase */
+    "waterAtSite": "Many Sites",
+    "potableFill": true,
     "sewer": "Some Sites",
-    "dumpStation": true,           /* Changed to camelCase */
+    "dumpStation": true,
     "bathhouse": true,
-    "laundryFacilities": true,     /* Changed to camelCase */
-    "cellService": "Good",         /* Changed to string for single value */
-    "wifi": "Fair",                /* Corrected: "Fair" is the value for "wifi" */
-    "tvCable": true,               /* Changed to camelCase */
+    "laundryFacilities": true,
+    "cellService": "Good",
+    "wifi": "Fair",
+    "tvCable": true,
     "petsWelcome": true,
     "dogPark": true,
     "campStore": true,
     "propaneRefill": false,
     "playground": true,
-    "swimmingPool": true,          /* Changed to camelCase */
-    "otherAmenities": ["Fitness Center/Gym", "1/4 Mile from I-30"] /* Changed to camelCase */
+    "swimmingPool": true,
+    "otherAmenities": ["Fitness Center/Gym", "1/4 Mile from I-30"]
   },
   "siteFeatures": {
     "level": true,
     "dirt": false,
     "gravel": true,
-    "paved": "Some",             /* Changed to string for single value */
-    "patio": "Some Sites",       /* Changed to string for single value */
-    "shade": "Some Sites",       /* Changed to string for single value */
-    "fireRing": true,            /* Changed to camelCase */
-    "picnicTable": true,         /* Changed to camelCase */
+    "paved": "Some",
+    "patio": "Some Sites",
+    "shade": "Some Sites",
+    "fireRing": true,
+    "picnicTable": true,
     "grill": true,
-    "otherNotes": ["Pull-Through Sites Available"] /* Changed to camelCase */
+    "otherNotes": ["Pull-Through Sites Available"]
   },
   "activities": {
-    "boatingLaunch": false,      /* Changed to camelCase */
+    "boatingLaunch": false,
     "fishing": true,
     "hiking": true,
     "biking": false,
-    "gameRoom": true,            /* Changed to camelCase */
-    "otherActivities": ["Pool with Splash Pad", "5-Acre Fishing Lake"] /* Changed to camelCase */
+    "gameRoom": true,
+    "otherActivities": ["Pool with Splash Pad", "5-Acre Fishing Lake"]
   },
   "nearby": {
-    "shopping": ["Grocery Store", "Pharmacy"], /* Corrected: this array should be the value for "shopping" */
-    "food": ["Restaurants"],                   /* Corrected: this array should be the value for "food" */
+    "shopping": ["Grocery Store", "Pharmacy"],
+    "food": ["Restaurants"],
     "emergencyMedicalDistance": "15 minutes"
   },
   "favoriteSites": ["N/A"],
