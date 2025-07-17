@@ -1,82 +1,77 @@
-    {"id": "pohick-bay-regional-park-06-2025",
-      "name": "Pohick Bay Regional Park",
-           "state": "Virginia",
-      "state_code": "VA",
-      "summary_text": "Pohick Bay Regional Park offers family-friendly camping with easy access to water activities and historical sites near Washington, D.C.",
-        "address": "6501 Pohick Bay Dr, Lorton, VA 22079",
-      "website": "https://www.novaparks.com/cabins-camping/camping/camping-family-0",
-      "reservations": "https://www.reserveamerica.com/explore/pohick-bay-regional-park-lorton/NOVA/1020012/overview",  
-      "latitude": 38.66900304609987,   
-      "longitude": -77.16827128793001,
-     "amenities": {
-        "electric": "50/30/20",
-        "wateratsite": "Many Sites",
-       "potablefill": true
-        "sewer": "Some Sites",
-      "dumpstation": true,
-        "bathhouse": true,
-        "laundryfacilities": true
-        "cellservice": ["Fair"],
-        "wifi": false,
-        "tvcable": false,
-        "petsWelcome": true,
-        "dogPark": false,
-        "campStore": true,
-        "propaneRefill": false
-        "playground": true,
-        "swimmingpool": false,
-       "otheramenities": ["N/A"]
-      },
-      "siteFeatures": {
-        "level": "Many sites, some are on a grade so be prepared with leveling blocks",
-      "dirt": ["Most"],
-      "gravel": ["Some"],
-      "paved": false,
-          "patio": false,
-          "shade": true,
-        "firering": true
-      "picnictable": true,
-        "grill": ["Attached to Fire Ring"],
-            "othernotes": ["Lots of tree cover makes use of Starlink difficult"]
-      },        
-        
-      "activities": {
-        "boatinglaunch": true,
-      "fishing": true,
-        "hiking": true,
-        "biking": true,
-      "gameroom": false,
-        "otheractivities": ["Mini-Golf", "Disc Golf", "Waterpark"]
-      },
-
-      "nearby": {
-        "shopping": true, ["Grocery Store", "Pharmacy"],
-      "food": true, ["Restaurants"],
-        "emergencyMedicalDistance": "15 minutes"
-      },
-        
-      "favoriteSites": ["40", "50"],
-
-
-      "photoGallery": [
-
-        {
-          "url": "https://raw.githubusercontent.com/MamaHubbs/hoth/main/image/pohicksite50.JPG",
-          "caption": "Site 50"
-        },
-        {
-          "url": "https://raw.githubusercontent.com/MamaHubbs/hoth/main/image/pohickbay.JPG",
-          "caption": "Pohick Bay"
-        }
-      ],
-      "reviews": [
-        {
-          "reviewId": "pohick-review-2025-06-29-01",
-          "visitDate": "June 2025",
-          "reviewDate": "06-29-2025",
-          "starRating": 4,
-          "text": "Pohick Bay Regional Park is a clean, family-friendly campground just 40 minutes from Washington, D.C., offering wooded campsites, hiking trails, and access to a marina. Highlights include the Pirate’s Cove waterpark, playgrounds, and friendly staff. Some campsites can be uneven or close together, but overall, it's a great spot for families and outdoor lovers looking for a convenient escape.",
-          "youtubeVideoUrl": "https://www.youtube.com/embed/10_B0CbGo4s?si=H9Aib9nWheYhycES"
-        }
-      ]
+{
+  "id": "pohick-bay-regional-park-06-2025",
+  "name": "Pohick Bay Regional Park",
+  "state": "Virginia",
+  "state_code": "VA",
+  "summary_text": "Pohick Bay Regional Park offers family-friendly camping with easy access to water activities and historical sites near Washington, D.C.",
+  "address": "6501 Pohick Bay Dr, Lorton, VA 22079",
+  "website": "https://www.novaparks.com/cabins-camping/camping/camping-family-0",
+  "reservations": "https://www.reserveamerica.com/explore/pohick-bay-regional-park-lorton/NOVA/1020012/overview",
+  "latitude": 38.66900304609987,
+  "longitude": -77.16827128793001,
+  "amenities": {
+    "electric": "50/30/20",
+    "waterAtSite": "Many Sites",
+    "potableFill": true,
+    "sewer": "Some Sites",
+    "dumpStation": true,
+    "bathhouse": true,
+    "laundryFacilities": true,
+    "cellService": "Fair",
+    "wifi": false,
+    "tvCable": false,
+    "petsWelcome": true,
+    "dogPark": false,
+    "campStore": true,
+    "propaneRefill": false,
+    "playground": true,
+    "swimmingPool": false,
+    "otherAmenities": ["N/A"]
+  },
+  "siteFeatures": {
+    "level": "Many sites, some are on a grade so be prepared with leveling blocks",
+    "dirt": ["Most"],
+    "gravel": ["Some"],
+    "paved": false,
+    "patio": false,
+    "shade": true,
+    "fireRing": true,
+    "picnicTable": true,
+    "grill": ["Attached to Fire Ring"],
+    "otherNotes": ["Lots of tree cover makes use of Starlink difficult"]
+  },
+  "activities": {
+    "boatingLaunch": true,
+    "fishing": true,
+    "hiking": true,
+    "biking": true,
+    "gameRoom": false,
+    "otherActivities": ["Mini-Golf", "Disc Golf", "Waterpark"]
+  },
+  "nearby": {
+    "shopping": ["Grocery Store", "Pharmacy"],
+    "food": ["Restaurants"],
+    "emergencyMedicalDistance": "15 minutes"
+  },
+  "favoriteSites": ["40", "50"],
+  "photoGallery": [
+    {
+      "url": "https://raw.githubusercontent.com/MamaHubbs/hoth/main/image/pohicksite50.JPG",
+      "caption": "Site 50"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/MamaHubbs/hoth/main/image/pohickbay.JPG",
+      "caption": "Pohick Bay"
     }
+  ],
+  "reviews": [
+    {
+      "reviewId": "pohick-review-2025-06-29-01",
+      "visitDate": "June 2025",
+      "reviewDate": "06-29-2025",
+      "starRating": 4,
+      "text": "Pohick Bay Regional Park is a clean, family-friendly campground just 40 minutes from Washington, D.C., offering wooded campsites, hiking trails, and access to a marina. Highlights include the Pirate’s Cove waterpark, playgrounds, and friendly staff. Some campsites can be uneven or close together, but overall, it's a great spot for families and outdoor lovers looking for a convenient escape.",
+      "youtubeVideoUrl": "https://www.youtube.com/embed/10_B0CbGo4s?si=H9Aib9nWheYhycES"
+    }
+  ]
+}
