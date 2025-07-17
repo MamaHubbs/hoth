@@ -89,35 +89,23 @@
 
     </div>
 
-    <script src="shared.js"></script>
+<script src="shared.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const usMapSvgObject = document.getElementById('usMapSvgObject');
             
-            // It's crucial to wait for the SVG object to load its content
             usMapSvgObject.addEventListener('load', function() {
                 try {
-                    // Check if contentDocument is accessible
-                    if (!usMapSvgObject.contentDocument) {
-                        console.error("SVG contentDocument is not accessible. This might be a same-origin policy issue if loading from different domain, or SVG simply failed to load.");
-                        const containerDiv = document.querySelector('.container');
-                        const errorP = document.createElement('p');
-                        errorP.textContent = "Error: Could not load interactive map content. Check browser console for details.";
-                        errorP.style.color = "red";
-                        containerDiv.appendChild(errorP);
-                        return;
-                    }
-
-                    const usMapSvg = usMapSvgObject.contentDocument.getElementById('us-map-svg');
+                    let usMapSvg = usMapSvgObject.contentDocument.getElementById('us-map-svg');
 
                     if (!usMapSvg) {
-                        console.error("Error: SVG element with ID 'us-map-svg' not found inside the loaded SVG file. Please ensure the SVG's root tag has id='us-map-svg'.");
-                        // If the SVG itself doesn't have the ID, try to get the root SVG element directly
-                        if (usMapSvgObject.contentDocument.documentElement && usMapSvgObject.contentDocument.documentElement.tagName === 'svg') {
-                            usMapSvgObject.contentDocument.documentElement.id = 'us-map-svg'; // Add the ID dynamically
+                        console.warn("SVG element with ID 'us-map-svg' not found inside the loaded SVG file. Attempting to get root SVG element directly.");
+                        if (usMapSvgObject.contentDocument && usMapSvgObject.contentDocument.documentElement && usMapSvgObject.contentDocument.documentElement.tagName === 'svg') {
                             usMapSvg = usMapSvgObject.contentDocument.documentElement;
-                            console.warn("SVG root element found but missing id='us-map-svg'. ID added dynamically.");
+                            usMapSvg.id = 'us-map-svg'; // Dynamically add the ID to the SVG
+                            console.warn("SVG root element found and id='us-map-svg' added dynamically.");
                         } else {
+                            console.error("Error: Map SVG structure invalid or missing root SVG element. Cannot proceed.");
                             const containerDiv = document.querySelector('.container');
                             const errorP = document.createElement('p');
                             errorP.textContent = "Error: Map SVG structure invalid or missing root SVG element. Check the SVG file.";
@@ -127,67 +115,71 @@
                         }
                     }
 
-                    // Fetch the central index file to know which states have campgrounds
-                    const indexJsonUrl = getCampgroundJsonUrl('campground_index'); 
+                    if (usMapSvg) {
+                        const indexJsonUrl = getCampgroundJsonUrl('campground_index'); 
 
-                    fetch(indexJsonUrl)
-                        .then(response => {
-                            if (!response.ok) {
-                                throw new Error(`HTTP error! status: ${response.status}`);
-                            }
-                            return response.json();
-                        })
-                        .then(data => {
-                            const allCampgrounds = data.campgrounds || [];
-                            const visitedStates = new Set(); 
-
-                            allCampgrounds.forEach(camp => {
-                                if (camp.state_code) {
-                                    visitedStates.add(camp.state_code.toUpperCase()); 
+                        fetch(indexJsonUrl)
+                            .then(response => {
+                                if (!response.ok) {
+                                    throw new Error(`HTTP error! status: ${response.status}`);
                                 }
+                                return response.json();
+                            })
+                            .then(data => {
+                                const allCampgrounds = data.campgrounds || [];
+                                const visitedStates = new Set(); 
+
+                                allCampgrounds.forEach(camp => {
+                                    if (camp.state_code) {
+                                        visitedStates.add(camp.state_code.toUpperCase()); 
+                                    }
+                                });
+
+                                // Add click listeners and classes to each state path within the loaded SVG
+                                // Selecting ALL path elements because your SVG uses classes like 'al', 'ak' directly on them
+                                const statePaths = usMapSvg.querySelectorAll('path'); 
+
+                                statePaths.forEach(path => {
+                                    // Use the existing class (e.g., 'al') as the stateCode ID
+                                    // Make sure path.classList[0] actually gives the state code.
+                                    // Some SVGs might have other classes first or no classes.
+                                    const stateClass = path.classList.length > 0 ? path.classList[0] : '';
+                                    const stateCode = stateClass.toUpperCase(); 
+
+                                    // Add our custom class for styling (even if it has 'al', 'ak' etc.)
+                                    path.classList.add('state-path'); 
+
+                                    if (stateCode && visitedStates.has(stateCode)) { 
+                                        path.classList.add('visited');
+                                        path.addEventListener('click', function() {
+                                            window.location.href = `state-page-template.html?state=${stateCode}`;
+                                        });
+                                    } else {
+                                        path.style.cursor = 'default';
+                                        path.style.opacity = '0.7';
+                                    }
+                                });
+
+                            })
+                            .catch(error => {
+                                console.error('Error fetching the campground index for map:', error);
+                                const containerDiv = document.querySelector('.container');
+                                const errorP = document.createElement('p');
+                                errorP.textContent = "Could not load map data. Please ensure 'campground_index.json' is correct and accessible.";
+                                errorP.style.color = "red";
+                                containerDiv.appendChild(errorP);
                             });
-
-                            // Add click listeners and classes to each state path within the loaded SVG
-                            const statePaths = usMapSvg.querySelectorAll('path'); // Select all path elements in the SVG
-
-                            statePaths.forEach(path => {
-                                const stateCode = path.id; // Get the state code from the path's ID (e.g., "VA")
-
-                                // Add our custom class for styling and JS selection
-                                path.classList.add('state-path'); // Adds our class for CSS/JS
-
-                                if (stateCode && visitedStates.has(stateCode)) { 
-                                    path.classList.add('visited'); // Highlight states with data
-                                    path.addEventListener('click', function() {
-                                        window.location.href = `state-page-template.html?state=${stateCode}`;
-                                    });
-                                } else {
-                                    path.style.cursor = 'default';
-                                    path.style.opacity = '0.7'; // Dim unvisited states
-                                }
-                            });
-
-                        })
-                        .catch(error => {
-                            console.error('Error fetching the campground index for map:', error);
-                            const containerDiv = document.querySelector('.container');
-                            const errorP = document.createElement('p');
-                            errorP.textContent = "Could not load map data. Please ensure 'campground_index.json' is correct and accessible.";
-                            errorP.style.color = "red";
-                            containerDiv.appendChild(errorP);
-                        });
-
+                    }
                 } catch (e) {
-                    console.error("Failed to access SVG content (likely a same-origin policy issue if not hosted on GitHub Pages, or SVG not loaded correctly):", e);
+                    console.error("Failed to access SVG content (likely same-origin policy or SVG not loaded correctly):", e);
                     const containerDiv = document.querySelector('.container');
                     const errorP = document.createElement('p');
-                    errorP.textContent = "Error loading interactive map. Check browser console for technical details.";
+                    errorP.textContent = "Error loading interactive map. Check browser console for technical details. (Hint: Is the SVG file itself valid and accessible?)";
                     errorP.style.color = "red";
                     containerDiv.appendChild(errorP);
                 }
             }, false);
 
-            // Handle potential errors if the SVG file itself cannot be loaded by the <object> tag
             usMapSvgObject.addEventListener('error', function() {
                 console.error("Error loading SVG file via <object> tag. Check file path and existence.");
                 const containerDiv = document.querySelector('.container');
