@@ -1,5 +1,4 @@
-{"campgrounds": [
-    {"id": "dallas-northeast-campground-rv-park-03-2021",
+{"id": "dallas-northeast-campground-rv-park-03-2021",
       "name": "Dallas Northeast Campground & RV Park",
       "state": "Texas",
       "state_code": "TX",
@@ -78,5 +77,3 @@
         }
       ]
     }
-  ]
-}
