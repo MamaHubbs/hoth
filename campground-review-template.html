@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: Helvetica, sans-serif; /* Helvetica for body text, fallback to sans-serif */
-            line-height: 1.4; /* ADJUSTED: Reduced line height for closer text */
+            line-height: 1.4;
             margin: 20px;
             background-color: #f4f4f4;
             color: #333;
@@ -51,7 +51,7 @@
         }
         
         p {
-            margin-bottom: 10px; /* Keep standard paragraph spacing */
+            margin-bottom: 10px;
         }
         strong {
             color: #555;
@@ -61,7 +61,7 @@
             padding: 0;
         }
         ul li {
-            margin-bottom: 5px; /* Keep standard list item spacing */
+            margin-bottom: 5px;
             padding: 8px 12px;
             border-radius: 4px;
         }
@@ -261,7 +261,8 @@
                 <h2 id="siteFeaturesHeading">Site Features</h2>
                 <p id="siteFeatures"></p>
 
-                <div class="favorite-sites-box"> <h2>Favorite Sites</h2>
+                <div class="favorite-sites-box"> 
+                    <h2>Favorite Sites</h2>
                     <p><span id="favoriteSites"></span></p> 
                 </div>
             </div>
@@ -302,15 +303,16 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const campgroundFileName = getQueryParameter('campground'); 
+            const campgroundId = getQueryParameter('campground'); 
 
-            if (!campgroundFileName) {
+            if (!campgroundId) {
                 document.getElementById('campgroundName').textContent = "Error: Campground ID not specified in URL.";
                 console.error("No 'campground' query parameter found in the URL.");
                 return;
             }
 
-            const jsonUrl = getCampgroundJsonUrl(campgroundFileName);
+            // Now, the jsonUrl points to the specific campground's JSON file in the 'campgrounds' folder
+            const jsonUrl = getCampgroundJsonUrl(campgroundId); // e.g., campgrounds/pohick-bay-regional-park-06-2025.json
 
             fetch(jsonUrl)
                 .then(response => {
@@ -320,7 +322,8 @@
                     return response.json();
                 })
                 .then(data => {
-                    const campground = data.campgrounds && data.campgrounds.length > 0 ? data.campgrounds[0] : null; 
+                    // Now, 'data' IS the campground object directly, no need for data.campgrounds[0]
+                    const campground = data; 
 
                     if (campground) {
                         // Calculate Overall Star Rating dynamically
@@ -361,7 +364,6 @@
                             reservationsLink.href = campground.reservations;
                             reservationsLink.textContent = "Click Here";
                         } else {
-                            // If no reservation URL, display N/A and not a clickable link
                             reservationsLink.textContent = "N/A"; 
                             reservationsLink.removeAttribute('href'); 
                         }
@@ -375,12 +377,19 @@
                         // Favorite Sites - Now under Site Features
                         document.getElementById('favoriteSites').textContent = campground.favoriteSites.join(', ');
 
-                        // Amenities - Now built as a list in the right column
+                        // Amenities - Dynamic Population from the new structure
                         const amenitiesList = document.getElementById('amenitiesList');
-                        amenitiesList.innerHTML = '';
+                        amenitiesList.innerHTML = ''; // Clear previous content
                         const amenities = campground.amenities;
                         if (amenities) {
-                            for (const key in amenities) {
+                            // Order of keys for display (optional, otherwise it's insertion order or alphabetical)
+                            const amenityOrder = [
+                                "electric", "waterAtSite", "potableFill", "sewer", "dumpStation", "bathhouse",
+                                "laundryFacilities", "cellService", "wifi", "tvCable", "petsWelcome", "dogPark",
+                                "campStore", "propaneRefill", "playground", "swimmingPool", "otherAmenities"
+                            ];
+
+                            amenityOrder.forEach(key => {
                                 if (amenities.hasOwnProperty(key)) {
                                     const li = document.createElement('li');
                                     let value = amenities[key];
@@ -388,44 +397,129 @@
 
                                     if (typeof value === 'boolean') {
                                         value = value ? "Yes" : "No";
+                                    } else if (Array.isArray(value)) {
+                                        value = value.join(', '); // Join array items
                                     }
                                     
                                     li.innerHTML = `<strong>${displayKey}:</strong> ${value}`;
                                     amenitiesList.appendChild(li);
                                 }
-                            }
+                            });
                         } else {
                             amenitiesList.innerHTML = '<li>No amenities information available.</li>';
                         }
+                        // END Amenities
 
-                        // Site Features
-                        document.getElementById('siteFeatures').textContent = campground.siteFeatures;
+                        // Site Features - Dynamic Population
+                        document.getElementById('siteFeatures').innerHTML = ''; // Clear existing content
+                        const siteFeaturesP = document.createElement('p');
+                        const siteFeatures = campground.siteFeatures;
+                        if (siteFeatures) {
+                            const featuresArray = [];
+                            // Handle 'level' as a string, others as booleans/arrays
+                            if (siteFeatures.level) featuresArray.push(`<strong>Level:</strong> ${siteFeatures.level}`);
+                            if (typeof siteFeatures.dirt === 'boolean') featuresArray.push(`<strong>Dirt:</strong> ${siteFeatures.dirt ? "Yes" : "No"}`);
+                            else if (Array.isArray(siteFeatures.dirt)) featuresArray.push(`<strong>Dirt:</strong> ${siteFeatures.dirt.join(', ')}`);
+                            else if (siteFeatures.dirt) featuresArray.push(`<strong>Dirt:</strong> ${siteFeatures.dirt}`); // If it's a string
 
-                        // Activities
-                        document.getElementById('waterfront').textContent = campground.activities.waterfront ? "Yes" : "No";
-                        document.getElementById('hiking').textContent = campground.activities.hiking ? "Yes" : "No";
-                        document.getElementById('biking').textContent = campground.activities.biking ? "Yes" : "No";
-                        
-                        const otherActivitiesContainer = document.getElementById('otherActivities');
-                        otherActivitiesContainer.innerHTML = ''; 
-                        if (campground.activities.other && campground.activities.other.length > 0) {
-                            const ul = document.createElement('ul');
-                            ul.style.listStyleType = 'disc'; 
-                            ul.style.paddingLeft = '20px'; 
-                            campground.activities.other.forEach(activity => {
-                                const li = document.createElement('li');
-                                li.textContent = activity;
-                                ul.appendChild(li);
-                            });
-                            otherActivitiesContainer.appendChild(ul);
+                            if (typeof siteFeatures.gravel === 'boolean') featuresArray.push(`<strong>Gravel:</strong> ${siteFeatures.gravel ? "Yes" : "No"}`);
+                            else if (Array.isArray(siteFeatures.gravel)) featuresArray.push(`<strong>Gravel:</strong> ${siteFeatures.gravel.join(', ')}`);
+                            else if (siteFeatures.gravel) featuresArray.push(`<strong>Gravel:</strong> ${siteFeatures.gravel}`); // If it's a string
+
+                            if (typeof siteFeatures.paved === 'boolean') featuresArray.push(`<strong>Paved:</strong> ${siteFeatures.paved ? "Yes" : "No"}`);
+                            else if (Array.isArray(siteFeatures.paved)) featuresArray.push(`<strong>Paved:</strong> ${siteFeatures.paved.join(', ')}`);
+                            else if (siteFeatures.paved) featuresArray.push(`<strong>Paved:</strong> ${siteFeatures.paved}`); // If it's a string
+
+
+                            if (typeof siteFeatures.patio === 'boolean') featuresArray.push(`<strong>Patio:</strong> ${siteFeatures.patio ? "Yes" : "No"}`);
+                            else if (siteFeatures.patio) featuresArray.push(`<strong>Patio:</strong> ${siteFeatures.patio}`);
+
+                            if (typeof siteFeatures.shade === 'boolean') featuresArray.push(`<strong>Shade:</strong> ${siteFeatures.shade ? "Yes" : "No"}`);
+                            else if (siteFeatures.shade) featuresArray.push(`<strong>Shade:</strong> ${siteFeatures.shade}`);
+
+                            if (siteFeatures.fireRing) featuresArray.push(`<strong>Fire Ring:</strong> ${typeof siteFeatures.fireRing === 'boolean' ? (siteFeatures.fireRing ? "Yes" : "No") : siteFeatures.fireRing}`);
+                            if (siteFeatures.picnicTable) featuresArray.push(`<strong>Picnic Table:</strong> ${typeof siteFeatures.picnicTable === 'boolean' ? (siteFeatures.picnicTable ? "Yes" : "No") : siteFeatures.picnicTable}`);
+                            if (siteFeatures.grill) featuresArray.push(`<strong>Grill:</strong> ${typeof siteFeatures.grill === 'boolean' ? (siteFeatures.grill ? "Yes" : "No") : siteFeatures.grill}`);
+
+                            if (siteFeatures.otherNotes && siteFeatures.otherNotes.length > 0) {
+                                featuresArray.push(`<strong>Other Notes:</strong> ${siteFeatures.otherNotes.join(', ')}`);
+                            }
+                            siteFeaturesP.innerHTML = featuresArray.join('<br>'); // Join with <br> for separate lines
+                            document.getElementById('siteFeatures').appendChild(siteFeaturesP);
                         } else {
-                            otherActivitiesContainer.textContent = 'N/A';
+                            document.getElementById('siteFeatures').textContent = 'N/A';
                         }
+                        // END Site Features
 
-                        // Nearby Essentials
-                        document.getElementById('shoppingNearby').textContent = campground.nearby.shopping ? "Yes" : "No";
-                        document.getElementById('emergencyMedicalDistance').textContent = campground.nearby.emergencyMedicalDistance;
-                        
+                        // Activities - Dynamic Population
+                        const activitiesContainer = document.getElementById('otherActivities').parentNode; // Get parent div for cleaner list styling
+                        activitiesContainer.innerHTML = '<h2>Activities</h2>'; // Re-add heading
+                        const activitiesListUl = document.createElement('ul');
+                        activitiesListUl.style.listStyleType = 'disc';
+                        activitiesListUl.style.paddingLeft = '20px';
+                        const activities = campground.activities;
+                        if (activities) {
+                            const activityOrder = [
+                                "boatingLaunch", "fishing", "hiking", "biking", "gameRoom", "otherActivities"
+                            ];
+                            activityOrder.forEach(key => {
+                                if (activities.hasOwnProperty(key)) {
+                                    const li = document.createElement('li');
+                                    let value = activities[key];
+                                    let displayKey = key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase());
+
+                                    if (typeof value === 'boolean') {
+                                        value = value ? "Yes" : "No";
+                                    } else if (Array.isArray(value)) {
+                                        value = value.join(', ');
+                                    }
+                                    li.innerHTML = `<strong>${displayKey}:</strong> ${value}`;
+                                    activitiesListUl.appendChild(li);
+                                }
+                            });
+                            activitiesContainer.appendChild(activitiesListUl);
+                        } else {
+                            activitiesContainer.innerHTML += '<p>No activities information available.</p>';
+                        }
+                        // END Activities
+
+                        // Nearby Essentials - Dynamic Population
+                        const nearbyDiv = document.getElementById('shoppingNearby').parentNode.parentNode; // Get the grid div
+                        nearbyDiv.innerHTML = '<h2>Nearby Essentials</h2>'; // Re-add heading
+                        const nearbyUl = document.createElement('ul');
+                        nearbyUl.style.listStyleType = 'none';
+                        nearbyUl.style.padding = '0';
+                        const nearby = campground.nearby;
+                        if (nearby) {
+                            if (nearby.shopping) {
+                                const li = document.createElement('li');
+                                if (Array.isArray(nearby.shopping)) {
+                                    li.innerHTML = `<strong>Shopping:</strong> ${nearby.shopping.join(', ')}`;
+                                } else {
+                                    li.innerHTML = `<strong>Shopping:</strong> ${nearby.shopping ? "Yes" : "No"}`;
+                                }
+                                nearbyUl.appendChild(li);
+                            }
+                            if (nearby.food) {
+                                const li = document.createElement('li');
+                                if (Array.isArray(nearby.food)) {
+                                    li.innerHTML = `<strong>Food:</strong> ${nearby.food.join(', ')}`;
+                                } else {
+                                    li.innerHTML = `<strong>Food:</strong> ${nearby.food ? "Yes" : "No"}`;
+                                }
+                                nearbyUl.appendChild(li);
+                            }
+                            if (nearby.emergencyMedicalDistance) {
+                                const li = document.createElement('li');
+                                li.innerHTML = `<strong>Nearest Emergency Medical:</strong> ${nearby.emergencyMedicalDistance}`;
+                                nearbyUl.appendChild(li);
+                            }
+                            nearbyDiv.appendChild(nearbyUl);
+                        } else {
+                            nearbyDiv.innerHTML += '<p>No nearby essentials information available.</p>';
+                        }
+                        // END Nearby Essentials
+
                         // Photo Gallery
                         const photoGalleryContainer = document.getElementById('photoGalleryContainer');
                         photoGalleryContainer.innerHTML = ''; 
