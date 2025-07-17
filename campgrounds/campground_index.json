@@ -6,7 +6,8 @@
       "state": "Virginia",
       "state_code": "VA",
       "latitude": 38.66900304609987,
-      "longitude": -77.16827128793001
+      "longitude": -77.16827128793001,
+      "filename": "20250629pohick"
     },
         {
       "id": "dallas-northeast-campground-rv-park-03-2021",
@@ -14,7 +15,8 @@
       "state": "Texas",
       "state_code": "TX",
       "latitude": 33.02367531550495,
-      "longitude": -96.20705659831987
+      "longitude": -96.20705659831987,
+      "filename": "20210313dallasnortheast"
     }
   ]
 }
