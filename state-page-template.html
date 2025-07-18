@@ -167,7 +167,6 @@
                             // ADJUSTED: Use camp.filename for the link to the individual review page
                             link.href = `campground-review-template.html?campground=${camp.filename}`; 
                             link.textContent = camp.name;
-                            link.target = "_parent"; // Or "_top" if iframe breaks things, or leave it for default behavior
 
                             li.appendChild(link);
                             if (camp.summary_text) {
