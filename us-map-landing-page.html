@@ -58,31 +58,21 @@
         display: block;
         margin: 0 auto;
     }
-    #us-map-svg path { /* Target all paths inside your SVG directly */
-        fill: #5c9ad5 !important; /* Force default state color */
-        stroke: #fff !important; /* Force white border */
-        stroke-width: 1px !important;
-        cursor: pointer;
-        transition: fill 0.2s ease-in-out;
-    }
+
     #us-map-svg path:hover {
-        fill: #2d7cbc !important; /* Force secondary color on hover */
+        fill: #e5f2ff !important;
     }
-    /* Highlight states that have campgrounds */
+
     #us-map-svg path.visited { /* Target paths with 'visited' class */
         fill: #133b66 !important; /* Force visited state color */
     }
-    #us-map-svg path.visited:hover {
-        fill: #2d7cbc !important; /* Force secondary color for hover */
-    }
-
-
         .map-note {
             text-align: center;
             font-size: 0.9em;
             color: #666;
             margin-top: 20px;
         }
+        
     </style>
 </head>
 <body>
