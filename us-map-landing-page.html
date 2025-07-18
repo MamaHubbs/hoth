@@ -61,10 +61,20 @@
 
     #us-map-svg path:hover {
         fill: #e5f2ff !important;
+        cursor: pointer !important; /* Ensure cursor is pointer on hover for all states */
     }
+
+        #us-map-svg path {
+        fill: #5c9ad5 !important; /* Default state color */
+        stroke: #fff !important; /* White border */
+        stroke-width: 2px !important;
+        cursor: default; /* Default cursor for all states initially */
+        transition: fill 0.2s ease-in-out; /* Smooth transition for color changes */
+    }    
 
     #us-map-svg path.visited { /* Target paths with 'visited' class */
         fill: #133b66 !important; /* Force visited state color */
+        cursor: pointer !important;
     }
         .map-note {
             text-align: center;
