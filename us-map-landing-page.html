@@ -51,49 +51,57 @@
 
         /* Styles that *will* apply to paths inside the SVG, even when loaded via <object> */
         /* These should be consistent with your .state-path styling from previous attempts */
+   /* SVG Map Styling - CORRECTED ORDER FOR HOVER */
     #us-map-svg {
         width: 100%;
         height: auto;
-        max-width: 850px;
+        max-width: 850px; /* Max width for the SVG map */
         display: block;
         margin: 0 auto;
     }
 
-    #us-map-svg path:hover {
-        fill: #e5f2ff !important;
-        cursor: pointer !important; /* Ensure cursor is pointer on hover for all states */
-    }
-
-        #us-map-svg path {
+    /* 1. Base style for ALL paths (default, unvisited, not hovered) */
+    #us-map-svg path {
         fill: #5c9ad5 !important; /* Default state color */
-        stroke: #fff !important; /* White border */
+        stroke: #fff !important;
         stroke-width: 2px !important;
         cursor: default; /* Default cursor for all states initially */
         transition: fill 0.2s ease-in-out; /* Smooth transition for color changes */
-    }    
-
-    #us-map-svg path.visited { /* Target paths with 'visited' class */
-        fill: #133b66 !important; /* Force visited state color */
-        cursor: pointer !important;
     }
-        .map-note {
-            text-align: center;
-            font-size: 0.9em;
-            color: #666;
-            margin-top: 20px;
-        }
+
+    /* 2. Style for states that HAVE campgrounds (visited) - more specific than 'path' */
+    #us-map-svg path.visited { 
+        fill: #133b66 !important; /* Visited state color (your main color) */
+        cursor: pointer !important; /* Make visited states clearly clickable */
+    }
+
+    /* 3. Hover effect for ALL paths - this must come LAST to override base and visited fill */
+    #us-map-svg path:hover { 
+        fill: #2d7cbc !important; /* Secondary color on hover (your lighter blue) */
+        cursor: pointer !important; /* Ensure cursor is pointer on hover for all states */
+    }
+
+    /* Note: The state-path class is still added by JS, but 'path' is sufficient for CSS selection here */
+
+
+    .map-note {
+        text-align: center;
+        font-size: 0.9em;
+        color: #666;
+        margin-top: 20px;
+    }
         
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Explore My Camping Travels Across the US!</h1>
-        <p>Click on a state to see all the campgrounds I've visited there.</p>
+<div class="container">
+        <h1>Explore Our Visited Campgrounds Across the US!</h1>
+        <p>Click on a state to view campgrounds we've visited, and, read our reviews.</p>
 
         <div id="us-map-object-container">
             <object id="usMapSvgObject" type="image/svg+xml" data="Blank_US_Map_(states_only).svg"></object>
         </div>
-        <p class="map-note">States are clickable if I have visited campgrounds there.</p>
+        <p class="map-note">States are clickable if we have visited campgrounds there.</p>
 
     </div>
 
@@ -144,18 +152,16 @@
                                 });
 
                                 // Add click listeners and classes to each state path within the loaded SVG
-                                // Selecting ALL path elements because your SVG uses classes like 'al', 'ak' directly on them
                                 const statePaths = usMapSvg.querySelectorAll('path'); 
 
                                 statePaths.forEach(path => {
-                                    // Use the existing class (e.g., 'al') as the stateCode ID
-                                    // Make sure path.classList[0] actually gives the state code.
-                                    // Some SVGs might have other classes first or no classes.
-                                    const stateClass = path.classList.length > 0 ? path.classList[0] : '';
-                                    const stateCode = stateClass.toUpperCase(); 
-
-                                    // Add our custom class for styling (even if it has 'al', 'ak' etc.)
-                                    path.classList.add('state-path'); 
+                                    let stateCode = path.id ? path.id.toUpperCase() : null;
+                                    if (!stateCode && path.classList.length > 0) {
+                                        stateCode = path.classList[0].toUpperCase(); 
+                                        path.id = stateCode; // Dynamically add ID to the path for future consistency
+                                    }
+                                    
+                                    path.classList.add('state-path'); // Add our custom class for styling
 
                                     if (stateCode && visitedStates.has(stateCode)) { 
                                         path.classList.add('visited');
@@ -163,8 +169,9 @@
                                             window.location.href = `state-page-template.html?state=${stateCode}`;
                                         });
                                     } else {
-                                        path.style.cursor = 'default';
-                                        path.style.opacity = '0.7';
+                                        // No action needed for unvisited states here, CSS handles default cursor
+                                        // path.style.cursor = 'default'; // CSS handles this
+                                        path.style.opacity = '0.7'; // Dim unvisited states
                                     }
                                 });
 
@@ -179,7 +186,7 @@
                             });
                     }
                 } catch (e) {
-                    console.error("Failed to access SVG content (likely same-origin policy or SVG not loaded correctly):", e);
+                    console.error("Failed to access SVG content or process map interactivity:", e);
                     const containerDiv = document.querySelector('.container');
                     const errorP = document.createElement('p');
                     errorP.textContent = "Error loading interactive map. Check browser console for technical details. (Hint: Is the SVG file itself valid and accessible?)";
