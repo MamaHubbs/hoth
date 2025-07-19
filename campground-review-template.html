@@ -269,13 +269,8 @@
         <div id="activitiesContainer">
             </div>
 
-        <h2>Nearby Essentials</h2>
-        <div class="section-grid">
-            <div>
-                <p><strong>Shopping Nearby:</strong> <span id="shoppingNearby"></span></p>
-                <p><strong>Nearest Emergency Medical:</strong> <span id="emergencyMedicalDistance"></span></p>
+        <div id="nearbyEssentialsContainer">
             </div>
-        </div>
 
         <h2>Photo Gallery</h2>
         <div id="photoGalleryContainer" class="photo-gallery-grid">
@@ -506,10 +501,10 @@
                         }
 
                         // Nearby Essentials - Dynamic Population
-                        const nearbyDiv = document.getElementById('shoppingNearby').parentNode.parentNode; 
-                        nearbyDiv.innerHTML = '<h2>Nearby Essentials</h2><div class="section-grid"><div></div><div></div></div>'; // Re-create structure
-                        const nearbyGridDiv1 = nearbyDiv.querySelector('.section-grid div:first-child');
-                        const nearbyGridDiv2 = nearbyDiv.querySelector('.section-grid div:last-child');
+                        const nearbyEssentialsContainer = document.getElementById('nearbyEssentialsContainer'); // Target the new container
+                        nearbyEssentialsContainer.innerHTML = '<h2>Nearby Essentials</h2><div class="section-grid"><div></div><div></div></div>'; // Re-create structure
+                        const nearbyGridDiv1 = nearbyEssentialsContainer.querySelector('.section-grid div:first-child');
+                        const nearbyGridDiv2 = nearbyEssentialsContainer.querySelector('.section-grid div:last-child');
                         
                         const nearby = campground.nearby;
                         if (nearby) {
@@ -550,12 +545,12 @@
                             nearbyGridDiv2.appendChild(ulRightNearby);
 
                         } else {
-                            nearbyDiv.innerHTML += '<p>No nearby essentials information available.</p>';
+                            nearbyEssentialsContainer.innerHTML += '<p>No nearby essentials information available.</p>';
                         }
 
                         // Photo Gallery
                         const photoGalleryContainer = document.getElementById('photoGalleryContainer');
-                        photoGalleryContainer.innerHTML = ''; 
+                        photoGalleryContainer.innerHTML = ''; 
                         if (campground.photoGallery && campground.photoGallery.length > 0) {
                             campground.photoGallery.forEach(photo => {
                                 const photoItem = document.createElement('div');
@@ -579,8 +574,8 @@
                                 reviewCard.className = 'review-card';
                                 reviewCard.innerHTML = `
                                     <p class="review-meta">
-                                        <strong>Visit Date:</strong> ${review.visitDate} | 
-                                        <strong>Review Date:</strong> ${review.reviewDate} | 
+                                        <strong>Visit Date:</strong> ${review.visitDate} | 
+                                        <strong>Review Date:</strong> ${review.reviewDate} | 
                                         <strong>Rating:</strong> ${"⭐".repeat(parseInt(review.starRating))}
                                     </p>
                                     <p>${review.text}</p>
