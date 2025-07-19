@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Campground Review</title>
-    <style>
+    <link href="lightbox2/css/lightbox.min.css" rel="stylesheet" /> <style>
         body {
             font-family: Helvetica, sans-serif; /* Helvetica for body text, fallback to sans-serif */
             line-height: 1.4;
@@ -137,26 +137,12 @@
         }
 
 
- /* Specific styles for Other Activities list items (transparent background) */
-    #otherActivities ul li {
-        background-color: transparent;
-        padding: 0;
-        margin-bottom: 5px; /* ADJUSTED: Set margin-bottom to 5px for consistency */
-    }
-
-    /* Styling for amenities list items to avoid extra padding from generic ul li */
-    #amenitiesList li {
-        background-color: transparent; /* Inherit parent background */
-        padding: 0;
-        margin-bottom: 5px; /* Confirmed: This is already 5px */
-    }
-
-    /* NEW: Specific styles for Nearby Essentials list items */
-    #nearbyEssentialsContainer ul li {
-        background-color: transparent;
-        padding: 0;
-        margin-bottom: 5px; /* ADJUSTED: Set margin-bottom to 5px for consistency */
-    }
+        /* Specific styles for Other Activities list items (transparent background) */
+        #otherActivities ul li {
+            background-color: transparent;
+            padding: 0;
+            margin-bottom: 5px; /* Adjusted for consistency */
+        }
 
         /* Map container styling */
         .map-container {
@@ -176,6 +162,12 @@
             border: 0;
         }
 
+        /* Styling for amenities list items to avoid extra padding from generic ul li */
+        #amenitiesList li {
+            background-color: transparent; /* Inherit parent background */
+            padding: 0;
+            margin-bottom: 5px;
+        }
 
         /* Photo Gallery Styling */
         .photo-gallery-grid {
@@ -237,6 +229,12 @@
             margin-bottom: 0px; /* Ensure 0px for tight spacing */
         }
 
+        /* NEW: Styles for dynamically generated Nearby Essentials list items */
+        #nearbyEssentialsContainer ul li {
+            background-color: transparent;
+            padding: 0;
+            margin-bottom: 5px; /* Adjusted for consistency */
+        }
     </style>
 </head>
 <body>
@@ -292,7 +290,7 @@
 
     </div>
 
-    <script src="shared.js"></script> 
+    <script src="lightbox2/js/lightbox.min.js"></script> <script src="shared.js"></script> 
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -483,12 +481,10 @@
                                     } else if (Array.isArray(value)) {
                                         value = value.join(', ');
                                     }
-                                    li.textContent = value; // Only show value for otherActivities
-                                    if (key !== "otherActivities") { // Add strong for specific activities like Game Room
-                                        li.innerHTML = `<strong>${displayKey}:</strong> ${value}`;
-                                    } else {
-                                        li.innerHTML = `<strong>${displayKey}:</strong>`; // Only header for "Other Activities"
-                                        const otherUl = document.createElement('ul'); // Nested ul for sub-items
+                                    // Special handling for "Other Activities"
+                                    if (key === "otherActivities") { 
+                                        li.innerHTML = `<strong>${displayKey}:</strong>`;
+                                        const otherUl = document.createElement('ul');
                                         otherUl.style.listStyleType = 'circle';
                                         otherUl.style.paddingLeft = '20px';
                                         if (Array.isArray(activities.otherActivities)) {
@@ -499,6 +495,8 @@
                                             });
                                         }
                                         li.appendChild(otherUl);
+                                    } else {
+                                        li.innerHTML = `<strong>${displayKey}:</strong> ${value}`;
                                     }
                                     ulRight.appendChild(li);
                                 }
@@ -556,15 +554,24 @@
                             nearbyEssentialsContainer.innerHTML += '<p>No nearby essentials information available.</p>';
                         }
 
-                        // Photo Gallery
+                        // Photo Gallery - Adjusted for Lightbox
                         const photoGalleryContainer = document.getElementById('photoGalleryContainer');
                         photoGalleryContainer.innerHTML = ''; 
                         if (campground.photoGallery && campground.photoGallery.length > 0) {
+                            // Assign a unique gallery name for this campground using its ID
+                            const galleryName = `${campground.id}-gallery`;
+
                             campground.photoGallery.forEach(photo => {
                                 const photoItem = document.createElement('div');
                                 photoItem.className = 'photo-gallery-item';
+                                
+                                // Lightbox requires an <a> tag pointing to the full-size image
+                                // data-lightbox attribute groups images into a gallery
+                                // data-title attribute provides the caption for the lightbox popup
                                 photoItem.innerHTML = `
-                                    <img src="${photo.url}" alt="${photo.caption || 'Campground Photo'}">
+                                    <a href="${photo.url}" data-lightbox="${galleryName}" data-title="${photo.caption || ''}">
+                                        <img src="${photo.url}" alt="${photo.caption || 'Campground Photo'}">
+                                    </a>
                                     ${photo.caption ? `<div class="caption">${photo.caption}</div>` : ''}
                                 `;
                                 photoGalleryContainer.appendChild(photoItem);
