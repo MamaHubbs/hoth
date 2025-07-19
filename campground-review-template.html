@@ -294,6 +294,12 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // --- Lightbox2 specific configuration ---
+            // Disable Lightbox2's default scroll behavior as we'll handle it
+            lightbox.option({
+                'disableScrolling': true // This prevents Lightbox from trying to fix its own scroll, which can conflict in iframe
+            });
+
             const campgroundFilename = getQueryParameter('campground'); 
 
             if (!campgroundFilename) {
@@ -569,13 +575,28 @@
                                 // data-lightbox attribute groups images into a gallery
                                 // data-title attribute provides the caption for the lightbox popup
                                 photoItem.innerHTML = `
-                                    <a href="${photo.url}" data-lightbox="${galleryName}" data-title="${photo.caption || ''}">
-                                        <img src="${photo.url}" alt="${photo.caption || 'Campground Photo'}">
+                                    <a href="${photo.url}" data-lightbox="${galleryName}" data-title="${photo.caption || ''}" class="lightbox-trigger"> <img src="${photo.url}" alt="${photo.caption || 'Campground Photo'}">
                                     </a>
                                     ${photo.caption ? `<div class="caption">${photo.caption}</div>` : ''}
                                 `;
                                 photoGalleryContainer.appendChild(photoItem);
                             });
+
+                            // --- NEW: Add event listener to scroll iframe to top on image click ---
+                            // We need to wait for a tiny moment for Lightbox to attach its own handlers
+                            // Or bind before Lightbox does it, which means doing it for a parent container
+                            // A safer way is to use event delegation on the container
+                            setTimeout(() => { // Give Lightbox a moment to set up its events
+                                const triggers = photoGalleryContainer.querySelectorAll('.lightbox-trigger');
+                                triggers.forEach(trigger => {
+                                    trigger.addEventListener('click', function() {
+                                        // Scroll the iframe's content to the top
+                                        window.scrollTo(0, 0); 
+                                    });
+                                });
+                            }, 100); // Small delay
+                            // --- END NEW ---
+
                         } else {
                             photoGalleryContainer.innerHTML = '<p>No photos available for this campground.</p>';
                         }
