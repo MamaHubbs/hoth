@@ -35,6 +35,28 @@
             margin-top: 25px;
             font-size: 1.2em;
         }
+        /* Navigation Bar Styles */
+        .navbar {
+            background-color: #133b66; /* Your main color */
+            padding: 10px 0;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .navbar a {
+            color: #fff; /* White text for links */
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-size: 1.1em;
+            padding: 8px 15px;
+            margin: 0 5px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        .navbar a:hover {
+            background-color: #2d7cbc; /* Your secondary color on hover */
+            text-decoration: none;
+        }
         .map-container {
             overflow: hidden;
             height: 400px; /* Taller map for state view */
@@ -84,6 +106,10 @@
     <div class="container">
         <h1 id="stateNameHeading">Loading State Campgrounds...</h1>
 
+        <div class="navbar">
+            <a href="us-map-landing-page.html" target="_parent">Return to US Map</a>
+        </div>
+
         <h2>Map of Campgrounds</h2>
         <div id="stateMapContainer" class="map-container">
             <iframe id="stateMapIframe" frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
@@ -101,7 +127,7 @@
     <script src="shared.js"></script> 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const stateCode = getQueryParameter('state'); // e.g., "VA"
+            const stateCode = getQueryParameter('state');
 
             if (!stateCode) {
                 document.getElementById('stateNameHeading').textContent = "Error: State code not specified in URL.";
@@ -109,8 +135,7 @@
                 return;
             }
 
-            // Fetch the central index file
-            const indexJsonUrl = getCampgroundJsonUrl('campground_index'); // Assumes campground_index.json is in 'campgrounds' folder
+            const indexJsonUrl = getCampgroundJsonUrl('campground_index'); 
 
             fetch(indexJsonUrl)
                 .then(response => {
@@ -124,13 +149,12 @@
                     const campgroundsInState = allCampgrounds.filter(camp => camp.state_code === stateCode.toUpperCase());
 
                     if (campgroundsInState.length > 0) {
-                        document.getElementById('stateNameHeading').textContent = `${campgroundsInState[0].state} Campgrounds`; // Use full state name from first campground
+                        document.getElementById('stateNameHeading').textContent = `${campgroundsInState[0].state} Campgrounds`;
 
                         // Populate Map
                         const stateMapIframe = document.getElementById('stateMapIframe');
-                        const zoomLevel = 7; // Good general zoom for a state
+                        const zoomLevel = 7; 
                         
-                        // Calculate center of all campgrounds in state for better map centering
                         let avgLat = 0;
                         let avgLon = 0;
                         campgroundsInState.forEach(camp => {
@@ -140,7 +164,6 @@
                         avgLat /= campgroundsInState.length;
                         avgLon /= campgroundsInState.length;
 
-                        // Build bbox to encompass all points roughly
                         let minLat = Infinity, maxLat = -Infinity, minLon = Infinity, maxLon = -Infinity;
                         campgroundsInState.forEach(camp => {
                             minLat = Math.min(minLat, camp.latitude);
@@ -149,23 +172,20 @@
                             maxLon = Math.max(maxLon, camp.longitude);
                         });
 
-                        // Add a small buffer to the bbox
-                        const latBuffer = (maxLat - minLat) * 0.1 || 0.05; // 10% buffer or a small default
+                        const latBuffer = (maxLat - minLat) * 0.1 || 0.05;
                         const lonBuffer = (maxLon - minLon) * 0.1 || 0.05;
 
-                        // For embed.html, the 'marker' param only takes one.
-                        // To show all, we can calculate the bbox for all and just center the map.
                         stateMapIframe.src = `https://www.openstreetmap.org/export/embed.html?bbox=${minLon - lonBuffer},${minLat - latBuffer},${maxLon + lonBuffer},${maxLat + latBuffer}&marker=${avgLat},${avgLon}&zoom=${zoomLevel}&layer=mapnik`;
 
 
                         // Populate List of Campgrounds
                         const campgroundsListUl = document.querySelector('#campgroundsList ul');
-                        campgroundsListUl.innerHTML = ''; // Clear default "No campgrounds..."
+                        campgroundsListUl.innerHTML = '';
                         campgroundsInState.forEach(camp => {
                             const li = document.createElement('li');
                             const link = document.createElement('a');
-                            // ADJUSTED: Use camp.filename for the link to the individual review page
                             link.href = `campground-review-template.html?campground=${camp.filename}`; 
+                            // Removed: link.target = "_parent"; 
                             link.textContent = camp.name;
 
                             li.appendChild(link);
