@@ -56,11 +56,11 @@
   "favoriteSites": ["40", "50"],
   "photoGallery": [
     {
-      "url": "https://raw.githubusercontent.com/MamaHubbs/hoth/main/image/pohicksite50.JPG",
+      "url": "https://mamahubbs.github.io/hoth/image/pohicksite50.JPG",
       "caption": "Site 50"
     },
     {
-      "url": "https://raw.githubusercontent.com/MamaHubbs/hoth/main/image/pohickbay.JPG",
+      "url": "https://mamahubbs.github.io/hoth/image/pohickbay.JPG",
       "caption": "Pohick Bay"
     }
   ],
