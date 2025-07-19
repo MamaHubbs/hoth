@@ -37,28 +37,17 @@
         #us-map-object-container { /* New ID for the object container */
             width: 850px;
             height: auto;
-            max-width: 850px; /* Max width for the SVG map */
+            max-width: 100%; /* Max width for the SVG map */
             display: block;
             margin: 0 auto;
             /* No direct styling for SVG paths here, as they are in the external SVG */
             /* We will apply styles to them via JavaScript if needed, or rely on internal SVG styles */
         }
         #us-map-object-container object {
-            width: 850px;
+            width: 100%;
             height: auto;
             display: block;
         }
-
-        /* Styles that *will* apply to paths inside the SVG, even when loaded via <object> */
-        /* These should be consistent with your .state-path styling from previous attempts */
-   /* SVG Map Styling - CORRECTED ORDER FOR HOVER */
-    #us-map-svg {
-        width: 850px;
-        height: auto;
-        max-width: 850px; /* Max width for the SVG map */
-        display: block;
-        margin: 0 auto;
-    }
 
     /* 1. Base style for ALL paths (default, unvisited, not hovered) */
     #us-map-svg path {
