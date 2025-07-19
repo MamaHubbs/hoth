@@ -663,7 +663,8 @@
                                     <p>${review.text}</p>
                                 `;
 
-                                if (review.youtubeVideoUrl) {
+// Only display the YouTube video section if a valid, non-empty URL exists
+                                if (review.youtubeVideoUrl && review.youtubeVideoUrl.trim() !== "") {
                                     const videoContainer = document.createElement('div');
                                     videoContainer.className = 'video-container';
                                     videoContainer.innerHTML = `<iframe src="${review.youtubeVideoUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
