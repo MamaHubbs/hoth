@@ -235,12 +235,40 @@
             padding: 0;
             margin-bottom: 5px; /* Adjusted for consistency */
         }
+
+        /* Navigation Bar Styles (re-used for campground review) */
+        .navbar {
+            background-color: #133b66; /* Your main color */
+            padding: 10px 0;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .navbar a {
+            color: #fff; /* White text for links */
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-size: 1.1em;
+            padding: 8px 15px;
+            margin: 0 5px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        .navbar a:hover {
+            background-color: #2d7cbc; /* Your secondary color on hover */
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1 id="campgroundName">Loading Campground Review...</h1>
         
+        <div class="navbar">
+            <a id="returnToStateLink" href="#" target="_parent">Return to State List</a>
+            <a href="us-map-landing-page.html" target="_parent">Return to US Map</a>
+        </div>
+
         <div class="section-grid">
             
             <div>
@@ -321,6 +349,24 @@
                     const campground = data; 
 
                     if (campground) {
+                        // --- NAVIGATION LOGIC ---
+                        // Get the state code from the current campground data
+                        const stateCode = campground.state_code;
+                        const returnToStateLink = document.getElementById('returnToStateLink');
+                        if (stateCode) {
+                            returnToStateLink.href = `state-page-template.html?state=${stateCode}`;
+                            // The target="_parent" is kept to navigate the parent iframe
+                            // or replace the content of the top-level Browse context.
+                            // If this page is loaded in an iframe, this will navigate the iframe to the state page.
+                            // If this page is opened directly, it will navigate the browser to the state page.
+                        } else {
+                            returnToStateLink.textContent = "Return to State List (N/A)";
+                            returnToStateLink.style.cursor = "default";
+                            returnToStateLink.removeAttribute('href');
+                        }
+                        // --- END NAVIGATION LOGIC ---
+
+
                         // Calculate Overall Star Rating dynamically
                         let totalStars = 0;
                         let numberOfReviews = 0;
