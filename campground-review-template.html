@@ -266,17 +266,8 @@
                 </div>
             </div>
         </div>
-        <h2>Activities</h2>
-        <div class="section-grid">
-            <div>
-                <p><strong>Waterfront:</strong> <span id="waterfront"></span></p>
-                <p><strong>Hiking:</strong> <span id="hiking"></span></p>
-                <p><strong>Biking:</strong> <span id="biking"></span></p>
+        <div id="activitiesContainer">
             </div>
-            <div>
-                <p><strong>Other Activities:</strong> <span id="otherActivities"></span></p>
-            </div>
-        </div>
 
         <h2>Nearby Essentials</h2>
         <div class="section-grid">
@@ -302,7 +293,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const campgroundFilename = getQueryParameter('campground'); // Now this is the FILENAME (e.g., "20250629pohick")
+            const campgroundFilename = getQueryParameter('campground'); 
 
             if (!campgroundFilename) {
                 document.getElementById('campgroundName').textContent = "Error: Campground filename not specified in URL.";
@@ -310,8 +301,6 @@
                 return;
             }
 
-            // Directly construct the JSON URL using the filename from the URL parameter
-            // shared.js handles placing it in the 'campgrounds/' folder
             const jsonUrl = getCampgroundJsonUrl(campgroundFilename); 
 
             fetch(jsonUrl)
@@ -322,7 +311,6 @@
                     return response.json();
                 })
                 .then(data => {
-                    // 'data' is now the individual campground object directly (since you removed the outer array)
                     const campground = data; 
 
                     if (campground) {
@@ -445,17 +433,22 @@
                         }
 
                         // Activities - Dynamic Population
-                        const activitiesContainer = document.getElementById('otherActivities').parentNode; 
-                        activitiesContainer.innerHTML = '<h2>Activities</h2>'; 
-                        const activitiesListUl = document.createElement('ul');
-                        activitiesListUl.style.listStyleType = 'disc';
-                        activitiesListUl.style.paddingLeft = '20px';
+                        const activitiesContainer = document.getElementById('activitiesContainer'); // Target the new container
+                        activitiesContainer.innerHTML = '<h2>Activities</h2><div class="section-grid"><div></div><div></div></div>'; // Re-create structure
+                        const activitiesGridDiv1 = activitiesContainer.querySelector('.section-grid div:first-child');
+                        const activitiesGridDiv2 = activitiesContainer.querySelector('.section-grid div:last-child');
+                        
                         const activities = campground.activities;
                         if (activities) {
-                            const activityOrder = [
-                                "boatingLaunch", "fishing", "hiking", "biking", "gameRoom", "otherActivities"
-                            ];
-                            activityOrder.forEach(key => {
+                            const activityOrderLeft = ["waterfront", "fishing", "hiking", "biking"];
+                            const activityOrderRight = ["gameRoom", "otherActivities"];
+
+                            const ulLeft = document.createElement('ul');
+                            ulLeft.style.listStyleType = 'none'; // No bullets for these
+                            ulLeft.style.padding = '0'; // No padding
+                            activitiesGridDiv1.appendChild(ulLeft);
+
+                            activityOrderLeft.forEach(key => {
                                 if (activities.hasOwnProperty(key)) {
                                     const li = document.createElement('li');
                                     let value = activities[key];
@@ -467,53 +460,102 @@
                                         value = value.join(', ');
                                     }
                                     li.innerHTML = `<strong>${displayKey}:</strong> ${value}`;
-                                    activitiesListUl.appendChild(li);
+                                    ulLeft.appendChild(li);
                                 }
                             });
-                            activitiesContainer.appendChild(activitiesListUl);
+
+                            const ulRight = document.createElement('ul');
+                            ulRight.style.listStyleType = 'disc'; // Bullets for these
+                            ulRight.style.paddingLeft = '20px'; // Padding for bullets
+                            activitiesGridDiv2.appendChild(ulRight);
+
+                            activityOrderRight.forEach(key => {
+                                if (activities.hasOwnProperty(key)) {
+                                    const li = document.createElement('li');
+                                    let value = activities[key];
+                                    let displayKey = key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase());
+
+                                    if (typeof value === 'boolean') {
+                                        value = value ? "Yes" : "No";
+                                    } else if (Array.isArray(value)) {
+                                        value = value.join(', ');
+                                    }
+                                    li.textContent = value; // Only show value for otherActivities
+                                    if (key !== "otherActivities") { // Add strong for specific activities like Game Room
+                                        li.innerHTML = `<strong>${displayKey}:</strong> ${value}`;
+                                    } else {
+                                        li.innerHTML = `<strong>${displayKey}:</strong>`; // Only header for "Other Activities"
+                                        const otherUl = document.createElement('ul'); // Nested ul for sub-items
+                                        otherUl.style.listStyleType = 'circle';
+                                        otherUl.style.paddingLeft = '20px';
+                                        if (Array.isArray(activities.otherActivities)) {
+                                            activities.otherActivities.forEach(item => {
+                                                const otherLi = document.createElement('li');
+                                                otherLi.textContent = item;
+                                                otherUl.appendChild(otherLi);
+                                            });
+                                        }
+                                        li.appendChild(otherUl);
+                                    }
+                                    ulRight.appendChild(li);
+                                }
+                            });
                         } else {
-                            activitiesContainer.innerHTML += '<p>No activities information available.</p>';
+                            activitiesGridDiv1.innerHTML = '<p>No activities information available.</p>';
+                            activitiesGridDiv2.innerHTML = '';
                         }
 
                         // Nearby Essentials - Dynamic Population
                         const nearbyDiv = document.getElementById('shoppingNearby').parentNode.parentNode; 
-                        nearbyDiv.innerHTML = '<h2>Nearby Essentials</h2>'; 
-                        const nearbyUl = document.createElement('ul');
-                        nearbyUl.style.listStyleType = 'none';
-                        nearbyUl.style.padding = '0';
+                        nearbyDiv.innerHTML = '<h2>Nearby Essentials</h2><div class="section-grid"><div></div><div></div></div>'; // Re-create structure
+                        const nearbyGridDiv1 = nearbyDiv.querySelector('.section-grid div:first-child');
+                        const nearbyGridDiv2 = nearbyDiv.querySelector('.section-grid div:last-child');
+                        
                         const nearby = campground.nearby;
                         if (nearby) {
-                            if (nearby.shopping) { 
+                            // Left side: Shopping, Food
+                            const ulLeftNearby = document.createElement('ul');
+                            ulLeftNearby.style.listStyleType = 'none';
+                            ulLeftNearby.style.padding = '0';
+                            
+                            if (nearby.shopping) {
                                 const li = document.createElement('li');
                                 if (Array.isArray(nearby.shopping)) {
                                     li.innerHTML = `<strong>Shopping:</strong> ${nearby.shopping.join(', ')}`;
                                 } else { 
                                     li.innerHTML = `<strong>Shopping:</strong> ${typeof nearby.shopping === 'boolean' ? (nearby.shopping ? "Yes" : "No") : nearby.shopping}`;
                                 }
-                                nearbyUl.appendChild(li);
+                                ulLeftNearby.appendChild(li);
                             }
-                            if (nearby.food) { 
+                            if (nearby.food) {
                                 const li = document.createElement('li');
                                 if (Array.isArray(nearby.food)) {
                                     li.innerHTML = `<strong>Food:</strong> ${nearby.food.join(', ')}`;
                                 } else { 
                                     li.innerHTML = `<strong>Food:</strong> ${typeof nearby.food === 'boolean' ? (nearby.food ? "Yes" : "No") : nearby.food}`;
                                 }
-                                nearbyUl.appendChild(li);
+                                ulLeftNearby.appendChild(li);
                             }
+                            nearbyGridDiv1.appendChild(ulLeftNearby);
+
+                            // Right side: Emergency Medical
+                            const ulRightNearby = document.createElement('ul');
+                            ulRightNearby.style.listStyleType = 'none';
+                            ulRightNearby.style.padding = '0';
                             if (nearby.emergencyMedicalDistance) {
                                 const li = document.createElement('li');
                                 li.innerHTML = `<strong>Nearest Emergency Medical:</strong> ${nearby.emergencyMedicalDistance}`;
-                                nearbyUl.appendChild(li);
+                                ulRightNearby.appendChild(li);
                             }
-                            nearbyDiv.appendChild(nearbyUl);
+                            nearbyGridDiv2.appendChild(ulRightNearby);
+
                         } else {
                             nearbyDiv.innerHTML += '<p>No nearby essentials information available.</p>';
                         }
 
                         // Photo Gallery
                         const photoGalleryContainer = document.getElementById('photoGalleryContainer');
-                        photoGalleryContainer.innerHTML = ''; 
+                        photoGalleryContainer.innerHTML = ''; 
                         if (campground.photoGallery && campground.photoGallery.length > 0) {
                             campground.photoGallery.forEach(photo => {
                                 const photoItem = document.createElement('div');
@@ -537,8 +579,8 @@
                                 reviewCard.className = 'review-card';
                                 reviewCard.innerHTML = `
                                     <p class="review-meta">
-                                        <strong>Visit Date:</strong> ${review.visitDate} | 
-                                        <strong>Review Date:</strong> ${review.reviewDate} | 
+                                        <strong>Visit Date:</strong> ${review.visitDate} | 
+                                        <strong>Review Date:</strong> ${review.reviewDate} | 
                                         <strong>Rating:</strong> ${"⭐".repeat(parseInt(review.starRating))}
                                     </p>
                                     <p>${review.text}</p>
