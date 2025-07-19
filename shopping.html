@@ -30,10 +30,10 @@
             margin: 0 10px;
             padding: 8px 15px;
             text-decoration: none;
-            color: #007bff;
-            background-color: #e9f5ff;
+            color: #007bff; /* Keep link color */
+            background-color: transparent; /* Changed: Removed background color */
             border-radius: 5px;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
             font-weight: bold;
         }
         .topic-navigation a:hover {
@@ -55,6 +55,7 @@
             padding: 12px;
             text-align: left;
             font-size: 1.2em;
+            /* Removed specific "Item 1, Item 2, Item 3" styling, if any */
         }
         .item-table td {
             padding: 15px;
@@ -189,10 +190,7 @@
             <table class="item-table">
                 <thead>
                     <tr>
-                        <th>Item 1</th>
-                        <th>Item 2</th>
-                        <th>Item 3</th>
-                    </tr>
+                        <th colspan="3"></th> </tr>
                 </thead>
                 <tbody id="rv-basics-body"></tbody>
             </table>
@@ -201,9 +199,7 @@
             <table class="item-table">
                 <thead>
                     <tr>
-                        <th>Item 1</th>
-                        <th>Item 2</th>
-                        <th>Item 3</th>
+                        <th colspan="3"></th>
                     </tr>
                 </thead>
                 <tbody id="outside-living-body"></tbody>
@@ -213,9 +209,7 @@
             <table class="item-table">
                 <thead>
                     <tr>
-                        <th>Item 1</th>
-                        <th>Item 2</th>
-                        <th>Item 3</th>
+                        <th colspan="3"></th>
                     </tr>
                 </thead>
                 <tbody id="kitchen-body"></tbody>
@@ -225,9 +219,7 @@
             <table class="item-table">
                 <thead>
                     <tr>
-                        <th>Item 1</th>
-                        <th>Item 2</th>
-                        <th>Item 3</th>
+                        <th colspan="3"></th>
                     </tr>
                 </thead>
                 <tbody id="bathroom-body"></tbody>
@@ -237,9 +229,7 @@
             <table class="item-table">
                 <thead>
                     <tr>
-                        <th>Item 1</th>
-                        <th>Item 2</th>
-                        <th>Item 3</th>
+                        <th colspan="3"></th>
                     </tr>
                 </thead>
                 <tbody id="bedrooms-body"></tbody>
@@ -249,9 +239,7 @@
             <table class="item-table">
                 <thead>
                     <tr>
-                        <th>Item 1</th>
-                        <th>Item 2</th>
-                        <th>Item 3</th>
+                        <th colspan="3"></th>
                     </tr>
                 </thead>
                 <tbody id="cleaning-maintenance-body"></tbody>
@@ -261,9 +249,7 @@
             <table class="item-table">
                 <thead>
                     <tr>
-                        <th>Item 1</th>
-                        <th>Item 2</th>
-                        <th>Item 3</th>
+                        <th colspan="3"></th>
                     </tr>
                 </thead>
                 <tbody id="electronics-body"></tbody>
@@ -273,9 +259,7 @@
             <table class="item-table">
                 <thead>
                     <tr>
-                        <th>Item 1</th>
-                        <th>Item 2</th>
-                        <th>Item 3</th>
+                        <th colspan="3"></th>
                     </tr>
                 </thead>
                 <tbody id="pet-care-body"></tbody>
@@ -285,9 +269,7 @@
             <table class="item-table">
                 <thead>
                     <tr>
-                        <th>Item 1</th>
-                        <th>Item 2</th>
-                        <th>Item 3</th>
+                        <th colspan="3"></th>
                     </tr>
                 </thead>
                 <tbody id="decorative-body"></tbody>
@@ -297,9 +279,7 @@
             <table class="item-table">
                 <thead>
                     <tr>
-                        <th>Item 1</th>
-                        <th>Item 2</th>
-                        <th>Item 3</th>
+                        <th colspan="3"></th>
                     </tr>
                 </thead>
                 <tbody id="entertainment-body"></tbody>
@@ -356,8 +336,7 @@
                 })
                 .catch(error => {
                     console.error('Error fetching or parsing RV items:', error);
-                    // You could display an error message on the page here
-                    document.getElementById('item-sections').innerHTML = '<p>Error loading RV items. Please try again later.</p>';
+                    document.getElementById('item-sections').innerHTML = '<p>Error loading RV items. Please ensure rv_items.json is correctly configured and accessible.</p>';
                 });
         });
     </script>
