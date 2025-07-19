@@ -71,7 +71,7 @@
             width: 180px; /* Adjust as needed */
             height: 180px; /* Adjust as needed */
             border: 1px solid #ddd;
-            border-radius: 5_0px;
+            border-radius: 5px;
             overflow: hidden;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             transition: transform 0.2s ease;
@@ -138,4 +138,228 @@
                 flex-wrap: wrap;
                 justify-content: center;
             }
-            .topic-navigation a
+            .topic-navigation a {
+                flex: 1 1 auto;
+                margin: 3px;
+                font-size: 0.8em;
+            }
+            .item-table, .item-table tbody, .item-table tr, .item-table td {
+                display: block;
+                width: 100%;
+            }
+            .item-table tr {
+                margin-bottom: 15px;
+                border: 1px solid #eee;
+                border-radius: 8px;
+            }
+            .item-table td {
+                border-bottom: none;
+                text-align: left;
+                padding: 10px;
+            }
+            .item-card {
+                width: 100%; /* Full width for small screens */
+                max-width: 200px; /* Max width to prevent overly large cards */
+                height: auto;
+                aspect-ratio: 1 / 1; /* Keep aspect ratio square */
+            }
+            .item-link {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="topic-navigation">
+            <a href="#rv-basics">RV Basics for Set-Up</a>
+            <a href="#outside-living">Outside Living</a>
+            <a href="#kitchen">Kitchen</a>
+            <a href="#bathroom">Bathroom</a>
+            <a href="#bedrooms">Bedrooms</a>
+            <a href="#cleaning-maintenance">Cleaning & Maintenance</a>
+            <a href="#electronics">Electronics</a>
+            <a href="#pet-care">Pet Care</a>
+            <a href="#decorative">Decorative</a>
+            <a href="#entertainment">Entertainment</a>
+        </div>
+
+        <div id="item-sections">
+            <h2 id="rv-basics">RV Basics for Set-Up</h2>
+            <table class="item-table">
+                <thead>
+                    <tr>
+                        <th>Item 1</th>
+                        <th>Item 2</th>
+                        <th>Item 3</th>
+                    </tr>
+                </thead>
+                <tbody id="rv-basics-body"></tbody>
+            </table>
+
+            <h2 id="outside-living">Outside Living</h2>
+            <table class="item-table">
+                <thead>
+                    <tr>
+                        <th>Item 1</th>
+                        <th>Item 2</th>
+                        <th>Item 3</th>
+                    </tr>
+                </thead>
+                <tbody id="outside-living-body"></tbody>
+            </table>
+
+            <h2 id="kitchen">Kitchen</h2>
+            <table class="item-table">
+                <thead>
+                    <tr>
+                        <th>Item 1</th>
+                        <th>Item 2</th>
+                        <th>Item 3</th>
+                    </tr>
+                </thead>
+                <tbody id="kitchen-body"></tbody>
+            </table>
+
+            <h2 id="bathroom">Bathroom</h2>
+            <table class="item-table">
+                <thead>
+                    <tr>
+                        <th>Item 1</th>
+                        <th>Item 2</th>
+                        <th>Item 3</th>
+                    </tr>
+                </thead>
+                <tbody id="bathroom-body"></tbody>
+            </table>
+
+            <h2 id="bedrooms">Bedrooms (Master and Bunk)</h2>
+            <table class="item-table">
+                <thead>
+                    <tr>
+                        <th>Item 1</th>
+                        <th>Item 2</th>
+                        <th>Item 3</th>
+                    </tr>
+                </thead>
+                <tbody id="bedrooms-body"></tbody>
+            </table>
+
+            <h2 id="cleaning-maintenance">Cleaning Supplies and Maintenance</h2>
+            <table class="item-table">
+                <thead>
+                    <tr>
+                        <th>Item 1</th>
+                        <th>Item 2</th>
+                        <th>Item 3</th>
+                    </tr>
+                </thead>
+                <tbody id="cleaning-maintenance-body"></tbody>
+            </table>
+
+            <h2 id="electronics">Electronics</h2>
+            <table class="item-table">
+                <thead>
+                    <tr>
+                        <th>Item 1</th>
+                        <th>Item 2</th>
+                        <th>Item 3</th>
+                    </tr>
+                </thead>
+                <tbody id="electronics-body"></tbody>
+            </table>
+
+            <h2 id="pet-care">Pet Care</h2>
+            <table class="item-table">
+                <thead>
+                    <tr>
+                        <th>Item 1</th>
+                        <th>Item 2</th>
+                        <th>Item 3</th>
+                    </tr>
+                </thead>
+                <tbody id="pet-care-body"></tbody>
+            </table>
+
+            <h2 id="decorative">Decorative</h2>
+            <table class="item-table">
+                <thead>
+                    <tr>
+                        <th>Item 1</th>
+                        <th>Item 2</th>
+                        <th>Item 3</th>
+                    </tr>
+                </thead>
+                <tbody id="decorative-body"></tbody>
+            </table>
+
+            <h2 id="entertainment">Entertainment</h2>
+            <table class="item-table">
+                <thead>
+                    <tr>
+                        <th>Item 1</th>
+                        <th>Item 2</th>
+                        <th>Item 3</th>
+                    </tr>
+                </thead>
+                <tbody id="entertainment-body"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('rv_items.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    for (const categoryId in data) {
+                        const items = data[categoryId];
+                        const tbodyId = `${categoryId}-body`;
+                        const tbody = document.getElementById(tbodyId);
+
+                        if (tbody) {
+                            let row;
+                            items.forEach((item, index) => {
+                                // Start a new row for every 3 items
+                                if (index % 3 === 0) {
+                                    row = document.createElement('tr');
+                                    tbody.appendChild(row);
+                                }
+
+                                const td = document.createElement('td');
+                                td.innerHTML = `
+                                    <div class="item-card">
+                                        <img src="${item.image_url}" alt="${item.name}">
+                                        <div class="item-overlay">${item.name}</div>
+                                    </div>
+                                    <a href="${item.purchase_link}" class="item-link" target="_blank">Purchase Here</a>
+                                `;
+                                row.appendChild(td);
+                            });
+
+                            // Fill remaining cells in the last row if less than 3 items
+                            if (row && items.length % 3 !== 0) {
+                                const remainingCells = 3 - (items.length % 3);
+                                for (let i = 0; i < remainingCells; i++) {
+                                    row.appendChild(document.createElement('td'));
+                                }
+                            }
+                        } else {
+                            console.warn(`No tbody found for category ID: ${categoryId}`);
+                        }
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching or parsing RV items:', error);
+                    // You could display an error message on the page here
+                    document.getElementById('item-sections').innerHTML = '<p>Error loading RV items. Please try again later.</p>';
+                });
+        });
+    </script>
+</body>
+</html>
