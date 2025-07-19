@@ -137,12 +137,26 @@
         }
 
 
-        /* Specific styles for Other Activities list items (transparent background) */
-        #otherActivities ul li {
-            background-color: transparent;
-            padding: 0;
-            margin-bottom: 0;
-        }
+ /* Specific styles for Other Activities list items (transparent background) */
+    #otherActivities ul li {
+        background-color: transparent;
+        padding: 0;
+        margin-bottom: 5px; /* ADJUSTED: Set margin-bottom to 5px for consistency */
+    }
+
+    /* Styling for amenities list items to avoid extra padding from generic ul li */
+    #amenitiesList li {
+        background-color: transparent; /* Inherit parent background */
+        padding: 0;
+        margin-bottom: 5px; /* Confirmed: This is already 5px */
+    }
+
+    /* NEW: Specific styles for Nearby Essentials list items */
+    #nearbyEssentialsContainer ul li {
+        background-color: transparent;
+        padding: 0;
+        margin-bottom: 5px; /* ADJUSTED: Set margin-bottom to 5px for consistency */
+    }
 
         /* Map container styling */
         .map-container {
@@ -162,12 +176,6 @@
             border: 0;
         }
 
-        /* Styling for amenities list items to avoid extra padding from generic ul li */
-        #amenitiesList li {
-            background-color: transparent; /* Inherit parent background */
-            padding: 0;
-            margin-bottom: 5px;
-        }
 
         /* Photo Gallery Styling */
         .photo-gallery-grid {
