@@ -1,0 +1,187 @@
+{
+  "rv-basics": [
+    {
+      "name": "Leveling Blocks",
+      "image_url": "https://via.placeholder.com/180/FF5733/FFFFFF?text=Leveling+Blocks",
+      "purchase_link": "https://example.com/leveling-blocks"
+    },
+    {
+      "name": "Sewer Hose",
+      "image_url": "https://via.placeholder.com/180/33FF57/FFFFFF?text=Sewer+Hose",
+      "purchase_link": "https://example.com/sewer-hose"
+    },
+    {
+      "name": "Fresh Water Hose",
+      "image_url": "https://via.placeholder.com/180/3357FF/FFFFFF?text=Fresh+Water+Hose",
+      "purchase_link": "https://example.com/fresh-water-hose"
+    },
+    {
+      "name": "Surge Protector",
+      "image_url": "https://via.placeholder.com/180/FFBD33/FFFFFF?text=Surge+Protector",
+      "purchase_link": "https://example.com/surge-protector"
+    },
+    {
+      "name": "Wheel Chocks",
+      "image_url": "https://via.placeholder.com/180/8D33FF/FFFFFF?text=Wheel+Chocks",
+      "purchase_link": "https://example.com/wheel-chocks"
+    },
+    {
+      "name": "Water Filter",
+      "image_url": "https://via.placeholder.com/180/33FFAB/FFFFFF?text=Water+Filter",
+      "purchase_link": "https://example.com/water-filter"
+    }
+  ],
+  "outside-living": [
+    {
+      "name": "Camping Chairs",
+      "image_url": "https://via.placeholder.com/180/FF33A8/FFFFFF?text=Camping+Chairs",
+      "purchase_link": "https://example.com/camping-chairs"
+    },
+    {
+      "name": "Folding Table",
+      "image_url": "https://via.placeholder.com/180/33A8FF/FFFFFF?text=Folding+Table",
+      "purchase_link": "https://example.com/folding-table"
+    },
+    {
+      "name": "Outdoor Rug",
+      "image_url": "https://via.placeholder.com/180/A8FF33/FFFFFF?text=Outdoor+Rug",
+      "purchase_link": "https://example.com/outdoor-rug"
+    }
+  ],
+  "kitchen": [
+    {
+      "name": "Compact Pots & Pans",
+      "image_url": "https://via.placeholder.com/180/E033FF/FFFFFF?text=Compact+Pots",
+      "purchase_link": "https://example.com/compact-pots"
+    },
+    {
+      "name": "Nesting Dishes Set",
+      "image_url": "https://via.placeholder.com/180/33FFE0/FFFFFF?text=Nesting+Dishes",
+      "purchase_link": "https://example.com/nesting-dishes"
+    },
+    {
+      "name": "Portable Grill",
+      "image_url": "https://via.placeholder.com/180/FFB833/FFFFFF?text=Portable+Grill",
+      "purchase_link": "https://example.com/portable-grill"
+    }
+  ],
+  "bathroom": [
+    {
+      "name": "RV Toilet Paper",
+      "image_url": "https://via.placeholder.com/180/57FF33/FFFFFF?text=RV+Toilet+Paper",
+      "purchase_link": "https://example.com/rv-toilet-paper"
+    },
+    {
+      "name": "Compact Towels",
+      "image_url": "https://via.placeholder.com/180/FF3357/FFFFFF?text=Compact+Towels",
+      "purchase_link": "https://example.com/compact-towels"
+    },
+    {
+      "name": "Tank Treatment",
+      "image_url": "https://via.placeholder.com/180/33FFB8/FFFFFF?text=Tank+Treatment",
+      "purchase_link": "https://example.com/tank-treatment"
+    }
+  ],
+  "bedrooms": [
+    {
+      "name": "RV Sheets",
+      "image_url": "https://via.placeholder.com/180/B833FF/FFFFFF?text=RV+Sheets",
+      "purchase_link": "https://example.com/rv-sheets"
+    },
+    {
+      "name": "Lightweight Comforter",
+      "image_url": "https://via.placeholder.com/180/FFB833/FFFFFF?text=Lightweight+Comforter",
+      "purchase_link": "https://example.com/lightweight-comforter"
+    },
+    {
+      "name": "Under-Bed Storage Bins",
+      "image_url": "https://via.placeholder.com/180/33FF57/FFFFFF?text=Storage+Bins",
+      "purchase_link": "https://example.com/storage-bins"
+    }
+  ],
+  "cleaning-maintenance": [
+    {
+      "name": "All-Purpose Cleaner",
+      "image_url": "https://via.placeholder.com/180/3357FF/FFFFFF?text=All-Purpose+Cleaner",
+      "purchase_link": "https://example.com/all-purpose-cleaner"
+    },
+    {
+      "name": "Microfiber Cloths",
+      "image_url": "https://via.placeholder.com/180/FF33E0/FFFFFF?text=Microfiber+Cloths",
+      "purchase_link": "https://example.com/microfiber-cloths"
+    },
+    {
+      "name": "RV Exterior Wash",
+      "image_url": "https://via.placeholder.com/180/33E0FF/FFFFFF?text=RV+Wash",
+      "purchase_link": "https://example.com/rv-wash"
+    }
+  ],
+  "electronics": [
+    {
+      "name": "Portable Power Station",
+      "image_url": "https://via.placeholder.com/180/57FF33/FFFFFF?text=Portable+Power",
+      "purchase_link": "https://example.com/power-station"
+    },
+    {
+      "name": "Wi-Fi Booster",
+      "image_url": "https://via.placeholder.com/180/FF5733/FFFFFF?text=Wi-Fi+Booster",
+      "purchase_link": "https://example.com/wifi-booster"
+    },
+    {
+      "name": "Bluetooth Speaker",
+      "image_url": "https://via.placeholder.com/180/33FF57/FFFFFF?text=Bluetooth+Speaker",
+      "purchase_link": "https://example.com/bluetooth-speaker"
+    }
+  ],
+  "pet-care": [
+    {
+      "name": "Collapsible Travel Bowl",
+      "image_url": "https://via.placeholder.com/180/FF33A8/FFFFFF?text=Travel+Bowl",
+      "purchase_link": "https://example.com/travel-bowl"
+    },
+    {
+      "name": "Compact Pet Bed",
+      "image_url": "https://via.placeholder.com/180/33A8FF/FFFFFF?text=Pet+Bed",
+      "purchase_link": "https://example.com/pet-bed"
+    },
+    {
+      "name": "Pet Tie-Out Stake",
+      "image_url": "https://via.placeholder.com/180/A8FF33/FFFFFF?text=Tie-Out",
+      "purchase_link": "https://example.com/tie-out-stake"
+    }
+  ],
+  "decorative": [
+    {
+      "name": "Command Hooks",
+      "image_url": "https://via.placeholder.com/180/E033FF/FFFFFF?text=Command+Hooks",
+      "purchase_link": "https://example.com/command-hooks"
+    },
+    {
+      "name": "Faux Small Plants",
+      "image_url": "https://via.placeholder.com/180/33FFE0/FFFFFF?text=Small+Plants",
+      "purchase_link": "https://example.com/faux-plants"
+    },
+    {
+      "name": "Battery LED String Lights",
+      "image_url": "https://via.placeholder.com/180/FFB833/FFFFFF?text=String+Lights",
+      "purchase_link": "https://example.com/string-lights"
+    }
+  ],
+  "entertainment": [
+    {
+      "name": "Travel Board Games",
+      "image_url": "https://via.placeholder.com/180/33FFAB/FFFFFF?text=Board+Games",
+      "purchase_link": "https://example.com/board-games"
+    },
+    {
+      "name": "E-Reader / Books",
+      "image_url": "https://via.placeholder.com/180/8D33FF/FFFFFF?text=Books",
+      "purchase_link": "https://example.com/e-reader"
+    },
+    {
+      "name": "Portable Projector",
+      "image_url": "https://via.placeholder.com/180/FF5733/FFFFFF?text=Portable+Projector",
+      "purchase_link": "https://example.com/portable-projector"
+    }
+  ]
+}
