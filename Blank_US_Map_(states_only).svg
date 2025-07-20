@@ -1,10 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--
-************* Copyright (c) 2017 Pareto Softare, LLC DBA Simplemaps.com *******************		
-************* Free for Commercial Use, full terms at  http://simplemaps.com/resources/svg-license ************
-************* Attribution is appreciated! http://simplemaps.com ***************************
--->
-
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -14,12 +8,8 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    enable_background="new 0 0 1000 589"
-   height="589px"
-   pretty_print="False"
-   style="stroke-linejoin: round; stroke:#000; fill: none;"
    version="1.1"
    viewBox="0 0 1000 589"
-   width="1000px"
    id="us-map-svg"
    inkscape:version="0.48.4 r9939"
    sodipodi:docname="us.svg">
@@ -44,82 +34,64 @@
      id="defs4">
     <style
        type="text/css"
-       id="style6">path { fill-rule: evenodd; }
-   
-        /* CORE STATE STYLES */
-        #us-map-svg > path[id]:not(#outline):not(#boundaries):not([id*='-']) {
-            fill: #5c9ad5; /* Default state color - your light blue */
-            stroke: #fff;
-            stroke-width: 1.25px;
+       id="style6">
+        /* Base styles for all individual state paths */
+        /* Targets all <path> elements directly under <svg> with an ID that's not 'AK_Labels', 'HI_Labels' etc. */
+        /* Also targets paths nested under specific groups like MI */
+        #us-map-svg > path[id]:not([id*='_Labels']):not(#simplemaps_container):not(#simplemaps_zoom_out):not(#simplemaps_zoom_in),
+        #AK path, #HI path, #MI path, #DC path {
+            fill: #5c9ad5; /* Your desired default state color */
+            stroke: #fff; /* White border */
+            stroke-width: 1.25px; /* Your desired border width */
             cursor: default;
             transition: fill 0.2s ease-in-out;
+            /* Ensure fill-rule: evenodd; if not already inherited */
+            fill-rule: evenodd;
         }
 
-        #MI path, #SP path {
-            fill: #5c9ad5;
-            stroke: #fff;
-            stroke-width: 1.25px;
-            cursor: default;
-            transition: fill 0.2s ease-in-out;
-        }
-
-        /* VISITED STATE STYLE - Applied by JavaScript */
+        /* Visited State Style (applied by JavaScript) */
         path.visited {
             fill: #133b66; /* Your main blue for visited states */
             cursor: pointer;
         }
 
-        /* HOVER EFFECT FOR ALL STATE PATHS */
-        #us-map-svg > path[id]:not(#outline):not(#boundaries):not([id*='-']):hover,
-        #MI path:hover,
-        #SP path:hover {
-            fill: #2d7cbc; /* Secondary color on hover (your lighter blue) */
+        /* Hover Effect for all state paths (overrides default and visited fill) */
+        #us-map-svg > path[id]:not([id*='_Labels']):not(#simplemaps_container):not(#simplemaps_zoom_out):not(#simplemaps_zoom_in):hover,
+        #AK path:hover, #HI path:hover, #MI path:hover, #DC path:hover {
+            fill: #2d7cbc; /* Your lighter blue on hover */
             cursor: pointer;
         }
 
-        /* NON-INTERACTIVE ELEMENTS (Borders, Outlines, Rectangles) */
-        #outline, #boundaries {
-            fill: none;
-            stroke: #FFFFFF;
-            stroke-width: 1.25px;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            stroke-miterlimit: 4;
-            stroke-dasharray: none;
-            stroke-opacity: 1;
-            pointer-events: none;
+        /* Text Labels for states */
+        /* The IDs for text labels seem to be e.g., 'MA_Labels', 'MN_Labels' in this map */
+        /* And for Alaska, Hawaii, Michigan, DC, they are paths with 'Labels' in their ID, not text elements */
+        /* Let's try to target these based on the `data-name` attribute as well for robustness */
+        /* Or simply use the direct IDs that end with _Labels */
+        path[id$='_Labels'], /* Paths that are state labels (e.g., AK_Labels) */
+        text { /* General text elements, if any states use <text> tags for labels */
+             font-size: 16px; /* Adjust font size if labels are too large/small */
+             font-weight: bold;
+             fill: #ffffff; /* White text for contrast on colored states */
+             pointer-events: none; /* Crucial: allows clicks to pass through to the state paths */
+             text-anchor: middle; /* Centers text horizontally */
+             dominant-baseline: central; /* Centers text vertically */
+             font-family: Arial, sans-serif; /* A common, readable font */
         }
 
-        g rect {
-            display: none;
-            pointer-events: none;
+
+        /* Global path styles (original from map, might conflict if not handled) */
+        /* Remove or adjust if they interfere with state coloring */
+        path {
+            fill-rule: evenodd; /* Keep this as it's part of how the shapes are drawn */
         }
 
-        [id^="path4"] {
-            fill: none;
-            stroke: #b9b9b9;
-            stroke-width: 1.25px;
-            pointer-events: none;
+        /* Styles for non-state elements if they exist and need specific handling */
+        /* This map seems to use "simplemaps_container", "simplemaps_zoom_out", "simplemaps_zoom_in" */
+        #simplemaps_container, #simplemaps_zoom_out, #simplemaps_zoom_in {
+            pointer-events: none; /* Ensure these are not clickable/interactive unexpectedly */
+            display: none; /* Hide any UI elements if you don't need them */
         }
 
-        /* TEXT LABELS (State Abbreviations) */
-        #labels text,
-        g[id^="g31"] text {
-            font-size: 21px;
-            font-style: normal;
-            font-variant: normal;
-            font-weight: normal;
-            font-stretch: normal;
-            line-height: 1.25;
-            letter-spacing: 0px;
-            word-spacing: 0px;
-            fill: #ffffff; /* Make text white for good contrast on the blue states */
-            fill-opacity: 1;
-            stroke: none;
-            font-family: 'Trebuchet MS', Helvetica, sans-serif;
-            -inkscape-font-specification: 'Trebuchet MS, Helvetica, sans-serif';
-            pointer-events: none;
-        }
     </style>
   </defs>
   <metadata
