@@ -7,7 +7,7 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   id="us-map-svg" sodipodi:version="0.32"
+   id="us-map-svg"
    sodipodi:version="0.32"
    inkscape:version="0.48.0 r9654"
    sodipodi:docname="Blank_US_Map.svg"
@@ -15,7 +15,8 @@
    version="1.1"
    inkscape:export-filename="/home/dave/Paula/Desktop/Blank_US_Map.png"
    inkscape:export-xdpi="90"
-   inkscape:export-ydpi="90">
+   inkscape:export-ydpi="90"
+   viewBox="0 0 961.84375 582.625">
   <metadata
      id="metadata62">
     <rdf:RDF>
@@ -28,7 +29,7 @@
       </cc:Work>
     </rdf:RDF>
   </metadata>
-  <defs
+ <defs
      id="defs60">
     <inkscape:perspective
        sodipodi:type="inkscape:persp3d"
@@ -37,7 +38,8 @@
        inkscape:vp_z="959 : 296.5 : 1"
        inkscape:persp3d-origin="479.5 : 197.66667 : 1"
        id="perspective64" />
-     <style type="text/css">
+
+    <style type="text/css">
         /*
          * CORE STATE STYLES
          * These apply to all individual state paths by their ID, excluding specific non-state elements.
