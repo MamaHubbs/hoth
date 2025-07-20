@@ -1,4 +1,3 @@
-
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -8,9 +7,7 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="961.84375"
-   height="582.625"
-   id="us-map-svg"
+   id="us-map-svg" sodipodi:version="0.32"
    sodipodi:version="0.32"
    inkscape:version="0.48.0 r9654"
    sodipodi:docname="Blank_US_Map.svg"
@@ -18,8 +15,7 @@
    version="1.1"
    inkscape:export-filename="/home/dave/Paula/Desktop/Blank_US_Map.png"
    inkscape:export-xdpi="90"
-   inkscape:export-ydpi="90"
-   viewBox="0 0 961.84375 582.625">
+   inkscape:export-ydpi="90">
   <metadata
      id="metadata62">
     <rdf:RDF>
@@ -41,7 +37,7 @@
        inkscape:vp_z="959 : 296.5 : 1"
        inkscape:persp3d-origin="479.5 : 197.66667 : 1"
        id="perspective64" />
-    <style type="text/css">
+     <style type="text/css">
         /*
          * CORE STATE STYLES
          * These apply to all individual state paths by their ID, excluding specific non-state elements.
@@ -145,7 +141,6 @@
             -inkscape-font-specification: 'Trebuchet MS, Helvetica, sans-serif';
             pointer-events: none; /* VERY IMPORTANT: Allows clicks to pass through text to the underlying state path */
         }
-
     </style>
   </defs>
   <sodipodi:namedview
