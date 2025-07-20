@@ -1,7 +1,38 @@
 <svg id="us-map-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 959 593">
   <title>Blank map of the United States, territories not included</title>
 <defs>
-<style type="text/css">
+        <style type="text/css">
+            /* Existing SVG styles */
+            .state {fill:#2d7cbc}
+            .borders {stroke:#FFFFFF; stroke-width:2}
+            .dccircle {display:yes}
+            .separator1 {stroke:#B0B0B0; stroke-width:2}
+
+            /* NEW/MOVED STYLES FOR INTERACTIVITY */
+            /* 1. Base style for ALL paths (default, unvisited, not hovered) */
+            /* This effectively replaces your '.state' rule if you want #5c9ad5 as default */
+            #us-map-svg path { /* Targeting paths directly within this SVG document */
+                fill: #5c9ad5; /* Default state color */
+                stroke: #fff;
+                stroke-width: 2px;
+                cursor: default; /* Default cursor for all states initially */
+                transition: fill 0.2s ease-in-out; /* Smooth transition for color changes */
+            }
+
+            /* 2. Style for states that HAVE campgrounds (visited) - applied by JS */
+            #us-map-svg path.visited {
+                fill: #133b66; /* Visited state color (your main color) */
+                cursor: pointer; /* Make visited states clearly clickable */
+            }
+
+            /* 3. Hover effect for ALL paths - this must come LAST to override base and visited fill */
+            #us-map-svg path:hover {
+                fill: #2d7cbc; /* Secondary color on hover (your lighter blue) */
+                cursor: pointer; /* Ensure cursor is pointer on hover for all states */
+            }
+            /* IMPORTANT: Removed !important from these rules as they are now internal to the SVG */
+
+
 .state {fill:#2d7cbc}                        /* default color for all states not specified below */
 .borders {stroke:#FFFFFF; stroke-width:2}    /* color and width of borders between states */
 .dccircle {display:yes}                      /* set display to yes to show the circle for the District of Columbia, or none to hide it */
