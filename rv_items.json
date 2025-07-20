@@ -2,102 +2,102 @@
   "rv-basics": [
         {
       "name": "Leveling Blocks",
-      "image_url": "https://mamahubbs.github.io/hoth/image/50surge.jpg",
+      "image_url": "https://mamahubbs.github.io/hoth/shopimages/50surge.jpg",
       "purchase_link": "https://example.com/leveling-blocks"
     },
         {
       "name": "Leveling Blocks",
-      "image_url": "https://mamahubbs.github.io/hoth/image/50to15.jpg",
+      "image_url": "https://mamahubbs.github.io/hoth/shopimages/50to15.jpg",
       "purchase_link": "https://example.com/leveling-blocks"
     },
         {
       "name": "Leveling Blocks",
-      "image_url": "https://mamahubbs.github.io/hoth/image/50to30.jpg",
+      "image_url": "https://mamahubbs.github.io/hoth/shopimages/50to30.jpg",
       "purchase_link": "https://example.com/leveling-blocks"
     },
         {
       "name": "Leveling Blocks",
-      "image_url": "https://mamahubbs.github.io/hoth/image/blacktankhose.jpg",
+      "image_url": "https://mamahubbs.github.io/hoth/shopimages/blacktankhose.jpg",
       "purchase_link": "https://example.com/leveling-blocks"
     },
         {
       "name": "Leveling Blocks",
-      "image_url": "https://mamahubbs.github.io/hoth/image/blacktankhoseholder.jpg",
+      "image_url": "https://mamahubbs.github.io/hoth/shopimages/blacktankhoseholder.jpg",
       "purchase_link": "https://example.com/leveling-blocks"
     },
         {
       "name": "Leveling Blocks",
-      "image_url": "https://mamahubbs.github.io/hoth/image/levelers.jpg",
+      "image_url": "https://mamahubbs.github.io/hoth/shopimages/levelers.jpg",
       "purchase_link": "https://example.com/leveling-blocks"
     },
         {
       "name": "Leveling Blocks",
-      "image_url": "https://mamahubbs.github.io/hoth/image/blocksforjack.jpg",
+      "image_url": "https://mamahubbs.github.io/hoth/shopimages/blocksforjack.jpg",
       "purchase_link": "https://example.com/leveling-blocks"
     },
         {
       "name": "Leveling Blocks",
-      "image_url": "https://mamahubbs.github.io/hoth/image/clevercover.jpg",
+      "image_url": "https://mamahubbs.github.io/hoth/shopimages/clevercover.jpg",
       "purchase_link": "https://example.com/leveling-blocks"
     },
         {
       "name": "Leveling Blocks",
-      "image_url": "https://mamahubbs.github.io/hoth/image/drinkinghose.jpg",
+      "image_url": "https://mamahubbs.github.io/hoth/shopimages/drinkinghose.jpg",
       "purchase_link": "https://example.com/leveling-blocks"
     },
         {
       "name": "Leveling Blocks",
-      "image_url": "https://mamahubbs.github.io/hoth/image/hitchchainholder.jpg",
+      "image_url": "https://mamahubbs.github.io/hoth/shopimages/hitchchainholder.jpg",
       "purchase_link": "https://example.com/leveling-blocks"
     },
         {
       "name": "Leveling Blocks",
-      "image_url": "https://mamahubbs.github.io/hoth/image/insetventcover.jpg",
+      "image_url": "https://mamahubbs.github.io/hoth/shopimages/insetventcover.jpg",
       "purchase_link": "https://example.com/leveling-blocks"
     },
         {
       "name": "Anderson Jack Blocks",
-      "image_url": "https://mamahubbs.github.io/hoth/image/jackblocks.jpg",
+      "image_url": "https://mamahubbs.github.io/hoth/shopimages/jackblocks.jpg",
       "purchase_link": "https://amzn.to/37XBjg4"
     },
     {
       "name": "Easy Roll-On Levelers with Mat",
-      "image_url": "https://mamahubbs.github.io/hoth/image/levelers.jpg",
+      "image_url": "https://mamahubbs.github.io/hoth/shopimages/levelers.jpg",
       "purchase_link": "https://amzn.to/2CBa9QP"
     },
     {
       "name": "Sewer Hose",
-      "image_url": "https://mamahubbs.github.io/hoth/image/maxxairventcovers.jpg",
+      "image_url": "https://mamahubbs.github.io/hoth/shopimages/maxxairventcovers.jpg",
       "purchase_link": "https://example.com/sewer-hose"
     },
     {
       "name": "Fresh Water Hose",
-      "image_url": "https://mamahubbs.github.io/hoth/image/ratchetstraps.jpg",
+      "image_url": "https://mamahubbs.github.io/hoth/shopimages/ratchetstraps.jpg",
       "purchase_link": "https://example.com/fresh-water-hose"
     },
     {
       "name": "Surge Protector",
-      "image_url": "https://mamahubbs.github.io/hoth/image/stabilizingpads.jpg",
+      "image_url": "https://mamahubbs.github.io/hoth/shopimages/stabilizingpads.jpg",
       "purchase_link": "https://example.com/surge-protector"
     },
     {
       "name": "Wheel Chocks",
-      "image_url": "https://mamahubbs.github.io/hoth/image/tstblacktanktabs.jpg",
+      "image_url": "https://mamahubbs.github.io/hoth/shopimages/tstblacktanktabs.jpg",
       "purchase_link": "https://example.com/wheel-chocks"
     },
     {
       "name": "Water Filter",
-      "image_url": "https://mamahubbs.github.io/hoth/image/waterfilter.jpg",
+      "image_url": "https://mamahubbs.github.io/hoth/shopimages/waterfilter.jpg",
       "purchase_link": "https://example.com/water-filter"
     },
         {
       "name": "Water Filter",
-      "image_url": "https://mamahubbs.github.io/hoth/image/waterpressureregulator.jpg",
+      "image_url": "https://mamahubbs.github.io/hoth/shopimageswaterpressureregulator.jpg",
       "purchase_link": "https://example.com/water-filter"
     },
         {
       "name": "Wheel Chocks (Get one for each trailer wheel)",
-      "image_url": "https://mamahubbs.github.io/hoth/image/wheelchocks.jpg",
+      "image_url": "https://mamahubbs.github.io/hoth/shopimages/wheelchocks.jpg",
       "purchase_link": "https://amzn.to/2zWmduP"
     }
   ],
