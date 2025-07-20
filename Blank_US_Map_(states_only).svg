@@ -20,7 +20,7 @@
    version="1.1"
    viewBox="0 0 1000 589"
    width="1000px"
-   id="svg"
+   id="us-map-svg"
    inkscape:version="0.48.4 r9939"
    sodipodi:docname="us.svg">
   <sodipodi:namedview
@@ -47,7 +47,83 @@
      id="defs4">
     <style
        type="text/css"
-       id="style6">path { fill-rule: evenodd; }</style>
+       id="style6">path { fill-rule: evenodd; }
+   
+        /* CORE STATE STYLES */
+        #us-map-svg > path[id]:not(#outline):not(#boundaries):not([id*='-']) {
+            fill: #5c9ad5; /* Default state color - your light blue */
+            stroke: #fff;
+            stroke-width: 1.25px;
+            cursor: default;
+            transition: fill 0.2s ease-in-out;
+        }
+
+        #MI path, #SP path {
+            fill: #5c9ad5;
+            stroke: #fff;
+            stroke-width: 1.25px;
+            cursor: default;
+            transition: fill 0.2s ease-in-out;
+        }
+
+        /* VISITED STATE STYLE - Applied by JavaScript */
+        path.visited {
+            fill: #133b66; /* Your main blue for visited states */
+            cursor: pointer;
+        }
+
+        /* HOVER EFFECT FOR ALL STATE PATHS */
+        #us-map-svg > path[id]:not(#outline):not(#boundaries):not([id*='-']):hover,
+        #MI path:hover,
+        #SP path:hover {
+            fill: #2d7cbc; /* Secondary color on hover (your lighter blue) */
+            cursor: pointer;
+        }
+
+        /* NON-INTERACTIVE ELEMENTS (Borders, Outlines, Rectangles) */
+        #outline, #boundaries {
+            fill: none;
+            stroke: #FFFFFF;
+            stroke-width: 1.25px;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 4;
+            stroke-dasharray: none;
+            stroke-opacity: 1;
+            pointer-events: none;
+        }
+
+        g rect {
+            display: none;
+            pointer-events: none;
+        }
+
+        [id^="path4"] {
+            fill: none;
+            stroke: #b9b9b9;
+            stroke-width: 1.25px;
+            pointer-events: none;
+        }
+
+        /* TEXT LABELS (State Abbreviations) */
+        #labels text,
+        g[id^="g31"] text {
+            font-size: 21px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-stretch: normal;
+            line-height: 1.25;
+            letter-spacing: 0px;
+            word-spacing: 0px;
+            fill: #ffffff; /* Make text white for good contrast on the blue states */
+            fill-opacity: 1;
+            stroke: none;
+            font-family: 'Trebuchet MS', Helvetica, sans-serif;
+            -inkscape-font-specification: 'Trebuchet MS, Helvetica, sans-serif';
+            pointer-events: none;
+        }
+    </style>
   </defs>
   <metadata
      id="metadata8">
