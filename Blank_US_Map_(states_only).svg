@@ -35,63 +35,40 @@
     <style
        type="text/css"
        id="style6">
-        /* Base styles for all individual state paths */
-        /* Targets all <path> elements directly under <svg> with an ID that's not 'AK_Labels', 'HI_Labels' etc. */
-        /* Also targets paths nested under specific groups like MI */
         #us-map-svg > path[id]:not([id*='_Labels']):not(#simplemaps_container):not(#simplemaps_zoom_out):not(#simplemaps_zoom_in),
         #AK path, #HI path, #MI path, #DC path {
-            fill: #5c9ad5; /* Your desired default state color */
-            stroke: #fff; /* White border */
-            stroke-width: 1.25px; /* Your desired border width */
+            fill: #5c9ad5;
+            stroke: #fff;
+            stroke-width: 1.25px;
             cursor: default;
             transition: fill 0.2s ease-in-out;
-            /* Ensure fill-rule: evenodd; if not already inherited */
             fill-rule: evenodd;
         }
-
-        /* Visited State Style (applied by JavaScript) */
         path.visited {
             fill: #133b66; /* Your main blue for visited states */
             cursor: pointer;
         }
-
-        /* Hover Effect for all state paths (overrides default and visited fill) */
         #us-map-svg > path[id]:not([id*='_Labels']):not(#simplemaps_container):not(#simplemaps_zoom_out):not(#simplemaps_zoom_in):hover,
         #AK path:hover, #HI path:hover, #MI path:hover, #DC path:hover {
             fill: #2d7cbc; /* Your lighter blue on hover */
             cursor: pointer;
         }
-
-        /* Text Labels for states */
-        /* The IDs for text labels seem to be e.g., 'MA_Labels', 'MN_Labels' in this map */
-        /* And for Alaska, Hawaii, Michigan, DC, they are paths with 'Labels' in their ID, not text elements */
-        /* Let's try to target these based on the `data-name` attribute as well for robustness */
-        /* Or simply use the direct IDs that end with _Labels */
-        path[id$='_Labels'], /* Paths that are state labels (e.g., AK_Labels) */
-        text { /* General text elements, if any states use <text> tags for labels */
-             font-size: 16px; /* Adjust font size if labels are too large/small */
+{
+             font-size: 16px;
              font-weight: bold;
-             fill: #ffffff; /* White text for contrast on colored states */
-             pointer-events: none; /* Crucial: allows clicks to pass through to the state paths */
-             text-anchor: middle; /* Centers text horizontally */
-             dominant-baseline: central; /* Centers text vertically */
-             font-family: Arial, sans-serif; /* A common, readable font */
+             fill: #ffffff;
+             pointer-events: none;
+             text-anchor: middle;
+             dominant-baseline: central;
+             font-family: Arial, sans-serif;
         }
-
-
-        /* Global path styles (original from map, might conflict if not handled) */
-        /* Remove or adjust if they interfere with state coloring */
         path {
-            fill-rule: evenodd; /* Keep this as it's part of how the shapes are drawn */
+            fill-rule: evenodd;
         }
-
-        /* Styles for non-state elements if they exist and need specific handling */
-        /* This map seems to use "simplemaps_container", "simplemaps_zoom_out", "simplemaps_zoom_in" */
-        #simplemaps_container, #simplemaps_zoom_out, #simplemaps_zoom_in {
-            pointer-events: none; /* Ensure these are not clickable/interactive unexpectedly */
-            display: none; /* Hide any UI elements if you don't need them */
+{
+            pointer-events: none;
+            display: none;
         }
-
     </style>
   </defs>
   <metadata
