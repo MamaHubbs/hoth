@@ -663,15 +663,41 @@
                                     <p>${review.text}</p>
                                 `;
 
-// Only display the YouTube video section if a valid, non-empty URL exists
-                                if (review.youtubeVideoUrl && review.youtubeVideoUrl.trim() !== "") {
-                                    const videoContainer = document.createElement('div');
-                                    videoContainer.className = 'video-container';
-                                    videoContainer.innerHTML = `<iframe src="${review.youtubeVideoUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
-                                    reviewCard.appendChild(videoContainer);
-                                }
-                                reviewsContainer.appendChild(reviewCard);
-                            });
+review.campgrounds.forEach(review => {
+    // ... existing code for reviewCard creation ...
+
+    // Condition to check if YouTube video section should be displayed
+    // It will NOT display if:
+    // 1. review.youtubeVideoUrl is null or undefined
+    // 2. review.youtubeVideoUrl is an empty string or contains only whitespace
+    // 3. review.youtubeVideoUrl is "N/A" (case-insensitive)
+    if (review.youtubeVideoUrl &&
+        review.youtubeVideoUrl.trim() !== "" &&
+        review.youtubeVideoUrl.trim().toLowerCase() !== "n/a") {
+
+        // Step 1: Extract the YouTube Video ID from the URL
+        // This regex extracts the 11-character video ID from various YouTube URL formats.
+        const youtubeRegex = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/;
+        const match = review.youtubeVideoUrl.match(youtubeRegex);
+
+        // Step 2: Check if a valid 11-character YouTube video ID was found
+        if (match && match[1]) {
+            const videoId = match[1];
+            // Construct the correct embed URL for the iframe
+            const embedUrl = `https://www.youtube.com/embed/${videoId}`;
+
+            const videoContainer = document.createElement('div');
+            videoContainer.className = 'video-container';
+            videoContainer.innerHTML = `<iframe src="${embedUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
+            reviewCard.appendChild(videoContainer);
+        } else {
+            // Optional: Log a warning to the console if a non-empty, non-"N/A" URL
+            // is still not a valid YouTube video format. This helps debugging.
+            console.warn(`Skipping video for invalid YouTube URL: ${review.youtubeVideoUrl}`);
+        }
+    }
+    reviewsContainer.appendChild(reviewCard);
+});
                         } else {
                             reviewsContainer.innerHTML = '<p>No reviews available for this campground.</p>';
                         }
