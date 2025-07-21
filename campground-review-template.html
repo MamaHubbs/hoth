@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Campground Review</title>
-    <link href="lightbox2/css/lightbox.min.css" rel="stylesheet" /> <style>
+    <link href="lightbox2/css/lightbox.min.css" rel="stylesheet" />
+    <style>
         body {
-            font-family: Helvetica, sans-serif; /* Helvetica for body text, fallback to sans-serif */
+            font-family: Helvetica, sans-serif;
             line-height: 1.4;
             margin: 20px;
             background-color: #f4f4f4;
@@ -21,35 +22,30 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         h1 {
-            font-family: Arial, sans-serif; /* Arial for h1 */
-            color: #133b66; /* Main color for primary heading */
+            font-family: Arial, sans-serif;
+            color: #133b66;
             text-align: center;
-            margin-bottom: 25px; /* Spacing below title, above grid content */
-            font-size: 2em; /* Keep h1 at 2em */
+            margin-bottom: 25px;
+            font-size: 2em;
         }
-        
-        /* Style for the overall rating when it's INSIDE the general info box */
         .overall-rating-general-info {
-            text-align: left; /* Aligns to the left within its column */
-            font-size: 1em; /* Smaller, closer to body text size */
-            margin-bottom: 15px; /* Space below rating in column */
-            color: #ff9800; /* Star color */
+            text-align: left;
+            font-size: 1em;
+            margin-bottom: 15px;
+            color: #ff9800;
             font-weight: bold;
         }
-
         h2 {
-            font-family: Arial, sans-serif; /* Arial for h2 */
-            color: #2d7cbc; /* Secondary color for section headings */
+            font-family: Arial, sans-serif;
+            color: #2d7cbc;
             border-bottom: 1px solid #eee;
             padding-bottom: 5px;
             margin-top: 15px;
-            font-size: 1.2em; /* All h2s are now 1.2em (smaller than 1.3em) */
+            font-size: 1.2em;
         }
-
-        h2#siteFeaturesHeading { 
-            margin-top: 30px; /* Specific margin-top for Site Features H2 after Amenities */
+        h2#siteFeaturesHeading {
+            margin-top: 30px;
         }
-        
         p {
             margin-bottom: 10px;
         }
@@ -66,46 +62,38 @@
             border-radius: 4px;
         }
         a {
-            color: #2d7cbc; /* Secondary color for links */
+            color: #2d7cbc;
             text-decoration: none;
         }
         a:hover {
             text-decoration: underline;
         }
         .rating {
-            /* This style is now mainly for the individual review ratings */
-            font-size: 1.2em; /* Keep individual review rating size */
+            font-size: 1.2em;
             font-weight: bold;
             color: #ff9800;
         }
-        /* Adjusted section-grid for 2 columns where relevant */
         .section-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 15px;
             margin-bottom: 20px;
         }
-        /* Style for the individual boxes within the grid */
-        .section-grid > div { /* Target direct children of section-grid */
+        .section-grid > div {
             background-color: #f9f9f9;
             padding: 10px;
             border-radius: 5px;
-            border: 1px solid #eee; /* This provides the outer border */
+            border: 1px solid #eee;
         }
-
-        /* Styling for the nested boxes within the main left column */
         .nested-box {
-            background-color: #f9f9f9; /* Same as other grid boxes */
+            background-color: #f9f9f9;
             padding: 10px;
             border-radius: 5px;
-            /* Border removed from here to prevent double border */
-            margin-bottom: 15px; /* Space between nested boxes */
+            margin-bottom: 15px;
         }
         .nested-box:last-child {
-            margin-bottom: 0; /* No margin for the last nested box */
+            margin-bottom: 0;
         }
-
-
         .review-card {
             background-color: #e6f7ff;
             padding: 15px;
@@ -135,19 +123,14 @@
             height: 100%;
             border: none;
         }
-
-
-        /* Specific styles for Other Activities list items (transparent background) */
         #otherActivities ul li {
             background-color: transparent;
             padding: 0;
-            margin-bottom: 5px; /* Adjusted for consistency */
+            margin-bottom: 5px;
         }
-
-        /* Map container styling */
         .map-container {
             overflow: hidden;
-            height: 300px; /* Fixed height in pixels */
+            height: 300px;
             position: relative;
             margin-top: 15px;
             border-radius: 5px;
@@ -161,18 +144,14 @@
             position: absolute;
             border: 0;
         }
-
-        /* Styling for amenities list items to avoid extra padding from generic ul li */
         #amenitiesList li {
-            background-color: transparent; /* Inherit parent background */
+            background-color: transparent;
             padding: 0;
             margin-bottom: 5px;
         }
-
-        /* Photo Gallery Styling */
         .photo-gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmin(150px, 1fr));
             gap: 15px;
             margin-top: 20px;
             margin-bottom: 30px;
@@ -204,48 +183,41 @@
             align-items: center;
             justify-content: center;
         }
-
         .favorite-sites-box {
-            border: 1px solid #2d7cbc; /* Using secondary color for border */
-            background-color: #e5f2ff; /* Your desired background color */
-            padding: 10px; /* Adjusted padding to match nested-box */
-            margin-top: 25px; /* Restored margin for spacing from Site Features */
+            border: 1px solid #2d7cbc;
+            background-color: #e5f2ff;
+            padding: 10px;
+            margin-top: 25px;
             border-radius: 5px;
             margin-left: 0;
             margin-right: 0;
-            padding-top: 5px; /* Reduce space at the top of the box */
+            padding-top: 5px;
         }
-
         .favorite-sites-box h2 {
             margin-top: 0;
-            margin-bottom: 0px; 
+            margin-bottom: 0px;
             border-bottom: none;
-            padding-bottom: 0px; 
-            line-height: 1.2; 
+            padding-bottom: 0px;
+            line-height: 1.2;
         }
-
         .favorite-sites-box p {
-            margin-top: 0px; 
-            margin-bottom: 0px; /* Ensure 0px for tight spacing */
+            margin-top: 0px;
+            margin-bottom: 0px;
         }
-
-        /* NEW: Styles for dynamically generated Nearby Essentials list items */
         #nearbyEssentialsContainer ul li {
             background-color: transparent;
             padding: 0;
-            margin-bottom: 5px; /* Adjusted for consistency */
+            margin-bottom: 5px;
         }
-
-        /* Navigation Bar Styles (re-used for campground review) */
         .navbar {
-            background-color: #133b66; /* Your main color */
+            background-color: #133b66;
             padding: 10px 0;
             margin-bottom: 20px;
             border-radius: 5px;
             text-align: center;
         }
         .navbar a {
-            color: #fff; /* White text for links */
+            color: #fff;
             text-decoration: none;
             font-family: Arial, sans-serif;
             font-size: 1.1em;
@@ -255,7 +227,7 @@
             transition: background-color 0.3s ease;
         }
         .navbar a:hover {
-            background-color: #2d7cbc; /* Your secondary color on hover */
+            background-color: #2d7cbc;
             text-decoration: none;
         }
     </style>
@@ -263,16 +235,14 @@
 <body>
     <div class="container">
         <h1 id="campgroundName">Loading Campground Review...</h1>
-        
+
         <div class="navbar">
             <a id="returnToStateLink" href="#">Return to State List</a>
             <a href="us-map-landing-page.html">Return to US Map</a>
         </div>
 
         <div class="section-grid">
-            
             <div>
-                
                 <div class="nested-box">
                     <h2>General Info</h2>
                     <p id="overallStarRating" class="overall-rating-general-info"></p>
@@ -285,26 +255,25 @@
                 </div>
             </div>
 
-            
             <div>
                 <h2>Amenities</h2>
                 <ul id="amenitiesList">
-                    </ul>
+                </ul>
 
                 <h2 id="siteFeaturesHeading">Site Features</h2>
                 <p id="siteFeatures"></p>
 
-                <div class="nested-box favorite-sites-box"> 
+                <div class="nested-box favorite-sites-box">
                     <h2>Favorite Sites</h2>
-                    <p><span id="favoriteSites"></span></p> 
+                    <p><span id="favoriteSites"></span></p>
                 </div>
             </div>
         </div>
         <div id="activitiesContainer">
-            </div>
+        </div>
 
         <div id="nearbyEssentialsContainer">
-            </div>
+        </div>
 
         <h2>Photo Gallery</h2>
         <div id="photoGalleryContainer" class="photo-gallery-grid">
@@ -318,17 +287,17 @@
 
     </div>
 
-    <script src="lightbox2/js/lightbox-plus-jquery.min.js"></script> <script src="shared.js"></script> 
+    <script src="lightbox2/js/lightbox-plus-jquery.min.js"></script>
+    <script src="shared.js"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // --- Lightbox2 specific configuration ---
-            // Disable Lightbox2's default scroll behavior as we'll handle it
             lightbox.option({
-                'disableScrolling': true // This prevents Lightbox from trying to fix its own scroll, which can conflict in iframe
+                'disableScrolling': true
             });
 
-            const campgroundFilename = getQueryParameter('campground'); 
+            const campgroundFilename = getQueryParameter('campground');
 
             if (!campgroundFilename) {
                 document.getElementById('campgroundName').textContent = "Error: Campground filename not specified in URL.";
@@ -336,7 +305,7 @@
                 return;
             }
 
-            const jsonUrl = getCampgroundJsonUrl(campgroundFilename); 
+            const jsonUrl = getCampgroundJsonUrl(campgroundFilename);
 
             fetch(jsonUrl)
                 .then(response => {
@@ -346,19 +315,14 @@
                     return response.json();
                 })
                 .then(data => {
-                    const campground = data; 
+                    const campground = data;
 
                     if (campground) {
                         // --- NAVIGATION LOGIC ---
-                        // Get the state code from the current campground data
                         const stateCode = campground.state_code;
                         const returnToStateLink = document.getElementById('returnToStateLink');
                         if (stateCode) {
                             returnToStateLink.href = `state-page-template.html?state=${stateCode}`;
-                            // The target="_parent" is kept to navigate the parent iframe
-                            // or replace the content of the top-level Browse context.
-                            // If this page is loaded in an iframe, this will navigate the iframe to the state page.
-                            // If this page is opened directly, it will navigate the browser to the state page.
                         } else {
                             returnToStateLink.textContent = "Return to State List (N/A)";
                             returnToStateLink.style.cursor = "default";
@@ -366,14 +330,13 @@
                         }
                         // --- END NAVIGATION LOGIC ---
 
-
                         // Calculate Overall Star Rating dynamically
                         let totalStars = 0;
                         let numberOfReviews = 0;
 
                         if (campground.reviews && campground.reviews.length > 0) {
                             campground.reviews.forEach(review => {
-                                if (typeof review.starRating === 'number') { 
+                                if (typeof review.starRating === 'number') {
                                     totalStars += review.starRating;
                                     numberOfReviews++;
                                 } else if (typeof review.starRating === 'string') {
@@ -390,29 +353,27 @@
                         if (numberOfReviews > 0) {
                             overallAverageRating = totalStars / numberOfReviews;
                         }
-                        
-                        // Populate Overall Rating in General Info box
+
                         document.getElementById('overallStarRating').textContent = "Overall Rating: " + "⭐".repeat(Math.round(overallAverageRating)) + ` (${overallAverageRating.toFixed(1)})`;
 
                         // General Info - Populating the box now just contains address/website/map
                         document.getElementById('campgroundName').textContent = campground.name;
                         document.getElementById('address').textContent = campground.address;
                         document.getElementById('website').href = campground.website;
-                        
+
                         // Populate Reservations Link
                         const reservationsLink = document.getElementById('reservations');
                         if (campground.reservations) {
                             reservationsLink.href = campground.reservations;
                             reservationsLink.textContent = "Click Here";
                         } else {
-                            reservationsLink.textContent = "N/A"; 
-                            reservationsLink.removeAttribute('href'); 
+                            reservationsLink.textContent = "N/A";
+                            reservationsLink.removeAttribute('href');
                         }
 
-
                         // OpenStreetMap Embedding
-                        const googleMapIframe = document.getElementById('googleMap'); 
-                        const zoomLevel = 15; 
+                        const googleMapIframe = document.getElementById('googleMap');
+                        const zoomLevel = 15;
                         googleMapIframe.src = `https://www.openstreetmap.org/export/embed.html?bbox=${campground.longitude - 0.005},${campground.latitude - 0.002},${campground.longitude + 0.005},${campground.latitude + 0.002}&marker=${campground.latitude},${campground.longitude}&zoom=${zoomLevel}&layer=mapnik`;
 
                         // Favorite Sites - Now under Site Features
@@ -420,7 +381,7 @@
 
                         // Amenities - Dynamic Population from the new structure
                         const amenitiesList = document.getElementById('amenitiesList');
-                        amenitiesList.innerHTML = ''; 
+                        amenitiesList.innerHTML = '';
                         const amenities = campground.amenities;
                         if (amenities) {
                             const amenityOrder = [
@@ -438,9 +399,9 @@
                                     if (typeof value === 'boolean') {
                                         value = value ? "Yes" : "No";
                                     } else if (Array.isArray(value)) {
-                                        value = value.join(', '); 
+                                        value = value.join(', ');
                                     }
-                                    
+
                                     li.innerHTML = `<strong>${displayKey}:</strong> ${value}`;
                                     amenitiesList.appendChild(li);
                                 }
@@ -450,14 +411,14 @@
                         }
 
                         // Site Features - Dynamic Population
-                        document.getElementById('siteFeatures').innerHTML = ''; 
+                        document.getElementById('siteFeatures').innerHTML = '';
                         const siteFeaturesP = document.createElement('p');
                         const siteFeatures = campground.siteFeatures;
                         if (siteFeatures) {
                             const featuresArray = [];
-                            
+
                             const featureKeys = [
-                                "level", "dirt", "gravel", "paved", "patio", "shade", "fireRing", 
+                                "level", "dirt", "gravel", "paved", "patio", "shade", "fireRing",
                                 "picnicTable", "grill", "otherNotes"
                             ];
 
@@ -486,19 +447,19 @@
                         }
 
                         // Activities - Dynamic Population
-                        const activitiesContainer = document.getElementById('activitiesContainer'); // Target the new container
-                        activitiesContainer.innerHTML = '<h2>Activities</h2><div class="section-grid"><div></div><div></div></div>'; // Re-create structure
+                        const activitiesContainer = document.getElementById('activitiesContainer');
+                        activitiesContainer.innerHTML = '<h2>Activities</h2><div class="section-grid"><div></div><div></div></div>';
                         const activitiesGridDiv1 = activitiesContainer.querySelector('.section-grid div:first-child');
                         const activitiesGridDiv2 = activitiesContainer.querySelector('.section-grid div:last-child');
-                        
+
                         const activities = campground.activities;
                         if (activities) {
                             const activityOrderLeft = ["waterfront", "fishing", "hiking", "biking"];
                             const activityOrderRight = ["gameRoom", "otherActivities"];
 
                             const ulLeft = document.createElement('ul');
-                            ulLeft.style.listStyleType = 'none'; // No bullets for these
-                            ulLeft.style.padding = '0'; // No padding
+                            ulLeft.style.listStyleType = 'none';
+                            ulLeft.style.padding = '0';
                             activitiesGridDiv1.appendChild(ulLeft);
 
                             activityOrderLeft.forEach(key => {
@@ -518,8 +479,8 @@
                             });
 
                             const ulRight = document.createElement('ul');
-                            ulRight.style.listStyleType = 'disc'; // Bullets for these
-                            ulRight.style.paddingLeft = '20px'; // Padding for bullets
+                            ulRight.style.listStyleType = 'disc';
+                            ulRight.style.paddingLeft = '20px';
                             activitiesGridDiv2.appendChild(ulRight);
 
                             activityOrderRight.forEach(key => {
@@ -533,8 +494,7 @@
                                     } else if (Array.isArray(value)) {
                                         value = value.join(', ');
                                     }
-                                    // Special handling for "Other Activities"
-                                    if (key === "otherActivities") { 
+                                    if (key === "otherActivities") {
                                         li.innerHTML = `<strong>${displayKey}:</strong>`;
                                         const otherUl = document.createElement('ul');
                                         otherUl.style.listStyleType = 'circle';
@@ -559,23 +519,23 @@
                         }
 
                         // Nearby Essentials - Dynamic Population
-                        const nearbyEssentialsContainer = document.getElementById('nearbyEssentialsContainer'); // Target the new container
-                        nearbyEssentialsContainer.innerHTML = '<h2>Nearby Essentials</h2><div class="section-grid"><div></div><div></div></div>'; // Re-create structure
+                        const nearbyEssentialsContainer = document.getElementById('nearbyEssentialsContainer');
+                        nearbyEssentialsContainer.innerHTML = '<h2>Nearby Essentials</h2><div class="section-grid"><div></div><div></div></div>';
                         const nearbyGridDiv1 = nearbyEssentialsContainer.querySelector('.section-grid div:first-child');
                         const nearbyGridDiv2 = nearbyEssentialsContainer.querySelector('.section-grid div:last-child');
-                        
+
                         const nearby = campground.nearby;
                         if (nearby) {
                             // Left side: Shopping, Food
                             const ulLeftNearby = document.createElement('ul');
                             ulLeftNearby.style.listStyleType = 'none';
                             ulLeftNearby.style.padding = '0';
-                            
+
                             if (nearby.shopping) {
                                 const li = document.createElement('li');
                                 if (Array.isArray(nearby.shopping)) {
                                     li.innerHTML = `<strong>Shopping:</strong> ${nearby.shopping.join(', ')}`;
-                                } else { 
+                                } else {
                                     li.innerHTML = `<strong>Shopping:</strong> ${typeof nearby.shopping === 'boolean' ? (nearby.shopping ? "Yes" : "No") : nearby.shopping}`;
                                 }
                                 ulLeftNearby.appendChild(li);
@@ -584,7 +544,7 @@
                                 const li = document.createElement('li');
                                 if (Array.isArray(nearby.food)) {
                                     li.innerHTML = `<strong>Food:</strong> ${nearby.food.join(', ')}`;
-                                } else { 
+                                } else {
                                     li.innerHTML = `<strong>Food:</strong> ${typeof nearby.food === 'boolean' ? (nearby.food ? "Yes" : "No") : nearby.food}`;
                                 }
                                 ulLeftNearby.appendChild(li);
@@ -608,40 +568,31 @@
 
                         // Photo Gallery - Adjusted for Lightbox
                         const photoGalleryContainer = document.getElementById('photoGalleryContainer');
-                        photoGalleryContainer.innerHTML = ''; 
+                        photoGalleryContainer.innerHTML = '';
                         if (campground.photoGallery && campground.photoGallery.length > 0) {
-                            // Assign a unique gallery name for this campground using its ID
                             const galleryName = `${campground.id}-gallery`;
 
                             campground.photoGallery.forEach(photo => {
                                 const photoItem = document.createElement('div');
                                 photoItem.className = 'photo-gallery-item';
-                                
-                                // Lightbox requires an <a> tag pointing to the full-size image
-                                // data-lightbox attribute groups images into a gallery
-                                // data-title attribute provides the caption for the lightbox popup
+
                                 photoItem.innerHTML = `
-                                    <a href="${photo.url}" data-lightbox="${galleryName}" data-title="${photo.caption || ''}" class="lightbox-trigger"> <img src="${photo.url}" alt="${photo.caption || 'Campground Photo'}">
+                                    <a href="${photo.url}" data-lightbox="${galleryName}" data-title="${photo.caption || ''}" class="lightbox-trigger">
+                                        <img src="${photo.url}" alt="${photo.caption || 'Campground Photo'}">
                                     </a>
                                     ${photo.caption ? `<div class="caption">${photo.caption}</div>` : ''}
                                 `;
                                 photoGalleryContainer.appendChild(photoItem);
                             });
 
-                            // --- NEW: Add event listener to scroll iframe to top on image click ---
-                            // We need to wait for a tiny moment for Lightbox to attach its own handlers
-                            // Or bind before Lightbox does it, which means doing it for a parent container
-                            // A safer way is to use event delegation on the container
-                            setTimeout(() => { // Give Lightbox a moment to set up its events
+                            setTimeout(() => {
                                 const triggers = photoGalleryContainer.querySelectorAll('.lightbox-trigger');
                                 triggers.forEach(trigger => {
                                     trigger.addEventListener('click', function() {
-                                        // Scroll the iframe's content to the top
-                                        window.scrollTo(0, 0); 
+                                        window.scrollTo(0, 0);
                                     });
                                 });
-                            }, 100); // Small delay
-                            // --- END NEW ---
+                            }, 100);
 
                         } else {
                             photoGalleryContainer.innerHTML = '<p>No photos available for this campground.</p>';
@@ -656,48 +607,37 @@
                                 reviewCard.className = 'review-card';
                                 reviewCard.innerHTML = `
                                     <p class="review-meta">
-                                        <strong>Visit Date:</strong> ${review.visitDate} | 
-                                        <strong>Review Date:</strong> ${review.reviewDate} | 
+                                        <strong>Visit Date:</strong> ${review.visitDate} |
+                                        <strong>Review Date:</strong> ${review.reviewDate} |
                                         <strong>Rating:</strong> ${"⭐".repeat(parseInt(review.starRating))}
                                     </p>
                                     <p>${review.text}</p>
                                 `;
 
-review.campgrounds.forEach(review => {
-    // ... existing code for reviewCard creation ...
+                                // YOUTUBE VIDEO LOGIC - CORRECTLY PLACED HERE
+                                if (review.youtubeVideoUrl &&
+                                    review.youtubeVideoUrl.trim() !== "" &&
+                                    review.youtubeVideoUrl.trim().toLowerCase() !== "n/a") {
 
-    // Condition to check if YouTube video section should be displayed
-    // It will NOT display if:
-    // 1. review.youtubeVideoUrl is null or undefined
-    // 2. review.youtubeVideoUrl is an empty string or contains only whitespace
-    // 3. review.youtubeVideoUrl is "N/A" (case-insensitive)
-    if (review.youtubeVideoUrl &&
-        review.youtubeVideoUrl.trim() !== "" &&
-        review.youtubeVideoUrl.trim().toLowerCase() !== "n/a") {
+                                    const youtubeRegex = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/;
+                                    const match = review.youtubeVideoUrl.match(youtubeRegex);
 
-        // Step 1: Extract the YouTube Video ID from the URL
-        // This regex extracts the 11-character video ID from various YouTube URL formats.
-        const youtubeRegex = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/;
-        const match = review.youtubeVideoUrl.match(youtubeRegex);
+                                    if (match && match[1]) {
+                                        const videoId = match[1];
+                                        // Use the correct YouTube embed domain for iframes to avoid issues:
+                                        // https://www.youtube.com/embed/VIDEO_ID
+                                        const embedUrl = `https://www.youtube.com/embed/${videoId}`;
 
-        // Step 2: Check if a valid 11-character YouTube video ID was found
-        if (match && match[1]) {
-            const videoId = match[1];
-            // Construct the correct embed URL for the iframe
-            const embedUrl = `https://www.youtube.com/embed/${videoId}`;
-
-            const videoContainer = document.createElement('div');
-            videoContainer.className = 'video-container';
-            videoContainer.innerHTML = `<iframe src="${embedUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
-            reviewCard.appendChild(videoContainer);
-        } else {
-            // Optional: Log a warning to the console if a non-empty, non-"N/A" URL
-            // is still not a valid YouTube video format. This helps debugging.
-            console.warn(`Skipping video for invalid YouTube URL: ${review.youtubeVideoUrl}`);
-        }
-    }
-    reviewsContainer.appendChild(reviewCard);
-});
+                                        const videoContainer = document.createElement('div');
+                                        videoContainer.className = 'video-container';
+                                        videoContainer.innerHTML = `<iframe src="${embedUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
+                                        reviewCard.appendChild(videoContainer);
+                                    } else {
+                                        console.warn(`Skipping video for invalid YouTube URL format (non-empty/non-N/A): ${review.youtubeVideoUrl}`);
+                                    }
+                                }
+                                reviewsContainer.appendChild(reviewCard);
+                            });
                         } else {
                             reviewsContainer.innerHTML = '<p>No reviews available for this campground.</p>';
                         }
