@@ -1,0 +1,28 @@
+{
+  "id": "high-pressure-shower-head",
+  "name": "RV High Pressure Shower Head with Handheld On Off Switch",
+  "cost": "$20",
+  "purchased": "Amazon",
+  "productlink": "https://amzn.to/46p2HnF",
+  "affililiateblurb": "Amazon links may earn me a small commission."
+
+  "photoGallery": [
+    {
+      "url": "https://mamahubbs.github.io/hoth/image/pohicksite50.JPG",
+      "caption": "Site 50"
+    },
+    {
+      "url": "https://mamahubbs.github.io/hoth/image/pohickbay.JPG",
+      "caption": "Pohick Bay"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewId": "high-pressure-shower-head",
+      "reviewDate": "07-23-2025",
+      "starRating": 5,
+      "text": "I replaced the low-flow shower head in my camping trailer with a new high-pressure model—and the difference is incredible! If your RV or camper shower feels like a trickle, this might be the fix you need. As an added bonus, it is super easy to install—no tools required!",
+      "youtubeVideoUrl": "https://www.youtube.com/embed/-jqPkn7Fs40?si=nYmng_mLTv678GtP"
+    }
+  ]
+}
