@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Review</title>
+    <link href="lightbox2/css/lightbox.min.css" rel="stylesheet" /> <style>
+        body {
+            font-family: Helvetica, sans-serif;
+            line-height: 1.4;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            font-family: Arial, sans-serif;
+            color: #133b66;
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 2em;
+        }
+        
+        /* General h2 styling (reused from campground template) */
+        h2 {
+            font-family: Arial, sans-serif;
+            color: #2d7cbc;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+            margin-top: 25px;
+            font-size: 1.2em;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+        strong {
+            color: #555;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            margin-bottom: 5px;
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+        a {
+            color: #2d7cbc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .rating {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #ff9800;
+        }
+        /* section-grid specific styles if needed, but for product maybe simpler layout */
+        .section-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .section-grid > div {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #eee;
+        }
+
+        /* Product Info Box Styling - similar to nested-box, but for product details */
+        .product-info-box {
+            background-color: #f9f9f9;
+            padding: 15px; /* Slightly more padding for main info */
+            border-radius: 8px; /* Slightly more rounded corners */
+            border: 1px solid #eee;
+            margin-bottom: 20px; /* Space below this main info block */
+            text-align: left; /* Align text left */
+        }
+        .product-info-box p {
+            margin-bottom: 5px; /* Tighter spacing within product info */
+        }
+        .product-info-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Photo Gallery Styling (reused from campground template) */
+        .photo-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+        .photo-gallery-item {
+            background-color: #f9f9f9;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+        }
+        .photo-gallery-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            display: block;
+        }
+        .photo-gallery-item .caption {
+            padding: 8px;
+            font-size: 0.9em;
+            color: #555;
+            text-align: center;
+            background-color: #fff;
+            border-top: 1px solid #eee;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Review Card Styling (reused from campground template) */
+        .review-card {
+            background-color: #e6f7ff;
+            padding: 15px;
+            border-left: 5px solid #2196f3;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        .review-meta {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .video-container { /* If you decide to add YouTube to product reviews */
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            margin-top: 20px;
+            overflow: hidden;
+            background-color: #000;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Navigation Bar Styles (reused from campground template) */
+        .navbar {
+            background-color: #133b66;
+            padding: 10px 0;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-size: 1.1em;
+            padding: 8px 15px;
+            margin: 0 5px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        .navbar a:hover {
+            background-color: #2d7cbc;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="productName">Loading Product Review...</h1>
+
+        <div class="navbar">
+            <a href="us-map-landing-page.html">Return to Product Map (if applicable)</a>
+            <a href="us-map-landing-page.html">Return to All Products (future link)</a>
+        </div>
+
+        <div class="product-info-box">
+            <h2>Product Details</h2>
+            <p id="productOverallRating" class="overall-rating-general-info"></p> <p><strong>Cost:</strong> <span id="productCost"></span></p>
+            <p><strong>Purchased From:</strong> <span id="productPurchased"></span></p>
+            <p><strong>Product Link:</strong> <a id="productLink" href="#" target="_blank">Click Here to View</a></p>
+            <p id="affiliateBlurb" style="font-size: 0.85em; color: #777; margin-top: 10px;"></p>
+        </div>
+
+        <h2>Photo Gallery</h2>
+        <div id="photoGalleryContainer" class="photo-gallery-grid">
+            <p>No photos available.</p>
+        </div>
+
+        <h2>Reviews</h2>
+        <div id="reviewsContainer">
+            <p>No reviews available.</p>
+        </div>
+
+    </div>
+
+    <script src="lightbox2/js/lightbox-plus-jquery.min.js"></script>
+    <script src="shared.js"></script> 
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            lightbox.option({
+                'disableScrolling': true
+            });
+
+            const productId = getQueryParameter('product'); // Parameter will be 'product' now
+
+            if (!productId) {
+                document.getElementById('productName').textContent = "Error: Product ID not specified in URL.";
+                console.error("No 'product' query parameter found in the URL.");
+                return;
+            }
+
+            // Assume product JSONs are in a 'products/' folder
+            // You'll need to create a `products/` folder and put your product JSONs there.
+            // And update shared.js getCampgroundJsonUrl to handle 'products/' vs 'campgrounds/'
+            // For now, let's make a new function, or explicitly give path if shared.js isn't updated
+            
+            // For simplicity in this product page, let's assume products have their own base folder
+            // You will need to create a 'getProdcutJsonUrl' in shared.js
+            // Or use an intelligent shared.js that differentiates file types/locations
+            
+            // For now, assume this product review page gets its data directly from 'products/YOUR_PRODUCT_ID.json'
+            const jsonUrl = `https://raw.githubusercontent.com/MamaHubbs/hoth/main/products/${productId}.json`;
+
+
+            fetch(jsonUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const product = data; // 'data' is the product object directly
+
+                    if (product) {
+                        document.getElementById('productName').textContent = product.name;
+
+                        // Calculate Overall Star Rating for product
+                        let totalStars = 0;
+                        let numberOfReviews = 0;
+                        if (product.reviews && product.reviews.length > 0) {
+                            product.reviews.forEach(review => {
+                                if (typeof review.starRating === 'number') { 
+                                    totalStars += review.starRating;
+                                    numberOfReviews++;
+                                } else if (typeof review.starRating === 'string') {
+                                    const parsedRating = parseInt(review.starRating);
+                                    if (!isNaN(parsedRating)) {
+                                        totalStars += parsedRating;
+                                        numberOfReviews++;
+                                    }
+                                }
+                            });
+                        }
+                        let overallAverageRating = 0;
+                        if (numberOfReviews > 0) {
+                            overallAverageRating = totalStars / numberOfReviews;
+                        }
+                        document.getElementById('productOverallRating').textContent = "Overall Rating: " + "⭐".repeat(Math.round(overallAverageRating)) + ` (${overallAverageRating.toFixed(1)})`;
+
+                        // Populate Product Details
+                        document.getElementById('productCost').textContent = product.cost || 'N/A';
+                        document.getElementById('productPurchased').textContent = product.purchased || 'N/A';
+                        
+                        const productLinkElement = document.getElementById('productLink');
+                        if (product.productlink) {
+                            productLinkElement.href = product.productlink;
+                        } else {
+                            productLinkElement.textContent = 'N/A';
+                            productLinkElement.removeAttribute('href');
+                        }
+
+                        document.getElementById('affiliateBlurb').textContent = product.affililiateblurb || '';
+
+
+                        // Photo Gallery (reused logic, but target 'product' data)
+                        const photoGalleryContainer = document.getElementById('photoGalleryContainer');
+                        photoGalleryContainer.innerHTML = ''; 
+                        if (product.photoGallery && product.photoGallery.length > 0) {
+                            const galleryName = `${product.id}-gallery`; // Unique gallery name for product
+
+                            product.photoGallery.forEach(photo => {
+                                const photoItem = document.createElement('div');
+                                photoItem.className = 'photo-gallery-item';
+                                photoItem.innerHTML = `
+                                    <a href="${photo.url}" data-lightbox="${galleryName}" data-title="${photo.caption || ''}" class="lightbox-trigger">
+                                        <img src="${photo.url}" alt="${photo.caption || 'Product Photo'}">
+                                    </a>
+                                    ${photo.caption ? `<div class="caption">${photo.caption}</div>` : ''}
+                                `;
+                                photoGalleryContainer.appendChild(photoItem);
+                            });
+
+                            setTimeout(() => {
+                                const triggers = photoGalleryContainer.querySelectorAll('.lightbox-trigger');
+                                triggers.forEach(trigger => {
+                                    trigger.addEventListener('click', function() {
+                                        window.scrollTo(0, 0); 
+                                    });
+                                });
+                            }, 100);
+
+                        } else {
+                            photoGalleryContainer.innerHTML = '<p>No photos available for this product.</p>';
+                        }
+
+                        // Reviews (reused logic)
+                        const reviewsContainer = document.getElementById('reviewsContainer');
+                        reviewsContainer.innerHTML = '';
+                        if (product.reviews && product.reviews.length > 0) {
+                            product.reviews.forEach(review => {
+                                const reviewCard = document.createElement('div');
+                                reviewCard.className = 'review-card';
+                                reviewCard.innerHTML = `
+                                    <p class="review-meta">
+                                        <strong>Review Date:</strong> ${review.reviewDate} | 
+                                        <strong>Rating:</strong> ${"⭐".repeat(parseInt(review.starRating))}
+                                    </p>
+                                    <p>${review.text}</p>
+                                `;
+                                // For product reviews, 'visitDate' might not apply, removed from display.
+                                // If you want a "visit date" equivalent, add a field like "reviewType" or "usagePeriod" to JSON.
+
+                                if (review.youtubeVideoUrl && review.youtubeVideoUrl.trim().toLowerCase() !== "n/a" && review.youtubeVideoUrl.trim() !== "") {
+                                    const videoContainer = document.createElement('div');
+                                    videoContainer.className = 'video-container';
+                                    videoContainer.innerHTML = `<iframe src="${review.youtubeVideoUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
+                                    reviewCard.appendChild(videoContainer);
+                                }
+                                reviewsContainer.appendChild(reviewCard);
+                            });
+                        } else {
+                            reviewsContainer.innerHTML = '<p>No reviews available for this product yet.</p>';
+                        }
+
+                    } else {
+                        document.getElementById('productName').textContent = `Product data for ID '${productId}' not found.`;
+                        console.error(`Product data for ID '${productId}' could not be loaded.`);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching product data:', error);
+                    document.getElementById('productName').textContent = "Failed to load product review.";
+                });
+        });
+    </script>
+</body>
+</html>
