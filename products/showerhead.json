@@ -5,13 +5,8 @@
   "purchased": "Amazon",
   "productlink": "https://amzn.to/46p2HnF",
   "affililiateblurb": "Amazon links may earn me a small commission.",
-
-  "photoGallery": [
-    {
-      "url": "https://mamahubbs.github.io/hoth/productimages/showerhead.png",
-      "caption": "High Pressure Shower Hand Held Head"
-    }
-  ],
+  "main_image_url": "https://mamahubbs.github.io/hoth/productimages/showerhead.png",
+  
   "reviews": [
     {
       "reviewId": "high-pressure-shower-head",
