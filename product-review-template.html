@@ -28,7 +28,14 @@
             font-size: 2em;
         }
         
-        /* General h2 styling (reused from campground template) */
+        .overall-rating-general-info {
+            text-align: left;
+            font-size: 1em;
+            margin-bottom: 15px;
+            color: #ff9800;
+            font-weight: bold;
+        }
+
         h2 {
             font-family: Arial, sans-serif;
             color: #2d7cbc;
@@ -65,73 +72,40 @@
             font-weight: bold;
             color: #ff9800;
         }
-        /* section-grid specific styles if needed, but for product maybe simpler layout */
-        .section-grid {
+        
+        /* NEW: Two-column layout for Product Info and Image */
+        .product-header-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
+            grid-template-columns: 1fr 1fr; /* Two equal columns */
+            gap: 20px; /* Space between columns */
             margin-bottom: 20px;
+            align-items: start; /* Align items to the top of their grid cells */
         }
-        .section-grid > div {
+        .product-header-grid > div {
             background-color: #f9f9f9;
-            padding: 10px;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        }
+        .product-image-container {
+            text-align: center;
+        }
+        .product-image-container img {
+            max-width: 100%; /* Ensure image fits its container */
+            height: auto; /* Maintain aspect ratio */
             border-radius: 5px;
-            border: 1px solid #eee;
-        }
-
-        /* Product Info Box Styling - similar to nested-box, but for product details */
-        .product-info-box {
-            background-color: #f9f9f9;
-            padding: 15px; /* Slightly more padding for main info */
-            border-radius: 8px; /* Slightly more rounded corners */
-            border: 1px solid #eee;
-            margin-bottom: 20px; /* Space below this main info block */
-            text-align: left; /* Align text left */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         .product-info-box p {
-            margin-bottom: 5px; /* Tighter spacing within product info */
+            margin-bottom: 5px;
         }
         .product-info-box p:last-child {
             margin-bottom: 0;
         }
 
-        /* Photo Gallery Styling (reused from campground template) */
-        .photo-gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-            margin-bottom: 30px;
-        }
-        .photo-gallery-item {
-            background-color: #f9f9f9;
-            border: 1px solid #eee;
-            border-radius: 5px;
-            overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            display: flex;
-            flex-direction: column;
-        }
-        .photo-gallery-item img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            display: block;
-        }
-        .photo-gallery-item .caption {
-            padding: 8px;
-            font-size: 0.9em;
-            color: #555;
-            text-align: center;
-            background-color: #fff;
-            border-top: 1px solid #eee;
-            flex-grow: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
 
-        /* Review Card Styling (reused from campground template) */
+        /* Review Card Styling (reused) */
         .review-card {
             background-color: #e6f7ff;
             padding: 15px;
@@ -144,10 +118,10 @@
             color: #666;
             margin-bottom: 10px;
         }
-        .video-container { /* If you decide to add YouTube to product reviews */
+        .video-container {
             position: relative;
             width: 100%;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            padding-bottom: 56.25%;
             height: 0;
             margin-top: 20px;
             overflow: hidden;
@@ -162,7 +136,7 @@
             border: none;
         }
 
-        /* Navigation Bar Styles (reused from campground template) */
+        /* Navigation Bar Styles (reused) */
         .navbar {
             background-color: #133b66;
             padding: 10px 0;
@@ -195,18 +169,25 @@
             <a href="us-map-landing-page.html">Return to All Products (future link)</a>
         </div>
 
-        <div class="product-info-box">
-            <h2>Product Details</h2>
-            <p id="productOverallRating" class="overall-rating-general-info"></p> <p><strong>Cost:</strong> <span id="productCost"></span></p>
-            <p><strong>Purchased From:</strong> <span id="productPurchased"></span></p>
-            <p><strong>Product Link:</strong> <a id="productLink" href="#" target="_blank">Click Here to View</a></p>
-            <p id="affiliateBlurb" style="font-size: 0.85em; color: #777; margin-top: 10px;"></p>
-        </div>
+        <div class="product-header-grid">
+            <div>
+                <h2>Product Details</h2>
+                <p id="productOverallRating" class="overall-rating-general-info"></p>
+                <p><strong>Cost:</strong> <span id="productCost"></span></p>
+                <p><strong>Purchased From:</b> <span id="productPurchased"></span></p>
+                <p><strong>Product Link:</strong> <a id="productLink" href="#" target="_blank">Click Here to View</a></p>
+                <p id="affiliateBlurb" style="font-size: 0.85em; color: #777; margin-top: 10px;"></p>
+            </div>
 
-        <h2>Photo Gallery</h2>
-        <div id="photoGalleryContainer" class="photo-gallery-grid">
-            <p>No photos available.</p>
+            <div class="product-image-container">
+                <h2>Product Image</h2> <a id="mainProductImageLink" href="#" data-lightbox="product-main-image-gallery" data-title="Product Image">
+                    <img id="mainProductImage" src="" alt="Product Image">
+                </a>
+            </div>
         </div>
+        <div id="photoGalleryContainer" class="photo-gallery-grid">
+            </div>
+
 
         <h2>Reviews</h2>
         <div id="reviewsContainer">
@@ -224,24 +205,18 @@
                 'disableScrolling': true
             });
 
-            const productId = getQueryParameter('product'); // Parameter will be 'product' now
+            const productId = getQueryParameter('product');
 
             if (!productId) {
                 document.getElementById('productName').textContent = "Error: Product ID not specified in URL.";
                 console.error("No 'product' query parameter found in the URL.");
                 return;
             }
-
+            
             // Assume product JSONs are in a 'products/' folder
-            // You'll need to create a `products/` folder and put your product JSONs there.
-            // And update shared.js getCampgroundJsonUrl to handle 'products/' vs 'campgrounds/'
-            // For now, let's make a new function, or explicitly give path if shared.js isn't updated
-            
-            // For simplicity in this product page, let's assume products have their own base folder
-            // You will need to create a 'getProdcutJsonUrl' in shared.js
-            // Or use an intelligent shared.js that differentiates file types/locations
-            
-            // For now, assume this product review page gets its data directly from 'products/YOUR_PRODUCT_ID.json'
+            // You will need to update shared.js to know about the 'products/' folder
+            // if it's not already handling it based on 'fileName' intelligence.
+            // For now, let's explicitly define product JSON URL logic here.
             const jsonUrl = `https://raw.githubusercontent.com/MamaHubbs/hoth/main/products/${productId}.json`;
 
 
@@ -253,7 +228,7 @@
                     return response.json();
                 })
                 .then(data => {
-                    const product = data; // 'data' is the product object directly
+                    const product = data;
 
                     if (product) {
                         document.getElementById('productName').textContent = product.name;
@@ -296,11 +271,29 @@
                         document.getElementById('affiliateBlurb').textContent = product.affililiateblurb || '';
 
 
-                        // Photo Gallery (reused logic, but target 'product' data)
+                        // NEW: Populate Main Product Image and associated Lightbox link
+                        const mainProductImage = document.getElementById('mainProductImage');
+                        const mainProductImageLink = document.getElementById('mainProductImageLink');
+                        if (product.main_image_url) {
+                            mainProductImage.src = product.main_image_url;
+                            mainProductImage.alt = product.name + " Image"; // Better alt text
+                            mainProductImageLink.href = product.main_image_url; // Link for Lightbox
+                            mainProductImageLink.setAttribute('data-lightbox', `${product.id}-main`); // Unique lightbox group for main image
+                            mainProductImageLink.setAttribute('data-title', product.name); // Caption
+                        } else {
+                            // Hide image container if no image
+                            mainProductImage.style.display = 'none'; 
+                            mainProductImageLink.style.display = 'none';
+                        }
+                        // END NEW MAIN PRODUCT IMAGE
+
+
+                        // Photo Gallery (now only populates if photoGallery array exists AND has items)
+                        // This allows you to have a main image without a full gallery below it.
                         const photoGalleryContainer = document.getElementById('photoGalleryContainer');
-                        photoGalleryContainer.innerHTML = ''; 
                         if (product.photoGallery && product.photoGallery.length > 0) {
-                            const galleryName = `${product.id}-gallery`; // Unique gallery name for product
+                            photoGalleryContainer.innerHTML = '<h2>More Product Photos</h2>'; // Add header if gallery exists
+                            const galleryName = `${product.id}-gallery`;
 
                             product.photoGallery.forEach(photo => {
                                 const photoItem = document.createElement('div');
@@ -324,12 +317,14 @@
                             }, 100);
 
                         } else {
-                            photoGalleryContainer.innerHTML = '<p>No photos available for this product.</p>';
+                            // If no additional photos, remove the container or keep it empty
+                            photoGalleryContainer.innerHTML = ''; // Keep it empty, no "No photos available" message for empty secondary gallery
                         }
+
 
                         // Reviews (reused logic)
                         const reviewsContainer = document.getElementById('reviewsContainer');
-                        reviewsContainer.innerHTML = '';
+                        reviewsContainer.innerHTML = '<h2>Reviews</h2>'; // Ensure heading is added when dynamically cleared
                         if (product.reviews && product.reviews.length > 0) {
                             product.reviews.forEach(review => {
                                 const reviewCard = document.createElement('div');
@@ -341,8 +336,6 @@
                                     </p>
                                     <p>${review.text}</p>
                                 `;
-                                // For product reviews, 'visitDate' might not apply, removed from display.
-                                // If you want a "visit date" equivalent, add a field like "reviewType" or "usagePeriod" to JSON.
 
                                 if (review.youtubeVideoUrl && review.youtubeVideoUrl.trim().toLowerCase() !== "n/a" && review.youtubeVideoUrl.trim() !== "") {
                                     const videoContainer = document.createElement('div');
@@ -353,7 +346,7 @@
                                 reviewsContainer.appendChild(reviewCard);
                             });
                         } else {
-                            reviewsContainer.innerHTML = '<p>No reviews available for this product yet.</p>';
+                            reviewsContainer.innerHTML += '<p>No reviews available for this product yet.</p>';
                         }
 
                     } else {
