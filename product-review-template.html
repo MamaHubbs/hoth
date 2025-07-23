@@ -79,17 +79,27 @@
             grid-template-columns: 1fr 1fr; /* Two equal columns */
             gap: 20px; /* Space between columns */
             margin-bottom: 20px;
-            align-items: start; /* Align items to the top of their grid cells */
+            align-items: stretch; /* NEW: Make grid items stretch to fill the height for equal columns */
         }
-        .product-header-grid > div {
-            background-color: #f9f9f9;
-            padding: 15px;
-            border-radius: 8px;
-            border: 1px solid #eee;
+        /* NEW: Class for the column boxes to ensure consistent styling */
+        .product-info-box-column {
+            background-color: #f9f9f9; /* Grey background */
+            padding: 15px; /* Padding inside the box */
+            border-radius: 8px; /* Rounded corners */
+            border: 1px solid #eee; /* Light border */
             box-sizing: border-box; /* Include padding and border in the element's total width and height */
         }
+        
+        .product-info-box-column p {
+            margin-bottom: 5px; /* Tighter spacing within product info */
+        }
+        .product-info-box-column p:last-child {
+            margin-bottom: 0;
+        }
+        
         .product-image-container {
             text-align: center;
+            /* Its styling is now primarily handled by product-info-box-column */
         }
         .product-image-container img {
             max-width: 100%; /* Ensure image fits its container */
@@ -97,13 +107,43 @@
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        .product-info-box p {
-            margin-bottom: 5px;
-        }
-        .product-info-box p:last-child {
-            margin-bottom: 0;
-        }
 
+
+        /* Photo Gallery Styling (reused) */
+        .photo-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+        .photo-gallery-item {
+            background-color: #f9f9f9;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+        }
+        .photo-gallery-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            display: block;
+        }
+        .photo-gallery-item .caption {
+            padding: 8px;
+            font-size: 0.9em;
+            color: #555;
+            text-align: center;
+            background-color: #fff;
+            border-top: 1px solid #eee;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
         /* Review Card Styling (reused) */
         .review-card {
@@ -118,7 +158,7 @@
             color: #666;
             margin-bottom: 10px;
         }
-        .video-container {
+        .video-container { /* If you decide to add YouTube to product reviews */
             position: relative;
             width: 100%;
             padding-bottom: 56.25%;
@@ -170,17 +210,15 @@
         </div>
 
         <div class="product-header-grid">
-            <div>
-                <h2>Product Details</h2>
+            <div class="product-info-box-column"> <h2>Product Details</h2>
                 <p id="productOverallRating" class="overall-rating-general-info"></p>
                 <p><strong>Cost:</strong> <span id="productCost"></span></p>
-                <p><strong>Purchased From:</b> <span id="productPurchased"></span></p>
+                <p><strong>Purchased From:</strong> <span id="productPurchased"></span></p>
                 <p><strong>Product Link:</strong> <a id="productLink" href="#" target="_blank">Click Here to View</a></p>
                 <p id="affiliateBlurb" style="font-size: 0.85em; color: #777; margin-top: 10px;"></p>
             </div>
 
-            <div class="product-image-container">
-                <h2>Product Image</h2> <a id="mainProductImageLink" href="#" data-lightbox="product-main-image-gallery" data-title="Product Image">
+            <div class="product-image-container product-info-box-column"> <h2>Product Image</h2> <a id="mainProductImageLink" href="#" data-lightbox="product-main-image-gallery" data-title="Product Image">
                     <img id="mainProductImage" src="" alt="Product Image">
                 </a>
             </div>
@@ -189,10 +227,8 @@
             </div>
 
 
-        <h2>Reviews</h2>
         <div id="reviewsContainer">
-            <p>No reviews available.</p>
-        </div>
+            </div>
 
     </div>
 
@@ -214,9 +250,6 @@
             }
             
             // Assume product JSONs are in a 'products/' folder
-            // You will need to update shared.js to know about the 'products/' folder
-            // if it's not already handling it based on 'fileName' intelligence.
-            // For now, let's explicitly define product JSON URL logic here.
             const jsonUrl = `https://raw.githubusercontent.com/MamaHubbs/hoth/main/products/${productId}.json`;
 
 
@@ -271,7 +304,7 @@
                         document.getElementById('affiliateBlurb').textContent = product.affililiateblurb || '';
 
 
-                        // NEW: Populate Main Product Image and associated Lightbox link
+                        // Populate Main Product Image and associated Lightbox link
                         const mainProductImage = document.getElementById('mainProductImage');
                         const mainProductImageLink = document.getElementById('mainProductImageLink');
                         if (product.main_image_url) {
@@ -285,15 +318,15 @@
                             mainProductImage.style.display = 'none'; 
                             mainProductImageLink.style.display = 'none';
                         }
-                        // END NEW MAIN PRODUCT IMAGE
 
 
                         // Photo Gallery (now only populates if photoGallery array exists AND has items)
-                        // This allows you to have a main image without a full gallery below it.
                         const photoGalleryContainer = document.getElementById('photoGalleryContainer');
                         if (product.photoGallery && product.photoGallery.length > 0) {
-                            photoGalleryContainer.innerHTML = '<h2>More Product Photos</h2>'; // Add header if gallery exists
-                            const galleryName = `${product.id}-gallery`;
+                            // Add header for photo gallery if there are photos
+                            photoGalleryContainer.insertAdjacentHTML('beforebegin', '<h2>Photo Gallery</h2>'); // Add header BEFORE the container
+                            photoGalleryContainer.innerHTML = ''; 
+                            const galleryName = `${product.id}-gallery`; // Unique gallery name for product
 
                             product.photoGallery.forEach(photo => {
                                 const photoItem = document.createElement('div');
@@ -317,15 +350,18 @@
                             }, 100);
 
                         } else {
-                            // If no additional photos, remove the container or keep it empty
-                            photoGalleryContainer.innerHTML = ''; // Keep it empty, no "No photos available" message for empty secondary gallery
+                            photoGalleryContainer.innerHTML = ''; // Keep it empty if no photos
+                            // No header inserted if no photos
                         }
 
 
                         // Reviews (reused logic)
                         const reviewsContainer = document.getElementById('reviewsContainer');
-                        reviewsContainer.innerHTML = '<h2>Reviews</h2>'; // Ensure heading is added when dynamically cleared
+                        reviewsContainer.innerHTML = '<h2>Reviews</h2>'; // Dynamically add Reviews header
                         if (product.reviews && product.reviews.length > 0) {
+                            reviewsContainer.innerHTML = '<h2>Reviews</h2>'; // Ensure header is added
+                            reviewsContainer.innerHTML += '<ul>'; // Start a list for reviews
+
                             product.reviews.forEach(review => {
                                 const reviewCard = document.createElement('div');
                                 reviewCard.className = 'review-card';
@@ -346,7 +382,7 @@
                                 reviewsContainer.appendChild(reviewCard);
                             });
                         } else {
-                            reviewsContainer.innerHTML += '<p>No reviews available for this product yet.</p>';
+                            reviewsContainer.innerHTML += '<p>No reviews available for this product yet.</p>'; // Append to header
                         }
 
                     } else {
