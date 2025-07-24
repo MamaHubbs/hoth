@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RV Inside Categories</title>
+    <style>
+        body {
+            font-family: Helvetica, sans-serif;
+            line-height: 1.4;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            font-family: Arial, sans-serif;
+            color: #133b66;
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 2em;
+        }
+        h2 {
+            font-family: Arial, sans-serif;
+            color: #2d7cbc;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+            margin-top: 25px;
+            font-size: 1.2em;
+        }
+        /* Navigation Bar Styles */
+        .navbar {
+            background-color: #133b66;
+            padding: 10px 0;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-size: 1.1em;
+            padding: 8px 15px;
+            margin: 0 5px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        .navbar a:hover {
+            background-color: #2d7cbc;
+            text-decoration: none;
+        }
+        .category-list ul {
+            list-style-type: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid for categories */
+            gap: 15px;
+        }
+        .category-list li {
+            background-color: #f9f9f9;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .category-list li:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            cursor: pointer;
+        }
+        .category-list li a {
+            font-weight: bold;
+            color: #133b66;
+            text-decoration: none;
+            font-size: 1.3em;
+            display: block; /* Make the whole list item clickable */
+            padding: 0; /* Remove padding from link as li has it */
+            margin: 0;
+        }
+        .category-list li a:hover {
+            text-decoration: underline;
+            background-color: transparent; /* Override navbar hover */
+        }
+        .category-list li p {
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 5px;
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="pageHeading">Loading Categories...</h1>
+
+        <div class="navbar">
+            <a href="trailer-landing-page.html">Return to RV Map</a>
+            <a href="us-map-landing-page.html">Return to US Map</a>
+        </div>
+
+        <h2>Select a Category</h2>
+        <div id="categoryList" class="category-list">
+            <ul>
+                <li>No categories found.</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script src="shared.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Determine if this is the 'inside' or 'outside' page
+            // We'll read the URL parameter for 'side' for consistency, even if filename implies it
+            const pageName = window.location.pathname.split('/').pop(); // Gets 'trailer-inside.html' or 'trailer-outside.html'
+            let side = '';
+            if (pageName === 'trailer-inside.html') {
+                side = 'inside';
+                document.getElementById('pageHeading').textContent = "Inside RV Categories";
+            } else if (pageName === 'trailer-outside.html') {
+                side = 'outside';
+                document.getElementById('pageHeading').textContent = "Outside RV Categories";
+            } else {
+                document.getElementById('pageHeading').textContent = "Unknown RV Section";
+                return;
+            }
+
+            // Fetch the product index
+            const productIndexJsonUrl = getCampgroundJsonUrl('product_index'); // Using getCampgroundJsonUrl which is in shared.js
+
+            fetch(productIndexJsonUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const allProducts = data.products || [];
+                    const productsForSide = allProducts.filter(p => p.side === side);
+
+                    const categories = new Set();
+                    productsForSide.forEach(p => {
+                        if (p.category) {
+                            categories.add(p.category);
+                        }
+                    });
+
+                    const categoryListUl = document.querySelector('#categoryList ul');
+                    categoryListUl.innerHTML = ''; // Clear "No categories found."
+
+                    if (categories.size > 0) {
+                        Array.from(categories).sort().forEach(category => { // Sort categories alphabetically
+                            const li = document.createElement('li');
+                            const link = document.createElement('a');
+                            // Link to product-list-by-category.html, passing side and category
+                            link.href = `product-list-by-category.html?side=${side}&category=${encodeURIComponent(category)}`;
+                            link.textContent = category;
+                            link.target = "_self"; // Stay within current iframe
+
+                            li.appendChild(link);
+                            categoryListUl.appendChild(li);
+                        });
+                    } else {
+                        categoryListUl.innerHTML = `<li>No categories found for ${side} RV section.</li>`;
+                    }
+                })
+                .catch(error => {
+                    console.error(`Error fetching product index for ${side} categories:`, error);
+                    document.getElementById('pageHeading').textContent = `Failed to load ${side} categories.`;
+                    document.querySelector('#categoryList ul').innerHTML = `<li>Error loading categories. Please try again later.</li>`;
+                });
+        });
+    </script>
+</body>
+</html>
