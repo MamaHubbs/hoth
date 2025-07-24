@@ -1,0 +1,18 @@
+{
+  "products": [
+    {
+      "id": "high-pressure-shower-head",
+      "name": "RV High Pressure Shower Head with Handheld On Off Switch",
+      "side": "inside",
+      "category": "Bathroom",
+      "filename": "showerhead"
+    },
+    {
+      "id": "rv-leveling-blocks",
+      "name": "RV Leveling Blocks",
+      "side": "outside",
+      "category": "RV Basics",
+      "filename": "leveling-blocks"
+    }
+  ]
+}
