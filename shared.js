@@ -12,15 +12,30 @@ function getQueryParameter(name) {
 
 /**
  * Constructs the full raw GitHub URL for a JSON file based on its filename.
- * IMPORTANT: Replace YOUR_USERNAME, YOUR_REPO, and YOUR_BRANCH with your actual GitHub details.
- * @param {string} fileName The name of the JSON file (e.g., '20250629pohick'). Note: Do NOT include '.json' extension here.
+ * It intelligently determines the correct subdirectory based on the filename.
+ *
+ * @param {string} fileName The base name of the JSON file (e.g., 'campground_index', 'showerhead', '20250629pohick'). Do NOT include '.json' extension.
  * @returns {string} The full raw URL to the JSON file.
  */
-function getCampgroundJsonUrl(fileName) {
-    // Assuming JSON files are in a 'campgrounds' folder
-    // And your repo is YOUR_REPO under YOUR_USERNAME, on YOUR_BRANCH (e.g., 'main')
-    const username = 'MamaHubbs'; // This is correct
-    const repo = 'hoth';         // This is correct
-    const branch = 'main';     // <<<<<<<<< CHANGE THIS LINE to 'main'
-    return `https://raw.githubusercontent.com/${username}/${repo}/${branch}/campgrounds/${fileName}.json`;
+function getCampgroundJsonUrl(fileName) { // Renamed from getProductJsonUrl/getCampgroundJsonUrl earlier to be more generic for shared usage
+    const username = 'MamaHubbs';
+    const repo = 'hoth';
+    const branch = 'main'; // Your default branch (e.g., 'main' or 'master')
+
+    let subdirectory = ''; // Default to no subdirectory
+
+    // Logic to determine the subdirectory
+    if (fileName === 'campground_index' || fileName.startsWith('20') || fileName.startsWith('pohick-bay')) {
+        // Assume all campground-related JSONs are in 'campgrounds/'
+        // '20' prefix is for old filenames like 20250629pohick.json
+        // 'pohick-bay' prefix is for ID-based filenames like pohick-bay-regional-park-06-2025.json
+        subdirectory = 'campgrounds/';
+    } else if (fileName === 'product_index' || fileName === 'showerhead' || fileName.startsWith('high-pressure') || fileName.startsWith('rv-leveling')) {
+        // Assume all product-related JSONs are in 'products/'
+        subdirectory = 'products/';
+    }
+    // You might need to refine this logic (e.g., use a more explicit mapping if filenames are very varied)
+    // For now, this approach intelligently guesses based on known patterns.
+
+    return `https://raw.githubusercontent.com/${username}/${repo}/${branch}/${subdirectory}${fileName}.json`;
 }
