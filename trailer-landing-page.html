@@ -32,30 +32,48 @@
             margin-bottom: 30px;
             font-size: 1.1em;
         }
-        /* SVG Trailer Map Styling */
-        #trailer-svg-map {
-            width: 100%;
-            height: auto;
-            max-width: 700px; /* Adjust max-width as needed for your trailer SVG */
-            display: block;
-            margin: 0 auto;
+
+        /* NEW: Image Container for two side-by-side images */
+        .trailer-image-selection-grid {
+            display: flex; /* Use flexbox for side-by-side */
+            justify-content: center; /* Center the images */
+            gap: 20px; /* Space between images */
+            margin: 0 auto 30px auto; /* Center the grid container itself */
+            max-width: 800px; /* Limit overall width */
+            align-items: flex-start; /* Align images at the top */
         }
-        .trailer-area-path { /* Apply this class to your clickable SVG parts */
-            fill: #c0d9ed; /* Default color for clickable areas */
-            stroke: #fff;
-            stroke-width: 1px;
+
+        .trailer-image-selection-grid .image-option {
+            flex: 1; /* Allow images to grow/shrink */
+            max-width: 350px; /* Max width for each image */
+            text-align: center;
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            text-decoration: none; /* Remove underline from anchor */
+        }
+        .trailer-image-selection-grid .image-option:hover {
+            transform: translateY(-5px); /* Lift effect on hover */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
             cursor: pointer;
-            transition: fill 0.2s ease-in-out;
         }
-        .trailer-area-path:hover {
-            fill: #2d7cbc; /* Hover color */
+
+        .trailer-image-selection-grid .image-option img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            display: block; /* Remove extra space below image */
+            margin: 0 auto 10px auto; /* Center image within its box, add space below */
         }
-        /* You can add different fill colors for specific parts if you want */
-        #trailer-inside-clickable {
-            fill: #a7bed3; /* Specific color for inside */
-        }
-        #trailer-outside-clickable {
-            fill: #85b8cb; /* Specific color for outside */
+
+        .trailer-image-selection-grid .image-option span {
+            font-family: Arial, sans-serif;
+            font-size: 1.2em;
+            color: #133b66; /* Main color for text */
+            font-weight: bold;
         }
     </style>
 </head>
@@ -64,50 +82,17 @@
         <h1>Explore My RV!</h1>
         <p>Click on a section to dive into specific reviews and gadgets.</p>
 
-        <svg id="trailer-svg-map" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400">
-            <title>RV Interior/Exterior Map</title>
-            <rect x="0" y="0" width="700" height="400" fill="#f0f0f0"/> <path id="trailer-outside-clickable" class="trailer-area-path" d="M 0 0 L 700 0 L 700 400 L 0 400 Z" opacity="0.8">
-                <title>Outside</title>
-            </path>
-
-            <path id="trailer-inside-clickable" class="trailer-area-path" d="M 100 100 L 400 100 L 400 300 L 100 300 Z" fill="#ffffff" stroke="#333" stroke-width="2">
-                <title>Inside</title>
-            </path>
-
-            </svg>
+        <div class="trailer-image-selection-grid">
+            <a href="trailer-outside.html" class="image-option">
+                <img src="image/Trailer_Outside.png" alt="Trailer Outside View">
+                <span>Outside</span>
+            </a>
+            <a href="trailer-inside.html" class="image-option">
+                <img src="image/Trailer_Inside.png" alt="Trailer Inside View">
+                <span>Inside</span>
+            </a>
+        </div>
         </div>
 
-    <script src="shared.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const trailerSvgMap = document.getElementById('trailer-svg-map');
-
-            if (trailerSvgMap) {
-                const insideArea = trailerSvgMap.querySelector('#trailer-inside-clickable');
-                const outsideArea = trailerSvgMap.querySelector('#trailer-outside-clickable');
-
-                if (insideArea) {
-                    insideArea.addEventListener('click', function() {
-                        // Link to trailer-category-page.html with side=inside
-                        window.location.href = `trailer-category-page.html?side=inside`;
-                    });
-                } else {
-                    console.warn("SVG element with ID 'trailer-inside-clickable' not found. 'Inside' link will not work.");
-                }
-
-                if (outsideArea) {
-                    outsideArea.addEventListener('click', function() {
-                        // Link to trailer-category-page.html with side=outside
-                        window.location.href = `trailer-category-page.html?side=outside`;
-                    });
-                } else {
-                    console.warn("SVG element with ID 'trailer-outside-clickable' not found. 'Outside' link will not work.");
-                }
-
-            } else {
-                console.error("SVG element with ID 'trailer-svg-map' not found. Interactive map will not load.");
-            }
-        });
-    </script>
-</body>
+    </body>
 </html>
