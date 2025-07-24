@@ -56,14 +56,8 @@
             background-color: #2d7cbc;
             text-decoration: none;
         }
-        /* Style for the current page link in the navbar (optional) */
-        .navbar a.current-page {
-            background-color: #2d7cbc; /* Highlight current page link */
-            cursor: default;
-        }
-        .navbar a.current-page:hover {
-            background-color: #2d7cbc; /* Prevent hover change for current page */
-        }
+        /* Style for the current page link in the navbar (optional) - Removed as it's now a link to OTHER page */
+        /* .navbar a.current-page { ... } */ 
 
         .category-list ul {
             list-style-type: none;
@@ -112,7 +106,7 @@
 
         <div class="navbar">
             <a href="trailer-landing-page.html">Return to Trailer View</a>
-            <a id="currentProductReviewLink" href="#" class="current-page">Loading...</a> <a href="shopping.html">Shopping List</a>
+            <a id="toggleSideLink" href="#">Go to Other Section</a> <a href="shopping.html">Shopping List</a>
         </div>
 
         <h2>Select a Category</h2>
@@ -127,31 +121,36 @@
     <script src="shared.js"></script> 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Determine if this is the 'inside' or 'outside' page based on its filename
             const pageName = window.location.pathname.split('/').pop();
             let side = '';
             let pageTitle = '';
+            let otherSideHref = '';
+            let otherSideText = '';
 
-            const currentProductReviewLink = document.getElementById('currentProductReviewLink');
+            const toggleSideLink = document.getElementById('toggleSideLink');
 
             if (pageName === 'trailer-inside.html') {
                 side = 'inside';
                 pageTitle = "Inside Product Reviews";
+                otherSideHref = 'trailer-outside.html';
+                otherSideText = 'Go to Outside Product Reviews';
             } else if (pageName === 'trailer-outside.html') {
                 side = 'outside';
                 pageTitle = "Outside Product Reviews";
+                otherSideHref = 'trailer-inside.html';
+                otherSideText = 'Go to Inside Product Reviews';
             } else {
-                pageTitle = "RV Product Categories";
+                pageTitle = "RV Product Categories"; // Fallback title
                 console.error("Unknown page name. Cannot determine 'side' (inside/outside).");
-                currentProductReviewLink.textContent = pageTitle;
-                currentProductReviewLink.style.cursor = "default";
-                currentProductReviewLink.removeAttribute('href');
-                currentProductReviewLink.classList.remove('current-page'); // Remove highlighting if generic
+                toggleSideLink.style.display = 'none'; // Hide this specific link if context is unknown
+                // You might also want to hide the whole navbar or show a general one
             }
 
             document.getElementById('pageHeading').textContent = pageTitle;
-            currentProductReviewLink.textContent = pageTitle;
-            currentProductReviewLink.href = pageName; // Link back to itself (current page)
+            
+            toggleSideLink.href = otherSideHref;
+            toggleSideLink.textContent = otherSideText;
+            toggleSideLink.target = "_self"; // Ensure it opens in the same iframe
 
 
             // Fetch the product index
