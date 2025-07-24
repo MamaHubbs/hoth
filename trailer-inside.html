@@ -56,6 +56,15 @@
             background-color: #2d7cbc;
             text-decoration: none;
         }
+        /* Style for the current page link in the navbar (optional) */
+        .navbar a.current-page {
+            background-color: #2d7cbc; /* Highlight current page link */
+            cursor: default;
+        }
+        .navbar a.current-page:hover {
+            background-color: #2d7cbc; /* Prevent hover change for current page */
+        }
+
         .category-list ul {
             list-style-type: none;
             padding: 0;
@@ -103,7 +112,7 @@
 
         <div class="navbar">
             <a href="trailer-landing-page.html">Return to Trailer View</a>
-            <a href="shopping.html">Shopping List</a>
+            <a id="currentProductReviewLink" href="#" class="current-page">Loading...</a> <a href="shopping.html">Shopping List</a>
         </div>
 
         <h2>Select a Category</h2>
@@ -123,19 +132,27 @@
             let side = '';
             let pageTitle = '';
 
+            const currentProductReviewLink = document.getElementById('currentProductReviewLink');
+
             if (pageName === 'trailer-inside.html') {
                 side = 'inside';
-                pageTitle = "Inside RV Product Reviews";
+                pageTitle = "Inside Product Reviews";
             } else if (pageName === 'trailer-outside.html') {
                 side = 'outside';
-                pageTitle = "Outside RV Product Reviews";
+                pageTitle = "Outside Product Reviews";
             } else {
-                pageTitle = "RV Product Categories"; // Fallback title
+                pageTitle = "RV Product Categories";
                 console.error("Unknown page name. Cannot determine 'side' (inside/outside).");
-                return;
+                currentProductReviewLink.textContent = pageTitle;
+                currentProductReviewLink.style.cursor = "default";
+                currentProductReviewLink.removeAttribute('href');
+                currentProductReviewLink.classList.remove('current-page'); // Remove highlighting if generic
             }
 
             document.getElementById('pageHeading').textContent = pageTitle;
+            currentProductReviewLink.textContent = pageTitle;
+            currentProductReviewLink.href = pageName; // Link back to itself (current page)
+
 
             // Fetch the product index
             const productIndexJsonUrl = getCampgroundJsonUrl('product_index');
