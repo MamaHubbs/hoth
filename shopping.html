@@ -6,68 +6,40 @@
     <title>RV Shopping List</title>
     <style>
         body {
-            font-family: Helvetica, sans-serif; /* Consistent font */
-            line-height: 1.4;
+            font-family: Arial, sans-serif;
             margin: 20px;
             background-color: #f4f4f4;
             color: #333;
         }
         .container {
-            max-width: 800px; /* Adjusted to match other pages for consistency */
-            margin: auto; /* Centering */
+            max-width: 1200px;
+            margin: 0 auto;
             background-color: #fff;
-            padding: 30px; /* Consistent padding */
+            padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        h1 {
-            font-family: Arial, sans-serif; /* Consistent font */
-            color: #133b66; /* Consistent color */
+        .topic-navigation {
             text-align: center;
-            margin-bottom: 25px;
-            font-size: 2em;
-        }
-        h2 { /* Consistent h2 styling */
-            font-family: Arial, sans-serif;
-            color: #2d7cbc;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
             border-bottom: 1px solid #eee;
-            padding-bottom: 5px;
-            margin-top: 25px;
-            font-size: 1.2em;
         }
-
-        /* Navigation Bar Styles - Consistent with other pages */
-        .navbar {
-            background-color: #133b66; /* Your main color */
-            padding: 10px 0;
-            margin-bottom: 20px;
-            border-radius: 5px;
-            text-align: center;
-        }
-        .navbar a {
-            color: #fff; /* White text for links */
-            text-decoration: none;
-            font-family: Arial, sans-serif;
-            font-size: 1.1em;
+        .topic-navigation a {
+            display: inline-block;
+            margin: 0 10px;
             padding: 8px 15px;
-            margin: 0 5px;
-            border-radius: 4px;
-            transition: background-color 0.3s ease;
-        }
-        .navbar a:hover {
-            background-color: #2d7cbc; /* Your secondary color on hover */
             text-decoration: none;
+            color: #007bff; /* Keep link color */
+            background-color: transparent; /* Changed: Removed background color */
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+            font-weight: bold;
         }
-        /* Style for the current page link in the navbar */
-        .navbar a.current-page {
-            background-color: #2d7cbc; /* Highlight current page link */
-            cursor: default;
+        .topic-navigation a:hover {
+            background-color: #007bff;
+            color: #fff;
         }
-        .navbar a.current-page:hover {
-            background-color: #2d7cbc; /* Prevent hover change for current page */
-        }
-        
-        /* General table and item card styles (from your previous shopping.html) */
         .item-table {
             width: 100%;
             border-collapse: collapse;
@@ -75,7 +47,7 @@
             background-color: #fff;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
             border-radius: 8px;
-            overflow: hidden;
+            overflow: hidden; /* Ensures rounded corners apply to content */
         }
         .item-table th {
             background-color: #6c757d;
@@ -83,6 +55,7 @@
             padding: 12px;
             text-align: left;
             font-size: 1.2em;
+            /* Removed specific "Item 1, Item 2, Item 3" styling, if any */
         }
         .item-table td {
             padding: 15px;
@@ -96,14 +69,14 @@
         .item-card {
             position: relative;
             display: inline-block;
-            width: 180px;
-            height: 180px;
+            width: 180px; /* Adjust as needed */
+            height: 180px; /* Adjust as needed */
             border: 1px solid #ddd;
             border-radius: 5px;
             overflow: hidden;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             transition: transform 0.2s ease;
-            margin: auto;
+            margin: auto; /* Center the card in the cell */
         }
         .item-card:hover {
             transform: translateY(-3px);
@@ -112,7 +85,7 @@
         .item-card img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: cover; /* Ensures image covers the area without distortion */
             display: block;
         }
         .item-overlay {
@@ -140,9 +113,9 @@
             text-decoration: underline;
         }
 
-        /* Responsive adjustments (from your previous shopping.html) */
+        /* Responsive adjustments */
         @media (max-width: 768px) {
-            .navbar a { /* Changed from topic-navigation a */
+            .topic-navigation a {
                 margin: 5px;
                 padding: 6px 10px;
                 font-size: 0.9em;
@@ -161,12 +134,12 @@
         }
 
         @media (max-width: 480px) {
-            .navbar { /* Changed from topic-navigation */
+            .topic-navigation {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: center;
             }
-            .navbar a { /* Changed from topic-navigation a */
+            .topic-navigation a {
                 flex: 1 1 auto;
                 margin: 3px;
                 font-size: 0.8em;
@@ -186,10 +159,10 @@
                 padding: 10px;
             }
             .item-card {
-                width: 100%;
-                max-width: 200px;
+                width: 100%; /* Full width for small screens */
+                max-width: 200px; /* Max width to prevent overly large cards */
                 height: auto;
-                aspect-ratio: 1 / 1;
+                aspect-ratio: 1 / 1; /* Keep aspect ratio square */
             }
             .item-link {
                 text-align: center;
@@ -199,16 +172,23 @@
 </head>
 <body>
     <div class="container">
-        <h1>My Shopping List</h1>
-
-        <div class="navbar">
-            <a href="trailer-landing-page.html">Return to Trailer View</a>
-            <a href="trailer-inside.html">Inside Product Reviews</a>
-            <a href="trailer-outside.html">Outside Product Reviews</a>
-            <a href="shopping.html" class="current-page">Shopping List</a>
+        <div class="topic-navigation">
+            <a href="#rv-basics">RV Basics for Set-Up</a>
+            <a href="#outside-living">Outside Living</a>
+            <a href="#kitchen">Kitchen</a>
+            <a href="#bathroom">Bathroom</a>
+            <a href="#bedrooms">Bedrooms</a>
+            <a href="#cleaning-maintenance">Cleaning & Maintenance</a>
+            <a href="#electronics">Electronics</a>
+            <a href="#pet-care">Pet Care</a>
+            <a href="#decorative">Decorative</a>
+            <a href="#entertainment">Entertainment</a>
         </div>
 
-        <h2>Items to Consider</h2>
+              <div class="navbar">
+            <a id="insideReviewsLink" href="trailer-inside.html">Inside Product Reviews</a>
+            <a id="outsideReviewsLink" href="trailer-outside.html">Outside Product Reviews</a></div>
+
         <div id="item-sections">
             <h2 id="rv-basics">RV Basics for Set-Up</h2>
             <table class="item-table">
