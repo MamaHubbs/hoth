@@ -3,6 +3,8 @@
   "name": "RV High Pressure Shower Head",
   "cost": "$20",
   "purchased": "Amazon",
+  "using": true,
+  "buyagain": true,
   "productlink": "https://amzn.to/46p2HnF",
   "affililiateblurb": "Amazon links may earn me a small commission.",
   "main_image_url": "https://mamahubbs.github.io/hoth/productimages/showerhead.png",
