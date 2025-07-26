@@ -56,9 +56,6 @@
             background-color: #2d7cbc;
             text-decoration: none;
         }
-        /* Style for the current page link in the navbar (optional) - Removed as it's now a link to OTHER page */
-        /* .navbar a.current-page { ... } */ 
-
         .category-list ul {
             list-style-type: none;
             padding: 0;
@@ -106,7 +103,8 @@
 
         <div class="navbar">
             <a href="trailer-landing-page.html">Return to Trailer View</a>
-            <a id="toggleSideLink" href="#">Go to Other Section</a> <a href="shopping.html">Shopping List</a>
+            <a id="toggleSideLink" href="#">Go to Other Section</a>
+            <a href="shopping.html">Shopping List</a>
         </div>
 
         <h2>Select a Category</h2>
@@ -143,18 +141,17 @@
                 pageTitle = "RV Product Categories"; // Fallback title
                 console.error("Unknown page name. Cannot determine 'side' (inside/outside).");
                 toggleSideLink.style.display = 'none'; // Hide this specific link if context is unknown
-                // You might also want to hide the whole navbar or show a general one
             }
 
             document.getElementById('pageHeading').textContent = pageTitle;
             
             toggleSideLink.href = otherSideHref;
             toggleSideLink.textContent = otherSideText;
-            toggleSideLink.target = "_self"; // Ensure it opens in the same iframe
+            toggleSideLink.target = "_self";
 
 
             // Fetch the product index
-            const productIndexJsonUrl = getCampgroundJsonUrl('product_index');
+            const productIndexJsonUrl = getCampgroundJsonUrl('product_index'); // Using getCampgroundJsonUrl which is in shared.js
 
             fetch(productIndexJsonUrl)
                 .then(response => {
@@ -181,8 +178,8 @@
                         Array.from(categories).sort().forEach(category => {
                             const li = document.createElement('li');
                             const link = document.createElement('a');
-                            // Link to product-list-by-category.html, passing side and category
-                            link.href = `product-list-by-category.html?side=${side}&category=${encodeURIComponent(category)}`;
+                            // ADJUSTED LINK: Now points to product-list-by-category.html
+                            link.href = `product-list-by-category.html?side=${side}&category=${encodeURIComponent(category)}`; 
                             link.textContent = category;
                             link.target = "_self"; // Stay within current iframe
 
