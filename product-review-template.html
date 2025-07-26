@@ -28,11 +28,12 @@
             font-size: 2em; /* Keep h1 at 2em */
         }
         
+        /* Style for the overall rating when it's INSIDE the general info box */
         .overall-rating-general-info {
-            text-align: left;
-            font-size: 1em;
-            margin-bottom: 15px;
-            color: #ff9800;
+            text-align: left; /* Aligns to the left within its column */
+            font-size: 1em; /* Smaller, closer to body text size */
+            margin-bottom: 15px; /* Space below rating in column */
+            color: #ff9800; /* Star color */
             font-weight: bold;
         }
 
@@ -200,8 +201,8 @@
         <h1 id="productName">Loading Product Review...</h1>
 
         <div class="navbar">
-            <a href="us-map-landing-page.html">Return to Product Map (if applicable)</a>
-            <a href="us-map-landing-page.html">Return to All Products (future link)</a>
+            <a id="returnToCategoryLink" href="#">Return to Select A Category</a> <a href="/hoth/trailer-landing-page.html">Return to Trailer View</a>
+            <a href="/hoth/shopping.html">Shopping List</a>
         </div>
 
         <div class="product-header-grid">
@@ -239,12 +240,26 @@
             });
 
             const productId = getQueryParameter('product');
+            const sideFromURL = getQueryParameter('side'); // NEW: Get side parameter
+            const categoryFromURL = getQueryParameter('category'); // NEW: Get category parameter
 
             if (!productId) {
                 document.getElementById('productName').textContent = "Error: Product ID not specified in URL.";
                 console.error("No 'product' query parameter found in the URL.");
                 return;
             }
+
+            // --- Navigation Logic for Return to Category Link ---
+            const returnToCategoryLink = document.getElementById('returnToCategoryLink');
+            if (sideFromURL && categoryFromURL) {
+                returnToCategoryLink.href = `/hoth/product-list-by-category.html?side=${sideFromURL}&category=${encodeURIComponent(categoryFromURL)}`;
+                returnToCategoryLink.textContent = `Return to ${decodeURIComponent(categoryFromURL)} List`;
+            } else {
+                returnToCategoryLink.textContent = `Return to Product Categories`; // Generic fallback
+                returnToCategoryLink.href = `/hoth/trailer-inside.html`; // Default to inside if no context
+                // You might also consider hiding this link if no valid side/category context is found.
+            }
+            // --- END Navigation Logic ---
             
             const jsonUrl = `https://raw.githubusercontent.com/MamaHubbs/hoth/main/products/${productId}.json`;
 
@@ -350,12 +365,9 @@
 
                         // Reviews (reused logic)
                         const reviewsContainer = document.getElementById('reviewsContainer');
-                        reviewsContainer.innerHTML = '<h2>Review</h2>'; // ADJUSTED: Dynamically add "Review" (singular) header
+                        reviewsContainer.innerHTML = '<h2>Review</h2>'; // Dynamically add "Review" (singular) header
                         if (product.reviews && product.reviews.length > 0) {
                             reviewsContainer.innerHTML = '<h2>Review</h2>'; // Ensure header is added
-                            // No need to start <ul> here, reviewsContainer is the parent
-                            // reviewsContainer.innerHTML += '<ul>'; // Removed unnecessary <ul> tag
-
                             product.reviews.forEach(review => {
                                 const reviewCard = document.createElement('div');
                                 reviewCard.className = 'review-card';
