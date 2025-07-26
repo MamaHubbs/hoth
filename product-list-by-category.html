@@ -67,10 +67,10 @@
             cursor: default;
         }
 
-        /* NEW: Grid for Product List Items - ADJUSTED COLUMNS */
+        /* NEW: Grid for Product List Items */
         .product-list-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* ADJUSTED: Exactly 2 columns */
+            grid-template-columns: repeat(2, 1fr); /* Exactly 2 columns */
             gap: 20px; /* Space between product cards */
             margin-bottom: 40px;
             align-items: start; /* Align items to the top of their grid cells */
@@ -104,7 +104,7 @@
         }
         .item-card img {
             width: 100%;
-            height: 100%; /* Make image fill the 16:9 container */
+            height: 100%;
             object-fit: cover; /* Ensures image covers the area without distortion */
             display: block;
         }
@@ -141,7 +141,7 @@
                 font-size: 0.9em;
             }
             .product-list-grid {
-                grid-template-columns: 1fr; /* ADJUSTED: Single column on smaller screens */
+                grid-template-columns: 1fr; /* Single column on smaller screens */
                 justify-items: center; /* Center items in the single column */
             }
             .item-card-wrapper {
@@ -180,14 +180,13 @@
 
         <div class="navbar">
             <a href="/hoth/trailer-landing-page.html">Return to Trailer View</a>
-            <a id="insideReviewsLink" href="/hoth/trailer-inside.html">Inside Product Reviews</a>
-            <a id="outsideReviewsLink" href="/hoth/trailer-outside.html">Outside Product Reviews</a>
-            <a href="/hoth/shopping.html">Shopping List (All Products)</a>
+            <a id="returnToCategoryListLink" href="#">Return to Select a Category</a> <a href="/hoth/shopping.html">Shopping List (All Products)</a>
         </div>
 
         <h2>Products in <span id="categoryTitle">Category</span></h2>
         <div id="productListGrid" class="product-list-grid">
-            <p>Loading products...</p> </div>
+            <p>Loading products...</p>
+        </div>
 
     </div>
 
@@ -199,9 +198,29 @@
 
             const pageHeading = document.getElementById('pageHeading');
             const categoryTitleSpan = document.getElementById('categoryTitle');
-            const productListGrid = document.getElementById('productListGrid'); // Target the grid div
+            const productListGrid = document.getElementById('productListGrid');
 
-            // Update Navbar highlighting based on current side
+            // NEW: Reference to the new link
+            const returnToCategoryListLink = document.getElementById('returnToCategoryListLink');
+
+            // Set up Return to Category List link
+            if (side && category) {
+                // If we know side and category, link back to the specific category list page
+                if (side === 'inside') {
+                    returnToCategoryListLink.href = `/hoth/trailer-inside.html`;
+                } else if (side === 'outside') {
+                    returnToCategoryListLink.href = `/hoth/trailer-outside.html`;
+                }
+                // Text is hardcoded in HTML as "Return to Select a Category"
+            } else {
+                // Fallback if side/category parameters are missing (e.g., if accessed directly)
+                returnToCategoryListLink.textContent = `Return to RV Categories`; // Generic text
+                returnToCategoryListLink.href = `/hoth/trailer-landing-page.html`; // Go back to the main RV view
+                returnToCategoryListLink.style.display = 'none'; // Optionally hide if no context
+            }
+
+
+            // Update Navbar highlighting based on current side (for Inside/Outside Product Reviews links)
             const insideLink = document.getElementById('insideReviewsLink');
             const outsideLink = document.getElementById('outsideReviewsLink');
             const shoppingListLink = document.querySelector('.navbar a[href="/hoth/shopping.html"]'); 
@@ -243,8 +262,8 @@
 
                     if (filteredProducts.length > 0) {
                         filteredProducts.forEach(product => {
-                            const productWrapper = document.createElement('div'); // Create wrapper for each product
-                            productWrapper.className = 'item-card-wrapper'; // Apply the new wrapper class
+                            const productWrapper = document.createElement('div');
+                            productWrapper.className = 'item-card-wrapper';
 
                             productWrapper.innerHTML = `
                                 <a href="/hoth/product-review-template.html?product=${product.filename}&side=${side}&category=${encodeURIComponent(decodedCategory)}" target="_self">
@@ -255,7 +274,7 @@
                                 </a>
                                 <a href="/hoth/product-review-template.html?product=${product.filename}&side=${side}&category=${encodeURIComponent(decodedCategory)}" class="item-link" target="_self">View Review</a>
                             `;
-                            productListGrid.appendChild(productWrapper); // Append to the grid div
+                            productListGrid.appendChild(productWrapper);
                         });
                     } else {
                         productListGrid.innerHTML = `<p>No products found for ${decodedCategory} in ${side} RV section.</p>`;
