@@ -213,7 +213,7 @@
         <h1 id="productName">Loading Product Review...</h1>
 
         <div class="navbar">
-            <a id="returnToCategoryLink" href="#">Return to [Category] List</a> <a id="returnToSelectCategoryLink" href="#">Return to Select Category</a> <a href="/hoth/trailer-landing-page.html">Return to Trailer View</a>
+            <a id="returnToCategoryLink" href="#">All [Category] Products</a> <a id="returnToSelectCategoryLink" href="#">Select A Category</a> <a href="/hoth/trailer-landing-page.html"> Trailer View</a>
             <a href="/hoth/shopping.html">Shopping List</a>
         </div>
 
@@ -272,7 +272,7 @@
             if (sideFromURL && categoryFromURL) {
                 // Link to the specific category list page (e.g., Bathroom list)
                 returnToCategoryListLink.href = `/hoth/product-list-by-category.html?side=${sideFromURL}&category=${encodeURIComponent(categoryFromURL)}`;
-                returnToCategoryListLink.textContent = `Return to ${decodeURIComponent(categoryFromURL)} List`; // Dynamic text
+                returnToCategoryListLink.textContent = `All ${decodeURIComponent(categoryFromURL)} Products`; // Dynamic text
 
                 // Link to the general side's category selection page (e.g., Inside Categories)
                 if (sideFromURL === 'inside') {
