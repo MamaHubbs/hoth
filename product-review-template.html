@@ -213,9 +213,9 @@
         <h1 id="productName">Loading Product Review...</h1>
 
         <div class="navbar">
-            <a id="returnToCategoryListLink" href="#">Return to [Category] List</a> 
-            <a id="returnToSelectCategoryLink" href="#">Return to Select Category</a> 
-            <a href="/hoth/trailer-landing-page.html">Return to Trailer View</a>
+            <a id="returnToCategoryListLink" href="#">All [Category] Products</a> 
+            <a id="returnToSelectCategoryLink" href="#">Select A Category</a> 
+            <a href="/hoth/trailer-landing-page.html">Trailer View</a>
             <a href="/hoth/shopping.html">Shopping List</a>
         </div>
 
@@ -273,7 +273,7 @@
             // Safely check if elements exist before setting href/textContent
             if (returnToCategoryListLink && sideFromURL && categoryFromURL) {
                 returnToCategoryListLink.href = `/hoth/product-list-by-category.html?side=${sideFromURL}&category=${encodeURIComponent(categoryFromURL)}`;
-                returnToCategoryListLink.textContent = `Return to ${decodeURIComponent(categoryFromURL)} List`; 
+                returnToCategoryListLink.textContent = `All ${decodeURIComponent(categoryFromURL)} Products`; 
             } else if (returnToCategoryListLink) {
                 // Fallback if side/category parameters are missing
                 returnToCategoryListLink.textContent = `Return to Product List`; 
@@ -288,7 +288,7 @@
                 } else if (sideFromURL === 'outside') {
                     returnToSelectCategoryLink.href = `/hoth/trailer-outside.html`;
                 }
-                returnToSelectCategoryLink.textContent = `Return to Select Category`; 
+                returnToSelectCategoryLink.textContent = `Select A Category`; 
             } else if (returnToSelectCategoryLink) {
                 returnToSelectCategoryLink.textContent = `Return to RV Categories`;
                 returnToSelectCategoryLink.href = `/hoth/trailer-landing-page.html`;
