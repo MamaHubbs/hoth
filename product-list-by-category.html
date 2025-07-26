@@ -64,6 +64,7 @@
         }
         .navbar a.current-page:hover {
             background-color: #2d7cbc;
+            cursor: default;
         }
 
         /* Table styles (similar to shopping.html) */
@@ -96,9 +97,9 @@
         .item-card {
             position: relative;
             display: inline-block;
-            width: 360px; /* ADJUSTED: Double width */
+            width: 360px; /* Base width */
             height: auto;
-            aspect-ratio: 16 / 9;
+            aspect-ratio: 16 / 9; /* NEW: Sets 16:9 aspect ratio */
             border: 1px solid #ddd;
             border-radius: 5px;
             overflow: hidden;
@@ -108,12 +109,12 @@
         }
         .item-card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
         }
         .item-card img {
             width: 100%;
             height: 100%; /* Make image fill the 16:9 container */
-            object-fit: cover;
+            object-fit: cover; /* Ensures image covers the area without distortion */
             display: block;
         }
         .item-overlay {
@@ -141,7 +142,7 @@
             text-decoration: underline;
         }
 
-        /* Responsive adjustments - ADJUSTED FOR DOUBLE SIZE */
+        /* Responsive adjustments */
         @media (max-width: 768px) {
             .navbar a {
                 margin: 5px;
@@ -152,7 +153,7 @@
                 padding: 10px;
             }
             .item-card {
-                width: 280px; /* ADJUSTED: Double width (from 140px) for medium screens */
+                width: 280px; /* Adjusted base width for smaller screens */
                 height: auto; /* Maintain aspect ratio */
             }
             .item-overlay {
@@ -188,7 +189,7 @@
             }
             .item-card {
                 width: 100%; /* Full width for small screens */
-                max-width: 300px; /* ADJUSTED: Increased max-width for very small screens */
+                max-width: 300px; /* Increased max-width for very small screens */
                 height: auto;
                 aspect-ratio: 16 / 9; /* Ensure 16:9 on mobile too */
             }
@@ -245,6 +246,7 @@
             }
             // No current-page class for shoppingListLink here, as this page is not shopping.html
 
+
             if (!side || !category) {
                 pageHeading.textContent = "Error: Side or Category not specified.";
                 productListTbody.innerHTML = '<tr><td colspan="3">Please select a side and category from the previous page.</td></tr>';
@@ -282,13 +284,13 @@
                             }
 
                             const td = document.createElement('td');
+                            // CORRECTED: Use product.filename to get the full product review page
                             td.innerHTML = `
                                 <div class="item-card">
                                     <img src="${product.main_image_url || '/hoth/image/placeholder.png'}" alt="${product.name}">
                                     <div class="item-overlay">${product.name}</div>
                                 </div>
-                                <a href="/hoth/product-review-template.html?product=${product.id}" class="item-link" target="_self">View Review</a>
-                            `;
+                                <a href="/hoth/product-review-template.html?product=${product.filename}" class="item-link" target="_self">View Review</a> `;
                             row.appendChild(td);
                         });
 
