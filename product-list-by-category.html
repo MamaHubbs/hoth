@@ -122,16 +122,8 @@
             overflow: hidden;
             text-overflow: ellipsis;
         }
-        .item-link { /* For "View Review" link under product image */
-            display: block;
-            margin-top: 10px;
-            text-decoration: none;
-            color: #007bff;
-            font-weight: bold;
-        }
-        .item-link:hover {
-            text-decoration: underline;
-        }
+        /* Removed .item-link styling as that specific anchor tag is being removed */
+
 
         /* Responsive adjustments */
         @media (max-width: 768px) {
@@ -183,7 +175,8 @@
 
         <div class="navbar">
             <a href="/hoth/trailer-landing-page.html">Return to Trailer View</a>
-            <a id="returnToCategoryListLink" href="#">Return to Select a Category</a> <a href="/hoth/shopping.html">Shopping List (All Products)</a>
+            <a id="returnToCategoryListLink" href="#">Return to Select a Category</a>
+            <a href="/hoth/shopping.html">Shopping List (All Products)</a>
         </div>
 
         <h2>Products in <span id="categoryTitle">Category</span></h2>
@@ -203,26 +196,30 @@
             const categoryTitleSpan = document.getElementById('categoryTitle');
             const productListGrid = document.getElementById('productListGrid');
 
-            // NEW: Reference to the new 'Return to Select a Category' link
             const returnToCategoryListLink = document.getElementById('returnToCategoryListLink');
 
-            // Set up 'Return to Select a Category' link dynamically
-            if (side === 'inside') {
-                returnToCategoryListLink.href = `/hoth/trailer-inside.html`;
-                // Text is hardcoded in HTML as "Return to Select a Category"
-            } else if (side === 'outside') {
-                returnToCategoryListLink.href = `/hoth/trailer-outside.html`;
-                // Text is hardcoded in HTML as "Return to Select a Category"
+            if (side && category) {
+                if (side === 'inside') {
+                    returnToCategoryListLink.href = `/hoth/trailer-inside.html`;
+                } else if (side === 'outside') {
+                    returnToCategoryListLink.href = `/hoth/trailer-outside.html`;
+                }
             } else {
-                // Fallback if side parameter is missing (e.g., if accessed directly)
-                returnToCategoryListLink.textContent = `Return to RV Categories`; // Generic text
-                returnToCategoryListLink.href = `/hoth/trailer-landing-page.html`; // Go back to the main RV view
-                // You might also consider hiding this link if no valid context is found:
-                // returnToCategoryListLink.style.display = 'none';
+                returnToCategoryListLink.textContent = `Return to RV Categories`;
+                returnToCategoryListLink.href = `/hoth/trailer-landing-page.html`;
             }
 
+            const insideLink = document.getElementById('insideReviewsLink');
+            const outsideLink = document.getElementById('outsideReviewsLink');
+            const shoppingListLink = document.querySelector('.navbar a[href="/hoth/shopping.html"]'); 
 
-            // REMOVED: Old Navbar highlighting for insideLink, outsideLink, shoppingListLink as they are not on this page anymore
+            if (side === 'inside') {
+                insideLink.classList.add('current-page');
+                outsideLink.classList.remove('current-page');
+            } else if (side === 'outside') {
+                outsideLink.classList.add('current-page');
+                insideLink.classList.remove('current-page');
+            }
 
             if (!side || !category) {
                 pageHeading.textContent = "Error: Side or Category not specified.";
@@ -256,6 +253,7 @@
                             const productWrapper = document.createElement('div');
                             productWrapper.className = 'item-card-wrapper';
 
+                            // CORRECTED: Image itself is now the link, removed separate "View Review" link
                             productWrapper.innerHTML = `
                                 <a href="/hoth/product-review-template.html?product=${product.filename}&side=${side}&category=${encodeURIComponent(decodedCategory)}" target="_self">
                                     <div class="item-card">
@@ -263,7 +261,6 @@
                                         <div class="item-overlay">${product.name}</div>
                                     </div>
                                 </a>
-                                <a href="/hoth/product-review-template.html?product=${product.filename}&side=${side}&category=${encodeURIComponent(decodedCategory)}" class="item-link" target="_self">View Review</a>
                             `;
                             productListGrid.appendChild(productWrapper);
                         });
