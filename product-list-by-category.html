@@ -133,7 +133,7 @@
             text-decoration: underline;
         }
 
-        /* Responsive adjustments for the new grid layout */
+        /* Responsive adjustments */
         @media (max-width: 768px) {
             .navbar a {
                 margin: 5px;
@@ -164,7 +164,10 @@
                 margin: 3px;
                 font-size: 0.8em;
             }
-            /* .product-list-grid is already 1fr and centered by 768px media query */
+            .product-list-grid {
+                grid-template-columns: 1fr; /* Single column on very small screens */
+                justify-items: center; /* Center the single item card in the column */
+            }
             .item-card-wrapper {
                 max-width: 100%; /* Allow to fill container width */
             }
@@ -200,38 +203,26 @@
             const categoryTitleSpan = document.getElementById('categoryTitle');
             const productListGrid = document.getElementById('productListGrid');
 
-            // NEW: Reference to the new link
+            // NEW: Reference to the new 'Return to Select a Category' link
             const returnToCategoryListLink = document.getElementById('returnToCategoryListLink');
 
-            // Set up Return to Category List link
-            if (side && category) {
-                // If we know side and category, link back to the specific category list page
-                if (side === 'inside') {
-                    returnToCategoryListLink.href = `/hoth/trailer-inside.html`;
-                } else if (side === 'outside') {
-                    returnToCategoryListLink.href = `/hoth/trailer-outside.html`;
-                }
+            // Set up 'Return to Select a Category' link dynamically
+            if (side === 'inside') {
+                returnToCategoryListLink.href = `/hoth/trailer-inside.html`;
+                // Text is hardcoded in HTML as "Return to Select a Category"
+            } else if (side === 'outside') {
+                returnToCategoryListLink.href = `/hoth/trailer-outside.html`;
                 // Text is hardcoded in HTML as "Return to Select a Category"
             } else {
-                // Fallback if side/category parameters are missing (e.g., if accessed directly)
+                // Fallback if side parameter is missing (e.g., if accessed directly)
                 returnToCategoryListLink.textContent = `Return to RV Categories`; // Generic text
                 returnToCategoryListLink.href = `/hoth/trailer-landing-page.html`; // Go back to the main RV view
-                returnToCategoryListLink.style.display = 'none'; // Optionally hide if no context
+                // You might also consider hiding this link if no valid context is found:
+                // returnToCategoryListLink.style.display = 'none';
             }
 
 
-            // Update Navbar highlighting based on current side (for Inside/Outside Product Reviews links)
-            const insideLink = document.getElementById('insideReviewsLink');
-            const outsideLink = document.getElementById('outsideReviewsLink');
-            const shoppingListLink = document.querySelector('.navbar a[href="/hoth/shopping.html"]'); 
-
-            if (side === 'inside') {
-                insideLink.classList.add('current-page');
-                outsideLink.classList.remove('current-page');
-            } else if (side === 'outside') {
-                outsideLink.classList.add('current-page');
-                insideLink.classList.remove('current-page');
-            }
+            // REMOVED: Old Navbar highlighting for insideLink, outsideLink, shoppingListLink as they are not on this page anymore
 
             if (!side || !category) {
                 pageHeading.textContent = "Error: Side or Category not specified.";
