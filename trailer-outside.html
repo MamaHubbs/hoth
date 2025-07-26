@@ -149,7 +149,7 @@
 
 
             // Fetch the product index
-            const productIndexJsonUrl = getCampgroundJsonUrl('product_index'); 
+            const productIndexJsonUrl = getCampgroundJsonUrl('product_index'); // Using getCampgroundJsonUrl which is in shared.js
 
             fetch(productIndexJsonUrl)
                 .then(response => {
@@ -176,8 +176,8 @@
                         Array.from(categories).sort().forEach(category => {
                             const li = document.createElement('li');
                             const link = document.createElement('a');
-                            // ADJUSTED LINK: Now points to shopping.html with root-relative path
-                            link.href = `/hoth/shopping.html?side=${side}&category=${encodeURIComponent(category)}`; 
+                            // CORRECTED LINK: Now points to product-list-by-category.html (the new page)
+                            link.href = `/hoth/product-list-by-category.html?side=${side}&category=${encodeURIComponent(category)}`; 
                             link.textContent = category;
                             link.target = "_self"; // Stay within current iframe
 
