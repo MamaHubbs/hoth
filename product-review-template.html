@@ -107,6 +107,18 @@
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
+        /* Styling for product link/blurb moved below image */
+        .product-image-container .image-extra-info {
+            margin-top: 15px; /* Space above these elements */
+            text-align: left;
+        }
+        .product-image-container .image-extra-info p {
+            font-size: 0.95em; /* Slightly smaller font */
+            margin-bottom: 5px; /* Tighter spacing */
+        }
+        .product-image-container .image-extra-info p:last-child {
+            margin-bottom: 0;
+        }
 
         .photo-gallery-grid {
             display: grid;
@@ -201,7 +213,7 @@
         <h1 id="productName">Loading Product Review...</h1>
 
         <div class="navbar">
-            <a id="returnToCategoryListLink" href="#">All [Category] Products</a> <a id="returnToSelectCategoryLink" href="#">Select A Category</a> <a href="/hoth/trailer-landing-page.html">Trailer View</a>
+            <a id="returnToCategoryLink" href="#">Return to [Category] List</a> <a id="returnToSelectCategoryLink" href="#">Return to Select Category</a> <a href="/hoth/trailer-landing-page.html">Return to Trailer View</a>
             <a href="/hoth/shopping.html">Shopping List</a>
         </div>
 
@@ -211,14 +223,18 @@
                 <p id="productOverallRating" class="overall-rating-general-info"></p>
                 <p><strong>Cost:</strong> <span id="productCost"></span></p>
                 <p><strong>Purchased From:</strong> <span id="productPurchased"></span></p>
-                <p><strong>Product Link:</strong> <a id="productLink" href="#" target="_blank">Click Here to View</a></p>
-                <p id="affiliateBlurb" style="font-size: 0.85em; color: #777; margin-top: 10px;"></p>
+                <p><strong>Still Using:</strong> <span id="productUsing"></span></p>
+                <p><strong>Would Buy Again:</strong> <span id="productBuyAgain"></span></p>
             </div>
 
             <div class="product-image-container product-info-box-column">
                 <a id="mainProductImageLink" href="#" data-lightbox="product-main-image-gallery" data-title="Product Image">
                     <img id="mainProductImage" src="" alt="Product Image">
                 </a>
+                <div class="image-extra-info">
+                    <p><strong>Product Link:</strong> <a id="productLink" href="#" target="_blank">Click Here to View</a></p>
+                    <p id="affiliateBlurb"></p>
+                </div>
             </div>
         </div>
         
@@ -256,7 +272,7 @@
             if (sideFromURL && categoryFromURL) {
                 // Link to the specific category list page (e.g., Bathroom list)
                 returnToCategoryListLink.href = `/hoth/product-list-by-category.html?side=${sideFromURL}&category=${encodeURIComponent(categoryFromURL)}`;
-                returnToCategoryListLink.textContent = `All ${decodeURIComponent(categoryFromURL)} Products`; // Dynamic text
+                returnToCategoryListLink.textContent = `Return to ${decodeURIComponent(categoryFromURL)} List`; // Dynamic text
 
                 // Link to the general side's category selection page (e.g., Inside Categories)
                 if (sideFromURL === 'inside') {
@@ -320,15 +336,9 @@
                         document.getElementById('productCost').textContent = product.cost || 'N/A';
                         document.getElementById('productPurchased').textContent = product.purchased || 'N/A';
                         
-                        const productLinkElement = document.getElementById('productLink');
-                        if (product.productlink) {
-                            productLinkElement.href = product.productlink;
-                        } else {
-                            productLinkElement.textContent = 'N/A';
-                            productLinkElement.removeAttribute('href');
-                        }
-
-                        document.getElementById('affiliateBlurb').textContent = product.affililiateblurb || '';
+                        // NEW: Populate Still Using and Would Buy Again
+                        document.getElementById('productUsing').textContent = (typeof product.using === 'boolean') ? (product.using ? "Yes" : "No") : 'N/A';
+                        document.getElementById('productBuyAgain').textContent = (typeof product.buyagain === 'boolean') ? (product.buyagain ? "Yes" : "No") : 'N/A';
 
 
                         // Populate Main Product Image and associated Lightbox link
@@ -344,6 +354,16 @@
                             mainProductImage.style.display = 'none'; 
                             mainProductImageLink.style.display = 'none';
                         }
+                        // Populate Product Link & Affiliate Blurb (MOVED)
+                        const productLinkElement = document.getElementById('productLink');
+                        if (product.productlink) {
+                            productLinkElement.href = product.productlink;
+                            productLinkElement.textContent = "Click Here to View";
+                        } else {
+                            productLinkElement.textContent = 'N/A';
+                            productLinkElement.removeAttribute('href');
+                        }
+                        document.getElementById('affiliateBlurb').textContent = product.affililiateblurb || '';
 
 
                         // Photo Gallery (now only populates if photoGallery array exists AND has items)
