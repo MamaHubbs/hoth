@@ -102,10 +102,8 @@
         <h1 id="pageHeading">Loading Categories...</h1>
 
         <div class="navbar">
-            <a href="trailer-landing-page.html">Return to Trailer View</a>
-            <a id="toggleSideLink" href="#">Go to Other Section</a>
-            <a href="shopping.html">Shopping List</a>
-        </div>
+            <a href="/hoth/trailer-landing-page.html">Return to Trailer View</a> <a id="toggleSideLink" href="#">Go to Other Section</a>
+            <a href="/hoth/shopping.html">Shopping List</a> </div>
 
         <h2>Select a Category</h2>
         <div id="categoryList" class="category-list">
@@ -130,12 +128,12 @@
             if (pageName === 'trailer-inside.html') {
                 side = 'inside';
                 pageTitle = "Inside Product Reviews";
-                otherSideHref = 'trailer-outside.html';
+                otherSideHref = '/hoth/trailer-outside.html'; // Root-relative path
                 otherSideText = 'Go to Outside Product Reviews';
             } else if (pageName === 'trailer-outside.html') {
                 side = 'outside';
                 pageTitle = "Outside Product Reviews";
-                otherSideHref = 'trailer-inside.html';
+                otherSideHref = '/hoth/trailer-inside.html'; // Root-relative path
                 otherSideText = 'Go to Inside Product Reviews';
             } else {
                 pageTitle = "RV Product Categories"; // Fallback title
@@ -151,7 +149,7 @@
 
 
             // Fetch the product index
-            const productIndexJsonUrl = getCampgroundJsonUrl('product_index'); // Using getCampgroundJsonUrl which is in shared.js
+            const productIndexJsonUrl = getCampgroundJsonUrl('product_index'); 
 
             fetch(productIndexJsonUrl)
                 .then(response => {
@@ -178,8 +176,8 @@
                         Array.from(categories).sort().forEach(category => {
                             const li = document.createElement('li');
                             const link = document.createElement('a');
-                            // ADJUSTED LINK: Now points to product-list-by-category.html
-                            link.href = `product-list-by-category.html?side=${side}&category=${encodeURIComponent(category)}`; 
+                            // ADJUSTED LINK: Now points to shopping.html with root-relative path
+                            link.href = `/hoth/shopping.html?side=${side}&category=${encodeURIComponent(category)}`; 
                             link.textContent = category;
                             link.target = "_self"; // Stay within current iframe
 
