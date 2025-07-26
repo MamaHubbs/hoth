@@ -76,23 +76,34 @@
             align-items: start; /* Align items to the top of their grid cells */
             justify-items: start; /* Align grid items to the start (left) of their cell */
         }
-        /* NEW: Wrapper for each product card in the grid */
-        .item-card-wrapper {
+        
+        /* NEW: Wrapper for the entire clickable product card */
+        .product-card-link { /* This is the new wrapping <a> tag */
+            display: flex; /* Make the link a flex container */
+            flex-direction: column; /* Stack image and name vertically */
+            justify-content: space-between; /* Space out content vertically */
+            text-decoration: none; /* Remove underline from the link */
+            color: inherit; /* Inherit text color from body */
+            
             background-color: #fff; /* White background for the card */
             border: 1px solid #eee; /* Light border */
             border-radius: 8px; /* Rounded corners */
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Subtle shadow */
             padding: 15px; /* Padding inside the card */
             box-sizing: border-box; /* Include padding and border in the element's total width */
-            display: flex;
-            flex-direction: column; /* Stack image and link vertically */
-            justify-content: space-between; /* Space out content vertically */
-            text-align: center; /* Center image and link text within card */
+            
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Hover transition */
+        }
+        .product-card-link:hover {
+            transform: translateY(-3px); /* Lift effect on hover */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            cursor: pointer;
         }
 
-        /* Item Card (for the image itself within the wrapper) - ADJUSTED FOR 16:9 ASPECT RATIO */
+
+        /* Item Card (for the image itself within the wrapper) */
         .item-card {
-            position: relative; /* Keep relative for potential future overlays if needed */
+            position: relative;
             display: block; /* Make it a block element to respect aspect-ratio */
             width: 100%; /* Fill the width of its wrapper */
             height: auto; /* Height will be determined by aspect-ratio */
@@ -108,10 +119,22 @@
             object-fit: cover; /* Ensures image covers the area without distortion */
             display: block;
         }
-        /* Removed .item-overlay styling as it's no longer an overlay */
-        /* .item-overlay { ... } */
+        .item-overlay { /* For text overlay on image, stays same */
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 8px;
+            font-size: 0.9em;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
 
-        /* NEW: Styling for the product name displayed below the image */
+        /* Styling for the product name displayed below the image */
         .product-name-below-image {
             font-size: 1.1em; /* Slightly larger text for the name */
             font-weight: bold;
@@ -120,17 +143,6 @@
             margin-bottom: 0; /* No bottom margin if it's the last element */
             padding: 0 5px; /* Little horizontal padding */
             text-align: center;
-        }
-        
-        .item-link { /* For "View Review" link under product image - Removed this in previous step, kept for reference */
-            display: block;
-            margin-top: 10px;
-            text-decoration: none;
-            color: #007bff;
-            font-weight: bold;
-        }
-        .item-link:hover {
-            text-decoration: underline;
         }
 
         /* Responsive adjustments */
@@ -144,12 +156,13 @@
                 grid-template-columns: 1fr; /* Single column on smaller screens */
                 justify-items: center; /* Center items in the single column */
             }
-            .item-card-wrapper {
+            .product-card-link { /* The new wrapping link becomes the flexible container */
                 max-width: 360px; /* Keep max-width for single column item to prevent it from being too wide */
+                width: 100%; /* Fill available space */
             }
-            /* .item-card { width is now 100% of wrapper, wrapper has minmax(280px, 1fr) } */
-            .product-name-below-image {
-                font-size: 1em; /* Adjust font size for smaller screens */
+            .item-overlay {
+                font-size: 0.8em;
+                padding: 6px;
             }
         }
 
@@ -165,8 +178,8 @@
                 font-size: 0.8em;
             }
             /* .product-list-grid is already 1fr and centered by 768px media query */
-            .item-card-wrapper {
-                max-width: 100%; /* Allow to fill container width */
+            .product-card-link { /* On very small screens, let it fill up to its container's max-width */
+                max-width: 100%; 
             }
             .item-card {
                 aspect-ratio: 16 / 9; /* Ensure 16:9 on mobile too */
@@ -243,18 +256,19 @@
 
                     if (filteredProducts.length > 0) {
                         filteredProducts.forEach(product => {
-                            const productWrapper = document.createElement('div');
-                            productWrapper.className = 'item-card-wrapper';
+                            // NEW: Wrap the entire card content in a single <a> tag
+                            const productCardLink = document.createElement('a');
+                            productCardLink.href = `/hoth/product-review-template.html?product=${product.filename}&side=${side}&category=${encodeURIComponent(decodedCategory)}`;
+                            productCardLink.className = 'product-card-link'; // Apply new styling class
+                            productCardLink.target = "_self"; // Stay within current iframe
 
-                            // CORRECTED: Image is the link, and product name is below it in a new div
-                            productWrapper.innerHTML = `
-                                <a href="/hoth/product-review-template.html?product=${product.filename}&side=${side}&category=${encodeURIComponent(decodedCategory)}" target="_self">
-                                    <div class="item-card">
-                                        <img src="${product.main_image_url || '/hoth/image/placeholder.png'}" alt="${product.name}">
-                                    </div>
-                                </a>
-                                <div class="product-name-below-image">${product.name}</div> `;
-                            productListGrid.appendChild(productWrapper);
+                            productCardLink.innerHTML = `
+                                <div class="item-card">
+                                    <img src="${product.main_image_url || '/hoth/image/placeholder.png'}" alt="${product.name}">
+                                </div>
+                                <div class="product-name-below-image">${product.name}</div>
+                            `;
+                            productListGrid.appendChild(productCardLink);
                         });
                     } else {
                         productListGrid.innerHTML = `<p>No products found for ${decodedCategory} in ${side} RV section.</p>`;
