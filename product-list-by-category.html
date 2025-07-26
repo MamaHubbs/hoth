@@ -76,32 +76,21 @@
             align-items: start; /* Align items to the top of their grid cells */
             justify-items: start; /* Align grid items to the start (left) of their cell */
         }
-        
-        /* NEW: Wrapper for the entire clickable product card */
-        .product-card-link { /* This is the new wrapping <a> tag */
-            display: flex; /* Make the link a flex container */
-            flex-direction: column; /* Stack image and name vertically */
-            justify-content: space-between; /* Space out content vertically */
-            text-decoration: none; /* Remove underline from the link */
-            color: inherit; /* Inherit text color from body */
-            
+        /* NEW: Wrapper for each product card in the grid */
+        .item-card-wrapper {
             background-color: #fff; /* White background for the card */
             border: 1px solid #eee; /* Light border */
             border-radius: 8px; /* Rounded corners */
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Subtle shadow */
             padding: 15px; /* Padding inside the card */
             box-sizing: border-box; /* Include padding and border in the element's total width */
-            
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Hover transition */
-        }
-        .product-card-link:hover {
-            transform: translateY(-3px); /* Lift effect on hover */
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-            cursor: pointer;
+            display: flex;
+            flex-direction: column; /* Stack image and link vertically */
+            justify-content: space-between; /* Space out content vertically */
+            text-align: center; /* Center image and link text within card */
         }
 
-
-        /* Item Card (for the image itself within the wrapper) */
+        /* Item Card (for the image itself within the wrapper) - ADJUSTED FOR 16:9 ASPECT RATIO */
         .item-card {
             position: relative;
             display: block; /* Make it a block element to respect aspect-ratio */
@@ -156,9 +145,8 @@
                 grid-template-columns: 1fr; /* Single column on smaller screens */
                 justify-items: center; /* Center items in the single column */
             }
-            .product-card-link { /* The new wrapping link becomes the flexible container */
+            .item-card-wrapper {
                 max-width: 360px; /* Keep max-width for single column item to prevent it from being too wide */
-                width: 100%; /* Fill available space */
             }
             .item-overlay {
                 font-size: 0.8em;
@@ -177,9 +165,12 @@
                 margin: 3px;
                 font-size: 0.8em;
             }
-            /* .product-list-grid is already 1fr and centered by 768px media query */
-            .product-card-link { /* On very small screens, let it fill up to its container's max-width */
-                max-width: 100%; 
+            .product-list-grid {
+                grid-template-columns: 1fr; /* Single column on very small screens */
+                justify-items: center; /* Center the single item card in the column */
+            }
+            .item-card-wrapper {
+                max-width: 100%; /* Allow to fill container width */
             }
             .item-card {
                 aspect-ratio: 16 / 9; /* Ensure 16:9 on mobile too */
@@ -197,7 +188,6 @@
             <a href="/hoth/shopping.html">Shopping List (All Products)</a>
         </div>
 
-        <h2>Products in <span id="categoryTitle">Category</span></h2>
         <div id="productListGrid" class="product-list-grid">
             <p>Loading products...</p>
         </div>
@@ -211,21 +201,27 @@
             const category = getQueryParameter('category');
 
             const pageHeading = document.getElementById('pageHeading');
-            const categoryTitleSpan = document.getElementById('categoryTitle');
+            // Removed categoryTitleSpan as it's no longer used in HTML
             const productListGrid = document.getElementById('productListGrid');
 
             const returnToCategoryListLink = document.getElementById('returnToCategoryListLink');
 
             if (side && category) {
+                // Dynamically set href for "Return to Select a Category"
                 if (side === 'inside') {
                     returnToCategoryListLink.href = `/hoth/trailer-inside.html`;
                 } else if (side === 'outside') {
                     returnToCategoryListLink.href = `/hoth/trailer-outside.html`;
                 }
+                // Text is hardcoded in HTML as "Return to Select a Category"
             } else {
-                returnToCategoryListLink.textContent = `Return to RV Categories`;
-                returnToCategoryListLink.href = `/hoth/trailer-landing-page.html`;
+                returnToCategoryListLink.textContent = `Return to RV Categories`; // Generic fallback
+                returnToCategoryListLink.href = `/hoth/trailer-landing-page.html`; // Go back to the main RV view
+                // Optionally hide this link if no valid context is found:
+                // returnToCategoryListLink.style.display = 'none';
             }
+
+            // Removed Navbar highlighting as those IDs are not on this page anymore
 
             if (!side || !category) {
                 pageHeading.textContent = "Error: Side or Category not specified.";
@@ -234,8 +230,9 @@
             }
 
             const decodedCategory = decodeURIComponent(category);
-            pageHeading.textContent = `${side.charAt(0).toUpperCase() + side.slice(1)} RV: ${decodedCategory} Products`;
-            categoryTitleSpan.textContent = decodedCategory;
+            // UPDATED: h1 text now includes the "Reviews" part
+            pageHeading.textContent = `${side.charAt(0).toUpperCase() + side.slice(1)} RV: ${decodedCategory} Product Reviews`; 
+            // Removed categoryTitleSpan.textContent as the span is removed from HTML
 
             const productIndexJsonUrl = getCampgroundJsonUrl('product_index'); 
 
@@ -256,11 +253,10 @@
 
                     if (filteredProducts.length > 0) {
                         filteredProducts.forEach(product => {
-                            // NEW: Wrap the entire card content in a single <a> tag
                             const productCardLink = document.createElement('a');
                             productCardLink.href = `/hoth/product-review-template.html?product=${product.filename}&side=${side}&category=${encodeURIComponent(decodedCategory)}`;
-                            productCardLink.className = 'product-card-link'; // Apply new styling class
-                            productCardLink.target = "_self"; // Stay within current iframe
+                            productCardLink.className = 'product-card-link';
+                            productCardLink.target = "_self";
 
                             productCardLink.innerHTML = `
                                 <div class="item-card">
