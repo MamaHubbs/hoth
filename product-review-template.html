@@ -256,7 +256,7 @@
             if (sideFromURL && categoryFromURL) {
                 // Link to the specific category list page (e.g., Bathroom list)
                 returnToCategoryListLink.href = `/hoth/product-list-by-category.html?side=${sideFromURL}&category=${encodeURIComponent(categoryFromURL)}`;
-                returnToCategoryListLink.textContent = `Return to ${decodeURIComponent(categoryFromURL)} List`; // Dynamic text
+                returnToCategoryListLink.textContent = `All ${decodeURIComponent(categoryFromURL)} Products`; // Dynamic text
 
                 // Link to the general side's category selection page (e.g., Inside Categories)
                 if (sideFromURL === 'inside') {
@@ -264,7 +264,7 @@
                 } else if (sideFromURL === 'outside') {
                     returnToSelectCategoryLink.href = `/hoth/trailer-outside.html`;
                 }
-                returnToSelectCategoryLink.textContent = `Return to Select Category`; // Fixed text
+                returnToSelectCategoryLink.textContent = `Select A Category`; // Fixed text
             } else {
                 // Fallback if side/category parameters are missing (e.g., if accessed directly)
                 returnToCategoryListLink.textContent = `Return to Product List`; 
