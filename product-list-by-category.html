@@ -122,8 +122,16 @@
             overflow: hidden;
             text-overflow: ellipsis;
         }
-        /* Removed .item-link styling as that specific anchor tag is being removed */
-
+        .item-link { /* For "View Review" link under product image */
+            display: block;
+            margin-top: 10px;
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+        .item-link:hover {
+            text-decoration: underline;
+        }
 
         /* Responsive adjustments */
         @media (max-width: 768px) {
@@ -175,8 +183,7 @@
 
         <div class="navbar">
             <a href="/hoth/trailer-landing-page.html">Return to Trailer View</a>
-            <a id="returnToCategoryListLink" href="#">Return to Select a Category</a>
-            <a href="/hoth/shopping.html">Shopping List (All Products)</a>
+            <a id="returnToCategoryListLink" href="#">Return to Select a Category</a> <a href="/hoth/shopping.html">Shopping List (All Products)</a>
         </div>
 
         <h2>Products in <span id="categoryTitle">Category</span></h2>
@@ -196,30 +203,28 @@
             const categoryTitleSpan = document.getElementById('categoryTitle');
             const productListGrid = document.getElementById('productListGrid');
 
-            const returnToCategoryListLink = document.getElementById('returnToCategoryListLink');
+            // --- IMPORTANT: Removed old JavaScript lines that were causing the error ---
+            // Removed: const insideLink = document.getElementById('insideReviewsLink');
+            // Removed: const outsideLink = document.getElementById('outsideReviewsLink');
+            // Removed: const shoppingListLink = document.querySelector('.navbar a[href="/hoth/shopping.html"]'); 
 
-            if (side && category) {
+            // Removed: if (side === 'inside') { ... } else if (side === 'outside') { ... }
+            // --- END REMOVAL ---
+
+            // Set up 'Return to Select a Category' link dynamically
+            const returnToCategoryListLink = document.getElementById('returnToCategoryListLink');
+            if (side && (side === 'inside' || side === 'outside')) { // Check if 'side' is valid
                 if (side === 'inside') {
                     returnToCategoryListLink.href = `/hoth/trailer-inside.html`;
-                } else if (side === 'outside') {
+                } else { // It must be outside
                     returnToCategoryListLink.href = `/hoth/trailer-outside.html`;
                 }
             } else {
-                returnToCategoryListLink.textContent = `Return to RV Categories`;
-                returnToCategoryListLink.href = `/hoth/trailer-landing-page.html`;
+                returnToCategoryListLink.textContent = `Return to RV Categories`; // Generic fallback
+                returnToCategoryListLink.href = `/hoth/trailer-landing-page.html`; // Go back to the main RV view
+                // returnToCategoryListLink.style.display = 'none'; // Optionally hide if no context
             }
 
-            const insideLink = document.getElementById('insideReviewsLink');
-            const outsideLink = document.getElementById('outsideReviewsLink');
-            const shoppingListLink = document.querySelector('.navbar a[href="/hoth/shopping.html"]'); 
-
-            if (side === 'inside') {
-                insideLink.classList.add('current-page');
-                outsideLink.classList.remove('current-page');
-            } else if (side === 'outside') {
-                outsideLink.classList.add('current-page');
-                insideLink.classList.remove('current-page');
-            }
 
             if (!side || !category) {
                 pageHeading.textContent = "Error: Side or Category not specified.";
@@ -253,7 +258,6 @@
                             const productWrapper = document.createElement('div');
                             productWrapper.className = 'item-card-wrapper';
 
-                            // CORRECTED: Image itself is now the link, removed separate "View Review" link
                             productWrapper.innerHTML = `
                                 <a href="/hoth/product-review-template.html?product=${product.filename}&side=${side}&category=${encodeURIComponent(decodedCategory)}" target="_self">
                                     <div class="item-card">
