@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List by Category</title>
+    <style>
+        body {
+            font-family: Helvetica, sans-serif;
+            line-height: 1.4;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            font-family: Arial, sans-serif;
+            color: #133b66;
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 2em;
+        }
+        h2 {
+            font-family: Arial, sans-serif;
+            color: #2d7cbc;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+            margin-top: 25px;
+            font-size: 1.2em;
+        }
+        /* Navigation Bar Styles */
+        .navbar {
+            background-color: #133b66;
+            padding: 10px 0;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-size: 1.1em;
+            padding: 8px 15px;
+            margin: 0 5px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        .navbar a:hover {
+            background-color: #2d7cbc;
+            text-decoration: none;
+        }
+        /* Style for the current page link in the navbar */
+        .navbar a.current-page {
+            background-color: #2d7cbc;
+            cursor: default;
+        }
+        .navbar a.current-page:hover {
+            background-color: #2d7cbc;
+        }
+
+        /* Table styles (similar to shopping.html) */
+        .item-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 40px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .item-table th {
+            background-color: #6c757d;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-size: 1.2em;
+        }
+        .item-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            text-align: center;
+            vertical-align: top;
+        }
+        .item-table tr:last-child td {
+            border-bottom: none;
+        }
+        .item-card { /* For product image within the table */
+            position: relative;
+            display: inline-block;
+            width: 180px;
+            height: 180px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+            margin: auto;
+        }
+        .item-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        .item-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .item-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 8px;
+            font-size: 0.9em;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .item-link { /* For "View Review" link under product image */
+            display: block;
+            margin-top: 10px;
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+        .item-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .navbar a {
+                margin: 5px;
+                padding: 6px 10px;
+                font-size: 0.9em;
+            }
+            .item-table th, .item-table td {
+                padding: 10px;
+            }
+            .item-card {
+                width: 140px;
+                height: 140px;
+            }
+            .item-overlay {
+                font-size: 0.8em;
+                padding: 6px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .navbar a {
+                flex: 1 1 auto;
+                margin: 3px;
+                font-size: 0.8em;
+            }
+            .item-table, .item-table tbody, .item-table tr, .item-table td {
+                display: block;
+                width: 100%;
+            }
+            .item-table tr {
+                margin-bottom: 15px;
+                border: 1px solid #eee;
+                border-radius: 8px;
+            }
+            .item-table td {
+                border-bottom: none;
+                text-align: left;
+                padding: 10px;
+            }
+            .item-card {
+                width: 100%;
+                max-width: 200px;
+                height: auto;
+                aspect-ratio: 1 / 1;
+            }
+            .item-link {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="pageHeading">Loading Products...</h1>
+
+        <div class="navbar">
+            <a href="trailer-landing-page.html">Return to Trailer View</a>
+            <a id="insideReviewsLink" href="trailer-inside.html">Inside Product Reviews</a>
+            <a id="outsideReviewsLink" href="trailer-outside.html">Outside Product Reviews</a>
+            <a href="shopping.html">Shopping List (All Products)</a> </div>
+
+        <h2>Products in <span id="categoryTitle">Category</span></h2>
+        <table class="item-table">
+            <thead>
+                <tr>
+                    <th colspan="3"></th>
+                </tr>
+            </thead>
+            <tbody id="product-list-body">
+                </tbody>
+        </table>
+
+    </div>
+
+    <script src="shared.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const side = getQueryParameter('side'); // e.g., 'inside' or 'outside'
+            const category = getQueryParameter('category'); // e.g., 'Bathroom'
+
+            const pageHeading = document.getElementById('pageHeading');
+            const categoryTitleSpan = document.getElementById('categoryTitle');
+            const productListTbody = document.getElementById('product-list-body');
+
+            if (!side || !category) {
+                pageHeading.textContent = "Error: Side or Category not specified.";
+                productListTbody.innerHTML = '<tr><td colspan="3">Please select a side and category from the previous page.</td></tr>';
+                return;
+            }
+
+            const decodedCategory = decodeURIComponent(category);
+            pageHeading.textContent = `${side.charAt(0).toUpperCase() + side.slice(1)} RV: ${decodedCategory} Products`;
+            categoryTitleSpan.textContent = decodedCategory;
+
+
+            // Update current page highlight in navbar (Shopping List is the main one)
+            const shoppingListLink = document.querySelector('.navbar a[href="shopping.html"]');
+            if (shoppingListLink) {
+                shoppingListLink.classList.remove('current-page'); // Remove current page from generic shopping list
+            }
+            // You might want to highlight a new link that says "Current Category" if you want.
+
+            // Fetch the product index
+            const productIndexJsonUrl = getCampgroundJsonUrl('product_index'); 
+
+            fetch(productIndexJsonUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const allProducts = data.products || [];
+                    const filteredProducts = allProducts.filter(p => 
+                        p.side === side && p.category === decodedCategory
+                    );
+
+                    productListTbody.innerHTML = ''; // Clear loading message
+
+                    if (filteredProducts.length > 0) {
+                        let row;
+                        filteredProducts.forEach((product, index) => {
+                            if (index % 3 === 0) {
+                                row = document.createElement('tr');
+                                productListTbody.appendChild(row);
+                            }
+
+                            const td = document.createElement('td');
+                            td.innerHTML = `
+                                <div class="item-card">
+                                    <img src="${product.main_image_url || 'placeholder.png'}" alt="${product.name}">
+                                    <div class="item-overlay">${product.name}</div>
+                                </div>
+                                <a href="product-review-template.html?product=${product.id}" class="item-link" target="_self">View Review</a>
+                            `;
+                            row.appendChild(td);
+                        });
+
+                        // Fill remaining cells in the last row if less than 3 items
+                        if (row && filteredProducts.length % 3 !== 0) {
+                            const remainingCells = 3 - (filteredProducts.length % 3);
+                            for (let i = 0; i < remainingCells; i++) {
+                                row.appendChild(document.createElement('td'));
+                            }
+                        }
+                    } else {
+                        productListTbody.innerHTML = `<tr><td colspan="3">No products found for ${decodedCategory} in ${side} RV section.</td></tr>`;
+                    }
+
+                })
+                .catch(error => {
+                    console.error('Error fetching product index:', error);
+                    productListTbody.innerHTML = '<tr><td colspan="3">Error loading products. Please try again later.</td></tr>';
+                });
+        });
+    </script>
+</body>
+</html>
