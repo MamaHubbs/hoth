@@ -201,7 +201,7 @@
         <h1 id="productName">Loading Product Review...</h1>
 
         <div class="navbar">
-            <a id="returnToCategoryLink" href="#">Return to Select A Category</a> <a href="/hoth/trailer-landing-page.html">Return to Trailer View</a>
+            <a id="returnToCategoryListLink" href="#">Return to [Category] List</a> <a id="returnToSelectCategoryLink" href="#">Return to Select Category</a> <a href="/hoth/trailer-landing-page.html">Return to Trailer View</a>
             <a href="/hoth/shopping.html">Shopping List</a>
         </div>
 
@@ -240,8 +240,8 @@
             });
 
             const productId = getQueryParameter('product');
-            const sideFromURL = getQueryParameter('side'); // NEW: Get side parameter
-            const categoryFromURL = getQueryParameter('category'); // NEW: Get category parameter
+            const sideFromURL = getQueryParameter('side');
+            const categoryFromURL = getQueryParameter('category');
 
             if (!productId) {
                 document.getElementById('productName').textContent = "Error: Product ID not specified in URL.";
@@ -250,14 +250,30 @@
             }
 
             // --- Navigation Logic for Return to Category Link ---
-            const returnToCategoryLink = document.getElementById('returnToCategoryLink');
+            const returnToCategoryListLink = document.getElementById('returnToCategoryListLink');
+            const returnToSelectCategoryLink = document.getElementById('returnToSelectCategoryLink'); // NEW LINK
+
             if (sideFromURL && categoryFromURL) {
-                returnToCategoryLink.href = `/hoth/product-list-by-category.html?side=${sideFromURL}&category=${encodeURIComponent(categoryFromURL)}`;
-                returnToCategoryLink.textContent = `Return to ${decodeURIComponent(categoryFromURL)} List`;
+                // Link to the specific category list page (e.g., Bathroom list)
+                returnToCategoryListLink.href = `/hoth/product-list-by-category.html?side=${sideFromURL}&category=${encodeURIComponent(categoryFromURL)}`;
+                returnToCategoryListLink.textContent = `Return to ${decodeURIComponent(categoryFromURL)} List`; // Dynamic text
+
+                // Link to the general side's category selection page (e.g., Inside Categories)
+                if (sideFromURL === 'inside') {
+                    returnToSelectCategoryLink.href = `/hoth/trailer-inside.html`;
+                } else if (sideFromURL === 'outside') {
+                    returnToSelectCategoryLink.href = `/hoth/trailer-outside.html`;
+                }
+                returnToSelectCategoryLink.textContent = `Return to Select Category`; // Fixed text
             } else {
-                returnToCategoryLink.textContent = `Return to Product Categories`; // Generic fallback
-                returnToCategoryLink.href = `/hoth/trailer-inside.html`; // Default to inside if no context
-                // You might also consider hiding this link if no valid side/category context is found.
+                // Fallback if side/category parameters are missing (e.g., if accessed directly)
+                returnToCategoryListLink.textContent = `Return to Product List`; 
+                returnToCategoryListLink.href = `/hoth/product-list-by-category.html`; // Generic link
+                // returnToCategoryListLink.style.display = 'none'; // Optionally hide if no context
+
+                returnToSelectCategoryLink.textContent = `Return to RV Categories`;
+                returnToSelectCategoryLink.href = `/hoth/trailer-landing-page.html`; // Go back to main RV view
+                // returnToSelectCategoryLink.style.display = 'none'; // Optionally hide
             }
             // --- END Navigation Logic ---
             
