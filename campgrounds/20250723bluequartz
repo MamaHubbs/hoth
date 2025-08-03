@@ -3,8 +3,7 @@
   "name": "Blue Quartz Winery (Harvest Host)",
   "state": "Virginia",
   "state_code": "VA",
-  "summary_text": "A Postcard You Can Camp In
-Wonderful stay! Winery, brewery and food on location. Peaceful spot with gorgeous 360° views, a picnic table, firepit, and amazing stars. ",
+  "summary_text": "A Postcard You Can Camp In - Wonderful stay! Winery, brewery and food on location. Peaceful spot with gorgeous 360° views, a picnic table, firepit, and amazing stars.",
   "address": "2585 S F T Valley Rd. Etlan, VA 22719",
   "website": "https://www.bluequartzwinery.com/",
   "reservations": "Harvest Host",
@@ -38,7 +37,7 @@ Wonderful stay! Winery, brewery and food on location. Peaceful spot with gorgeou
     "shade": false,
     "fireRing": false,
     "picnicTable": true,
-    "grill": ["No],
+    "grill": ["No"],
     "otherNotes": ["The site is in the middle of a grassy field with 360 degree views. There was a firepit available to use."]
   },
   "activities": {
