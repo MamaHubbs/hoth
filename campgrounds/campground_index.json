@@ -18,7 +18,14 @@
       "longitude": -96.20705659831987,
       "filename": "20210313dallasnortheast"
     }
+            {
+      "id": "blue-quartz-winery-07-2025",
+      "name": "Blue Quartz Winery (Harvest Host)",
+      "state": "Virginia",
+      "state_code": "VA",
+      "latitude": 38.492954996397145,
+      "longitude": -78.28310871566069,
+      "filename": "20250723bluequartz"
+    }
   ]
 }
-
-
