@@ -1,0 +1,78 @@
+{
+  "id": "blue-quartz-winery-07-2025",
+  "name": "Blue Quartz Winery (Harvest Host)",
+  "state": "Virginia",
+  "state_code": "VA",
+  "summary_text": "A Postcard You Can Camp In
+Wonderful stay! Winery, brewery and food on location. Peaceful spot with gorgeous 360° views, a picnic table, firepit, and amazing stars. ",
+  "address": "2585 S F T Valley Rd. Etlan, VA 22719",
+  "website": "https://www.bluequartzwinery.com/",
+  "reservations": "Harvest Host",
+  "latitude": 38.492954996397145,
+  "longitude": -78.28310871566069,
+  "amenities": {
+    "electric": "None",
+    "waterAtSite": "No",
+    "potableFill": true,
+    "sewer": "No",
+    "dumpStation": false,
+    "bathhouse": false,
+    "laundryFacilities": false,
+    "cellService": "Fair",
+    "wifi": false,
+    "tvCable": false,
+    "petsWelcome": true,
+    "dogPark": false,
+    "campStore": false,
+    "propaneRefill": false,
+    "playground": false,
+    "swimmingPool": false,
+    "otherAmenities": ["N/A"]
+  },
+  "siteFeatures": {
+    "level": "You should be able to find a level spot in the field to park.",
+    "dirt": ["No"],
+    "gravel": ["No"],
+    "paved": false,
+    "patio": false,
+    "shade": false,
+    "fireRing": false,
+    "picnicTable": true,
+    "grill": ["No],
+    "otherNotes": ["The site is in the middle of a grassy field with 360 degree views. There was a firepit available to use."]
+  },
+  "activities": {
+    "boatingLaunch": false,
+    "fishing": false,
+    "hiking": "Very close to many popular hiking trails in Shenandoah National Park",
+    "biking": false,
+    "gameRoom": false,
+    "otherActivities": ["Winery, Brewery and Food"]
+  },
+  "nearby": {
+    "shopping": ["None"],
+    "food": ["Food available at the winery/brewery when open."],
+    "emergencyMedicalDistance": "30 minutes"
+  },
+  "favoriteSites": ["N/A"],
+  "photoGallery": [
+    {
+      "url": "https://mamahubbs.github.io/hoth/image/pohicksite50.JPG",
+      "caption": "Site 50"
+    },
+    {
+      "url": "https://mamahubbs.github.io/hoth/image/pohickbay.JPG",
+      "caption": "Pohick Bay"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewId": "bluequartz-review-2025-07-23-01",
+      "visitDate": "July 2025",
+      "reviewDate": "07-23-2025",
+      "starRating": 5,
+      "text": "I had an amazing at Blue Quartz Winery through the Harvest Hosts program. Thankfully, I was able to use the generator—a must in the hot Virginia summer! There was potable water available to fill up your tank if needed. Although the winery was closed during my visit (they’re closed Tuesdays and Wednesdays), Chris went above and beyond by greeting me and kindly offering wine samples before I purchased a bottle. If you come during open hours, you’ll find plenty of indoor and outdoor seating, both wine and craft beer (there’s a brewery on site), and a kitchen serving what looks like a delicious menu. The site area is in the middle of an open field—no shade, but very flat. I didn’t need to unhitch from the truck, which was a huge bonus. Starlink reception was perfect, and they provided a picnic table and firepit in the general area (which you can likely move closer to your setup). I had a peaceful evening stargazing—such a treat! The next morning, I took a walk around the vineyard and enjoyed the small pond nearby. The property is very pet-friendly, and my dogs had as much fun as I did. Can’t say enough about the beautiful views, and the wine was fantastic. I’ll definitely be back!",
+      "youtubeVideoUrl": "https://www.youtube.com/embed/10_B0CbGo4s?si=H9Aib9nWheYhycES"
+    }
+  ]
+}
