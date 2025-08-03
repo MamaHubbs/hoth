@@ -57,12 +57,28 @@ Wonderful stay! Winery, brewery and food on location. Peaceful spot with gorgeou
   "favoriteSites": ["N/A"],
   "photoGallery": [
     {
-      "url": "https://mamahubbs.github.io/hoth/image/pohicksite50.JPG",
-      "caption": "Site 50"
+      "url": "https://mamahubbs.github.io/hoth/image/bluequartz01.jpg",
+      "caption": "Site View"
     },
     {
-      "url": "https://mamahubbs.github.io/hoth/image/pohickbay.JPG",
-      "caption": "Pohick Bay"
+      "url": "https://mamahubbs.github.io/hoth/image/bluequartz02.jpg",
+      "caption": "Blue Ridge Mountains"
+    },
+    {
+      "url": "https://mamahubbs.github.io/hoth/image/bluequartz03.jpg",
+      "caption": "Happy Pups"
+    },
+    {
+      "url": "https://mamahubbs.github.io/hoth/image/bluequartz04.jpg",
+      "caption": "Sunset with a Campfire"
+    },
+    {
+      "url": "https://mamahubbs.github.io/hoth/image/bluequartz05.jpg",
+      "caption": "The Milky Way"
+    },
+    {
+      "url": "https://mamahubbs.github.io/hoth/image/bluequartz06.jpg",
+      "caption": "Sunrise Over the Vineyard"
     }
   ],
   "reviews": [
