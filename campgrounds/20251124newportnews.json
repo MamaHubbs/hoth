@@ -1,59 +1,59 @@
 {
-  "id": "blue-quartz-winery-07-2025",
-  "name": "Blue Quartz Winery (Harvest Host)",
+  "id": "newport-news-park-11-2025",
+  "name": "Newport News Park Campground",
   "state": "Virginia",
   "state_code": "VA",
-  "summary_text": "A Postcard You Can Camp In - Wonderful stay! Winery, brewery and food on location. Peaceful spot with gorgeous 360° views, a picnic table, firepit, and amazing stars.",
-  "address": "2585 S F T Valley Rd. Etlan, VA 22719",
-  "website": "https://www.bluequartzwinery.com/",
-  "reservations": "Harvest Host",
-  "latitude": 38.492954996397145,
-  "longitude": -78.28310871566069,
+  "summary_text": "Nature Meets Convenience — Wooded privacy, water views, and endless places to explore nearby.",
+  "address": "13564 Jefferson Ave, Newport News, VA 23603",
+  "website": "https://www.visitnewportnews.com/stay/camping/",
+  "reservations": "https://online.rezexpert.com/book?business_code=300026",
+  "latitude": 37.188648927782964,
+  "longitude": -76.55836548941465,
   "amenities": {
-    "electric": "None",
-    "waterAtSite": "No",
+    "electric": "Yes",
+    "waterAtSite": "Yes",
     "potableFill": true,
     "sewer": "No",
-    "dumpStation": false,
-    "bathhouse": false,
-    "laundryFacilities": false,
+    "dumpStation": true,
+    "bathhouse": true,
+    "laundryFacilities": true,
     "cellService": "Fair",
     "wifi": false,
     "tvCable": false,
     "petsWelcome": true,
     "dogPark": false,
-    "campStore": false,
+    "campStore": true,
     "propaneRefill": false,
     "playground": false,
     "swimmingPool": false,
     "otherAmenities": ["N/A"]
   },
   "siteFeatures": {
-    "level": "You should be able to find a level spot in the field to park.",
-    "dirt": ["No"],
-    "gravel": ["No"],
-    "paved": false,
+    "level": "Level-ish but plan to bring some blocks and extra boards to build up as needed.",
+    "dirt": ["Some"],
+    "gravel": ["Some"],
+    "paved": ["Some"],
     "patio": false,
-    "shade": false,
-    "fireRing": false,
+    "shade": true,
+    "fireRing": true,
     "picnicTable": true,
-    "grill": ["No"],
-    "otherNotes": ["The site is in the middle of a grassy field with 360 degree views. There was a firepit available to use."]
+    "grill": ["As part of the fire ring"],
+    "otherNotes": ["All of the sites are very well shaded so using Starlink may be a challenge. Cell phone service was string enough for video conferencing."]
   },
   "activities": {
-    "boatingLaunch": false,
-    "fishing": false,
-    "hiking": "Very close to many popular hiking trails in Shenandoah National Park",
-    "biking": false,
+    "boatingLaunch": true,
+    "fishing": true,
+    "hiking": "Nice walkking trails throughout the park.",
+    "biking": true,
     "gameRoom": false,
-    "otherActivities": ["Winery, Brewery and Food"]
+    "otherActivities": ["Disc Golf, Public Golf Course, Archery, 30 acre aeromodel flying field, Discovery Nature Center, Floral Gardens, Celebration of Lights drive-through Christmas lights in Dec" ]
   },
   "nearby": {
-    "shopping": ["None"],
-    "food": ["Food available at the winery/brewery when open."],
-    "emergencyMedicalDistance": "30 minutes"
+    "shopping": ["Within 15 minutes there are large shopping centers with stores such as Walmart, Target, Best Buy, Bass Pro Shops, etc."],
+    "food": ["Several grocery stores within a 5-10 minute drive, plus local restaurants. There are also a few local brewing companies to visit."],
+    "emergencyMedicalDistance": "10 minutes"
   },
-  "favoriteSites": ["N/A"],
+  "favoriteSites": ["B46"],
   "photoGallery": [
     {
       "url": "https://mamahubbs.github.io/hoth/image/bluequartz01.jpg",
@@ -82,11 +82,11 @@
   ],
   "reviews": [
     {
-      "reviewId": "bluequartz-review-2025-07-23-01",
-      "visitDate": "July 2025",
-      "reviewDate": "07-23-2025",
-      "starRating": 5,
-      "text": "I had an amazing at Blue Quartz Winery through the Harvest Hosts program. Thankfully, I was able to use the generator—a must in the hot Virginia summer! There was potable water available to fill up your tank if needed. Although the winery was closed during my visit (they’re closed Tuesdays and Wednesdays), Chris went above and beyond by greeting me and kindly offering wine samples before I purchased a bottle. If you come during open hours, you’ll find plenty of indoor and outdoor seating, both wine and craft beer (there’s a brewery on site), and a kitchen serving what looks like a delicious menu. The site area is in the middle of an open field—no shade, but very flat. I didn’t need to unhitch from the truck, which was a huge bonus. Starlink reception was perfect, and they provided a picnic table and firepit in the general area (which you can likely move closer to your setup). I had a peaceful evening stargazing—such a treat! The next morning, I took a walk around the vineyard and enjoyed the small pond nearby. The property is very pet-friendly, and my dogs had as much fun as I did. Can’t say enough about the beautiful views, and the wine was fantastic. I’ll definitely be back!",
+      "reviewId": "newport-news-park-review-2025-11-24-01",
+      "visitDate": "November 2025",
+      "reviewDate": "11-24-2025",
+      "starRating": 4,
+      "text": "This is my second stay at Newport News Park Campground, a lovely city-run campground tucked into a beautifully wooded setting. The atmosphere is peaceful and natural, with many sites sitting along a small reservoir—having the water right outside my site made for a wonderfully relaxing stay. I loved being able to sit and look out at the water, walk my dog along the quiet loops, and explore the nearby hiking and biking trails. The campground store near the entrance is small but has the essentials. The sites are nicely spread out, giving you a real sense of privacy, and while the facilities are a bit dated, they’re fully functional and have everything you need. One of my favorite discoveries on this trip was Grandview Nature Preserve, about a 30-minute drive away — an incredible spot for a shoreline walk and enjoying the coastal scenery. The campground’s location is also fantastic for exploring the region. You’re close to Colonial Williamsburg, Yorktown Battlefield, Jamestown Settlement, Fort Monroe, Hampton, Norfolk, and even Virginia Beach for a day trip. Norfolk itself has plenty of museums and activities, plus summer whale-watching and fishing tours if you’re looking for something extra memorable. There are also several local breweries in the area if you enjoy checking out the craft beer scene, along with shopping, restaurants, and other nature preserves. Cons: The main downside is noise. The campground is close to I-64, so road noise is noticeable throughout the day, though after a while, you start to tune it out. There’s also a train that occasionally comes through and blows its whistle. Overall: This is an amazing area to explore — from its deep historical roots to its family-friendly activities and natural beauty. Newport News Park Campground is an excellent launching point for all of it, and despite the road noise, I thoroughly enjoyed my stay and would happily return again.",
       "youtubeVideoUrl": "https://www.youtube.com/embed/xZgLLy-dJho?si=oI2ZumV1wHlXkP2n"
     }
   ]
