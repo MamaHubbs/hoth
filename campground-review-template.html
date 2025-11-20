@@ -416,7 +416,23 @@
 
                         // General Info - Populating the box now just contains address/website/map
                         document.getElementById('campgroundName').textContent = campground.name;
-                        document.getElementById('address').textContent = campground.address;
+
+                        // Make address clickable → opens Google Maps pin
+document.getElementById('address').textContent = campground.address;
+
+const addressLink = document.getElementById('addressLink');
+
+// Prefer exact lat/lng when available
+if (campground.latitude && campground.longitude) {
+    addressLink.href =
+        `https://www.google.com/maps/search/?api=1&query=${campground.latitude},${campground.longitude}`;
+} else {
+    // Fallback: text-based search
+    const encodedAddress = encodeURIComponent(campground.address);
+    addressLink.href =
+        `https://www.google.com/maps/search/?api=1&query=${encodedAddress}`;
+}
+
                         document.getElementById('website').href = campground.website;
 
                         // Populate Reservations Link
