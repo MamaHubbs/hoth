@@ -488,37 +488,40 @@
                 // --- General Info ---
                 document.getElementById('campgroundName').textContent = campground.name;
 
- // Set address text
-document.getElementById('address').textContent = campground.address;
+// ----- Address + Map Buttons -----
+const addressSpan = document.getElementById('address');
+addressSpan.textContent = campground.address || "";
 
-// Set Google Maps + Apple Maps buttons
+// Map buttons
 const googleBtn = document.getElementById('googleMapsBtn');
-const appleBtn = document.getElementById('appleMapsBtn');
+const appleBtn  = document.getElementById('appleMapsBtn');
 
 if (campground.latitude && campground.longitude) {
-
     const lat = campground.latitude;
     const lng = campground.longitude;
 
-    // Google Maps exact pin
+    // Google Maps: pin at exact coordinates
     googleBtn.href =
         `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
 
-    // Apple Maps exact pin
+    // Apple Maps: DIRECTIONS to this campground
+    // daddr = destination address/coords, dirflg=d (driving)
     appleBtn.href =
-        `https://maps.apple.com/?ll=${lat},${lng}&q=${encodeURIComponent(campground.name)}`;
-
-} else {
-    // Fallback to address search
+        `https://maps.apple.com/?daddr=${lat},${lng}&dirflg=d`;
+} else if (campground.address) {
+    // Fallback: use text address for both
     const encodedAddr = encodeURIComponent(campground.address);
 
     googleBtn.href =
         `https://www.google.com/maps/search/?api=1&query=${encodedAddr}`;
 
     appleBtn.href =
-        `https://maps.apple.com/?q=${encodedAddr}`;
+        `https://maps.apple.com/?daddr=${encodedAddr}&dirflg=d`;
+} else {
+    // If we don't even have an address, hide buttons
+    googleBtn.style.display = 'none';
+    appleBtn.style.display  = 'none';
 }
-
 
                 // Website
                 document.getElementById('website').href = campground.website;
