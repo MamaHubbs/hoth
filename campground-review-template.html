@@ -198,6 +198,20 @@
     color: #666;
 }
 
+        /* Nested lists under Other Activities + Nearby (Shopping / Food) */
+.nested-activities-list,
+.nested-nearby-list {
+    margin-top: 4px;
+    padding-left: 1.25rem;
+    list-style: disc;
+}
+
+.nested-activities-list li,
+.nested-nearby-list li {
+    padding: 2px 0;
+    border-bottom: none; /* don't draw the spec-line on nested items */
+}
+
 
     /* === Photo Gallery (portrait-grid-style cards) === */
     .photo-gallery-grid {
@@ -668,64 +682,94 @@
                     activitiesGridDiv2.innerHTML = '';
                 }
 
-                // Nearby Essentials - Dynamic Population
-                const nearbyEssentialsContainer = document.getElementById('nearbyEssentialsContainer');
-                nearbyEssentialsContainer.innerHTML =
-                    '<h2>Nearby Essentials</h2><div class="section-grid"><div></div><div></div></div>';
-                const nearbyGridDiv1 = nearbyEssentialsContainer.querySelector('.section-grid div:first-child');
-                const nearbyGridDiv2 = nearbyEssentialsContainer.querySelector('.section-grid div:last-child');
+              // Nearby Essentials - Dynamic Population
+const nearbyEssentialsContainer = document.getElementById('nearbyEssentialsContainer');
+nearbyEssentialsContainer.innerHTML =
+    '<h2>Nearby Essentials</h2><div class="section-grid"><div></div><div></div></div>';
 
-                const nearby = campground.nearby;
-                if (nearby) {
-                    // Left side: Shopping, Food
-                    const ulLeftNearby = document.createElement('ul');
+const nearbyGridDiv1 = nearbyEssentialsContainer.querySelector('.section-grid div:first-child');
+const nearbyGridDiv2 = nearbyEssentialsContainer.querySelector('.section-grid div:last-child');
 
-                    if (nearby.shopping) {
-                        const li = document.createElement('li');
-                        if (Array.isArray(nearby.shopping)) {
-                            li.innerHTML =
-                                `<strong>Shopping:</strong> ${nearby.shopping.join(', ')}`;
-                        } else {
-                            li.innerHTML =
-                                `<strong>Shopping:</strong> ${
-                                    typeof nearby.shopping === 'boolean'
-                                        ? (nearby.shopping ? "Yes" : "No")
-                                        : nearby.shopping
-                                }`;
-                        }
-                        ulLeftNearby.appendChild(li);
-                    }
-                    if (nearby.food) {
-                        const li = document.createElement('li');
-                        if (Array.isArray(nearby.food)) {
-                            li.innerHTML =
-                                `<strong>Food:</strong> ${nearby.food.join(', ')}`;
-                        } else {
-                            li.innerHTML =
-                                `<strong>Food:</strong> ${
-                                    typeof nearby.food === 'boolean'
-                                        ? (nearby.food ? "Yes" : "No")
-                                        : nearby.food
-                                }`;
-                        }
-                        ulLeftNearby.appendChild(li);
-                    }
-                    nearbyGridDiv1.appendChild(ulLeftNearby);
+const nearby = campground.nearby;
+if (nearby) {
+    // LEFT side: Shopping, Food (with nested lists like "Other Activities")
+    const ulLeftNearby = document.createElement('ul');
 
-                    // Right side: Emergency Medical
-                    const ulRightNearby = document.createElement('ul');
-                    if (nearby.emergencyMedicalDistance) {
-                        const li = document.createElement('li');
-                        li.innerHTML =
-                            `<strong>Nearest Emergency Medical:</strong> ${nearby.emergencyMedicalDistance}`;
-                        ulRightNearby.appendChild(li);
-                    }
-                    nearbyGridDiv2.appendChild(ulRightNearby);
+    // Shopping
+    if (nearby.shopping) {
+        const li = document.createElement('li');
 
-                } else {
-                    nearbyEssentialsContainer.innerHTML +=
-                        '<p>No nearby essentials information available.</p>';
-                }
+        if (Array.isArray(nearby.shopping)) {
+            // Nested style like Other Activities
+            li.innerHTML = '<strong>Shopping:</strong>';
+            const nested = document.createElement('ul');
+            nested.classList.add('nested-nearby-list');
+
+            nearby.shopping.forEach(place => {
+                const innerLi = document.createElement('li');
+                innerLi.textContent = place;
+                nested.appendChild(innerLi);
+            });
+
+            li.appendChild(nested);
+        } else {
+            // Boolean or string
+            const value =
+                typeof nearby.shopping === 'boolean'
+                    ? (nearby.shopping ? 'Yes' : 'No')
+                    : nearby.shopping;
+            li.innerHTML = `<strong>Shopping:</strong> ${value}`;
+        }
+
+        ulLeftNearby.appendChild(li);
+    }
+
+    // Food
+    if (nearby.food) {
+        const li = document.createElement('li');
+
+        if (Array.isArray(nearby.food)) {
+            // Nested style like Other Activities
+            li.innerHTML = '<strong>Food:</strong>';
+            const nested = document.createElement('ul');
+            nested.classList.add('nested-nearby-list');
+
+            nearby.food.forEach(place => {
+                const innerLi = document.createElement('li');
+                innerLi.textContent = place;
+                nested.appendChild(innerLi);
+            });
+
+            li.appendChild(nested);
+        } else {
+            // Boolean or string
+            const value =
+                typeof nearby.food === 'boolean'
+                    ? (nearby.food ? 'Yes' : 'No')
+                    : nearby.food;
+            li.innerHTML = `<strong>Food:</strong> ${value}`;
+        }
+
+        ulLeftNearby.appendChild(li);
+    }
+
+    nearbyGridDiv1.appendChild(ulLeftNearby);
+
+    // RIGHT side: Emergency Medical
+    const ulRightNearby = document.createElement('ul');
+    if (nearby.emergencyMedicalDistance) {
+        const li = document.createElement('li');
+        li.innerHTML =
+            `<strong>Nearest Emergency Medical:</strong> ${nearby.emergencyMedicalDistance}`;
+        ulRightNearby.appendChild(li);
+    }
+    nearbyGridDiv2.appendChild(ulRightNearby);
+
+} else {
+    nearbyEssentialsContainer.innerHTML +=
+        '<p>No nearby essentials information available.</p>';
+}
+
 
                 // Photo Gallery - Adjusted for Lightbox
                 const photoGalleryContainer = document.getElementById('photoGalleryContainer');
