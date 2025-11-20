@@ -499,77 +499,79 @@ if (campground.parkmap) {
                             document.getElementById('siteFeatures').textContent = 'N/A';
                         }
 
-                        // Activities - Dynamic Population
-                        const activitiesContainer = document.getElementById('activitiesContainer');
-                        activitiesContainer.innerHTML = '<h2>Activities</h2><div class="section-grid"><div></div><div></div></div>';
-                        const activitiesGridDiv1 = activitiesContainer.querySelector('.section-grid div:first-child');
-                        const activitiesGridDiv2 = activitiesContainer.querySelector('.section-grid div:last-child');
+// Activities - Dynamic Population
+const activitiesContainer = document.getElementById('activitiesContainer');
+activitiesContainer.innerHTML = '<h2>Activities</h2><div class="section-grid"><div></div><div></div></div>';
+const activitiesGridDiv1 = activitiesContainer.querySelector('.section-grid div:first-child');
+const activitiesGridDiv2 = activitiesContainer.querySelector('.section-grid div:last-child');
 
-                        const activities = campground.activities;
-                        if (activities) {
-                            const activityOrderLeft = ["waterfront", "fishing", "hiking", "biking"];
-                            const activityOrderRight = ["gameRoom", "otherActivities"];
+const activities = campground.activities;
+if (activities) {
+    const activityOrderLeft = ["waterfront", "fishing", "hiking", "biking"];
+    const activityOrderRight = ["gameRoom", "otherActivities"];
 
-                            const ulLeft = document.createElement('ul');
-                            ulLeft.style.listStyleType = 'none';
-                            ulLeft.style.padding = '0';
-                            activitiesGridDiv1.appendChild(ulLeft);
+    // LEFT column list
+    const ulLeft = document.createElement('ul');
+    activitiesGridDiv1.appendChild(ulLeft);
 
-                            activityOrderLeft.forEach(key => {
-                                if (activities.hasOwnProperty(key)) {
-                                    const li = document.createElement('li');
-                                    let value = activities[key];
-                                    let displayKey = key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase());
+    activityOrderLeft.forEach(key => {
+        if (activities.hasOwnProperty(key)) {
+            const li = document.createElement('li');
+            let value = activities[key];
+            let displayKey = key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase());
 
-                                    if (typeof value === 'boolean') {
-                                        value = value ? "Yes" : "No";
-                                    } else if (Array.isArray(value)) {
-                                        value = value.join(', ');
-                                    }
-                                    li.innerHTML = `<strong>${displayKey}:</strong> ${value}`;
-                                    ulLeft.appendChild(li);
-                                }
-                            });
+            if (typeof value === 'boolean') {
+                value = value ? "Yes" : "No";
+            } else if (Array.isArray(value)) {
+                value = value.join(', ');
+            }
+            li.innerHTML = `<strong>${displayKey}:</strong> ${value}`;
+            ulLeft.appendChild(li);
+        }
+    });
 
-                            const ulRight = document.createElement('ul');
-                            ulRight.style.listStyleType = 'disc';
-                            ulRight.style.paddingLeft = '20px';
-                            activitiesGridDiv2.appendChild(ulRight);
+    // RIGHT column list
+    const ulRight = document.createElement('ul');
+    activitiesGridDiv2.appendChild(ulRight);
 
-                            activityOrderRight.forEach(key => {
-                                if (activities.hasOwnProperty(key)) {
-                                    const li = document.createElement('li');
-                                    let value = activities[key];
-                                    let displayKey = key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase());
+    activityOrderRight.forEach(key => {
+        if (activities.hasOwnProperty(key)) {
+            const li = document.createElement('li');
+            let value = activities[key];
+            let displayKey = key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase());
 
-                                    if (typeof value === 'boolean') {
-                                        value = value ? "Yes" : "No";
-                                    } else if (Array.isArray(value)) {
-                                        value = value.join(', ');
-                                    }
-                                    if (key === "otherActivities") {
-                                        li.innerHTML = `<strong>${displayKey}:</strong>`;
-                                        const otherUl = document.createElement('ul');
-                                        otherUl.style.listStyleType = 'circle';
-                                        otherUl.style.paddingLeft = '20px';
-                                        if (Array.isArray(activities.otherActivities)) {
-                                            activities.otherActivities.forEach(item => {
-                                                const otherLi = document.createElement('li');
-                                                otherLi.textContent = item;
-                                                otherUl.appendChild(otherLi);
-                                            });
-                                        }
-                                        li.appendChild(otherUl);
-                                    } else {
-                                        li.innerHTML = `<strong>${displayKey}:</strong> ${value}`;
-                                    }
-                                    ulRight.appendChild(li);
-                                }
-                            });
-                        } else {
-                            activitiesGridDiv1.innerHTML = '<p>No activities information available.</p>';
-                            activitiesGridDiv2.innerHTML = '';
-                        }
+            if (typeof value === 'boolean') {
+                value = value ? "Yes" : "No";
+            } else if (Array.isArray(value)) {
+                value = value.join(', ');
+            }
+
+            if (key === "otherActivities") {
+                // Label
+                li.innerHTML = `<strong>${displayKey}:</strong>`;
+
+                // Nested list for individual items (still no bullets because of CSS)
+                const otherUl = document.createElement('ul');
+                if (Array.isArray(activities.otherActivities)) {
+                    activities.otherActivities.forEach(item => {
+                        const otherLi = document.createElement('li');
+                        otherLi.textContent = item;
+                        otherUl.appendChild(otherLi);
+                    });
+                }
+                li.appendChild(otherUl);
+            } else {
+                li.innerHTML = `<strong>${displayKey}:</strong> ${value}`;
+            }
+
+            ulRight.appendChild(li);
+        }
+    });
+} else {
+    activitiesGridDiv1.innerHTML = '<p>No activities information available.</p>';
+    activitiesGridDiv2.innerHTML = '';
+}
+
 
                         // Nearby Essentials - Dynamic Population
                         const nearbyEssentialsContainer = document.getElementById('nearbyEssentialsContainer');
