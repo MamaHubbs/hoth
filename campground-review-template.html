@@ -372,6 +372,16 @@
                             reservationsLink.removeAttribute('href');
                         }
 
+                        // ⭐ Populate Park Map Link — BELOW reservations so it appears next in UI
+const parkMapLink = document.getElementById('parkmap');
+if (campground.parkmap) {
+    parkMapLink.href = campground.parkmap;
+    parkMapLink.textContent = "Click to View";
+} else {
+    parkMapLink.textContent = "N/A";
+    parkMapLink.removeAttribute('href');
+}
+
                         // OpenStreetMap Embedding
                         const googleMapIframe = document.getElementById('googleMap');
                         const zoomLevel = 15;
