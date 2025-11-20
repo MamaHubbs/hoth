@@ -622,15 +622,6 @@ if (campground.parkmap) {
                                 photoGalleryContainer.appendChild(photoItem);
                             });
 
-                            setTimeout(() => {
-                                const triggers = photoGalleryContainer.querySelectorAll('.lightbox-trigger');
-                                triggers.forEach(trigger => {
-                                    trigger.addEventListener('click', function() {
-                                        window.scrollTo(0, 0);
-                                    });
-                                });
-                            }, 100);
-
                         } else {
                             photoGalleryContainer.innerHTML = '<p>No photos available for this campground.</p>';
                         }
