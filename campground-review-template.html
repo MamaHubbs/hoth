@@ -93,6 +93,28 @@
     background-color: #195c8c;
     text-decoration: none;
 }
+        /* Center the map buttons */
+.map-buttons {
+    text-align: center;
+    margin: 10px 0 15px;
+}
+
+.map-buttons a {
+    display: inline-block;
+    margin: 5px 8px;
+    padding: 8px 14px;
+    background-color: #2d7cbc;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.95em;
+    transition: background-color 0.2s ease;
+}
+
+.map-buttons a:hover {
+    background-color: #1b5f90;
+}
+
 
     .section-grid {
         display: grid;
@@ -338,10 +360,11 @@
             <p><strong>Campground Map:</strong> <a id="parkmap" href="#" target="_blank">Click to View</a></p>
 <p><strong>Address:</strong> <span id="address"></span></p>
 
-<div id="mapButtons" style="margin: 6px 0 12px;">
-    <a id="googleMapsBtn" class="map-btn" href="#" target="_blank">Open in Google Maps</a>
-    <a id="appleMapsBtn" class="map-btn" href="#" target="_blank">Open in Apple Maps</a>
+<div class="map-buttons">
+    <a id="googleMapsBtn" href="#" target="_blank">Open in Google Maps</a>
+    <a id="appleMapsBtn" href="#" target="_blank">Open in Apple Maps</a>
 </div>
+
 
             <div class="map-container">
                 <iframe id="googleMap" frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
@@ -465,31 +488,37 @@
                 // --- General Info ---
                 document.getElementById('campgroundName').textContent = campground.name;
 
-                // Address text
-                const addressSpan = document.getElementById('address');
-                addressSpan.textContent = campground.address;
+ // Set address text
+document.getElementById('address').textContent = campground.address;
 
-                // Map buttons (Google + Apple)
-                const googleMapsBtn = document.getElementById('googleMapsBtn');
-                const appleMapsBtn = document.getElementById('appleMapsBtn');
+// Set Google Maps + Apple Maps buttons
+const googleBtn = document.getElementById('googleMapsBtn');
+const appleBtn = document.getElementById('appleMapsBtn');
 
-                let coordQuery = "";
-                if (campground.latitude && campground.longitude) {
-                    coordQuery = `${campground.latitude},${campground.longitude}`;
-                }
+if (campground.latitude && campground.longitude) {
 
-                // Google Maps URL
-                const googleUrl = coordQuery
-                    ? `https://www.google.com/maps/search/?api=1&query=${coordQuery}`
-                    : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(campground.address)}`;
+    const lat = campground.latitude;
+    const lng = campground.longitude;
 
-                // Apple Maps URL
-                const appleUrl = coordQuery
-                    ? `https://maps.apple.com/?ll=${coordQuery}&q=${encodeURIComponent(campground.name || 'Campground')}`
-                    : `https://maps.apple.com/?q=${encodeURIComponent(campground.address)}`;
+    // Google Maps exact pin
+    googleBtn.href =
+        `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
 
-                if (googleMapsBtn) googleMapsBtn.href = googleUrl;
-                if (appleMapsBtn) appleMapsBtn.href = appleUrl;
+    // Apple Maps exact pin
+    appleBtn.href =
+        `https://maps.apple.com/?ll=${lat},${lng}&q=${encodeURIComponent(campground.name)}`;
+
+} else {
+    // Fallback to address search
+    const encodedAddr = encodeURIComponent(campground.address);
+
+    googleBtn.href =
+        `https://www.google.com/maps/search/?api=1&query=${encodedAddr}`;
+
+    appleBtn.href =
+        `https://maps.apple.com/?q=${encodedAddr}`;
+}
+
 
                 // Website
                 document.getElementById('website').href = campground.website;
