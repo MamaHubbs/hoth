@@ -95,24 +95,26 @@
 }
         /* Center the map buttons */
 .map-buttons {
-    text-align: center;
-    margin: 10px 0 15px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;           /* small spacing */
+    margin-top: 10px;
+    flex-wrap: wrap;    /* still allows wrapping on very tiny screens */
 }
 
 .map-buttons a {
     display: inline-block;
-    margin: 5px 8px;
-    padding: 8px 14px;
+    padding: 4px 10px;       /* smaller padding */
+    font-size: 0.85em;       /* smaller text size */
+    border-radius: 5px;
     background-color: #2d7cbc;
-    color: #fff;
+    color: white;
     text-decoration: none;
-    border-radius: 6px;
-    font-size: 0.95em;
-    transition: background-color 0.2s ease;
+    white-space: nowrap;     /* prevents breaking onto multiple lines */
 }
 
 .map-buttons a:hover {
-    background-color: #1b5f90;
+    background-color: #1d5c96;
 }
 
 
