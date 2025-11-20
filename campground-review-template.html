@@ -166,6 +166,20 @@
     #nearbyEssentialsContainer ul li:last-child {
         border-bottom: none;
     }
+        /* Nested "Other Activities" list styling */
+#activitiesContainer .nested-activities-list {
+    margin-top: 0.25rem;
+    margin-left: 1.25rem;  /* visual indent */
+    padding-left: 0;       /* no extra padding */
+}
+
+#activitiesContainer .nested-activities-list li {
+    border-bottom: none;   /* no extra dividers inside */
+    padding: 2px 0;
+    font-size: 0.9em;
+    color: #666;
+}
+
 
     /* === Photo Gallery (portrait-grid-style cards) === */
     .photo-gallery-grid {
@@ -546,21 +560,23 @@ if (activities) {
                 value = value.join(', ');
             }
 
-            if (key === "otherActivities") {
-                // Label
-                li.innerHTML = `<strong>${displayKey}:</strong>`;
+if (key === "otherActivities") {
+    li.innerHTML = `<strong>${displayKey}:</strong>`;
 
-                // Nested list for individual items (still no bullets because of CSS)
-                const otherUl = document.createElement('ul');
-                if (Array.isArray(activities.otherActivities)) {
-                    activities.otherActivities.forEach(item => {
-                        const otherLi = document.createElement('li');
-                        otherLi.textContent = item;
-                        otherUl.appendChild(otherLi);
-                    });
-                }
-                li.appendChild(otherUl);
-            } else {
+    const otherUl = document.createElement('ul');
+    otherUl.classList.add('nested-activities-list');  // 👈 NEW
+
+    if (Array.isArray(activities.otherActivities)) {
+        activities.otherActivities.forEach(item => {
+            const otherLi = document.createElement('li');
+            otherLi.textContent = item;
+            otherUl.appendChild(otherLi);
+        });
+    }
+
+    li.appendChild(otherUl);
+} else {
+
                 li.innerHTML = `<strong>${displayKey}:</strong> ${value}`;
             }
 
