@@ -133,107 +133,111 @@
 
     </div>
 
-    <script src="shared.js"></script> 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const stateCode = getQueryParameter('state');
+   <script src="shared.js"></script> 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const stateCode = getQueryParameter('state');
 
-            if (!stateCode) {
+        if (!stateCode) {
+            document.getElementById('stateNameHeading').textContent =
+                "Error: State code not specified in URL.";
+            return;
+        }
+
+        const indexJsonUrl = getCampgroundJsonUrl('campground_index');
+
+        fetch(indexJsonUrl)
+            .then(response => {
+                if (!response.ok) throw new Error(response.status);
+                return response.json();
+            })
+            .then(data => {
+                const allCampgrounds = data.campgrounds || [];
+                const campgroundsInState = allCampgrounds.filter(
+                    c => c.state_code === stateCode.toUpperCase()
+                );
+
+                if (campgroundsInState.length === 0) {
+                    document.getElementById('stateNameHeading').textContent =
+                        `No Campgrounds Found for ${stateCode}`;
+                    return;
+                }
+
                 document.getElementById('stateNameHeading').textContent =
-                    "Error: State code not specified in URL.";
-                return;
-            }
+                    `${campgroundsInState[0].state} Campgrounds`;
 
-            const indexJsonUrl = getCampgroundJsonUrl('campground_index');
+                /* LEAFLET MAP */
+                const map = L.map('stateMap');
 
-            fetch(indexJsonUrl)
-                .then(response => {
-                    if (!response.ok) throw new Error(response.status);
-                    return response.json();
-                })
-                .then(data => {
-                    const allCampgrounds = data.campgrounds || [];
-                    const campgroundsInState = allCampgrounds.filter(
-                        c => c.state_code === stateCode.toUpperCase()
-                    );
+                L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    maxZoom: 19,
+                    attribution: '&copy; OpenStreetMap contributors'
+                }).addTo(map);
 
-                    if (campgroundsInState.length === 0) {
-                        document.getElementById('stateNameHeading').textContent =
-                            `No Campgrounds Found for ${stateCode}`;
-                        return;
-                    }
+                const markerGroup = L.featureGroup();
 
-                    document.getElementById('stateNameHeading').textContent =
-                        `${campgroundsInState[0].state} Campgrounds`;
+                /* NEW MARKER BEHAVIOR — tooltip on hover, direct click open */
+                campgroundsInState.forEach(camp => {
+                    if (typeof camp.latitude !== 'number' ||
+                        typeof camp.longitude !== 'number') return;
 
-                    /* LEAFLET MAP */
-                    const map = L.map('stateMap');
+                    // Tooltip text
+                    const tooltipHtml = `
+                        <strong>${camp.name}</strong><br>
+                        <em>Click to view campground info</em>
+                    `;
 
-                    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                        maxZoom: 19,
-                        attribution: '&copy; OpenStreetMap contributors'
-                    }).addTo(map);
-
-                    const markerGroup = L.featureGroup();
-
-                    campgroundsInState.forEach(camp => {
-                        if (typeof camp.latitude !== 'number' ||
-                            typeof camp.longitude !== 'number') return;
-
-                        const popupHtml = `
-                            <strong>${camp.name}</strong><br>
-                            <a href="campground-review-template.html?campground=${camp.filename}"
-                               target="_blank">
-                               View review page
-                            </a>
-                        `;
-
-                        const marker = L.marker([camp.latitude, camp.longitude])
-                            .bindPopup(popupHtml);
-
-                        marker.on('mouseover', function() {
-                            this.openPopup();
-                        });
-                        marker.on('mouseout', function() {
-                            this.closePopup();
+                    const marker = L.marker([camp.latitude, camp.longitude])
+                        .bindTooltip(tooltipHtml, {
+                            direction: 'top',
+                            offset: [0, -8],
+                            opacity: 0.9,
+                            sticky: true
+                        })
+                        .on('click', () => {
+                            window.open(
+                                `campground-review-template.html?campground=${camp.filename}`,
+                                '_blank'
+                            );
                         });
 
-                        markerGroup.addLayer(marker);
-                    });
-
-                    markerGroup.addTo(map);
-
-                    if (markerGroup.getLayers().length > 0) {
-                        map.fitBounds(markerGroup.getBounds(), { padding: [30, 30] });
-                    } else {
-                        map.setView([39.8283, -98.5795], 4);
-                    }
-
-                    /* LIST OF CAMPGROUNDS */
-                    const list = document.querySelector('#campgroundsList ul');
-                    list.innerHTML = '';
-
-                    campgroundsInState.forEach(camp => {
-                        const li = document.createElement('li');
-                        const link = document.createElement('a');
-                        link.textContent = camp.name;
-                        link.href = `campground-review-template.html?campground=${camp.filename}`;
-                        li.appendChild(link);
-
-                        if (camp.summary_text) {
-                            const p = document.createElement('p');
-                            p.textContent = camp.summary_text;
-                            li.appendChild(p);
-                        }
-
-                        list.appendChild(li);
-                    });
-                })
-                .catch(err => {
-                    document.getElementById('stateNameHeading').textContent =
-                        "Failed to load state campgrounds.";
+                    markerGroup.addLayer(marker);
                 });
-        });
-    </script>
+
+                markerGroup.addTo(map);
+
+                if (markerGroup.getLayers().length > 0) {
+                    map.fitBounds(markerGroup.getBounds(), { padding: [30, 30] });
+                } else {
+                    map.setView([39.8283, -98.5795], 4);
+                }
+
+                /* LIST OF CAMPGROUNDS */
+                const list = document.querySelector('#campgroundsList ul');
+                list.innerHTML = '';
+
+                campgroundsInState.forEach(camp => {
+                    const li = document.createElement('li');
+                    const link = document.createElement('a');
+                    link.textContent = camp.name;
+                    link.href = `campground-review-template.html?campground=${camp.filename}`;
+                    li.appendChild(link);
+
+                    if (camp.summary_text) {
+                        const p = document.createElement('p');
+                        p.textContent = camp.summary_text;
+                        li.appendChild(p);
+                    }
+
+                    list.appendChild(li);
+                });
+            })
+            .catch(err => {
+                document.getElementById('stateNameHeading').textContent =
+                    "Failed to load state campgrounds.";
+            });
+    });
+</script>
+
 </body>
 </html>
