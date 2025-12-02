@@ -26,9 +26,17 @@
             font-family: Arial, sans-serif;
             color: #133b66;
             text-align: center;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             font-size: 2em;
         }
+
+        h1 .subheader {
+    display: block;
+    font-size: 0.6em;        /* slightly smaller */
+    color: #2d7cbc;          /* your lighter blue from h2 headings */
+    margin-top: 6px;
+    font-weight: normal;
+}
 
         h2 {
             font-family: Arial, sans-serif;
@@ -48,7 +56,39 @@
             font-size: 0.95em;
             color: #555;
             text-align: center;
+            margin-bottom: 18px;
+        }
+
+        /* Table of contents box */
+        .toc {
+            border-radius: 6px;
+            border: 1px solid #e3e3e3;
+            background-color: #fafafa;
+            padding: 12px 14px;
             margin-bottom: 20px;
+        }
+        .toc-title {
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            font-size: 0.95em;
+            color: #133b66;
+            margin: 0 0 6px;
+        }
+        .toc ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;
+            font-size: 0.9em;
+        }
+        .toc li {
+            margin-bottom: 4px;
+        }
+        .toc a {
+            color: #2d7cbc;
+            text-decoration: none;
+        }
+        .toc a:hover {
+            text-decoration: underline;
         }
 
         /* Responsive 16:9 video embed */
@@ -59,7 +99,8 @@
             overflow: hidden;
             border-radius: 8px;
             background-color: #000;
-            margin-bottom: 20px;
+            margin-top: 10px;
+            margin-bottom: 4px;
         }
         .video-wrapper iframe {
             position: absolute;
@@ -69,28 +110,73 @@
             height: 100%;
             border: 0;
         }
+        .video-note {
+            font-size: 0.9em;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        /* Download buttons grid */
+        .download-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        @media (max-width: 600px) {
+            .download-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .download-btn {
+            display: block;
+            background-color: #133b66;  /* site navy */
+            color: #ffffff;
+            text-align: center;
+            padding: 12px 15px;
+            font-size: 1em;
+            border-radius: 8px;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: background-color 0.25s ease, transform 0.15s ease;
+        }
+        .download-btn:hover {
+            background-color: #2d7cbc; /* lighter blue on hover */
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 <body>
     <div class="container">
 
-        <h1>Grand Design Imagine XLS 22BHE – Our Two-Year Owner Review</h1>
+<h1>
+    Grand Design Imagine XLS 22BHE<br>
+    <span class="subheader">Owner Review</span>
+</h1>
+
 
         <p class="intro-text">
-            This page goes along with our YouTube walkthrough of our Grand Design Imagine XLS 22BHE travel trailer.
+            Here's a quick review of our Imagine XLS 22BHE, plus links to helpful resources and a walkthrough video.
         </p>
 
-        <div class="video-wrapper">
-            <!-- Replace VIDEO_ID_HERE with your actual video ID -->
-            <iframe 
-                src="https://www.youtube.com/embed/VIDEO_ID_HERE"
-                title="Grand Design Imagine XLS 22BHE Walkthrough"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen>
-            </iframe>
+        <!-- On This Page / Index -->
+        <div class="toc">
+            <p class="toc-title">On this page:</p>
+            <ul>
+                <li><a href="#why-22bhe">Why We Chose the 22BHE</a></li>
+                <li><a href="#comfort-layout">Comfort &amp; Layout</a></li>
+                <li><a href="#construction">Construction &amp; Build Quality</a></li>
+                <li><a href="#seasons">Comfort in All Seasons</a></li>
+                <li><a href="#solar">Solar, Power &amp; the 12V Fridge</a></li>
+                <li><a href="#storage">Storage &amp; Exterior Features</a></li>
+                <li><a href="#final-thoughts">Final Thoughts</a></li>
+                <li><a href="#walkthrough-video">Walkthrough Video</a></li>
+                <li><a href="#downloads">Helpful Resources &amp; Downloads</a></li>
+            </ul>
         </div>
 
-        <h2>Why We Chose the 22BHE</h2>
+        <h2 id="why-22bhe">Why We Chose the 22BHE</h2>
         <p>
             We picked the <strong>Grand Design Imagine XLS 22BHE</strong> after a lot of searching, comparing,
             and crawling through trailers—and now that we’re two years into ownership, we can honestly say it’s
@@ -103,7 +189,7 @@
             as well. The 22BHE meets every one of those needs without feeling cramped or compromised.
         </p>
 
-        <h2>Comfort & Layout</h2>
+        <h2 id="comfort-layout">Comfort &amp; Layout</h2>
         <p>
             One of the things we appreciate most is the <strong>headroom</strong>. At 5'10" and 6'3", it’s such a relief
             not to duck through doorways or squeeze into a tiny shower—because we actually fit in this one. The layout
@@ -111,7 +197,7 @@
             impressive for a trailer this size.
         </p>
 
-        <h2>Construction & Build Quality</h2>
+        <h2 id="construction">Construction &amp; Build Quality</h2>
         <p>
             After looking at plenty of other RVs, the construction on Grand Design really stands out. You can really tell
             Grand Design didn’t cut corners. The <strong>laminated aluminum framed walls</strong> give the trailer a
@@ -126,7 +212,7 @@
             which keeps dirt out of the vents (huge win when you travel with a dog!).
         </p>
 
-        <h2>Comfort in All Seasons</h2>
+        <h2 id="seasons">Comfort in All Seasons</h2>
         <p>
             One of the big selling points for us was the <strong>4-Seasons Protection Package</strong>, and it’s lived up
             to the hype. The trailer stays comfortable in all kinds of weather.
@@ -139,7 +225,7 @@
             The <strong>double axle</strong> and <strong>integrated anti-lock brakes</strong> make towing feel safer.
         </p>
 
-        <h2>Solar, Power & the 12V Fridge</h2>
+        <h2 id="solar">Solar, Power &amp; the 12V Fridge</h2>
         <p>
             We like the idea of camping in more remote locations, so the <strong>factory solar setup</strong> was a huge
             selling point, plus the option to add more solar at any time.
@@ -150,7 +236,7 @@
             the internal components are smaller, leaving more usable space inside the fridge and freezer (what a win-win)!
         </p>
 
-        <h2>Storage & Exterior Features</h2>
+        <h2 id="storage">Storage &amp; Exterior Features</h2>
         <p>
             The <strong>pass-through storage</strong> is also incredible—a huge compartment that we can actually fully
             use because Grand Design cuts the door opening larger than other trailers and routes plumbing and wiring out
@@ -160,79 +246,59 @@
             The <strong>accessory hitch</strong> gives us room for extra gear on longer trips.
         </p>
 
-        <h2>Final Thoughts</h2>
+        <h2 id="final-thoughts">Final Thoughts</h2>
         <p>
-            If you watch the walkthrough video, this write-up should give you a better idea of why we chose this model
-            and why we’re so happy with it. If you’re considering the 22BHE, hopefully our experience helps you decide
-            if it’s the right fit for you, too.
+            If you’re considering the Imagine XLS 22BHE, we hope our experience helps you decide if it’s the right fit
+            for you. For us, it’s been a great balance of towability, comfort, and thoughtful design over these past
+            two years.
         </p>
         <p><strong>Feel free to comment on our YouTube video if you have any questions.</strong></p>
 
-<h2>Helpful Resources & Downloads</h2>
+        <h2 id="walkthrough-video">Walkthrough Video</h2>
+        <p class="video-note">
+            Prefer to see the layout in action? Watch our full walkthrough of our actual 22BHE below.
+        </p>
+        <div class="video-wrapper">
+            <!-- Replace VIDEO_ID_HERE with your actual video ID -->
+            <iframe 
+                src="https://www.youtube.com/embed/VIDEO_ID_HERE"
+                title="Grand Design Imagine XLS 22BHE Walkthrough"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
 
-<div class="download-grid">
-    <a class="download-btn" 
-       href="https://d1nmxxg9d5tdo.cloudfront.net/75808/files/22BHE_Storage_Measurements.pdf?1764710498" 
-       target="_blank">
-        📏 22BHE Storage Measurements
-    </a>
+        <h2 id="downloads">Helpful Resources &amp; Downloads</h2>
+        <p>
+            Here are some additional resources and documents related to the Grand Design Imagine XLS 22BHE:
+        </p>
 
-    <a class="download-btn" 
-       href="https://d1nmxxg9d5tdo.cloudfront.net/75808/files/GRAND_DESIGN_IMAGINE_22BHE_INFO_SHEET.pdf?1764714120" 
-       target="_blank">
-        📄 22BHE Info Sheet
-    </a>
+        <div class="download-grid">
+            <a class="download-btn" 
+               href="https://d1nmxxg9d5tdo.cloudfront.net/75808/files/22BHE_Storage_Measurements.pdf?1764710498" 
+               target="_blank">
+                📏 22BHE Storage Measurements
+            </a>
 
-    <a class="download-btn" 
-       href="https://d1nmxxg9d5tdo.cloudfront.net/75808/files/Imagine_Brochure.pdf?1764714142" 
-       target="_blank">
-        📘 Imagine Brochure
-    </a>
+            <a class="download-btn" 
+               href="https://d1nmxxg9d5tdo.cloudfront.net/75808/files/GRAND_DESIGN_IMAGINE_22BHE_INFO_SHEET.pdf?1764714120" 
+               target="_blank">
+                📄 22BHE Info Sheet
+            </a>
 
-    <a class="download-btn" 
-       href="https://d1nmxxg9d5tdo.cloudfront.net/75808/files/Imagine_Owner's_Manual_Rev01_2025.pdf?1764714132" 
-       target="_blank">
-        🛠️ Owner’s Manual (2025)
-    </a>
-</div>
+            <a class="download-btn" 
+               href="https://d1nmxxg9d5tdo.cloudfront.net/75808/files/Imagine_Brochure.pdf?1764714142" 
+               target="_blank">
+                📘 Imagine Brochure
+            </a>
 
-<style>
-    /* Button Grid Layout */
-    .download-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 15px;
-        margin-top: 15px;
-    }
+            <a class="download-btn" 
+               href="https://d1nmxxg9d5tdo.cloudfront.net/75808/files/Imagine_Owner's_Manual_Rev01_2025.pdf?1764714132" 
+               target="_blank">
+                🛠️ Owner’s Manual (2025)
+            </a>
+        </div>
 
-    @media (max-width: 600px) {
-        .download-grid {
-            grid-template-columns: 1fr;
-        }
-    }
-
-    /* Button Styling */
-    .download-btn {
-        display: block;
-        background-color: #133b66;  /* Your site’s navy */
-        color: #ffffff;
-        text-align: center;
-        padding: 12px 15px;
-        font-size: 1em;
-        border-radius: 8px;
-        text-decoration: none;
-        font-family: Arial, sans-serif;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        transition: background-color 0.25s ease, transform 0.15s ease;
-    }
-
-    .download-btn:hover {
-        background-color: #2d7cbc; /* Your lighter blue hover color */
-        transform: translateY(-2px);
-    }
-</style>
-
-        
     </div>
 </body>
 </html>
