@@ -146,14 +146,13 @@
             transform: translateY(-2px);
         }
 
-        /* Updated prettier Table of Contents */
-/* MINI CARD TABLE OF CONTENTS */
-/* MINI CARD TABLE OF CONTENTS */
-.mini-card-toc {
-    max-width: 380px;               
-    margin: 0 auto 28px auto;       
-    padding: 18px 20px;
-    background: #fafafa;            
+
+/* MINI CARD TABLE OF CONTENTS — TWO COLUMNS */
+.mini-card-toc.two-col-toc {
+    max-width: 560px;               /* wider to allow 2 columns */
+    margin: 0 auto 28px auto;
+    padding: 20px 24px;
+    background: #fafafa;
     border-radius: 10px;
     border: 1px solid #e6e6e6;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
@@ -165,17 +164,28 @@
     color: #133b66;
     font-weight: bold;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
-.mini-card-toc ul {
+/* UL becomes a grid */
+.mini-card-toc.two-col-toc ul {
     list-style: none;
     padding-left: 0;
     margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* two equal columns */
+    column-gap: 18px;
+    row-gap: 8px;
+}
+
+@media (max-width: 580px) {
+    .mini-card-toc.two-col-toc ul {
+        grid-template-columns: 1fr; /* stack on mobile */
+    }
 }
 
 .mini-card-toc li {
-    margin: 8px 0;
+    margin: 0;
 }
 
 .mini-card-toc a {
@@ -188,8 +198,9 @@
 
 .mini-card-toc a:hover {
     color: #133b66;
-    padding-left: 4px; /* slight movement to the right on hover */
+    padding-left: 4px;
 }
+
 
 
     </style>
@@ -204,7 +215,7 @@
 
         <p></p>
         <!-- On This Page / Index -->
-<div class="toc mini-card-toc">
+<div class="toc mini-card-toc two-col-toc">
     <p class="toc-title">On This Page</p>
     <ul>
         <li><a href="#why-22bhe">▸ Why We Chose the 22BHE</a></li>
@@ -218,6 +229,7 @@
         <li><a href="#downloads">▸ Downloads & Resources</a></li>
     </ul>
 </div>
+
 
 
 
