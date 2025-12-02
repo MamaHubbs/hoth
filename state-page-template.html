@@ -133,7 +133,7 @@
 
     </div>
 
-   <script src="shared.js"></script> 
+<script src="shared.js"></script> 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const stateCode = getQueryParameter('state');
@@ -176,12 +176,11 @@
 
                 const markerGroup = L.featureGroup();
 
-                /* NEW MARKER BEHAVIOR — tooltip on hover, direct click open */
+                /* MARKER BEHAVIOR — tooltip on hover, click stays in embed */
                 campgroundsInState.forEach(camp => {
                     if (typeof camp.latitude !== 'number' ||
                         typeof camp.longitude !== 'number') return;
 
-                    // Tooltip text
                     const tooltipHtml = `
                         <strong>${camp.name}</strong><br>
                         <em>Click to view campground info</em>
@@ -195,10 +194,9 @@
                             sticky: true
                         })
                         .on('click', () => {
-                            window.open(
-                                `campground-review-template.html?campground=${camp.filename}`,
-                                '_blank'
-                            );
+                            // 👇 This keeps navigation INSIDE the embedded page/iframe
+                            window.location.href =
+                                `campground-review-template.html?campground=${camp.filename}`;
                         });
 
                     markerGroup.addLayer(marker);
@@ -221,6 +219,7 @@
                     const link = document.createElement('a');
                     link.textContent = camp.name;
                     link.href = `campground-review-template.html?campground=${camp.filename}`;
+                    // note: no target="_blank" here → also stays in embed
                     li.appendChild(link);
 
                     if (camp.summary_text) {
@@ -238,6 +237,7 @@
             });
     });
 </script>
+
 
 </body>
 </html>
