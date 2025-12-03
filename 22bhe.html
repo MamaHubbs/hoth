@@ -159,8 +159,7 @@
 .mini-card-toc.two-col-toc {
     max-width: 560px;               
     margin: 0 auto 28px auto;
-    /* top | right | bottom | left */
-    padding: 20px 20px 20px 70px;   /* ⬅ more space on the left */
+   padding: 20px 30px;
     background: #fafafa;
     border-radius: 10px;
     border: 1px solid #e6e6e6;
@@ -180,13 +179,14 @@
 /* UL becomes a grid */
 .mini-card-toc.two-col-toc ul {
     list-style: none;
-    padding-left: 0;
+    padding-left: 35px;   /* NEW: shift link content without moving title */
     margin: 0;
     display: grid;
-    grid-template-columns: 1fr 1fr; /* two equal columns */
+    grid-template-columns: 1fr 1fr;
     column-gap: 18px;
     row-gap: 8px;
 }
+
 
 @media (max-width: 580px) {
     .mini-card-toc.two-col-toc ul {
