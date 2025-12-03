@@ -59,30 +59,67 @@
             margin-bottom: 18px;
         }
 
-        /* Responsive 16:9 video embed */
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            border-radius: 8px;
-            background-color: #000;
-            margin-top: 10px;
-            margin-bottom: 4px;
-        }
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-        .video-note {
-            font-size: 0.9em;
-            color: #555;
-            margin-bottom: 10px;
-        }
+/* Responsive 16:9 video embed */
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #000;
+    margin: 0; /* card handles spacing now */
+}
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* New intro text above the video */
+.video-intro {
+    text-align: center;
+    color: #555;
+    font-size: 0.95em;
+    margin-top: -6px;
+    margin-bottom: 14px;
+}
+
+        /* Card around video */
+.video-card {
+    background: #fafafa;
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    padding: 16px 18px 18px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* YouTube button */
+.video-buttons {
+    text-align: center;
+    margin-top: 14px;
+}
+
+.yt-button {
+    background: #133b66;
+    color: #fff;
+    padding: 9px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.95em;
+    font-family: Arial, sans-serif;
+    display: inline-block;
+    transition: background-color 0.25s ease, transform 0.15s ease;
+}
+
+.yt-button:hover {
+    background: #2d7cbc;
+    transform: translateY(-1px);
+}
+
 
         /* Download buttons grid */
         .download-grid {
@@ -281,19 +318,32 @@
         </p>
         <p><strong>Feel free to comment on our YouTube video if you have any questions.</strong></p>
 
-        <h2 id="walkthrough-video">Walkthrough Video</h2>
-        <p class="video-note">
-            Prefer to see the layout in action? Watch the full walkthrough of our actual 22BHE below.
-        </p>
-        <div class="video-wrapper">
-            <!-- Replace VIDEO_ID_HERE with your actual video ID -->
-            <iframe 
-                src="https://www.youtube.com/embed/VIDEO_ID_HERE"
-                title="Grand Design Imagine XLS 22BHE Walkthrough"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen>
-            </iframe>
-        </div>
+<h2 id="walkthrough-video">Walkthrough Video</h2>
+
+<p class="video-intro">
+    See inside our actual 22BHE and how everything fits together in our full walkthrough tour.
+</p>
+
+<div class="video-card">
+    <div class="video-wrapper">
+        <!-- Replace VIDEO_ID_HERE with your actual ID -->
+        <iframe 
+            src="https://www.youtube.com/embed/VIDEO_ID_HERE"
+            title="Grand Design Imagine XLS 22BHE Walkthrough"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+        </iframe>
+    </div>
+
+    <p class="video-buttons">
+        <a href="https://www.youtube.com/watch?v=VIDEO_ID_HERE" 
+           target="_blank" 
+           class="yt-button">
+            ▶️ Watch on YouTube
+        </a>
+    </p>
+</div>
+
 
         <h2 id="downloads">Helpful Resources &amp; Downloads</h2>
         <p>
