@@ -128,6 +128,19 @@
             color: #b00020;
             margin-top: 20px;
         }
+
+        /* Optional: back link styling if you add one later */
+        .back-link {
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+        .back-link a {
+            color: #2d7cbc;
+            text-decoration: none;
+        }
+        .back-link a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -154,10 +167,15 @@
 
         <p class="error-message" id="errorMessage" style="display:none;"></p>
 
+        <!-- Optional: Back to blog index link (loads in same iframe) -->
+        <p class="back-link">
+            <a href="blog-index.html">&larr; Back to Blog</a>
+        </p>
+
     </div>
 
     <script>
-        // Simple helper to read query params (if you don't already have this in shared.js)
+        // If you already have getQueryParameter in shared.js, you can delete this
         function getQueryParameter(name) {
             const params = new URLSearchParams(window.location.search);
             return params.get(name);
@@ -251,7 +269,7 @@
                                 post.noteBox +
                                 ' <a href="' +
                                 post.noteBoxLink +
-                                '" target="_blank">Learn more</a>.';
+                                '">Learn more</a>.';
                         } else {
                             noteDiv.textContent = post.noteBox;
                         }
