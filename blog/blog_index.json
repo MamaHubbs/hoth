@@ -1,6 +1,18 @@
 {
   "posts": [
     {
+  "id": "cabinet-repairs-2019",
+  "title": "Cabinet Repairs",
+  "subtitle": "A quick and easy fix for faded Grand Design cabinets",
+  "date": "2019-09-05",
+  "display_date": "September 5, 2019",
+  "category": "RV Repair",
+  "summary": "If your dark Grand Design cabinets are fading, here’s a super easy fix using a Minwax stain marker.",
+  "tags": ["RV Repair", "Grand Design", "DIY"],
+  "filename": "20190905_cabinet_repairs"
+}
+
+    {
       "id": "two-years-with-22bhe",
       "title": "Two Years with Our Grand Design Imagine XLS 22BHE",
       "subtitle": "How this floorplan really works for our family",
