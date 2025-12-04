@@ -181,6 +181,7 @@
         const BLOG_INDEX_URL = 'blog/blog_index.json';
 
         function buildPostUrl(filename) {
+            // Internal navigation: no target="_blank" so it loads in the same iframe
             return 'blog-post-template.html?post=' + encodeURIComponent(filename);
         }
 
@@ -229,7 +230,7 @@
                     const titleLink = buildPostUrl(post.filename);
 
                     card.innerHTML = `
-                        <h3><a href="${titleLink}" target="_blank">${post.title || 'Untitled Post'}</a></h3>
+                        <h3><a href="${titleLink}">${post.title || 'Untitled Post'}</a></h3>
                         ${post.subtitle ? `<div class="post-subtitle">${post.subtitle}</div>` : ''}
                         <div class="post-meta">
                             ${post.display_date ? post.display_date : (post.date || '')}
@@ -295,8 +296,7 @@
                     postsInMonth.forEach(post => {
                         const li = document.createElement('li');
                         const link = document.createElement('a');
-                        link.href = buildPostUrl(post.filename);
-                        link.target = '_blank';
+                        link.href = buildPostUrl(post.filename); // no target="_blank"
                         link.textContent = post.title || 'Untitled Post';
                         li.appendChild(link);
                         ul.appendChild(li);
