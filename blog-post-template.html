@@ -129,7 +129,7 @@
             margin-top: 20px;
         }
 
-        /* Optional: back link styling if you add one later */
+        /* Optional: back link styling */
         .back-link {
             margin-top: 20px;
             font-size: 0.9em;
@@ -140,6 +140,48 @@
         }
         .back-link a:hover {
             text-decoration: underline;
+        }
+
+        /* Photo gallery for posts with images[] */
+        .photo-gallery {
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .photo-gallery h2 {
+            font-family: Arial, sans-serif;
+            color: #2d7cbc;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        .photo-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 10px;
+        }
+        .photo-gallery-item {
+            background: #fafafa;
+            border: 1px solid #e6e6e6;
+            border-radius: 8px;
+            padding: 6px;
+            text-align: center;
+        }
+        .photo-gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            display: block;
+        }
+        .photo-caption {
+            font-size: 0.85em;
+            color: #555;
+            margin-top: 4px;
+        }
+
+        @media (max-width: 600px) {
+            .photo-gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            }
         }
     </style>
 </head>
@@ -167,7 +209,6 @@
 
         <p class="error-message" id="errorMessage" style="display:none;"></p>
 
-        <!-- Optional: Back to blog index link (loads in same iframe) -->
         <p class="back-link">
             <a href="blog-index.html">&larr; Back to Blog</a>
         </p>
@@ -175,7 +216,7 @@
     </div>
 
     <script>
-        // If you already have getQueryParameter in shared.js, you can delete this
+        // Simple helper if you don't already share it
         function getQueryParameter(name) {
             const params = new URLSearchParams(window.location.search);
             return params.get(name);
@@ -219,7 +260,7 @@
                     if (post.readTime) metaParts.push(post.readTime);
                     metaEl.textContent = metaParts.join(' • ');
 
-                    // Hero image
+                    // Hero image (optional)
                     if (post.heroImage && post.heroImage.url) {
                         const heroContainer = document.getElementById('heroImageContainer');
                         const heroImg = document.getElementById('heroImage');
@@ -259,7 +300,43 @@
                         });
                     }
 
-                    // Note box
+                    // Photo gallery (optional)
+                    if (Array.isArray(post.images) && post.images.length > 0) {
+                        const galleryWrapper = document.createElement('div');
+                        galleryWrapper.className = 'photo-gallery';
+
+                        const galleryHeading = document.createElement('h2');
+                        galleryHeading.textContent = 'Photo Gallery';
+                        galleryWrapper.appendChild(galleryHeading);
+
+                        const grid = document.createElement('div');
+                        grid.className = 'photo-gallery-grid';
+
+                        post.images.forEach(img => {
+                            const item = document.createElement('div');
+                            item.className = 'photo-gallery-item';
+
+                            const imageEl = document.createElement('img');
+                            imageEl.src = img.url;
+                            imageEl.alt = img.caption || post.title || 'Blog image';
+
+                            item.appendChild(imageEl);
+
+                            if (img.caption) {
+                                const cap = document.createElement('div');
+                                cap.className = 'photo-caption';
+                                cap.textContent = img.caption;
+                                item.appendChild(cap);
+                            }
+
+                            grid.appendChild(item);
+                        });
+
+                        galleryWrapper.appendChild(grid);
+                        contentEl.appendChild(galleryWrapper);
+                    }
+
+                    // Note box (optional)
                     if (post.noteBox) {
                         const noteDiv = document.createElement('div');
                         noteDiv.className = 'note-box';
@@ -277,7 +354,7 @@
                         contentEl.appendChild(noteDiv);
                     }
 
-                    // Quote
+                    // Quote (optional)
                     if (post.quote) {
                         const quoteDiv = document.createElement('div');
                         quoteDiv.className = 'post-quote';
@@ -285,7 +362,7 @@
                         contentEl.appendChild(quoteDiv);
                     }
 
-                    // Tags
+                    // Tags (optional)
                     if (Array.isArray(post.tags) && post.tags.length > 0) {
                         const tagsWrapper = document.getElementById('postTags');
                         const tagsList = document.getElementById('postTagsList');
