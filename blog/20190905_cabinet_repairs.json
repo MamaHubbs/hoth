@@ -6,11 +6,6 @@
   "category": "RV Repair",
   "readTime": "2 min read",
 
-  "heroImage": {
-    "url": "https://example.com/your-image-here.jpg",
-    "caption": "Cabinet color fade and repair using a stain marker."
-  },
-
   "tags": [
     "Grand Design",
     "RV Repair",
@@ -44,6 +39,26 @@
       ]
     }
   ],
+
+  "images": [
+  {
+    "url": "image/cabinet_01.jpg",
+    "caption": "Cabinet fade before repair."
+  },
+  {
+    "url": "image/cabinet_02.jpg",
+    "caption": "Minwax Stain Marker in Ebony"
+  },
+  {
+    "url": "image/cabinet_03.jpg",
+    "caption": "Applying the Minwax Ebony stain marker - It’s so easy to use, even a kid can do it!"
+  },
+  {
+    "url": "image/cabinet_04.jpg",
+    "caption": "Here’s what they look like after…. much better!"
+  }
+],
+
 
   "quote": "It’s amazing how such a small fix can make the cabinets look like new again.",
 
