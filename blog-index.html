@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hubbards on the Hitch Blog</title>
+
+    <style>
+        body {
+            font-family: Helvetica, sans-serif;
+            line-height: 1.5;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-family: Arial, sans-serif;
+            color: #133b66;
+            text-align: center;
+            margin-bottom: 6px;
+            font-size: 2em;
+        }
+        h1 .subheader {
+            display: block;
+            font-size: 0.6em;
+            color: #2d7cbc;
+            margin-top: 6px;
+            font-weight: normal;
+        }
+
+        .blog-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        @media (max-width: 800px) {
+            .blog-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Left column: recent posts */
+        .recent-posts h2 {
+            font-family: Arial, sans-serif;
+            color: #2d7cbc;
+            font-size: 1.25em;
+            margin-bottom: 12px;
+        }
+
+        .post-card {
+            border-radius: 8px;
+            border: 1px solid #e6e6e6;
+            background: #fafafa;
+            padding: 16px 18px;
+            margin-bottom: 16px;
+        }
+
+        .post-card h3 {
+            margin: 0 0 4px;
+            font-size: 1.15em;
+        }
+        .post-card h3 a {
+            color: #133b66;
+            text-decoration: none;
+        }
+        .post-card h3 a:hover {
+            text-decoration: underline;
+        }
+
+        .post-subtitle {
+            font-size: 0.9em;
+            color: #2d7cbc;
+            margin-bottom: 6px;
+        }
+
+        .post-meta {
+            font-size: 0.85em;
+            color: #777;
+            margin-bottom: 8px;
+        }
+
+        .post-summary {
+            font-size: 0.95em;
+            margin-bottom: 10px;
+        }
+
+        .tag-pill {
+            display: inline-block;
+            margin: 3px 6px 0 0;
+            padding: 3px 8px;
+            background: #f1f5f9;
+            border-radius: 999px;
+            font-size: 0.8em;
+            color: #133b66;
+        }
+
+        /* Right column: archive sidebar */
+        .archive-sidebar h2 {
+            font-family: Arial, sans-serif;
+            color: #2d7cbc;
+            font-size: 1.15em;
+            margin-bottom: 10px;
+        }
+
+        .archive-section {
+            margin-bottom: 18px;
+        }
+
+        .archive-month {
+            font-weight: bold;
+            color: #133b66;
+            font-size: 0.95em;
+            margin-bottom: 4px;
+        }
+
+        .archive-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        .archive-list li {
+            margin-bottom: 4px;
+            font-size: 0.9em;
+        }
+
+        .archive-list a {
+            color: #2d7cbc;
+            text-decoration: none;
+        }
+
+        .archive-list a:hover {
+            text-decoration: underline;
+        }
+
+        .empty-message {
+            font-size: 0.95em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>
+            Hubbards on the Hitch Blog<br>
+            <span class="subheader">Trip reports, gear thoughts, and life in our RV</span>
+        </h1>
+
+        <div class="blog-layout">
+            <!-- LEFT: Recent posts -->
+            <div class="recent-posts">
+                <h2>Recent Posts</h2>
+                <div id="recentPostsContainer">
+                    <p class="empty-message">Loading posts...</p>
+                </div>
+            </div>
+
+            <!-- RIGHT: Archive sidebar -->
+            <aside class="archive-sidebar">
+                <h2>Archive</h2>
+                <div id="archiveContainer">
+                    <p class="empty-message">Loading archive...</p>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <script>
+        const BLOG_INDEX_URL = 'blog/blog_index.json';
+
+        function buildPostUrl(filename) {
+            return 'blog-post-template.html?post=' + encodeURIComponent(filename);
+        }
+
+        function formatMonthYear(dateStr) {
+            const d = new Date(dateStr);
+            if (isNaN(d)) return dateStr;
+            return d.toLocaleString('default', { month: 'long', year: 'numeric' });
+        }
+
+        fetch(BLOG_INDEX_URL)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('HTTP status ' + response.status);
+                }
+                return response.json();
+            })
+            .then(data => {
+                const posts = Array.isArray(data.posts) ? data.posts.slice() : [];
+
+                const recentContainer = document.getElementById('recentPostsContainer');
+                const archiveContainer = document.getElementById('archiveContainer');
+
+                if (!posts.length) {
+                    recentContainer.innerHTML =
+                        '<p class="empty-message">No blog posts available yet.</p>';
+                    archiveContainer.innerHTML =
+                        '<p class="empty-message">No archive entries yet.</p>';
+                    return;
+                }
+
+                // Sort by date descending
+                posts.sort((a, b) => {
+                    const da = new Date(a.date || 0);
+                    const db = new Date(b.date || 0);
+                    return db - da;
+                });
+
+                // Recent posts (max 5)
+                recentContainer.innerHTML = '';
+                const recentPosts = posts.slice(0, 5);
+
+                recentPosts.forEach(post => {
+                    const card = document.createElement('div');
+                    card.className = 'post-card';
+
+                    const titleLink = buildPostUrl(post.filename);
+
+                    card.innerHTML = `
+                        <h3><a href="${titleLink}" target="_blank">${post.title || 'Untitled Post'}</a></h3>
+                        ${post.subtitle ? `<div class="post-subtitle">${post.subtitle}</div>` : ''}
+                        <div class="post-meta">
+                            ${post.display_date ? post.display_date : (post.date || '')}
+                            ${post.category ? ' • ' + post.category : ''}
+                        </div>
+                        ${post.summary ? `<div class="post-summary">${post.summary}</div>` : ''}
+                    `;
+
+                    if (Array.isArray(post.tags) && post.tags.length > 0) {
+                        post.tags.forEach(tag => {
+                            const span = document.createElement('span');
+                            span.className = 'tag-pill';
+                            span.textContent = tag;
+                            card.appendChild(span);
+                        });
+                    }
+
+                    recentContainer.appendChild(card);
+                });
+
+                // Archive grouped by month
+                archiveContainer.innerHTML = '';
+
+                const grouped = {};
+                posts.forEach(post => {
+                    if (!post.date) return;
+                    const d = new Date(post.date);
+                    if (isNaN(d)) return;
+
+                    const year = d.getFullYear();
+                    const month = d.getMonth() + 1;
+                    const key = `${year}-${String(month).padStart(2, '0')}`;
+
+                    if (!grouped[key]) {
+                        grouped[key] = [];
+                    }
+                    grouped[key].push(post);
+                });
+
+                const monthKeys = Object.keys(grouped).sort((a, b) => (a < b ? 1 : -1));
+
+                monthKeys.forEach(key => {
+                    const postsInMonth = grouped[key];
+                    const label = formatMonthYear(postsInMonth[0].date);
+
+                    const section = document.createElement('div');
+                    section.className = 'archive-section';
+
+                    const monthHeading = document.createElement('div');
+                    monthHeading.className = 'archive-month';
+                    monthHeading.textContent = label;
+                    section.appendChild(monthHeading);
+
+                    const ul = document.createElement('ul');
+                    ul.className = 'archive-list';
+
+                    postsInMonth.sort((a, b) => {
+                        const da = new Date(a.date || 0);
+                        const db = new Date(b.date || 0);
+                        return db - da;
+                    });
+
+                    postsInMonth.forEach(post => {
+                        const li = document.createElement('li');
+                        const link = document.createElement('a');
+                        link.href = buildPostUrl(post.filename);
+                        link.target = '_blank';
+                        link.textContent = post.title || 'Untitled Post';
+                        li.appendChild(link);
+                        ul.appendChild(li);
+                    });
+
+                    section.appendChild(ul);
+                    archiveContainer.appendChild(section);
+                });
+            })
+            .catch(err => {
+                console.error('Error loading blog index:', err);
+                document.getElementById('recentPostsContainer').innerHTML =
+                    '<p class="empty-message">Failed to load blog posts.</p>';
+                document.getElementById('archiveContainer').innerHTML =
+                    '<p class="empty-message">Failed to load archive.</p>';
+            });
+    </script>
+</body>
+</html>
