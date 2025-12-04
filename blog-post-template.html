@@ -129,7 +129,6 @@
             margin-top: 20px;
         }
 
-        /* Optional: back link styling */
         .back-link {
             margin-top: 20px;
             font-size: 0.9em;
@@ -166,6 +165,9 @@
             padding: 6px;
             text-align: center;
         }
+        .photo-gallery-item a img {
+            cursor: zoom-in;
+        }
         .photo-gallery-item img {
             width: 100%;
             height: auto;
@@ -184,10 +186,10 @@
             }
         }
     </style>
-    
-    <link href="lightbox2/css/lightbox.min.css" rel="stylesheet" />
-<script src="lightbox2/js/lightbox-plus-jquery.min.js"></script>
 
+    <!-- Lightbox2 (same paths as campground review pages) -->
+    <link href="lightbox2/css/lightbox.min.css" rel="stylesheet" />
+    <script src="lightbox2/js/lightbox-plus-jquery.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -220,7 +222,7 @@
     </div>
 
     <script>
-        // Simple helper if you don't already share it
+        // Simple helper to read ?post=FILENAME from URL
         function getQueryParameter(name) {
             const params = new URLSearchParams(window.location.search);
             return params.get(name);
@@ -304,7 +306,7 @@
                         });
                     }
 
-                    // Photo gallery (optional)
+                    // Photo gallery (optional) using Lightbox2
                     if (Array.isArray(post.images) && post.images.length > 0) {
                         const galleryWrapper = document.createElement('div');
                         galleryWrapper.className = 'photo-gallery';
@@ -320,11 +322,20 @@
                             const item = document.createElement('div');
                             item.className = 'photo-gallery-item';
 
+                            // Lightbox link
+                            const link = document.createElement('a');
+                            link.href = img.url;
+                            link.setAttribute('data-lightbox', (post.id || post.title || 'gallery') + '-images');
+                            if (img.caption) {
+                                link.setAttribute('data-title', img.caption);
+                            }
+
                             const imageEl = document.createElement('img');
                             imageEl.src = img.url;
                             imageEl.alt = img.caption || post.title || 'Blog image';
 
-                            item.appendChild(imageEl);
+                            link.appendChild(imageEl);
+                            item.appendChild(link);
 
                             if (img.caption) {
                                 const cap = document.createElement('div');
