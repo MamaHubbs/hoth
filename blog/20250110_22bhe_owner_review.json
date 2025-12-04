@@ -6,10 +6,11 @@
   "category": "RV Living",
   "readTime": "6 min read",
 
-  "heroImage": {
-    "url": "https://d1nmxxg9d5tdo.cloudfront.net/75808/files/22bhe_hero_example.jpg",
-    "caption": "Our Imagine XLS 22BHE set up at one of our favorite campsites."
-  },
+"heroImage": {
+  "url": "image/nnp01.JPG",
+  "caption": "Our Imagine XLS 22BHE set up at one of our favorite campsites."
+}
+
 
   "tags": [
     "Grand Design",
