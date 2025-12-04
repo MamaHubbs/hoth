@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post</title>
+
+    <style>
+        body {
+            font-family: Helvetica, sans-serif;
+            line-height: 1.5;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-family: Arial, sans-serif;
+            color: #133b66;
+            text-align: center;
+            margin-bottom: 6px;
+            font-size: 2em;
+        }
+        h1 .subheader {
+            display: block;
+            font-size: 0.6em;
+            color: #2d7cbc;
+            margin-top: 6px;
+            font-weight: normal;
+        }
+
+        .post-meta {
+            text-align: center;
+            font-size: 0.9em;
+            color: #777;
+            margin-bottom: 20px;
+        }
+        .post-meta span {
+            margin: 0 6px;
+        }
+        .meta-separator {
+            color: #ccc;
+        }
+
+        .hero-image {
+            margin-bottom: 20px;
+        }
+        .hero-image img {
+            width: 100%;
+            display: block;
+            border-radius: 8px;
+        }
+        .hero-caption {
+            font-size: 0.85em;
+            color: #777;
+            text-align: center;
+            margin-top: 4px;
+        }
+
+        .post-content {
+            font-size: 0.98em;
+        }
+        .post-content h2 {
+            font-family: Arial, sans-serif;
+            color: #2d7cbc;
+            margin-top: 24px;
+            margin-bottom: 8px;
+            font-size: 1.25em;
+        }
+        .post-content p {
+            margin-bottom: 14px;
+        }
+
+        .note-box {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 10px 12px;
+            font-size: 0.9em;
+            margin: 16px 0;
+        }
+        .note-box a {
+            color: #2d7cbc;
+            text-decoration: none;
+        }
+        .note-box a:hover {
+            text-decoration: underline;
+        }
+
+        .post-quote {
+            border-left: 4px solid #2d7cbc;
+            padding-left: 12px;
+            margin: 18px 0;
+            color: #555;
+            font-style: italic;
+        }
+
+        .post-tags {
+            margin-top: 24px;
+            font-size: 0.9em;
+            color: #555;
+        }
+        .post-tags span.label {
+            font-weight: bold;
+            color: #133b66;
+        }
+        .tag-pill {
+            display: inline-block;
+            margin: 4px 6px 0 0;
+            padding: 4px 8px;
+            background: #f1f5f9;
+            border-radius: 999px;
+            font-size: 0.85em;
+            color: #133b66;
+        }
+
+        .error-message {
+            text-align: center;
+            color: #b00020;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <h1 id="postTitle">
+            Loading Blog Post...
+            <span class="subheader" id="postSubtitle"></span>
+        </h1>
+
+        <div class="post-meta" id="postMeta"></div>
+
+        <div class="hero-image" id="heroImageContainer" style="display:none;">
+            <img id="heroImage" src="" alt="">
+            <div class="hero-caption" id="heroCaption"></div>
+        </div>
+
+        <div class="post-content" id="postContent"></div>
+
+        <div class="post-tags" id="postTags" style="display:none;">
+            <span class="label">Tags:</span>
+            <span id="postTagsList"></span>
+        </div>
+
+        <p class="error-message" id="errorMessage" style="display:none;"></p>
+
+    </div>
+
+    <script>
+        // Simple helper to read query params (if you don't already have this in shared.js)
+        function getQueryParameter(name) {
+            const params = new URLSearchParams(window.location.search);
+            return params.get(name);
+        }
+
+        function getBlogJsonUrl(postFilename) {
+            return 'blog/' + postFilename + '.json';
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const postFilename = getQueryParameter('post');
+
+            if (!postFilename) {
+                document.getElementById('postTitle').textContent =
+                    'Error: Blog post filename not specified in URL.';
+                document.getElementById('postSubtitle').textContent = '';
+                return;
+            }
+
+            const jsonUrl = getBlogJsonUrl(postFilename);
+
+            fetch(jsonUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('HTTP status ' + response.status);
+                    }
+                    return response.json();
+                })
+                .then(post => {
+                    // Title & subtitle
+                    const h1 = document.getElementById('postTitle');
+                    const subtitleEl = document.getElementById('postSubtitle');
+                    h1.firstChild.nodeValue = post.title || 'Untitled Blog Post';
+                    subtitleEl.textContent = post.subtitle || '';
+
+                    // Meta
+                    const metaEl = document.getElementById('postMeta');
+                    const metaParts = [];
+                    if (post.date) metaParts.push(post.date);
+                    if (post.category) metaParts.push(post.category);
+                    if (post.readTime) metaParts.push(post.readTime);
+                    metaEl.textContent = metaParts.join(' • ');
+
+                    // Hero image
+                    if (post.heroImage && post.heroImage.url) {
+                        const heroContainer = document.getElementById('heroImageContainer');
+                        const heroImg = document.getElementById('heroImage');
+                        const heroCaption = document.getElementById('heroCaption');
+
+                        heroImg.src = post.heroImage.url;
+                        heroImg.alt = post.heroImage.caption || post.title || 'Blog post image';
+                        heroCaption.textContent = post.heroImage.caption || '';
+                        heroContainer.style.display = 'block';
+                    }
+
+                    const contentEl = document.getElementById('postContent');
+                    contentEl.innerHTML = '';
+
+                    // Intro
+                    if (post.intro) {
+                        const introP = document.createElement('p');
+                        introP.textContent = post.intro;
+                        contentEl.appendChild(introP);
+                    }
+
+                    // Sections
+                    if (Array.isArray(post.sections)) {
+                        post.sections.forEach(section => {
+                            if (section.heading) {
+                                const h2 = document.createElement('h2');
+                                h2.textContent = section.heading;
+                                contentEl.appendChild(h2);
+                            }
+                            if (Array.isArray(section.paragraphs)) {
+                                section.paragraphs.forEach(text => {
+                                    const p = document.createElement('p');
+                                    p.textContent = text;
+                                    contentEl.appendChild(p);
+                                });
+                            }
+                        });
+                    }
+
+                    // Note box
+                    if (post.noteBox) {
+                        const noteDiv = document.createElement('div');
+                        noteDiv.className = 'note-box';
+
+                        if (post.noteBoxLink) {
+                            noteDiv.innerHTML =
+                                post.noteBox +
+                                ' <a href="' +
+                                post.noteBoxLink +
+                                '" target="_blank">Learn more</a>.';
+                        } else {
+                            noteDiv.textContent = post.noteBox;
+                        }
+
+                        contentEl.appendChild(noteDiv);
+                    }
+
+                    // Quote
+                    if (post.quote) {
+                        const quoteDiv = document.createElement('div');
+                        quoteDiv.className = 'post-quote';
+                        quoteDiv.textContent = post.quote;
+                        contentEl.appendChild(quoteDiv);
+                    }
+
+                    // Tags
+                    if (Array.isArray(post.tags) && post.tags.length > 0) {
+                        const tagsWrapper = document.getElementById('postTags');
+                        const tagsList = document.getElementById('postTagsList');
+
+                        tagsList.innerHTML = '';
+                        post.tags.forEach(tag => {
+                            const span = document.createElement('span');
+                            span.className = 'tag-pill';
+                            span.textContent = tag;
+                            tagsList.appendChild(span);
+                        });
+
+                        tagsWrapper.style.display = 'block';
+                    }
+                })
+                .catch(err => {
+                    console.error('Error loading blog post:', err);
+                    const errorEl = document.getElementById('errorMessage');
+                    errorEl.textContent = 'Failed to load blog post. Please try again later.';
+                    errorEl.style.display = 'block';
+                });
+        });
+    </script>
+</body>
+</html>
