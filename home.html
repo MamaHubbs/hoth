@@ -168,6 +168,22 @@
             margin-top: 6px;
         }
 
+        /* Google Photos-style carousel widget */
+.pa-carousel-widget {
+    width: 100% !important;
+    max-width: 100%;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #000;
+    position: relative;
+}
+
+.pa-carousel-widget object {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
         /* Recent blog posts list */
         .recent-posts-list {
             list-style: none;
@@ -309,21 +325,30 @@
             <!-- LEFT COLUMN -->
             <div>
                 <!-- Adventures / slideshow card -->
-                <div class="card">
-                    <h3>See Our Adventures</h3>
-                    <div class="slideshow-wrapper">
-                        <!-- This may need to be swapped with a proper Google Photos embed code later -->
-                        <iframe 
-                            src="https://photos.google.com/share/AF1QipOwC2tB3_bGuovDfyfOLjcfHlZCkTUZe6gTmx4nWylZKnKMUjqWF5ypjmpCfGKx_w?pli=1&key=bzBkWVNEbHgyYmtNVnhCT0JLT1BRZjRaZDBXWENn"
-                            title="Hubbards on the Hitch Photo Slideshow"
-                            loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                    </div>
-                    <p class="slideshow-note">
-                        A peek at some of our favorite campsites, road trips, and moments from the road.
-                    </p>
-                </div>
+<div class="card">
+    <h3>See Our Adventures</h3>
+
+    <!-- Your Google Photos-style carousel widget -->
+    <div class="pa-carousel-widget"
+         style="width:100%; height:480px; display:none;"
+         data-link="https://photos.app.goo.gl/7m7LUwTJG7Ei9Jzo6"
+         data-title="HOTH"
+         data-description="43 new items · Album by Hubbards On The Hitch"
+         data-delay="2">
+
+        <!-- keep all your <object> tags exactly as you pasted them -->
+        <!-- shortened here for sanity, but you should paste the full list -->
+        <object data="https://lh3.googleusercontent.com/pw/AP1GczMBPlo5qiFO7fsOLtWqT24Lv-wtw7rG0pJRvu9L4rHrSrijGDWBiHL_RqKXYQUPXTCoXNDaXZzgmzbYaTchblqoUk5CZyB2mC3i4FzOaXRViyrzG3Y=w1920-h1080"></object>
+        <object data="https://lh3.googleusercontent.com/pw/AP1GczPM5TT-t-J-MMrfPheEx_nTxgNE_Dps4F8rEoyiDgJGaEWPwSP52BgHrL_Cqo5ZSuB8F6RDAkdEGUCeo3Ozh_dcM2ZfaU-7C6mgS5yjrITl5QrrQus=w1920-h1080"></object>
+        <!-- ... all the rest of your <object> elements ... -->
+        <object data="https://lh3.googleusercontent.com/pw/AP1GczMI1rjfzm7TZ8k2genOOiyT9YXqlWm_-dAfEtaGo9lezrtx2eFI6OCv9orL06kVl4kRiM8if1vx0jH4WV5AVwGcmDqeO1jRFssjXdAMqWP8rX8ZRew=w1920-h1080"></object>
+    </div>
+
+    <p class="slideshow-note">
+        A peek at some of our favorite campsites, road trips, and moments from the road.
+    </p>
+</div>
+
 
                 <!-- Recent blog posts card -->
                 <div class="card">
@@ -357,83 +382,117 @@
 
     </div>
 
-    <script>
-        // Load recent blog posts from blog/blog_index.json
-        const BLOG_INDEX_URL = 'blog/blog_index.json';
+  <script>
+    // Load recent blog posts from blog/blog_index.json
+    const BLOG_INDEX_URL = 'blog/blog_index.json';
 
-        function buildPostUrl(filename) {
-            return 'blog-post-template.html?post=' + encodeURIComponent(filename);
-        }
+    function buildPostUrl(filename) {
+        return 'blog-post-template.html?post=' + encodeURIComponent(filename);
+    }
 
-        function loadRecentPosts() {
-            const container = document.getElementById('recentPostsContainer');
+    function loadRecentPosts() {
+        const container = document.getElementById('recentPostsContainer');
 
-            fetch(BLOG_INDEX_URL)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('HTTP status ' + response.status);
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    const posts = Array.isArray(data.posts) ? data.posts.slice() : [];
+        fetch(BLOG_INDEX_URL)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('HTTP status ' + response.status);
+                }
+                return response.json();
+            })
+            .then(data => {
+                const posts = Array.isArray(data.posts) ? data.posts.slice() : [];
 
-                    if (!posts.length) {
-                        container.innerHTML =
-                            '<p class="recent-empty">No blog posts available yet.</p>';
-                        return;
-                    }
-
-                    // Sort by date descending
-                    posts.sort((a, b) => {
-                        const da = new Date(a.date || 0);
-                        const db = new Date(b.date || 0);
-                        return db - da;
-                    });
-
-                    const maxPosts = 3; // show up to 3 on the home page
-                    const recent = posts.slice(0, maxPosts);
-
-                    const ul = document.createElement('ul');
-                    ul.className = 'recent-posts-list';
-
-                    recent.forEach(post => {
-                        const li = document.createElement('li');
-
-                        const titleDiv = document.createElement('div');
-                        titleDiv.className = 'recent-post-title';
-
-                        const link = document.createElement('a');
-                        link.href = buildPostUrl(post.filename);
-                        link.textContent = post.title || 'Untitled Post';
-
-                        titleDiv.appendChild(link);
-
-                        const metaDiv = document.createElement('div');
-                        metaDiv.className = 'recent-post-meta';
-
-                        const dateText = post.display_date || post.date || '';
-                        const categoryText = post.category ? (' • ' + post.category) : '';
-
-                        metaDiv.textContent = dateText + categoryText;
-
-                        li.appendChild(titleDiv);
-                        li.appendChild(metaDiv);
-
-                        ul.appendChild(li);
-                    });
-
-                    container.innerHTML = '';
-                    container.appendChild(ul);
-                })
-                .catch(err => {
-                    console.error('Error loading blog index:', err);
+                if (!posts.length) {
                     container.innerHTML =
-                        '<p class="recent-empty">Failed to load recent posts.</p>';
-                });
-        }
+                        '<p class="recent-empty">No blog posts available yet.</p>';
+                    return;
+                }
 
-        document.addEventListener('DOMContentLoaded', loadRecentPosts);
-    </script>
+                // Sort by date descending
+                posts.sort((a, b) => {
+                    const da = new Date(a.date || 0);
+                    const db = new Date(b.date || 0);
+                    return db - da;
+                });
+
+                const maxPosts = 3; // show up to 3 on the home page
+                const recent = posts.slice(0, maxPosts);
+
+                const ul = document.createElement('ul');
+                ul.className = 'recent-posts-list';
+
+                recent.forEach(post => {
+                    const li = document.createElement('li');
+
+                    const titleDiv = document.createElement('div');
+                    titleDiv.className = 'recent-post-title';
+
+                    const link = document.createElement('a');
+                    link.href = buildPostUrl(post.filename);
+                    link.textContent = post.title || 'Untitled Post';
+
+                    titleDiv.appendChild(link);
+
+                    const metaDiv = document.createElement('div');
+                    metaDiv.className = 'recent-post-meta';
+
+                    const dateText = post.display_date || post.date || '';
+                    const categoryText = post.category ? (' • ' + post.category) : '';
+
+                    metaDiv.textContent = dateText + categoryText;
+
+                    li.appendChild(titleDiv);
+                    li.appendChild(metaDiv);
+
+                    ul.appendChild(li);
+                });
+
+                container.innerHTML = '';
+                container.appendChild(ul);
+            })
+            .catch(err => {
+                console.error('Error loading blog index:', err);
+                container.innerHTML =
+                    '<p class="recent-empty">Failed to load recent posts.</p>';
+            });
+    }
+
+    // Simple slideshow logic for the pa-carousel-widget
+    function initPaCarousel() {
+        const widget = document.querySelector('.pa-carousel-widget');
+        if (!widget) return;
+
+        const items = Array.from(widget.querySelectorAll('object, img'));
+        if (items.length === 0) return;
+
+        // Show the widget (old code had display:none)
+        widget.style.display = 'block';
+
+        // Make sure each item fills the box and hide all but the first
+        items.forEach((el, idx) => {
+            el.style.width = '100%';
+            el.style.height = '100%';
+            el.style.display = (idx === 0) ? 'block' : 'none';
+        });
+
+        let current = 0;
+        const delayAttr = parseFloat(widget.getAttribute('data-delay'));
+        const delaySeconds = isNaN(delayAttr) ? 4 : delayAttr; // default 4s if missing
+        const interval = delaySeconds * 1000;
+
+        setInterval(() => {
+            items[current].style.display = 'none';
+            current = (current + 1) % items.length;
+            items[current].style.display = 'block';
+        }, interval);
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        loadRecentPosts();
+        initPaCarousel();
+    });
+</script>
+
 </body>
 </html>
