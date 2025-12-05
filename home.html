@@ -143,24 +143,7 @@
         }
 
         /* Slideshow embed */
-        .slideshow-wrapper {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%; /* 16:9 ratio */
-            height: 0;
-            overflow: hidden;
-            border-radius: 6px;
-            background-color: #000;
-        }
 
-        .slideshow-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
 
         .slideshow-note {
             font-size: 0.85em;
@@ -365,26 +348,64 @@
 <div class="card">
     <h3>See Our Adventures</h3>
 
-    <!-- Your Google Photos-style carousel widget -->
-    <div class="pa-carousel-widget"
-         style="width:100%; height:480px; display:none;"
-         data-link="https://photos.app.goo.gl/7m7LUwTJG7Ei9Jzo6"
-         data-title="HOTH"
-         data-description="43 new items · Album by Hubbards On The Hitch"
-         data-delay="2">
-
-        <!-- keep all your <object> tags exactly as you pasted them -->
-        <!-- shortened here for sanity, but you should paste the full list -->
-        <object data="https://lh3.googleusercontent.com/pw/AP1GczMBPlo5qiFO7fsOLtWqT24Lv-wtw7rG0pJRvu9L4rHrSrijGDWBiHL_RqKXYQUPXTCoXNDaXZzgmzbYaTchblqoUk5CZyB2mC3i4FzOaXRViyrzG3Y=w1920-h1080"></object>
-        <object data="https://lh3.googleusercontent.com/pw/AP1GczPM5TT-t-J-MMrfPheEx_nTxgNE_Dps4F8rEoyiDgJGaEWPwSP52BgHrL_Cqo5ZSuB8F6RDAkdEGUCeo3Ozh_dcM2ZfaU-7C6mgS5yjrITl5QrrQus=w1920-h1080"></object>
-        <!-- ... all the rest of your <object> elements ... -->
-        <object data="https://lh3.googleusercontent.com/pw/AP1GczMI1rjfzm7TZ8k2genOOiyT9YXqlWm_-dAfEtaGo9lezrtx2eFI6OCv9orL06kVl4kRiM8if1vx0jH4WV5AVwGcmDqeO1jRFssjXdAMqWP8rX8ZRew=w1920-h1080"></object>
-    </div>
+    <!-- PublicAlbum Google Photos Slideshow -->
+<script src="https://cdn.jsdelivr.net/npm/publicalbum@latest/embed-ui.min.js" async></script>
+<div class="pa-carousel-widget" style="width:100%; height:480px; display:none;"
+  data-link="https://photos.app.goo.gl/7m7LUwTJG7Ei9Jzo6"
+  data-title="HOTH · Feb 11 – May 8, 2024 📸"
+  data-description="Shared album · Tap to view!"
+  data-delay="2"
+  data-background-color="#ffffff">
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczMBPlo5qiFO7fsOLtWqT24Lv-wtw7rG0pJRvu9L4rHrSrijGDWBiHL_RqKXYQUPXTCoXNDaXZzgmzbYaTchblqoUk5CZyB2mC3i4FzOaXRViyrzG3Y=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczPM5TT-t-J-MMrfPheEx_nTxgNE_Dps4F8rEoyiDgJGaEWPwSP52BgHrL_Cqo5ZSuB8F6RDAkdEGUCeo3Ozh_dcM2ZfaU-7C6mgS5yjrITl5QrrQus=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczMBt6mIDikwouEes6k3WkqZsV7A4T41oNjYHeBYmeTBMe7eBbPvqhawzRXsPBWZIiarKibzNQN4Bn680JjR0JJUVYQ1mcPRJ4rNrYmSHDKWkd0fuaY=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczP8zFl7yTnP0FCyiic6YlK6LVegGrDsrOHQWSmwQFRDXoCF8mt0Yhx6zSkJN1Cg1PMuR1ot1VDmfgVs4ZsGHwozhEHoo2BX07ipI-tkYNFO4_bdq4o=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczO5aIEjeOeIK_dDV1B3dn_4AOYTlvvxSAcb4fmMI0UzATuj4SqzmvWd8kNueUDenkOftM-g18MShW_1RfukEElFWf-jg7lI4zw84Uys505sv6-r_jU=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczNA65wCKLpPbkrZCjyYTXaYCI5dB_-UB_Am8WeAPm9Ed15tgpT5PaHOew2T0BaU2vef1UKeP2wtIuR_L1xeZOvUHOXCzKw6ea1mUESftu4vp-haRy0=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczPa3ox6pH9T2xuHflHQqynUUihoagqJpi9ZRp1suwZydNMAsKYv2B-BHW4KlR0F9PEiEJZ8-g1odTqQcVnEvhnlySV8RBbUvTCst7H0xCe5dyxdn1w=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczPVB60J45WPm0etosAbGLfuPcDy0vHXMw9bvDk7VPW6t3kPZYcZbkZSBvsLPTPL09H4ZmmRUH_k0h5jG-Jhg9g5rUuimyKv98w7CdtEY6npv-tc2Zs=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczN9uSuxwh4liSUbfkRbGcmO2OMWw0lDPVjUO32dBVOQSIUd9BoQ-9gwSW8zQ1C_r1DFjP4qTLTTnk0WRCzigdRpJbDKudGvas6WtGk7-cWVP7mlNWk=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczPEy-kysez7vsl_6eTo7rY1VXQg8qdTICREwXE2byfgW7YmXfHjbMgag-XKSVgFFIaLRGDIQVrwoumEirghBMGbTV4CwSFGZ0CwBT98kT47LsSwE9I=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczMV5OwLK-MrRPADUQF6kHL1PQd-4UOg1qwi3g_GbTAQm6IiqE1XA7oeQenTbfSg4CW3axz4evA3JdSAJLbWIXhlqbphqy-xqr0mp5W4HyN2OHK_-jY=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczMVj5DAWZcS8INFTmYR3K4RUkZc1XILzm9Cu53x0Ea9dUoww9MkF_RnOkbF0tdCENlajHQxwI2EafYkQYUME9qUUBXOneKUBD4ARnjjOUava_DjiYQ=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczMai6LHnhvRgYePpVdkQXkWkQ2l9kmPUzOr0BuFQoNdeo64sX9fUqUxLSeDsleoDatPySbQNs42nSfV0pP_DdZGJJkJBO8wF39WgBkdv16j98Z_Bow=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczNFGF0dtOHyPOaNiHvN4rvQZm5dE71XKEIcFoU_774EgZ0aQqTU_Unro16xJUpoFbfH4OE59LUi8qRNEQ75dahYwP20-k1Nqaqd3jf-3kUBgOYuNlA=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczMHxIWwPMLagEokgHbjAsWDMbF6Wo-l2oT9AT1kUHUK7ElhRi5tnbFGeZ0H6c5PqBD0NE9G9sYFu_GUNm06M1fKgYgUXSrLbjAxUhEZ5UvwNhf3nFA=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczN62z71NfckEwkEFC7ZRpsJdnKaztUR5Esnv2ja_iLgO6kExFtqP8RzWPY4QZPPnDDKeMl0FiO2djP6fG0iawTD4zQ5TXF-fAEg2QAzibEJ2CIG_zA=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczMgzGk80Wum9HBmHevGhw4p_7CDhAtL845pq25VPRWOiXegKJ1gg8wth-p-7O4DbjBcD5e_PJqiMVM-o2CWnfxHkyeCQZ9n8bkLga3rFjPLtgOcBIo=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczMOdB4gqeUMxHnZzXYJGnxE6PCm0XVcX4JnWT51jHi99mqAPZaXVW3wNvUxwS-4GwV4dszH_H9n8JsCIG_9bzKVsmNxmV9oqzOeSXtGBN2ALu_Ud_E=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczOyrweHFoLfghKHCxQhRymVnQNlbjRsI0Q6xbVVL-joD2N4plKHN8gP7A5AFWfsTGCCjxOXxlU4JCOWRqMQW-EgrLN2bsS4lUj6Gg71le8Ldku6cOc=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczO9edAd6B_poxP3tnM4yv9I-UtkbuE642giG9WqzdKkQOX50q_3-1Q-sxTkkAyGnZBpxiMKWnil-WwU8Cpfb9CKaMgYcHZ01ml-5wB6bI2XvzxrCaA=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczMMcHrcK3Ax3uOJsXU6yjlZfL7jb45jjccTe0eqtyPHjJ-isr56J4dobmhvSTe5dnpY8gd9oMr4BJK4uRNivI0hlsNW0raht79-i4TXWE_2ImU6NfI=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczO_UotdcZu7yV5Iikp8siejO_1dsp4Og9RhW8_A7PgdupVMy3Cg-Y2MH3oSwbX__OCY6WeD1zItPbO7pkVkW_Yq_wvzkin5ZWC3WA3NOy8KIxDvI9o=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczNePi-3yW_0k8s6rmUiTaoIjlKp8jAbqy6HhEFtWdm_41M8CJihGYaxDwx2nIT0W8VIsNodm9xBlZ872kEIkQueZyJPaZl6Es9VLqr_edxSQ4EkxsA=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczMPKSBrPBhAPSxlSOaZk_-K9N2wvI8FN2PYz0qiXRqq-gFrtS8nKCb4n3xiD2HLJgSwu_lX2EeuLy2jVbWTiY6ts2Sw3BPK99AyBckvrq78U7b0vtg=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczMhaWERAnRGfatO_l-fz_rawu5zgpq2UIa0K6JvoEqzu4NlzI3Ic6E-sg1Ux04Dfsb57iqgJ-4qwKe2XC2vnfsY2y7rEPWfeZmXrQISGHjukW9Ytyg=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczPjvmtHoy0xdQc8l5YE6SG_hJqapdeDPjKRK9edcZn_Su7bjJ-H3ECam9_NimAmL69QALcapfhG6sMKlb80wB7_UPALGRpwDPrbHLifQj08vJ9xeoQ=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczNY4yji_Qtcxv5TYynxbwrmIh0vMWDH507QDEMa1EGpdsSt0zGPc9mpUelE2nze25-ArtNp1Ro7uHhIqiGYBlGnhJ_zruYgp29mWlq1X_jtszX03go=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczPZ4plfryrGwkA_Vgx3V1SJjWMLnzVnsiHLYZog5kmcG8J8UYvyc-zzQSVUjJonC7IDoFeQ8ifKJ0EmY9uu9FgG4kPxIFv_LN6bJe_ITTtHLqh8biM=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczN6fP3By1i5MpU9umE3Lc1JX4SMt_PUSdIaNuMRJ8tnEdw3k0wXNqUuZMMPAuWEyCdzUvRcZlwPiyv_ClNI_9qM3CH4Rgm7PwZabhd4ViXkoZlIE-8=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczPf2ZDRCTCtvsDl6zEWdy0e3UdPowxWcdWIk5emuMValfMGMgAfT6KxwbT_ql0pyZdgGhe5S9wJgiRNiybrz64MgimmWvOw2e5GunQedxdNFbUjHDI=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczP7YucJzyXY8VzWuKNPr-R4-d-fh8g49eGNfiiKgDJswf9ZK9im5sUMF9juGXg7AJ6a3-8Cm40caCeywcxTbd8XfQEDk6bQdrObsXQbSdqHD4Tm3o8=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczM-b5_Og_ncrKXgNaC675se4Hv-ZjYsiOr9qSFMxAkAipJ2AL9fTgIIHdplQz_8haUWN4yt7pL5v6UO71KH6srSXFlJN0NHSHGrcdI9OloH6RvYPc4=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczPsBSKeiCPtSN5W_P5KtUp-8_fN8mApML2oxQo-QIGRYFU8076zfXjKIdnu-fG5swuIU4Ssrrfp5B84q1Fg6viTdVCWuEpkY2aQZzv-hizoQUJUybo=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczO79j3hAjDNrkfPwjVP1jGmUbxcBG9SzfUaClnYfnxnRqSI8VX3nN1GD4H-a7nWisPVfFRJyjaRAoNUmRcT2l9zns8vayTjhH1t2otqaqO7Py2mKK4=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczPlYgpwyRKqitrrYOM-O_6gbTFNHRf469KZUNgMfewHdWz_oim7ZJLmQ3RA3lxHFP9fFSXrNz97UaZOzJW0iiC-imFrzN5ugq84Bp5iavZOPGdy7hA=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczMTjWCPAEF4RbA7IdKMflyRuaehaZDKemSvv9_bzRQdm_xCfdi51DzQp2-cukHUan1eKidOUw_tEDwUCQodQW0dGTW0BT_nlW3kCnPcbJodlcy29vM=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczNy5NlObv30906DWv_0HS3__rSQA13-u0-eOccCRa7_udACNt-RLa8f35R2Y97FklRm0KnxS71FZUeb2yIfvlFzF933T66gL1YWQ7x4QYfTw6H9jF0=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczMJWZyzUNEGwFftPDsnyFdCINQSNbPdo1yk9V-qfaRDoVJBzxeu2gMmwBdKLfEPBI54Ios_lNAW6I_cLvghhBYVl6gGP9Xqjl3XmblEIgy9zzieadk=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczPeKRIBHhJJnImdMeJPknIsh84yosrZcCWMwtFQp3BohT46sSlZyI8pkEX-xq7h8qcsJd-epfVh9NKCfyx6J8Nlre6AZhQB_6EWx7kRYs55cC-Fwsk=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczPLJZQRHB2xtupBBUETDmpexx58tkVvXtTclZTAwLCeUAqJE7yD62ZSHZnbE7xktqOtxCX8BwQvSj__8etBRN6co3HYRoXednwOuiBNNk4UPX3QNJg=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczPT-qSikZ9VMldfxKM-z9pu86XScxabb59vLCIT7Il3LKTKhEHLmUTLH3P1vOX05nrpjdZzS_VIxf0fJ6KBxYwpmDRCLwSWeJRO62C76zP1z4vS4wg=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczNU5giuovCHHgd5VhOCsJ-TaLS5UL97ANUXSIjXA-vfdhhSlxDDmVmaEvOgr7sfu9easmv035HNf4yiMTEubE0slT6dzAqF8dyQRjxGu8PDRn__w78=w1920-h1080"></object>
+  <object data="https://lh3.googleusercontent.com/pw/AP1GczMI1rjfzm7TZ8k2genOOiyT9YXqlWm_-dAfEtaGo9lezrtx2eFI6OCv9orL06kVl4kRiM8if1vx0jH4WV5AVwGcmDqeO1jRFssjXdAMqWP8rX8ZRew=w1920-h1080"></object>
+ </div>
 
     <p class="slideshow-note">
         A peek at some of our favorite campsites, road trips, and moments from the road.
     </p>
 </div>
+
 
 
                 <!-- Recent blog posts card -->
@@ -419,7 +440,7 @@
 
     </div>
 
-  <script>
+<script>
     // Load recent blog posts from blog/blog_index.json
     const BLOG_INDEX_URL = 'blog/blog_index.json';
 
@@ -429,6 +450,8 @@
 
     function loadRecentPosts() {
         const container = document.getElementById('recentPostsContainer');
+
+        if (!container) return;
 
         fetch(BLOG_INDEX_URL)
             .then(response => {
@@ -495,41 +518,12 @@
             });
     }
 
-    // Simple slideshow logic for the pa-carousel-widget
-    function initPaCarousel() {
-        const widget = document.querySelector('.pa-carousel-widget');
-        if (!widget) return;
-
-        const items = Array.from(widget.querySelectorAll('object, img'));
-        if (items.length === 0) return;
-
-        // Show the widget (old code had display:none)
-        widget.style.display = 'block';
-
-        // Make sure each item fills the box and hide all but the first
-        items.forEach((el, idx) => {
-            el.style.width = '100%';
-            el.style.height = '100%';
-            el.style.display = (idx === 0) ? 'block' : 'none';
-        });
-
-        let current = 0;
-        const delayAttr = parseFloat(widget.getAttribute('data-delay'));
-        const delaySeconds = isNaN(delayAttr) ? 4 : delayAttr; // default 4s if missing
-        const interval = delaySeconds * 1000;
-
-        setInterval(() => {
-            items[current].style.display = 'none';
-            current = (current + 1) % items.length;
-            items[current].style.display = 'block';
-        }, interval);
-    }
-
     document.addEventListener('DOMContentLoaded', function () {
         loadRecentPosts();
-        initPaCarousel();
+        // ✅ No more initPaCarousel() — PublicAlbum handles the slideshow
     });
 </script>
+
 
 </body>
 </html>
