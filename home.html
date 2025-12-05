@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hubbards on the Hitch</title>
+
+    <style>
+        body {
+            font-family: Helvetica, sans-serif;
+            line-height: 1.5;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-family: Arial, sans-serif;
+            color: #133b66;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.2em;
+        }
+
+        h2 {
+            font-family: Arial, sans-serif;
+            color: #2d7cbc;
+            font-size: 1.35em;
+            margin-top: 24px;
+            margin-bottom: 8px;
+        }
+
+        h3 {
+            font-family: Arial, sans-serif;
+            color: #133b66;
+            font-size: 1.1em;
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+
+        p {
+            font-size: 0.98em;
+            margin-bottom: 12px;
+        }
+
+        .hero-image {
+            margin-bottom: 20px;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+
+        .intro-text {
+            font-size: 0.98em;
+            color: #444;
+        }
+
+        .intro-text strong {
+            color: #133b66;
+        }
+
+        /* Social icons row */
+        .social-section {
+            margin-top: 18px;
+            margin-bottom: 26px;
+            text-align: center;
+        }
+
+        .social-label {
+            font-size: 0.95em;
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        .social-links {
+            display: inline-flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 7px 12px;
+            border-radius: 999px;
+            font-size: 0.9em;
+            text-decoration: none;
+            background-color: #133b66;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.25s ease, transform 0.15s ease;
+        }
+
+        .social-btn span.icon {
+            font-size: 1.1em;
+        }
+
+        .social-btn:hover {
+            background-color: #2d7cbc;
+            transform: translateY(-1px);
+        }
+
+        /* Main two-column layout */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 24px;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 800px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background: #fafafa;
+            border: 1px solid #e6e6e6;
+            border-radius: 8px;
+            padding: 14px 16px 16px;
+            margin-bottom: 18px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+
+        .card p {
+            font-size: 0.96em;
+        }
+
+        /* Slideshow embed */
+        .slideshow-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 6px;
+            background-color: #000;
+        }
+
+        .slideshow-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .slideshow-note {
+            font-size: 0.85em;
+            color: #666;
+            margin-top: 6px;
+        }
+
+        /* Recent blog posts list */
+        .recent-posts-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        .recent-posts-list li {
+            margin-bottom: 8px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .recent-posts-list li:last-child {
+            border-bottom: none;
+        }
+
+        .recent-post-title {
+            font-size: 0.95em;
+            margin-bottom: 2px;
+        }
+
+        .recent-post-title a {
+            color: #133b66;
+            text-decoration: none;
+        }
+
+        .recent-post-title a:hover {
+            text-decoration: underline;
+        }
+
+        .recent-post-meta {
+            font-size: 0.8em;
+            color: #777;
+        }
+
+        .recent-empty {
+            font-size: 0.9em;
+            color: #777;
+        }
+
+        /* Page index list */
+        .page-index-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+            font-size: 0.94em;
+        }
+
+        .page-index-list li {
+            margin-bottom: 6px;
+        }
+
+        .page-index-list a {
+            color: #2d7cbc;
+            text-decoration: none;
+        }
+
+        .page-index-list a:hover {
+            text-decoration: underline;
+        }
+
+        .small-text {
+            font-size: 0.85em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <h1>Hubbards on the Hitch</h1>
+
+        <!-- HERO IMAGE -->
+        <div class="hero-image">
+            <!-- Adjust path if needed -->
+            <img src="image/hoth_cover.jpg" alt="Hubbards on the Hitch cover image">
+        </div>
+
+        <!-- INTRO SECTION -->
+        <h2>Welcome to Our Little Corner of the Road</h2>
+        <div class="intro-text">
+            <p>
+                We are a family of five that have dreamed of owning a camper for about as long as we can remember.
+                Childhood memories are made while the family is together exploring this great wide world.
+            </p>
+            <p>
+                For those that have little camping experience, and definitely for those without any trailer or RV experience,
+                it can be overwhelming. Follow along with us as we learn as we go!
+            </p>
+            <p>
+                Our hope is that by sharing our experiences with you, we can save you time, money, and frustration and make your
+                camping adventures that much more memorable. We are excited for this new journey and look forward to meeting all
+                of you along the way, whether it is just virtual or in person. Each connection we make will strengthen our love
+                for this new adventure!
+            </p>
+        </div>
+
+     <!-- SOCIAL ICONS -->
+<div class="social-section">
+    <div class="social-label">Connect with us:</div>
+    <div class="social-links">
+
+        <!-- Facebook -->
+        <a class="social-btn" 
+           href="https://www.facebook.com/hubbardsonthehitch/" 
+           target="_blank" rel="noopener">
+            <span class="icon">📘</span><span>Facebook</span>
+        </a>
+
+        <!-- Instagram -->
+        <a class="social-btn" 
+           href="https://www.instagram.com/hubbardsonthehitch/" 
+           target="_blank" rel="noopener">
+            <span class="icon">📸</span><span>Instagram</span>
+        </a>
+
+        <!-- X (Twitter) -->
+        <a class="social-btn" 
+           href="https://twitter.com/hubbsonthehitch" 
+           target="_blank" rel="noopener">
+            <span class="icon">✖️</span><span>X (Twitter)</span>
+        </a>
+
+        <!-- YouTube -->
+        <a class="social-btn" 
+           href="https://www.youtube.com/channel/UCOcZDezff-0MyGAgwb_vUqA" 
+           target="_blank" rel="noopener">
+            <span class="icon">▶️</span><span>YouTube</span>
+        </a>
+
+    </div>
+</div>
+
+
+        <!-- MAIN GRID -->
+        <div class="main-grid">
+
+            <!-- LEFT COLUMN -->
+            <div>
+                <!-- Adventures / slideshow card -->
+                <div class="card">
+                    <h3>See Our Adventures</h3>
+                    <div class="slideshow-wrapper">
+                        <!-- This may need to be swapped with a proper Google Photos embed code later -->
+                        <iframe 
+                            src="https://photos.google.com/share/AF1QipOwC2tB3_bGuovDfyfOLjcfHlZCkTUZe6gTmx4nWylZKnKMUjqWF5ypjmpCfGKx_w?pli=1&key=bzBkWVNEbHgyYmtNVnhCT0JLT1BRZjRaZDBXWENn"
+                            title="Hubbards on the Hitch Photo Slideshow"
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                    <p class="slideshow-note">
+                        A peek at some of our favorite campsites, road trips, and moments from the road.
+                    </p>
+                </div>
+
+                <!-- Recent blog posts card -->
+                <div class="card">
+                    <h3>Recent Blog Posts</h3>
+                    <div id="recentPostsContainer">
+                        <p class="recent-empty">Loading recent posts...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <div>
+                <div class="card">
+                    <h3>Explore Our Site</h3>
+                    <ul class="page-index-list">
+                        <!-- Adjust these paths/names to match your actual pages -->
+                        <li><a href="blog-index.html">Blog Home</a></li>
+                        <li><a href="xls-22bhe.html">Our Grand Design Imagine XLS 22BHE</a></li>
+                        <li><a href="us-map-landing-page.html">Campground Reviews Map</a></li>
+                        <li><a href="state-page-template.html?state=VA">Virginia Campgrounds</a></li>
+                        <li><a href="state-page-template.html?state=TX">Texas Campgrounds</a></li>
+                        <!-- Add more links as your site grows -->
+                    </ul>
+                    <p class="small-text" style="margin-top:10px;">
+                        This list will grow as we add more trip reports, campground reviews, and RV tips.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        // Load recent blog posts from blog/blog_index.json
+        const BLOG_INDEX_URL = 'blog/blog_index.json';
+
+        function buildPostUrl(filename) {
+            return 'blog-post-template.html?post=' + encodeURIComponent(filename);
+        }
+
+        function loadRecentPosts() {
+            const container = document.getElementById('recentPostsContainer');
+
+            fetch(BLOG_INDEX_URL)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('HTTP status ' + response.status);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const posts = Array.isArray(data.posts) ? data.posts.slice() : [];
+
+                    if (!posts.length) {
+                        container.innerHTML =
+                            '<p class="recent-empty">No blog posts available yet.</p>';
+                        return;
+                    }
+
+                    // Sort by date descending
+                    posts.sort((a, b) => {
+                        const da = new Date(a.date || 0);
+                        const db = new Date(b.date || 0);
+                        return db - da;
+                    });
+
+                    const maxPosts = 3; // show up to 3 on the home page
+                    const recent = posts.slice(0, maxPosts);
+
+                    const ul = document.createElement('ul');
+                    ul.className = 'recent-posts-list';
+
+                    recent.forEach(post => {
+                        const li = document.createElement('li');
+
+                        const titleDiv = document.createElement('div');
+                        titleDiv.className = 'recent-post-title';
+
+                        const link = document.createElement('a');
+                        link.href = buildPostUrl(post.filename);
+                        link.textContent = post.title || 'Untitled Post';
+
+                        titleDiv.appendChild(link);
+
+                        const metaDiv = document.createElement('div');
+                        metaDiv.className = 'recent-post-meta';
+
+                        const dateText = post.display_date || post.date || '';
+                        const categoryText = post.category ? (' • ' + post.category) : '';
+
+                        metaDiv.textContent = dateText + categoryText;
+
+                        li.appendChild(titleDiv);
+                        li.appendChild(metaDiv);
+
+                        ul.appendChild(li);
+                    });
+
+                    container.innerHTML = '';
+                    container.appendChild(ul);
+                })
+                .catch(err => {
+                    console.error('Error loading blog index:', err);
+                    container.innerHTML =
+                        '<p class="recent-empty">Failed to load recent posts.</p>';
+                });
+        }
+
+        document.addEventListener('DOMContentLoaded', loadRecentPosts);
+    </script>
+</body>
+</html>
