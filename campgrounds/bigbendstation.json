@@ -4,11 +4,11 @@
   "state": "Texas",
   "state_code": "TX",
   "status": "starter",
-  "type": "RV Park",
+  "type": "RV Resort",
   "visitYears": [
     2026
   ],
-  "summary_text": "A modern full-hookup RV park in Alpine, Texas, offering spacious sites, excellent amenities, and an ideal home base for exploring Big Bend National Park, Big Bend Ranch State Park, and the Davis Mountains.",
+  "summary_text": "A modern full-hookup RV resort in Alpine, Texas, offering spacious sites, convenient amenities, and an ideal home base for exploring Big Bend National Park, Big Bend Ranch State Park, and the Davis Mountains.",
   "address": "1500 US Highway 90, Alpine, TX 79830",
   "website": "https://www.bigbendstation.com/",
   "reservations": "https://www.bigbendstation.com/",
@@ -43,9 +43,7 @@
   "siteFeatures": {
     "level": "Very level throughout the park",
     "dirt": "No",
-    "gravel": [
-      "Sites and Roads"
-    ],
+    "gravel": "Sites and Roads",
     "paved": "No",
     "patio": "No",
     "shade": "Limited",
@@ -63,8 +61,8 @@
     "waterfront": "No",
     "boatingLaunch": "No",
     "fishing": "No",
-    "hiking": "No",
-    "biking": "Yes",
+    "hiking": "Nearby",
+    "biking": "Campground Roads and Nearby",
     "gameRoom": "No",
     "otherActivities": [
       "Fitness Center",
@@ -73,23 +71,23 @@
   },
   "nearby": {
     "shopping": [
-      "Walmart",
-      "Porter's Grocery",
       "Auto Parts Stores",
-      "RV Supplies"
+      "Porter's Grocery",
+      "RV Supplies",
+      "Walmart"
     ],
     "food": [
-      "Restaurants",
       "Coffee Shops",
-      "Fast Food"
+      "Fast Food",
+      "Local Restaurants"
     ],
     "nearbyAttractions": [
-      "Big Bend National Park",
-      "Big Bend Ranch State Park",
-      "Davis Mountains State Park",
-      "McDonald Observatory",
+      "Historic Downtown Alpine",
       "Museum of the Big Bend",
-      "Historic Downtown Alpine"
+      "Big Bend National Park",
+      "Davis Mountains State Park",
+      "Big Bend Ranch State Park",
+      "McDonald Observatory"
     ],
     "emergencyMedicalDistance": "Approximately 5 minutes"
   },
