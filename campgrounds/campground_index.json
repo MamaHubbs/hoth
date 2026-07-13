@@ -7,7 +7,9 @@
       "state_code": "VA",
       "latitude": 38.66900304609987,
       "longitude": -77.16827128793001,
-      "filename": "pohickbay"
+      "filename": "pohickbay",
+  "visitYears": [2024,2025,2026],
+  "visitCount": 4
     },
     {
       "id": "dallas-northeast-campground-rv-park",
@@ -16,7 +18,9 @@
       "state_code": "TX",
       "latitude": 33.02367531550495,
       "longitude": -96.20705659831987,
-      "filename": "dallasnortheast"
+      "filename": "dallasnortheast",
+  "visitYears": [20XX],
+  "visitCount": 1
     },
     {
       "id": "blue-quartz-winery",
@@ -25,7 +29,9 @@
       "state_code": "VA",
       "latitude": 38.492954996397145,
       "longitude": -78.28310871566069,
-      "filename": "bluequartz"
+      "filename": "bluequartz",
+  "visitYears": [2025],
+  "visitCount": 2
     },
     {
       "id": "newport-news-park",
@@ -34,7 +40,9 @@
       "state_code": "VA",
       "latitude": 37.188648927782964,
       "longitude": -76.55836548941465,
-      "filename": "newportnews"
+      "filename": "newportnews",
+  "visitYears": [20XX,2026],
+  "visitCount": 2
     },
     {
       "id": "rudds-creek-campground",
@@ -43,7 +51,9 @@
       "state_code": "VA",
       "latitude": 36.6358,
       "longitude": -78.5447,
-      "filename": "ruddscreek"
+      "filename": "ruddscreek",
+  "visitYears": [2023,2025],
+  "visitCount": 2
     },
     {
       "id": "occoneechee-state-park",
@@ -52,7 +62,9 @@
       "state_code": "VA",
       "latitude": 36.6219,
       "longitude": -78.5239,
-      "filename": "occoneechee"
+      "filename": "occoneechee",
+  "visitYears": [20XX],
+  "visitCount": 1
     },
     {
       "id": "longwood-park-campground",
@@ -61,7 +73,9 @@
       "state_code": "VA",
       "latitude": 36.5488,
       "longitude": -78.5647,
-      "filename": "longwoodpark"
+      "filename": "longwoodpark",
+  "visitYears": [20XX],
+  "visitCount": 2
     },
     {
       "id": "westmoreland-state-park",
@@ -70,7 +84,9 @@
       "state_code": "VA",
       "latitude": 38.1612,
       "longitude": -76.8659,
-      "filename": "westmoreland"
+      "filename": "westmoreland",
+  "visitYears": [20XX],
+  "visitCount": 3
     },
     {
       "id": "first-landing-state-park",
@@ -79,7 +95,9 @@
       "state_code": "VA",
       "latitude": 36.9189,
       "longitude": -76.05,
-      "filename": "firstlanding"
+      "filename": "firstlanding",
+  "visitYears": [2018,2019,2020,2021,2022,2023,2024,2025,2026],
+  "visitCount": 10
     },
     {
       "id": "seminole-canyon-state-park-historic-site",
@@ -88,7 +106,9 @@
       "state_code": "TX",
       "latitude": 29.7034,
       "longitude": -101.3135,
-      "filename": "seminolecanyon"
+      "filename": "seminolecanyon",
+  "visitYears": [20XX],
+  "visitCount": 1
     },
     {
       "id": "sun-outdoors-lake-travis",
@@ -97,7 +117,9 @@
       "state_code": "TX",
       "latitude": 30.4148,
       "longitude": -97.9281,
-      "filename": "sunoutdoorslaketravis"
+      "filename": "sunoutdoorslaketravis",
+  "visitYears": [20XX],
+  "visitCount": 1
     },
     {
       "id": "sun-retreats-texas-hill-country",
@@ -106,7 +128,9 @@
       "state_code": "TX",
       "latitude": 29.6867,
       "longitude": -98.1265,
-      "filename": "sunretreatstexashillcountry"
+      "filename": "sunretreatstexashillcountry",
+  "visitYears": [20XX],
+  "visitCount": 1
     },
     {
       "id": "small-country-campground",
@@ -115,7 +139,9 @@
       "state_code": "VA",
       "latitude": 38.0154,
       "longitude": -78.0154,
-      "filename": "smallcountry"
+      "filename": "smallcountry",
+  "visitYears": [20XX],
+  "visitCount": 2
     },
     {
       "id": "jellystone-park-natural-bridge",
@@ -124,7 +150,9 @@
       "state_code": "VA",
       "latitude": 37.6268,
       "longitude": -79.5077,
-      "filename": "jellystonenaturalbridge"
+      "filename": "jellystonenaturalbridge",
+  "visitYears": [20XX],
+  "visitCount": 1
     },
     {
       "id": "big-bend-station-rv-park",
@@ -133,7 +161,9 @@
       "state_code": "TX",
       "latitude": 30.3473,
       "longitude": -103.6624,
-      "filename": "bigbendstation"
+      "filename": "bigbendstation",
+  "visitYears": [20XX],
+  "visitCount": 1
     },
     {
       "id": "ballards-rv-park",
@@ -142,7 +172,9 @@
       "state_code": "MO",
       "latitude": 36.6086,
       "longitude": -89.5276,
-      "filename": "ballardsrvpark"
+      "filename": "ballardsrvpark",
+  "visitYears": [20XX],
+  "visitCount": 1
     },
     {
       "id": "harpers-ferry-koa-holiday",
@@ -151,7 +183,9 @@
       "state_code": "WV",
       "latitude": 39.3223,
       "longitude": -77.7307,
-      "filename": "harpersferrykoa"
+      "filename": "harpersferrykoa",
+  "visitYears": [20XX],
+  "visitCount": 2
     },
     {
       "id": "prince-william-forest-rv-campground",
@@ -160,7 +194,9 @@
       "state_code": "VA",
       "latitude": 38.6466,
       "longitude": -77.3816,
-      "filename": "princewilliamforest"
+      "filename": "princewilliamforest",
+  "visitYears": [20XX],
+  "visitCount": 1
     },
     {
       "id": "fredericksburg-washington-dc-south-koa-holiday",
@@ -169,7 +205,9 @@
       "state_code": "VA",
       "latitude": 38.1535,
       "longitude": -77.4923,
-      "filename": "fredericksburgkoa"
+      "filename": "fredericksburgkoa",
+  "visitYears": [2018,2024],
+  "visitCount": 2
     },
     {
       "id": "houghton-letchworth-koa-holiday",
@@ -178,7 +216,9 @@
       "state_code": "NY",
       "latitude": 42.4225,
       "longitude": -78.1562,
-      "filename": "houghtonletchworthkoa"
+      "filename": "houghtonletchworthkoa",
+  "visitYears": [20XX],
+  "visitCount": 1
     },
     {
       "id": "williamsport-south-nittany-mountain-koa-holiday",
@@ -187,7 +227,9 @@
       "state_code": "PA",
       "latitude": 41.2377,
       "longitude": -77.0502,
-      "filename": "williamsportkoa"
+      "filename": "williamsportkoa",
+  "visitYears": [20XX],
+  "visitCount": 1
     },
     {
       "id": "ricketts-glen-state-park",
@@ -196,7 +238,9 @@
       "state_code": "PA",
       "latitude": 41.3383,
       "longitude": -76.2794,
-      "filename": "rickettsglen"
+      "filename": "rickettsglen",
+  "visitYears": [20XX],
+  "visitCount": 1
     },
     {
       "id": "anchor-down-rv-resort",
@@ -205,7 +249,9 @@
       "state_code": "TN",
       "latitude": 35.8705,
       "longitude": -83.7544,
-      "filename": "anchordown"
+      "filename": "anchordown",
+  "visitYears": [20XX],
+  "visitCount": 2
     },
     {
       "id": "oasis-point-rv-resort",
@@ -214,7 +260,9 @@
       "state_code": "KY",
       "latitude": 36.8625,
       "longitude": -88.0933,
-      "filename": "oasispoint"
+      "filename": "oasispoint",
+  "visitYears": [20XX],
+  "visitCount": 1
     },
     {
   "id": "outer-banks-west-currituck-sound-koa-holiday",
@@ -223,7 +271,9 @@
   "state_code": "NC",
   "latitude": 36.417178,
   "longitude": -75.923594,
-  "filename": "outerbankswestkoa"
+  "filename": "outerbankswestkoa",
+  "visitYears": [20XX],
+  "visitCount": 1
 },
 {
   "id": "madison-vines-rv-resort-cottages",
@@ -232,7 +282,9 @@
   "state_code": "VA",
   "latitude": 38.3676,
   "longitude": -78.2574,
-  "filename": "madisonvines"
+  "filename": "madisonvines",
+  "visitYears": [20XX],
+  "visitCount": 1
 },
 {
   "id": "bethpage-camp-resort",
@@ -241,7 +293,9 @@
   "state_code": "VA",
   "latitude": 37.6357,
   "longitude": -76.5821,
-  "filename": "bethpage"
+  "filename": "bethpage",
+  "visitYears": [20XX],
+  "visitCount": 2
 },
 {
   "id": "greys-point-camp",
@@ -250,7 +304,9 @@
   "state_code": "VA",
   "latitude": 37.6101265,
   "longitude": -76.440566,
-  "filename": "greyspoint"
+  "filename": "greyspoint",
+  "visitYears": [20XX],
+  "visitCount": 1
 },
 {
   "id": "delaware-seashore-state-park",
@@ -259,7 +315,9 @@
   "state_code": "DE",
   "latitude": 38.65,
   "longitude": -75.06611,
-  "filename": "delawareseashore"
+  "filename": "delawareseashore",
+  "visitYears": [20XX],
+  "visitCount": 1
 },
 {
   "id": "myrtle-beach-state-park",
@@ -268,7 +326,9 @@
   "state_code": "SC",
   "latitude": 33.65583,
   "longitude": -78.93111,
-  "filename": "myrtlebeachstatepark"
+  "filename": "myrtlebeachstatepark",
+  "visitYears": [20XX],
+  "visitCount": 3
 },
 {
   "id": "sun-outdoors-myrtle-beach",
@@ -277,7 +337,9 @@
   "state_code": "SC",
   "latitude": 33.84384211,
   "longitude": -78.84323221,
-  "filename": "sunoutdoorsmyrtlebeach"
+  "filename": "sunoutdoorsmyrtlebeach",
+  "visitYears": [20XX],
+  "visitCount": 1
 },
 {
   "id": "lake-shore-rv-resort",
@@ -286,7 +348,9 @@
   "state_code": "NJ",
   "latitude": 39.1777,
   "longitude": -74.7338,
-  "filename": "lakeandshore"
+  "filename": "lakeandshore",
+  "visitYears": [20XX],
+  "visitCount": 1
 },
 {
   "id": "gulf-shores-pensacola-west-koa-holiday",
@@ -295,7 +359,9 @@
   "state_code": "AL",
   "latitude": 30.39571,
   "longitude": -87.453122,
-  "filename": "gulfshoreskoa"
+  "filename": "gulfshoreskoa",
+  "visitYears": [20XX],
+  "visitCount": 1
 },
 {
   "id": "lake-charles-east-iowa-koa-journey",
@@ -304,7 +370,9 @@
   "state_code": "LA",
   "latitude": 30.243,
   "longitude": -92.953,
-  "filename": "lakecharleskoa"
+  "filename": "lakecharleskoa",
+  "visitYears": [20XX],
+  "visitCount": 1
 },
     {
   "id": "candy-hill-campground",
@@ -313,7 +381,9 @@
   "state_code": "VA",
   "latitude": 38.3124,
   "longitude": -78.4633,
-  "filename": "candyhill"
+  "filename": "candyhill",
+  "visitYears": [20XX],
+  "visitCount": 1
 },
 {
   "id": "fontainebleau-state-park",
@@ -322,7 +392,9 @@
   "state_code": "LA",
   "latitude": 30.2756,
   "longitude": -90.0323,
-  "filename": "fontainebleau"
+  "filename": "fontainebleau",
+  "visitYears": [20XX],
+  "visitCount": 1
 },
 {
   "id": "lumberton-i95-koa-journey",
@@ -331,7 +403,9 @@
   "state_code": "NC",
   "latitude": 34.5955,
   "longitude": -79.0083,
-  "filename": "lumbertonkoa"
+  "filename": "lumbertonkoa",
+  "visitYears": [20XX],
+  "visitCount": 1
 },
 {
   "id": "jacksonville-north-st-marys-koa-holiday",
@@ -340,7 +414,9 @@
   "state_code": "GA",
   "latitude": 30.7995,
   "longitude": -81.6955,
-  "filename": "jacksonvillekoa"
+  "filename": "jacksonvillekoa",
+  "visitYears": [20XX],
+  "visitCount": 1
 },
 {
   "id": "tom-sawyers-rv-park",
@@ -349,7 +425,9 @@
   "state_code": "AR",
   "latitude": 35.1448,
   "longitude": -90.1846,
-  "filename": "tomsawyers"
+  "filename": "tomsawyers",
+  "visitYears": [20XX],
+  "visitCount": 1
 },
 {
   "id": "wytheville-koa-holiday",
@@ -358,7 +436,9 @@
   "state_code": "VA",
   "latitude": 36.9559,
   "longitude": -81.0845,
-  "filename": "wythevillekoa"
+  "filename": "wythevillekoa",
+  "visitYears": [20XX],
+  "visitCount": 1
 },
 {
   "id": "masseys-landing",
@@ -367,7 +447,9 @@
   "state_code": "DE",
   "latitude": 38.6248,
   "longitude": -75.1662,
-  "filename": "masseyslanding"
+  "filename": "masseyslanding",
+  "visitYears": [20XX],
+  "visitCount": 2
 },
 {
   "id": "gettysburg-battlefield-koa-holiday",
@@ -376,7 +458,20 @@
   "state_code": "PA",
   "latitude": 39.7897,
   "longitude": -77.1608,
-  "filename": "gettysburgkoa"
+  "filename": "gettysburgkoa",
+  "visitYears": [20XX],
+  "visitCount": 1
+},
+    {
+  "id": "arbuckle-rv-resort",
+  "name": "Arbuckle RV Resort",
+  "state": "Oklahoma",
+  "state_code": "OK",
+  "latitude": 34.5077,
+  "longitude": -97.1419,
+  "filename": "arbuckle",
+  "visitYears": [2021],
+  "visitCount": 1
 }
   ]
 }
