@@ -1,33 +1,42 @@
 {
   "campgrounds": [
-    {
-      "id": "pohick-bay-regional-park-06-2025",
-      "name": "Pohick Bay Regional Park",
-      "state": "Virginia",
-      "state_code": "VA",
-      "latitude": 38.66900304609987,
-      "longitude": -77.16827128793001,
-      "filename": "20250629pohick"
-    },
-        {
-      "id": "dallas-northeast-campground-rv-park-03-2021",
-      "name": "Dallas Northeast Campground & RV Park",
-      "state": "Texas",
-      "state_code": "TX",
-      "latitude": 33.02367531550495,
-      "longitude": -96.20705659831987,
-      "filename": "20210313dallasnortheast"
-    },
-            {
-      "id": "blue-quartz-winery-07-2025",
-      "name": "Blue Quartz Winery (Harvest Host)",
-      "state": "Virginia",
-      "state_code": "VA",
-      "latitude": 38.492954996397145,
-      "longitude": -78.28310871566069,
-      "filename": "20250723bluequartz"
-    },
-                {
+{
+  "id": "pohick-bay-regional-park",
+  "name": "Pohick Bay Regional Park",
+  "state": "Virginia",
+  "state_code": "VA",
+  "latitude": 38.66900304609987,
+  "longitude": -77.16827128793001,
+  "filename": "pohickbay"
+},
+{
+  "id": "dallas-northeast-campground-rv-park",
+  "name": "Dallas Northeast Campground & RV Park",
+  "state": "Texas",
+  "state_code": "TX",
+  "latitude": 33.02367531550495,
+  "longitude": -96.20705659831987,
+  "filename": "dallasnortheast"
+},
+{
+  "id": "blue-quartz-winery",
+  "name": "Blue Quartz Winery (Harvest Host)",
+  "state": "Virginia",
+  "state_code": "VA",
+  "latitude": 38.492954996397145,
+  "longitude": -78.28310871566069,
+  "filename": "bluequartz"
+},
+{
+  "id": "newport-news-park",
+  "name": "Newport News Park Campground",
+  "state": "Virginia",
+  "state_code": "VA",
+  "latitude": 37.188648927782964,
+  "longitude": -76.55836548941465,
+  "filename": "newportnews"
+},
+  {
   "id": "newport-news-park-11-2025",
   "name": "Newport News Park Campground",
   "state": "Virginia",
@@ -125,6 +134,97 @@
       "latitude": 37.6268,
       "longitude": -79.5077,
       "filename": "jellystonenaturalbridge"
-    }
+    },
+  {
+    "id": "big-bend-station-rv-park",
+    "name": "Big Bend Station RV Park",
+    "state": "Texas",
+    "state_code": "TX",
+    "latitude": 30.3473,
+    "longitude": -103.6624,
+    "filename": "bigbendstation"
+  },
+  {
+    "id": "ballards-rv-park",
+    "name": "Ballard's RV Park",
+    "state": "Missouri",
+    "state_code": "MO",
+    "latitude": 36.6086,
+    "longitude": -89.5276,
+    "filename": "ballardsrvpark"
+  },
+  {
+    "id": "harpers-ferry-koa-holiday",
+    "name": "Harpers Ferry / Civil War Battlefields KOA Holiday",
+    "state": "West Virginia",
+    "state_code": "WV",
+    "latitude": 39.3223,
+    "longitude": -77.7307,
+    "filename": "harpersferrykoa"
+  },
+  {
+    "id": "prince-william-forest-rv-campground",
+    "name": "Prince William Forest RV Campground",
+    "state": "Virginia",
+    "state_code": "VA",
+    "latitude": 38.6466,
+    "longitude": -77.3816,
+    "filename": "princewilliamforest"
+  },
+  {
+    "id": "fredericksburg-washington-dc-south-koa-holiday",
+    "name": "Fredericksburg / Washington DC South KOA Holiday",
+    "state": "Virginia",
+    "state_code": "VA",
+    "latitude": 38.1535,
+    "longitude": -77.4923,
+    "filename": "fredericksburgkoa"
+  },
+  {
+    "id": "houghton-letchworth-koa-holiday",
+    "name": "Houghton / Letchworth KOA Holiday",
+    "state": "New York",
+    "state_code": "NY",
+    "latitude": 42.4225,
+    "longitude": -78.1562,
+    "filename": "houghtonletchworthkoa"
+  },
+  {
+    "id": "williamsport-south-nittany-mountain-koa-holiday",
+    "name": "Williamsport South / Nittany Mountain KOA Holiday",
+    "state": "Pennsylvania",
+    "state_code": "PA",
+    "latitude": 41.2377,
+    "longitude": -77.0502,
+    "filename": "williamsportkoa"
+  },
+  {
+    "id": "ricketts-glen-state-park",
+    "name": "Ricketts Glen State Park",
+    "state": "Pennsylvania",
+    "state_code": "PA",
+    "latitude": 41.3383,
+    "longitude": -76.2794,
+    "filename": "rickettsglen"
+  },
+  {
+    "id": "anchor-down-rv-resort",
+    "name": "Anchor Down RV Resort",
+    "state": "Tennessee",
+    "state_code": "TN",
+    "latitude": 35.8705,
+    "longitude": -83.7544,
+    "filename": "anchordown"
+  },
+  {
+    "id": "oasis-point-rv-resort",
+    "name": "Oasis Point RV Resort",
+    "state": "Kentucky",
+    "state_code": "KY",
+    "latitude": 36.8625,
+    "longitude": -88.0933,
+    "filename": "oasispoint"
+  }
+]
   ]
 }
