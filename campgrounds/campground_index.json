@@ -215,6 +215,96 @@
       "latitude": 36.8625,
       "longitude": -88.0933,
       "filename": "oasispoint"
-    }
+    },
+    {
+  "id": "outer-banks-west-currituck-sound-koa-holiday",
+  "name": "Outer Banks West / Currituck Sound KOA Holiday",
+  "state": "North Carolina",
+  "state_code": "NC",
+  "latitude": 36.417178,
+  "longitude": -75.923594,
+  "filename": "outerbankswestkoa"
+},
+{
+  "id": "madison-vines-rv-resort-cottages",
+  "name": "Madison Vines RV Resort & Cottages",
+  "state": "Virginia",
+  "state_code": "VA",
+  "latitude": 38.3676,
+  "longitude": -78.2574,
+  "filename": "madisonvines"
+},
+{
+  "id": "bethpage-camp-resort",
+  "name": "Bethpage Camp-Resort",
+  "state": "Virginia",
+  "state_code": "VA",
+  "latitude": 37.6357,
+  "longitude": -76.5821,
+  "filename": "bethpage"
+},
+{
+  "id": "greys-point-camp",
+  "name": "Grey's Point Camp",
+  "state": "Virginia",
+  "state_code": "VA",
+  "latitude": 37.6101265,
+  "longitude": -76.440566,
+  "filename": "greyspoint"
+},
+{
+  "id": "delaware-seashore-state-park",
+  "name": "Delaware Seashore State Park",
+  "state": "Delaware",
+  "state_code": "DE",
+  "latitude": 38.65,
+  "longitude": -75.06611,
+  "filename": "delawareseashore"
+},
+{
+  "id": "myrtle-beach-state-park",
+  "name": "Myrtle Beach State Park",
+  "state": "South Carolina",
+  "state_code": "SC",
+  "latitude": 33.65583,
+  "longitude": -78.93111,
+  "filename": "myrtlebeachstatepark"
+},
+{
+  "id": "sun-outdoors-myrtle-beach",
+  "name": "Sun Outdoors Myrtle Beach",
+  "state": "South Carolina",
+  "state_code": "SC",
+  "latitude": 33.84384211,
+  "longitude": -78.84323221,
+  "filename": "sunoutdoorsmyrtlebeach"
+},
+{
+  "id": "lake-shore-rv-resort",
+  "name": "Lake & Shore RV Resort",
+  "state": "New Jersey",
+  "state_code": "NJ",
+  "latitude": 39.1777,
+  "longitude": -74.7338,
+  "filename": "lakeandshore"
+},
+{
+  "id": "gulf-shores-pensacola-west-koa-holiday",
+  "name": "Gulf Shores / Pensacola West KOA Holiday",
+  "state": "Alabama",
+  "state_code": "AL",
+  "latitude": 30.39571,
+  "longitude": -87.453122,
+  "filename": "gulfshoreskoa"
+},
+{
+  "id": "lake-charles-east-iowa-koa-journey",
+  "name": "Lake Charles East / Iowa KOA Journey",
+  "state": "Louisiana",
+  "state_code": "LA",
+  "latitude": 30.243,
+  "longitude": -92.953,
+  "filename": "lakecharleskoa"
+}
   ]
 }
