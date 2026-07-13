@@ -4,6 +4,7 @@
   "state": "Virginia",
   "state_code": "VA",
   "status": "starter",
+  "type": "State Park",
   "visitYears": [
     2018,
     2019,
@@ -14,13 +15,90 @@
     2024,
     2025
   ],
-  "summary_text": "A coastal Virginia State Park in Virginia Beach with beachside camping, maritime forest, cypress swamps, and miles of trails.",
+  "summary_text": "A beautiful Virginia State Park on the Chesapeake Bay featuring beach camping, maritime forests, cypress swamps, and nearly 20 miles of hiking and biking trails just minutes from the Virginia Beach oceanfront.",
   "address": "2500 Shore Drive, Virginia Beach, VA 23451",
   "website": "https://www.dcr.virginia.gov/state-parks/first-landing",
   "reservations": "https://reservevaparks.com/Web/",
   "parkmap": "",
   "latitude": 36.9189,
   "longitude": -76.05,
+  "amenities": {
+    "electric": "50/30",
+    "waterAtSite": "All Sites",
+    "potableFill": "Yes",
+    "sewer": "No",
+    "dumpStation": "Yes",
+    "bathhouse": "Yes",
+    "laundryFacilities": "Yes",
+    "cellService": "Good",
+    "wifi": "No",
+    "tvCable": "No",
+    "petsWelcome": "Yes",
+    "dogPark": "No",
+    "campStore": "Yes",
+    "propaneRefill": "No",
+    "playground": "Yes",
+    "swimmingBeach": "Yes",
+    "swimmingPool": "No",
+    "otherAmenities": [
+      "Visitor Center",
+      "Bike Rentals",
+      "Educational Programs"
+    ]
+  },
+  "siteFeatures": {
+    "level": "Mostly level sites",
+    "dirt": "No",
+    "gravel": "Most Sites",
+    "paved": "Roads",
+    "patio": "Some Sites",
+    "shade": "Heavy",
+    "fireRing": "Yes",
+    "picnicTable": "Yes",
+    "grill": "Yes",
+    "otherNotes": [
+      "Well wooded campground providing excellent shade.",
+      "Some sites can be tight for larger RVs.",
+      "Expect limited Starlink reception due to dense tree cover.",
+      "Short walk or bike ride to the Chesapeake Bay beach from many campsites."
+    ]
+  },
+  "activities": {
+    "waterfront": "Chesapeake Bay",
+    "boatingLaunch": "Nearby Public Ramp",
+    "fishing": "Yes",
+    "hiking": "Nearly 20 Miles of Trails",
+    "biking": "Paved and Natural Trails",
+    "gameRoom": "No",
+    "otherActivities": [
+      "Swimming",
+      "Beachcombing",
+      "Kayaking",
+      "Nature Programs",
+      "Wildlife Viewing"
+    ]
+  },
+  "nearby": {
+    "shopping": [
+      "Grocery Stores",
+      "Pharmacy",
+      "Target",
+      "Walmart"
+    ],
+    "food": [
+      "Local Restaurants",
+      "Fast Food",
+      "Seafood"
+    ],
+    "nearbyAttractions": [
+      "Virginia Beach Oceanfront",
+      "Cape Henry Lighthouse",
+      "Military Aviation Museum",
+      "Back Bay National Wildlife Refuge",
+      "First Landing State Park Trails"
+    ],
+    "emergencyMedicalDistance": "Approximately 15 minutes"
+  },
   "favoriteSites": [],
   "photoGallery": [],
   "reviews": []
