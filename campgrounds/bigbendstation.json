@@ -1,0 +1,97 @@
+{
+  "id": "big-bend-station-rv-park",
+  "name": "Big Bend Station RV Park",
+  "state": "Texas",
+  "state_code": "TX",
+  "status": "starter",
+  "type": "RV Park",
+  "visitYears": [
+    2026
+  ],
+  "summary_text": "A modern full-hookup RV park in Alpine, Texas, offering spacious sites, excellent amenities, and an ideal home base for exploring Big Bend National Park, Big Bend Ranch State Park, and the Davis Mountains.",
+  "address": "1500 US Highway 90, Alpine, TX 79830",
+  "website": "https://www.bigbendstation.com/",
+  "reservations": "https://www.bigbendstation.com/",
+  "parkmap": "",
+  "latitude": 30.3473,
+  "longitude": -103.6624,
+  "amenities": {
+    "electric": "50/30/20",
+    "waterAtSite": "All Sites",
+    "potableFill": "Yes",
+    "sewer": "All Sites",
+    "dumpStation": "No",
+    "bathhouse": "Yes",
+    "laundryFacilities": "Yes",
+    "cellService": "Excellent",
+    "wifi": "Yes",
+    "tvCable": "No",
+    "petsWelcome": "Yes",
+    "dogPark": "Yes",
+    "campStore": "No",
+    "propaneRefill": "No",
+    "playground": "No",
+    "swimmingPool": "No",
+    "otherAmenities": [
+      "Clubhouse",
+      "Fitness Center",
+      "Community Fire Pit",
+      "Picnic Pavilion"
+    ]
+  },
+  "siteFeatures": {
+    "level": "Very level throughout the park",
+    "dirt": "No",
+    "gravel": [
+      "Sites and Roads"
+    ],
+    "paved": "No",
+    "patio": "No",
+    "shade": "Limited",
+    "fireRing": "No",
+    "picnicTable": "Yes",
+    "grill": "No",
+    "otherNotes": [
+      "Large pull-through sites available",
+      "Wide roads make maneuvering easy for big rigs",
+      "Minimal tree cover provides excellent Starlink reception",
+      "Mountain views from many sites"
+    ]
+  },
+  "activities": {
+    "boatingLaunch": "No",
+    "fishing": "No",
+    "hiking": "No",
+    "biking": "Yes",
+    "gameRoom": "No",
+    "otherActivities": [
+      "Fitness Center",
+      "Community Fire Pit"
+    ]
+  },
+  "nearby": {
+    "shopping": [
+      "Walmart",
+      "Porter's Grocery",
+      "Auto Parts Stores",
+      "RV Supplies"
+    ],
+    "food": [
+      "Restaurants",
+      "Coffee Shops",
+      "Fast Food"
+    ],
+    "nearbyAttractions": [
+      "Big Bend National Park",
+      "Big Bend Ranch State Park",
+      "Davis Mountains State Park",
+      "McDonald Observatory",
+      "Museum of the Big Bend",
+      "Historic Downtown Alpine"
+    ],
+    "emergencyMedicalDistance": "Approximately 5 minutes"
+  },
+  "favoriteSites": [],
+  "photoGallery": [],
+  "reviews": []
+}
