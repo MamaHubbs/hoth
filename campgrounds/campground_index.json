@@ -19,7 +19,7 @@
       "latitude": 33.02367531550495,
       "longitude": -96.20705659831987,
       "filename": "dallasnortheast",
-  "visitYears": [20XX],
+  "visitYears": [20],
   "visitCount": 1
     },
     {
@@ -41,7 +41,7 @@
       "latitude": 37.188648927782964,
       "longitude": -76.55836548941465,
       "filename": "newportnews",
-  "visitYears": [20XX,2026],
+  "visitYears": [20,2026],
   "visitCount": 2
     },
     {
@@ -63,7 +63,7 @@
       "latitude": 36.6219,
       "longitude": -78.5239,
       "filename": "occoneechee",
-  "visitYears": [20XX],
+  "visitYears": [20],
   "visitCount": 1
     },
     {
@@ -74,7 +74,7 @@
       "latitude": 36.5488,
       "longitude": -78.5647,
       "filename": "longwoodpark",
-  "visitYears": [20XX],
+  "visitYears": [20],
   "visitCount": 2
     },
     {
@@ -85,7 +85,7 @@
       "latitude": 38.1612,
       "longitude": -76.8659,
       "filename": "westmoreland",
-  "visitYears": [20XX],
+  "visitYears": [20],
   "visitCount": 3
     },
     {
@@ -107,7 +107,7 @@
       "latitude": 29.7034,
       "longitude": -101.3135,
       "filename": "seminolecanyon",
-  "visitYears": [20XX],
+  "visitYears": [20],
   "visitCount": 1
     },
     {
@@ -118,7 +118,7 @@
       "latitude": 30.4148,
       "longitude": -97.9281,
       "filename": "sunoutdoorslaketravis",
-  "visitYears": [20XX],
+  "visitYears": [20],
   "visitCount": 1
     },
     {
@@ -129,7 +129,7 @@
       "latitude": 29.6867,
       "longitude": -98.1265,
       "filename": "sunretreatstexashillcountry",
-  "visitYears": [20XX],
+  "visitYears": [20],
   "visitCount": 1
     },
     {
@@ -140,7 +140,7 @@
       "latitude": 38.0154,
       "longitude": -78.0154,
       "filename": "smallcountry",
-  "visitYears": [20XX],
+  "visitYears": [20],
   "visitCount": 2
     },
     {
@@ -151,7 +151,7 @@
       "latitude": 37.6268,
       "longitude": -79.5077,
       "filename": "jellystonenaturalbridge",
-  "visitYears": [20XX],
+  "visitYears": [20],
   "visitCount": 1
     },
     {
@@ -162,7 +162,7 @@
       "latitude": 30.3473,
       "longitude": -103.6624,
       "filename": "bigbendstation",
-  "visitYears": [20XX],
+  "visitYears": [20],
   "visitCount": 1
     },
     {
@@ -173,7 +173,7 @@
       "latitude": 36.6086,
       "longitude": -89.5276,
       "filename": "ballardsrvpark",
-  "visitYears": [20XX],
+  "visitYears": [20],
   "visitCount": 1
     },
     {
@@ -184,7 +184,7 @@
       "latitude": 39.3223,
       "longitude": -77.7307,
       "filename": "harpersferrykoa",
-  "visitYears": [20XX],
+  "visitYears": [20],
   "visitCount": 2
     },
     {
@@ -195,7 +195,7 @@
       "latitude": 38.6466,
       "longitude": -77.3816,
       "filename": "princewilliamforest",
-  "visitYears": [20XX],
+  "visitYears": [20],
   "visitCount": 1
     },
     {
@@ -217,7 +217,7 @@
       "latitude": 42.4225,
       "longitude": -78.1562,
       "filename": "houghtonletchworthkoa",
-  "visitYears": [20XX],
+  "visitYears": [20],
   "visitCount": 1
     },
     {
@@ -228,7 +228,7 @@
       "latitude": 41.2377,
       "longitude": -77.0502,
       "filename": "williamsportkoa",
-  "visitYears": [20XX],
+  "visitYears": [20],
   "visitCount": 1
     },
     {
@@ -239,7 +239,7 @@
       "latitude": 41.3383,
       "longitude": -76.2794,
       "filename": "rickettsglen",
-  "visitYears": [20XX],
+  "visitYears": [20],
   "visitCount": 1
     },
     {
@@ -250,7 +250,7 @@
       "latitude": 35.8705,
       "longitude": -83.7544,
       "filename": "anchordown",
-  "visitYears": [20XX],
+  "visitYears": [20],
   "visitCount": 2
     },
     {
@@ -261,7 +261,7 @@
       "latitude": 36.8625,
       "longitude": -88.0933,
       "filename": "oasispoint",
-  "visitYears": [20XX],
+  "visitYears": [20],
   "visitCount": 1
     },
     {
@@ -272,7 +272,7 @@
   "latitude": 36.417178,
   "longitude": -75.923594,
   "filename": "outerbankswestkoa",
-  "visitYears": [20XX],
+  "visitYears": [20],
   "visitCount": 1
 },
 {
@@ -283,7 +283,7 @@
   "latitude": 38.3676,
   "longitude": -78.2574,
   "filename": "madisonvines",
-  "visitYears": [20XX],
+  "visitYears": [20],
   "visitCount": 1
 },
 {
@@ -294,7 +294,7 @@
   "latitude": 37.6357,
   "longitude": -76.5821,
   "filename": "bethpage",
-  "visitYears": [20XX],
+  "visitYears": [20],
   "visitCount": 2
 },
 {
@@ -305,7 +305,7 @@
   "latitude": 37.6101265,
   "longitude": -76.440566,
   "filename": "greyspoint",
-  "visitYears": [20XX],
+  "visitYears": [20],
   "visitCount": 1
 },
 {
@@ -316,7 +316,7 @@
   "latitude": 38.65,
   "longitude": -75.06611,
   "filename": "delawareseashore",
-  "visitYears": [20XX],
+  "visitYears": [20],
   "visitCount": 1
 },
 {
@@ -327,7 +327,7 @@
   "latitude": 33.65583,
   "longitude": -78.93111,
   "filename": "myrtlebeachstatepark",
-  "visitYears": [20XX],
+  "visitYears": [20],
   "visitCount": 3
 },
 {
@@ -338,7 +338,7 @@
   "latitude": 33.84384211,
   "longitude": -78.84323221,
   "filename": "sunoutdoorsmyrtlebeach",
-  "visitYears": [20XX],
+  "visitYears": [20],
   "visitCount": 1
 },
 {
@@ -349,7 +349,7 @@
   "latitude": 39.1777,
   "longitude": -74.7338,
   "filename": "lakeandshore",
-  "visitYears": [20XX],
+  "visitYears": [20],
   "visitCount": 1
 },
 {
@@ -360,7 +360,7 @@
   "latitude": 30.39571,
   "longitude": -87.453122,
   "filename": "gulfshoreskoa",
-  "visitYears": [20XX],
+  "visitYears": [20],
   "visitCount": 1
 },
 {
@@ -371,7 +371,7 @@
   "latitude": 30.243,
   "longitude": -92.953,
   "filename": "lakecharleskoa",
-  "visitYears": [20XX],
+  "visitYears": [20],
   "visitCount": 1
 },
     {
@@ -382,7 +382,7 @@
   "latitude": 38.3124,
   "longitude": -78.4633,
   "filename": "candyhill",
-  "visitYears": [20XX],
+  "visitYears": [20],
   "visitCount": 1
 },
 {
@@ -393,7 +393,7 @@
   "latitude": 30.2756,
   "longitude": -90.0323,
   "filename": "fontainebleau",
-  "visitYears": [20XX],
+  "visitYears": [20],
   "visitCount": 1
 },
 {
@@ -404,7 +404,7 @@
   "latitude": 34.5955,
   "longitude": -79.0083,
   "filename": "lumbertonkoa",
-  "visitYears": [20XX],
+  "visitYears": [20],
   "visitCount": 1
 },
 {
@@ -415,7 +415,7 @@
   "latitude": 30.7995,
   "longitude": -81.6955,
   "filename": "jacksonvillekoa",
-  "visitYears": [20XX],
+  "visitYears": [20],
   "visitCount": 1
 },
 {
@@ -426,7 +426,7 @@
   "latitude": 35.1448,
   "longitude": -90.1846,
   "filename": "tomsawyers",
-  "visitYears": [20XX],
+  "visitYears": [20],
   "visitCount": 1
 },
 {
@@ -437,7 +437,7 @@
   "latitude": 36.9559,
   "longitude": -81.0845,
   "filename": "wythevillekoa",
-  "visitYears": [20XX],
+  "visitYears": [20],
   "visitCount": 1
 },
 {
@@ -448,7 +448,7 @@
   "latitude": 38.6248,
   "longitude": -75.1662,
   "filename": "masseyslanding",
-  "visitYears": [20XX],
+  "visitYears": [20],
   "visitCount": 2
 },
 {
@@ -459,7 +459,7 @@
   "latitude": 39.7897,
   "longitude": -77.1608,
   "filename": "gettysburgkoa",
-  "visitYears": [20XX],
+  "visitYears": [20],
   "visitCount": 1
 },
     {
