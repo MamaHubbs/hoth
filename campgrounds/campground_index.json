@@ -305,6 +305,78 @@
   "latitude": 30.243,
   "longitude": -92.953,
   "filename": "lakecharleskoa"
+},
+    {
+  "id": "candy-hill-campground",
+  "name": "Candy Hill Campground",
+  "state": "Virginia",
+  "state_code": "VA",
+  "latitude": 38.3124,
+  "longitude": -78.4633,
+  "filename": "candyhill"
+},
+{
+  "id": "fontainebleau-state-park",
+  "name": "Fontainebleau State Park",
+  "state": "Louisiana",
+  "state_code": "LA",
+  "latitude": 30.2756,
+  "longitude": -90.0323,
+  "filename": "fontainebleau"
+},
+{
+  "id": "lumberton-i95-koa-journey",
+  "name": "Lumberton / I-95 KOA Journey",
+  "state": "North Carolina",
+  "state_code": "NC",
+  "latitude": 34.5955,
+  "longitude": -79.0083,
+  "filename": "lumbertonkoa"
+},
+{
+  "id": "jacksonville-north-st-marys-koa-holiday",
+  "name": "Jacksonville North / St. Marys KOA Holiday",
+  "state": "Georgia",
+  "state_code": "GA",
+  "latitude": 30.7995,
+  "longitude": -81.6955,
+  "filename": "jacksonvillekoa"
+},
+{
+  "id": "tom-sawyers-rv-park",
+  "name": "Tom Sawyer's RV Park",
+  "state": "Arkansas",
+  "state_code": "AR",
+  "latitude": 35.1448,
+  "longitude": -90.1846,
+  "filename": "tomsawyers"
+},
+{
+  "id": "wytheville-koa-holiday",
+  "name": "Wytheville KOA Holiday",
+  "state": "Virginia",
+  "state_code": "VA",
+  "latitude": 36.9559,
+  "longitude": -81.0845,
+  "filename": "wythevillekoa"
+},
+{
+  "id": "masseys-landing",
+  "name": "Massey's Landing",
+  "state": "Delaware",
+  "state_code": "DE",
+  "latitude": 38.6248,
+  "longitude": -75.1662,
+  "filename": "masseyslanding"
+},
+{
+  "id": "gettysburg-battlefield-koa-holiday",
+  "name": "Gettysburg / Battlefield KOA Holiday",
+  "state": "Pennsylvania",
+  "state_code": "PA",
+  "latitude": 39.7897,
+  "longitude": -77.1608,
+  "filename": "gettysburgkoa"
 }
   ]
 }
