@@ -59,7 +59,7 @@
     "waterfront": "5-acre Fishing Lake",
     "boatingLaunch": "No",
     "fishing": "Yes",
-    "hiking": "Walking Trails",
+    "hiking": "Walking Trail Around Fishing Lake",
     "biking": "Campground Roads",
     "gameRoom": "Yes",
     "otherActivities": [
@@ -69,19 +69,19 @@
   },
   "nearby": {
     "shopping": [
-      "Walmart",
       "Grocery Store",
-      "Pharmacy"
+      "Pharmacy",
+      "Walmart"
     ],
     "food": [
-      "Restaurants",
-      "Fast Food"
+      "Fast Food",
+      "Restaurants"
     ],
     "nearbyAttractions": [
-      "Downtown Dallas",
       "Lake Ray Hubbard",
       "Rockwall Harbor",
-      "Southfork Ranch"
+      "Southfork Ranch",
+      "Downtown Dallas"
     ],
     "emergencyMedicalDistance": "Approximately 15 minutes"
   },
