@@ -15,29 +15,31 @@
   "parkmap": "",
   "latitude": 38.492954996397145,
   "longitude": -78.28310871566069,
+    ]
+    },
   "amenities": {
-    "electric": "None",
-    "waterAtSite": "No",
-    "potableFill": "Yes",
-    "sewer": "No",
-    "dumpStation": "No",
-    "bathhouse": "No",
-    "laundryFacilities": "No",
-    "cellService": "Fair",
-    "wifi": "No",
-    "tvCable": "No",
-    "petsWelcome": "Yes",
-    "dogPark": "No",
-    "campStore": "Winery and Brewery",
-    "propaneRefill": "No",
-    "playground": "No",
-    "swimmingBeach": "No",
-    "swimmingPool": "No",
-    "otherAmenities": [
-      "Wine Tastings",
-      "Craft Brewery",
-      "On-Site Kitchen",
-      "Indoor and Outdoor Seating"
+  "electric": "No",
+  "waterAtSite": "No",
+  "potableFill": "Yes",
+  "sewer": "No",
+  "dumpStation": "No",
+  "bathhouse": "No",
+  "laundryFacilities": "No",
+  "cellService": "Fair",
+  "wifi": "No",
+  "tvCable": "No",
+  "petsWelcome": "Yes",
+  "dogPark": "No",
+  "campStore": "No",
+  "propaneRefill": "No",
+  "playground": "No",
+  "swimmingBeach": "No",
+  "swimmingPool": "No",
+  "otherAmenities": [
+    "Wine Tastings",
+    "Craft Brewery",
+    "On-Site Kitchen",
+    "Indoor and Outdoor Seating"
     ]
   },
   "siteFeatures": {
@@ -58,6 +60,7 @@
       "Generator use was permitted during the visit."
     ]
   },
+  
   "activities": {
     "waterfront": "No",
     "boatingLaunch": "No",
