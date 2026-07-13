@@ -36,42 +36,6 @@
   "longitude": -76.55836548941465,
   "filename": "20251124newportnews"
     },
-       {
-      "id": "rudds-creek-campground",
-      "name": "Rudds Creek Campground",
-      "state": "Virginia",
-      "state_code": "VA",
-      "latitude": 36.6362,
-      "longitude": -78.5445,
-      "filename": "ruddscreek"
-    },
-    {
-      "id": "occoneechee-state-park",
-      "name": "Occoneechee State Park",
-      "state": "Virginia",
-      "state_code": "VA",
-      "latitude": 36.6218,
-      "longitude": -78.5236,
-      "filename": "occoneechee"
-    },
-    {
-      "id": "longwood-park-campground",
-      "name": "Longwood Park Campground",
-      "state": "Virginia",
-      "state_code": "VA",
-      "latitude": 36.5488,
-      "longitude": -78.5646,
-      "filename": "longwoodpark"
-    },
-    {
-      "id": "westmoreland-state-park",
-      "name": "Westmoreland State Park",
-      "state": "Virginia",
-      "state_code": "VA",
-      "latitude": 38.1611,
-      "longitude": -76.8669,
-      "filename": "westmoreland"
-    },
     {
       "id": "rudds-creek-campground",
       "name": "Rudds Creek Campground",
