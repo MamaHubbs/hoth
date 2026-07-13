@@ -1,0 +1,20 @@
+{
+  "id": "small-country-campground",
+  "name": "Small Country Campground",
+  "state": "Virginia",
+  "state_code": "VA",
+  "status": "starter",
+  "visitYears": [
+    2018
+  ],
+  "summary_text": "A family campground in Louisa County, Virginia, centered around a private lake and convenient to central Virginia attractions.",
+  "address": "4400 Byrd Mill Road, Louisa, VA 23093",
+  "website": "https://smallcountry.com/",
+  "reservations": "https://smallcountry.com/",
+  "parkmap": "",
+  "latitude": 38.0154,
+  "longitude": -78.0154,
+  "favoriteSites": [],
+  "photoGallery": [],
+  "reviews": []
+}

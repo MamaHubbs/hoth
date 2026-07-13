@@ -1,0 +1,20 @@
+{
+  "id": "seminole-canyon-state-park-historic-site",
+  "name": "Seminole Canyon State Park & Historic Site",
+  "state": "Texas",
+  "state_code": "TX",
+  "status": "starter",
+  "visitYears": [
+    2026
+  ],
+  "summary_text": "A rugged West Texas park near the Rio Grande featuring desert camping, canyon scenery, trails, and ancient rock art.",
+  "address": "US Highway 90, Comstock, TX 78837",
+  "website": "https://tpwd.texas.gov/state-parks/seminole-canyon",
+  "reservations": "https://texasstateparks.reserveamerica.com/",
+  "parkmap": "",
+  "latitude": 29.7034,
+  "longitude": -101.3135,
+  "favoriteSites": [],
+  "photoGallery": [],
+  "reviews": []
+}

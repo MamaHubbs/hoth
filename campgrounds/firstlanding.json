@@ -1,0 +1,27 @@
+{
+  "id": "first-landing-state-park",
+  "name": "First Landing State Park",
+  "state": "Virginia",
+  "state_code": "VA",
+  "status": "starter",
+  "visitYears": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "summary_text": "A coastal Virginia State Park in Virginia Beach with beachside camping, maritime forest, cypress swamps, and miles of trails.",
+  "address": "2500 Shore Drive, Virginia Beach, VA 23451",
+  "website": "https://www.dcr.virginia.gov/state-parks/first-landing",
+  "reservations": "https://reservevaparks.com/Web/",
+  "parkmap": "",
+  "latitude": 36.9189,
+  "longitude": -76.05,
+  "favoriteSites": [],
+  "photoGallery": [],
+  "reviews": []
+}
