@@ -71,6 +71,96 @@
       "latitude": 38.1611,
       "longitude": -76.8669,
       "filename": "westmoreland"
+    },
+    {
+      "id": "rudds-creek-campground",
+      "name": "Rudds Creek Campground",
+      "state": "Virginia",
+      "state_code": "VA",
+      "latitude": 36.6358,
+      "longitude": -78.5447,
+      "filename": "ruddscreek"
+    },
+    {
+      "id": "occoneechee-state-park",
+      "name": "Occoneechee State Park",
+      "state": "Virginia",
+      "state_code": "VA",
+      "latitude": 36.6219,
+      "longitude": -78.5239,
+      "filename": "occoneechee"
+    },
+    {
+      "id": "longwood-park-campground",
+      "name": "Longwood Park Campground",
+      "state": "Virginia",
+      "state_code": "VA",
+      "latitude": 36.5488,
+      "longitude": -78.5647,
+      "filename": "longwoodpark"
+    },
+    {
+      "id": "westmoreland-state-park",
+      "name": "Westmoreland State Park",
+      "state": "Virginia",
+      "state_code": "VA",
+      "latitude": 38.1612,
+      "longitude": -76.8659,
+      "filename": "westmoreland"
+    },
+    {
+      "id": "first-landing-state-park",
+      "name": "First Landing State Park",
+      "state": "Virginia",
+      "state_code": "VA",
+      "latitude": 36.9189,
+      "longitude": -76.05,
+      "filename": "firstlanding"
+    },
+    {
+      "id": "seminole-canyon-state-park-historic-site",
+      "name": "Seminole Canyon State Park & Historic Site",
+      "state": "Texas",
+      "state_code": "TX",
+      "latitude": 29.7034,
+      "longitude": -101.3135,
+      "filename": "seminolecanyon"
+    },
+    {
+      "id": "sun-outdoors-lake-travis",
+      "name": "Sun Outdoors Lake Travis",
+      "state": "Texas",
+      "state_code": "TX",
+      "latitude": 30.4148,
+      "longitude": -97.9281,
+      "filename": "sunoutdoorslaketravis"
+    },
+    {
+      "id": "sun-retreats-texas-hill-country",
+      "name": "Sun Retreats Texas Hill Country",
+      "state": "Texas",
+      "state_code": "TX",
+      "latitude": 29.6867,
+      "longitude": -98.1265,
+      "filename": "sunretreatstexashillcountry"
+    },
+    {
+      "id": "small-country-campground",
+      "name": "Small Country Campground",
+      "state": "Virginia",
+      "state_code": "VA",
+      "latitude": 38.0154,
+      "longitude": -78.0154,
+      "filename": "smallcountry"
+    },
+    {
+      "id": "jellystone-park-natural-bridge",
+      "name": "Yogi Bear's Jellystone Park Camp-Resort: Natural Bridge",
+      "state": "Virginia",
+      "state_code": "VA",
+      "latitude": 37.6268,
+      "longitude": -79.5077,
+      "filename": "jellystonenaturalbridge"
     }
   ]
 }
