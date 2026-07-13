@@ -1,10 +1,14 @@
 {
-  "id": "dallas-northeast-campground-rv-park-03-2021",
+  "id": "dallas-northeast-campground-rv-park",
   "name": "Dallas Northeast Campground & RV Park",
   "state": "Texas",
   "state_code": "TX",
   "status": "complete",
-  "summary_text": "Dallas NE Campground is Good Sam-rated and offers premier facilities on the east side of DFW. Easy on and off I-30.",
+  "type": "RV Resort",
+  "visitYears": [
+    2021
+  ],
+  "summary_text": "A Good Sam-rated RV resort east of Dallas offering full-hookup sites, family-friendly amenities, and convenient access directly off Interstate 30.",
   "address": "4268 FM 36, Caddo Mills, TX 75135",
   "website": "https://openroadresorts.com/dallas-ne-campground/",
   "reservations": "https://book.openroadresorts.com/resorts/dallas-ne-campground?_gl=1*p8lqqy*_gcl_au*NjE1NjE4MDEyLjE3NTI2NjcwOTM.*_ga*NDIzMDU3OTQ1LjE3NTI2NjcwOTM.*_ga_79LV6LX6C0*czE3NTI2NjcwOTIkbzEkZzAkdDE3NTI2NjcwOTJiajYwJGwwJGgw",
@@ -14,48 +18,74 @@
   "amenities": {
     "electric": "50/30/20",
     "waterAtSite": "Many Sites",
-    "potableFill": true,
+    "potableFill": "Yes",
     "sewer": "Some Sites",
-    "dumpStation": true,
-    "bathhouse": true,
-    "laundryFacilities": true,
+    "dumpStation": "Yes",
+    "bathhouse": "Yes",
+    "laundryFacilities": "Yes",
     "cellService": "Good",
     "wifi": "Fair",
-    "tvCable": true,
-    "petsWelcome": true,
-    "dogPark": true,
-    "campStore": true,
-    "propaneRefill": false,
-    "playground": true,
-    "swimmingPool": true,
-    "otherAmenities": ["Fitness Center/Gym", "1/4 Mile from I-30"]
+    "tvCable": "Yes",
+    "petsWelcome": "Yes",
+    "dogPark": "Yes",
+    "campStore": "Yes",
+    "propaneRefill": "No",
+    "playground": "Yes",
+    "swimmingBeach": "No",
+    "swimmingPool": "Yes",
+    "otherAmenities": [
+      "Fitness Center",
+      "Splash Pad"
+    ]
   },
   "siteFeatures": {
-    "level": true,
-    "dirt": false,
-    "gravel": true,
-    "paved": "Some",
+    "level": "Mostly level sites",
+    "dirt": "No",
+    "gravel": "Most Sites",
+    "paved": "Some Sites",
     "patio": "Some Sites",
     "shade": "Some Sites",
-    "fireRing": true,
-    "picnicTable": true,
-    "grill": true,
-    "otherNotes": ["Pull-Through Sites Available"]
+    "fireRing": "Yes",
+    "picnicTable": "Yes",
+    "grill": "Yes",
+    "otherNotes": [
+      "Large pull-through sites available",
+      "Concrete pads available on some sites",
+      "Excellent Starlink reception due to open skies",
+      "Located approximately 1/4 mile from Interstate 30"
+    ]
   },
   "activities": {
-    "boatingLaunch": false,
-    "fishing": true,
-    "hiking": true,
-    "biking": false,
-    "gameRoom": true,
-    "otherActivities": ["Pool with Splash Pad", "5-Acre Fishing Lake"]
+    "waterfront": "5-acre Fishing Lake",
+    "boatingLaunch": "No",
+    "fishing": "Yes",
+    "hiking": "Walking Trails",
+    "biking": "Campground Roads",
+    "gameRoom": "Yes",
+    "otherActivities": [
+      "Swimming Pool",
+      "Splash Pad"
+    ]
   },
   "nearby": {
-    "shopping": ["Grocery Store", "Pharmacy"],
-    "food": ["Restaurants"],
-    "emergencyMedicalDistance": "15 minutes"
+    "shopping": [
+      "Walmart",
+      "Grocery Store",
+      "Pharmacy"
+    ],
+    "food": [
+      "Restaurants",
+      "Fast Food"
+    ],
+    "nearbyAttractions": [
+      "Downtown Dallas",
+      "Lake Ray Hubbard",
+      "Rockwall Harbor",
+      "Southfork Ranch"
+    ],
+    "emergencyMedicalDistance": "Approximately 15 minutes"
   },
-  "favoriteSites": ["N/A"],
+  "favoriteSites": [],
   "photoGallery": [
     {
       "url": "https://mamahubbs.github.io/hoth/image/dallasne01.JPG",
@@ -72,8 +102,8 @@
       "visitDate": "March 2021",
       "reviewDate": "03-13-2021",
       "starRating": 5,
-      "text": "We stayed at Dallas NE Campground (also called Dallas Northeast Campground & RV Park) in Caddo Mills, TX and overall had a pretty good experience. The staff was super friendly and helpful, and the place was clean with well-maintained gravel roads and some concrete pads. We liked that they had a pool, a pond for fishing, a small store, and a playground—definitely family-friendly. It’s in a convenient spot, about 20 minutes from shopping and restaurants, and just 5 minutes to a local market. It’s also right off I-30, which makes it a super easy on/off stop for anyone passing through—really convenient for travelers. That said, being close to the highway does mean some road noise. A few areas could use a little more upkeep, and the bathrooms were a bit dated but were clean and worked well. WiFi was okay, not amazing. Great view of the sky though if you use Starlink. There’s a mix of short-term visitors and permanent residents, which didn’t bother us but worth mentioning. Overall, a decent spot if you’re looking for something laid-back, kid-friendly, and easy to get to near Dallas.",
-      "youtubeVideoUrl": "N/A"
+      "text": "We stayed at Dallas Northeast Campground & RV Park in Caddo Mills, Texas, and overall had a great experience. The staff was friendly and helpful, and the campground was clean with well-maintained gravel roads and a mix of gravel and concrete sites. We especially enjoyed the fishing lake, swimming pool, splash pad, playground, camp store, and fitness center, making it a great stop for families. The campground is conveniently located just off Interstate 30, making it an excellent overnight stop while traveling across Texas. Shopping and restaurants are only about 20 minutes away, with a local market just a few minutes from the campground. Being close to the interstate does mean there is some highway noise, but the convenience outweighs the downside for a travel stop. Wi-Fi was adequate, and the open sky provided excellent Starlink performance. There is a mix of overnight campers and longer-term residents, which didn't impact our stay. Overall, we would happily stay here again.",
+      "youtubeVideoUrl": ""
     }
   ]
 }
