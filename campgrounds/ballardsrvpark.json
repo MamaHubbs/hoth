@@ -1,0 +1,90 @@
+{
+  "id": "ballards-rv-park",
+  "name": "Ballard's RV Park",
+  "state": "Missouri",
+  "state_code": "MO",
+  "status": "starter",
+  "type": "RV Park",
+  "visitYears": [
+    2026
+  ],
+  "summary_text": "A quiet overnight RV park in southeast Missouri offering full-hookup sites, easy interstate access, and a convenient stop for travelers heading across the Midwest.",
+  "address": "1500 State Highway 84, Hayti, MO 63851",
+  "website": "https://ballardsrvpark.com/",
+  "reservations": "https://ballardsrvpark.com/",
+  "parkmap": "",
+  "latitude": 36.6086,
+  "longitude": -89.5276,
+  "amenities": {
+    "electric": "50/30",
+    "waterAtSite": "All Sites",
+    "potableFill": "Yes",
+    "sewer": "All Sites",
+    "dumpStation": "No",
+    "bathhouse": "Yes",
+    "laundryFacilities": "Yes",
+    "cellService": "Excellent",
+    "wifi": "Yes",
+    "tvCable": "No",
+    "petsWelcome": "Yes",
+    "dogPark": "Small Dog Run",
+    "campStore": "Office with Basic Supplies",
+    "propaneRefill": "No",
+    "playground": "No",
+    "swimmingBeach": "No",
+    "swimmingPool": "No",
+    "otherAmenities": [
+      "Clubhouse",
+      "Storm Shelter"
+    ]
+  },
+  "siteFeatures": {
+    "level": "Very level pull-through sites.",
+    "dirt": "No",
+    "gravel": "Sites",
+    "paved": "Roads",
+    "patio": "No",
+    "shade": "Limited",
+    "fireRing": "No",
+    "picnicTable": "Yes",
+    "grill": "No",
+    "otherNotes": [
+      "Large pull-through sites accommodate big rigs.",
+      "Easy access from Interstate 55.",
+      "Minimal tree cover provides excellent Starlink reception.",
+      "Ideal overnight stop when traveling through southeast Missouri."
+    ]
+  },
+  "activities": {
+    "waterfront": "No",
+    "boatingLaunch": "No",
+    "fishing": "Nearby",
+    "hiking": "No",
+    "biking": "Campground Roads",
+    "gameRoom": "No",
+    "otherActivities": [
+      "Dog Walking",
+      "Relaxing"
+    ]
+  },
+  "nearby": {
+    "shopping": [
+      "Love's Travel Stop",
+      "Dollar General",
+      "Walmart"
+    ],
+    "food": [
+      "Fast Food",
+      "Local Restaurants"
+    ],
+    "nearbyAttractions": [
+      "Reelfoot Lake",
+      "Hunter-Dawson State Historic Site",
+      "Hayti Historic District"
+    ],
+    "emergencyMedicalDistance": "Approximately 10 minutes"
+  },
+  "favoriteSites": [],
+  "photoGallery": [],
+  "reviews": []
+}
