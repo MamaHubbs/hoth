@@ -1,0 +1,103 @@
+{
+  "id": "greys-point-camp",
+  "name": "Grey's Point Camp",
+  "state": "Virginia",
+  "state_code": "VA",
+  "status": "starter",
+  "type": "RV Resort",
+  "visitYears": [],
+  "summary_text": "A waterfront RV resort on Virginia's Rappahannock River offering full-hookup campsites, marina access, family activities, and easy access to the Chesapeake Bay region.",
+  "address": "3601 Grey's Point Road, Topping, VA 23169",
+  "website": "https://www.greyspointcamp.com/",
+  "reservations": "https://www.greyspointcamp.com/",
+  "parkmap": "",
+  "latitude": 37.5945,
+  "longitude": -76.4269,
+  "amenities": {
+    "electric": "50/30",
+    "waterAtSite": "All Sites",
+    "potableFill": "Yes",
+    "sewer": "Full-Hookup Sites Available",
+    "dumpStation": "Yes",
+    "bathhouse": "Yes",
+    "laundryFacilities": "Yes",
+    "cellService": "Good",
+    "wifi": "Yes",
+    "tvCable": "No",
+    "petsWelcome": "Yes",
+    "dogPark": "No",
+    "campStore": "Camp Store",
+    "propaneRefill": "Yes",
+    "playground": "Yes",
+    "swimmingBeach": "River Beach",
+    "swimmingPool": "Outdoor Pool",
+    "otherAmenities": [
+      "Marina",
+      "Boat Ramp",
+      "Fishing Pier",
+      "Splash Pad",
+      "Jumping Pillow",
+      "Mini-Golf",
+      "Arcade",
+      "Golf Cart Rentals"
+    ]
+  },
+  "siteFeatures": {
+    "level": "Mostly level sites with a mix of waterfront and interior locations.",
+    "dirt": "Tent Sites",
+    "gravel": "Many Sites",
+    "paved": "Premium Sites",
+    "patio": "Premium Patio Sites",
+    "shade": "Moderate",
+    "fireRing": "Yes",
+    "picnicTable": "Yes",
+    "grill": "Attached to Fire Ring",
+    "otherNotes": [
+      "Many sites offer views of the Rappahannock River.",
+      "Large campground with wide roads and easy RV access.",
+      "Tree cover varies throughout the campground.",
+      "Boaters and anglers will appreciate the on-site marina."
+    ]
+  },
+  "activities": {
+    "waterfront": "Rappahannock River",
+    "boatingLaunch": "On-site Marina",
+    "fishing": "On-site",
+    "hiking": "Walking Trails",
+    "biking": "Campground Roads",
+    "gameRoom": "Arcade",
+    "otherActivities": [
+      "Swimming",
+      "Kayaking",
+      "Paddleboarding",
+      "Boating",
+      "Mini-Golf",
+      "Jumping Pillow",
+      "Planned Family Activities"
+    ]
+  },
+  "nearby": {
+    "shopping": [
+      "Kilmarnock",
+      "Local Grocery Stores",
+      "Pharmacy"
+    ],
+    "food": [
+      "Waterfront Seafood Restaurants",
+      "Local Restaurants",
+      "Ice Cream Shops"
+    ],
+    "nearbyAttractions": [
+      "Deltaville Maritime Museum",
+      "Middlesex County Museum",
+      "Chesapeake Bay",
+      "Belle Isle State Park",
+      "Compass Entertainment Complex",
+      "Historic Urbanna"
+    ],
+    "emergencyMedicalDistance": "Approximately 20 minutes"
+  },
+  "favoriteSites": [],
+  "photoGallery": [],
+  "reviews": []
+}
