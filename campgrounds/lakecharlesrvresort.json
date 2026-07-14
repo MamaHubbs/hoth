@@ -1,0 +1,150 @@
+{
+  "id": "lake-charles-rv-resort",
+  "name": "Lake Charles RV Resort",
+  "previousNames": [
+    {
+      "name": "Lake Charles East / Iowa KOA Holiday",
+      "notes": "Name when we visited in 2021."
+    }
+  ],
+  "id": "lake-charles-east-iowa-koa-holiday",
+  "name": "Lake Charles East / Iowa KOA Holiday - NOW RENAMED",
+  "state": "Louisiana",
+  "state_code": "LA",
+  "status": "starter",
+  "type": "KOA Holiday",
+  "visitYears": [
+    2021
+  ],
+  "visitCount": 1,
+  "summary_text": "A quiet KOA Holiday conveniently located just off Interstate 10 with spacious full-hookup sites, fishing lakes, resort-style amenities, and easy access to Lake Charles and southwest Louisiana.",
+  "address": "21125 Louisiana Cotton Drive, Iowa, LA 70647",
+  "website": "https://koa.com/campgrounds/lake-charles-east/",
+  "reservations": "https://koa.com/campgrounds/lake-charles-east/",
+  "parkmap": "https://koa.com/campgrounds/lake-charles-east/site-type-map/",
+  "latitude": 30.2414,
+  "longitude": -93.0202,
+  "amenities": {
+    "electric": "50/30/20",
+    "waterAtSite": "All Sites",
+    "potableFill": "Yes",
+    "sewer": "Full-Hookup Sites",
+    "dumpStation": "Yes",
+    "bathhouse": "Yes",
+    "laundryFacilities": "Yes",
+    "cellService": "Excellent",
+    "wifi": "Yes",
+    "tvCable": "No",
+    "petsWelcome": "Yes",
+    "dogPark": "KampK9",
+    "campStore": "Camp Store",
+    "propaneRefill": "Yes",
+    "playground": "Yes",
+    "swimmingBeach": "No",
+    "swimmingPool": "Outdoor Pool",
+    "otherAmenities": [
+      "Fishing Lakes",
+      "Clubhouse",
+      "Hot Tub",
+      "Mini-Golf",
+      "Basketball Court",
+      "Pickleball Court",
+      "Horseshoes",
+      "Fire Pit Gathering Area"
+    ]
+  },
+  "siteFeatures": {
+    "level": "Large, mostly level pull-through and back-in sites.",
+    "dirt": "Tent Area",
+    "gravel": "Most RV Sites",
+    "paved": "Campground Roads",
+    "patio": "Premium Patio Sites",
+    "shade": "Limited",
+    "fireRing": "Some Sites",
+    "picnicTable": "Yes",
+    "grill": "Some Sites",
+    "otherNotes": [
+      "Very easy access from Interstate 10.",
+      "Wide roads make navigating larger RVs simple.",
+      "Several premium sites overlook the fishing ponds.",
+      "A great overnight stop when traveling across the Gulf Coast."
+    ]
+  },
+  "starlink": {
+    "rating": "Excellent",
+    "notes": "Minimal tree cover provides a wide, unobstructed view of the sky."
+  },
+  "activities": {
+    "waterfront": "Fishing Lakes",
+    "boatingLaunch": "No",
+    "fishing": "Catch-and-Release Fishing",
+    "hiking": "Walking Paths",
+    "biking": "Campground Roads",
+    "gameRoom": "No",
+    "otherActivities": [
+      "Swimming",
+      "Mini-Golf",
+      "Pickleball",
+      "Basketball",
+      "Fishing",
+      "Bird Watching"
+    ]
+  },
+  "nearby": {
+    "shopping": [
+      "Walmart",
+      "Grocery Stores",
+      "Pharmacy"
+    ],
+    "food": [
+      "Restaurants in Iowa",
+      "Lake Charles Restaurants",
+      "Cajun Cuisine",
+      "Fast Food"
+    ],
+    "nearbyAttractions": [
+      "Lake Charles",
+      "Golden Nugget Casino",
+      "Creole Nature Trail",
+      "Sam Houston Jones State Park",
+      "L'Auberge Casino Resort",
+      "Louisiana Marshes"
+    ]
+  },
+  "petNotes": {
+    "walkingAreas": "Wide campground roads and open grassy areas make for pleasant dog walks.",
+    "dogPark": "KampK9 dog park available.",
+    "dogFriendlyTrails": "Walking paths throughout the campground.",
+    "petRestrictions": "Pets must remain leashed outside the dog park.",
+    "hazards": "Expect heat, humidity, mosquitoes, and other biting insects during warmer months.",
+    "overallPetRating": "Excellent",
+    "notes": "Large grassy areas and the KampK9 make this a comfortable overnight stop with dogs."
+  },
+  "emergencyServices": {
+    "hospital": {
+      "name": "Lake Charles Memorial Hospital",
+      "address": "1701 Oak Park Blvd, Lake Charles, LA 70601",
+      "distance": "Approximately 20 minutes"
+    },
+    "veterinarian": {
+      "name": "Iowa Veterinary Clinic",
+      "address": "203 North Thomson Avenue, Iowa, LA 70647",
+      "distance": "Approximately 5 minutes"
+    },
+    "emergencyVeterinarian": {
+      "name": "Southwest Louisiana Veterinary Center",
+      "address": "1615 Country Club Road, Lake Charles, LA 70605",
+      "distance": "Approximately 20 minutes"
+    }
+  },
+  "tripTips": [
+    "Excellent overnight stop when traveling along Interstate 10.",
+    "Reserve one of the pond-front sites if available.",
+    "Bring fishing gear for the campground lakes.",
+    "Pack bug spray during warmer months.",
+    "Lake Charles is only a short drive away if you need shopping or supplies."
+  ],
+  "favoriteSites": [],
+  "photoGallery": [],
+  "reviews": []
+}
