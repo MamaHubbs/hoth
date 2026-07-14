@@ -132,9 +132,10 @@
         .category-jump-nav {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            justify-content: center;
+            gap: 10px;
             margin: 0 0 24px;
-            padding: 12px;
+            padding: 14px;
             background: #f5f9fd;
             border: 1px solid #e1eaf2;
             border-radius: 8px;
@@ -142,11 +143,11 @@
 
         .category-jump-nav a {
             display: inline-block;
-            padding: 7px 11px;
+            padding: 6px 14px;
             background-color: #2d7cbc;
             color: #fff;
-            border-radius: 999px;
-            font-size: 0.9em;
+            border-radius: 20px;
+            font-size: 0.95em;
             font-weight: bold;
             text-decoration: none;
             white-space: nowrap;
@@ -369,12 +370,9 @@
 
                 sortedCategories.forEach(category => {
                     const categoryId = `category-${slugifyCategory(category)}`;
-                    const campgroundCount = groupedCampgrounds[category].length;
-
                     const jumpLink = document.createElement('a');
                     jumpLink.href = `#${categoryId}`;
-                    jumpLink.textContent =
-                        `${category} (${campgroundCount})`;
+                    jumpLink.textContent = category;
                     jumpNav.appendChild(jumpLink);
 
                     const section = document.createElement('section');
