@@ -1,0 +1,98 @@
+{
+  "id": "delaware-seashore-state-park",
+  "name": "Delaware Seashore State Park",
+  "state": "Delaware",
+  "state_code": "DE",
+  "status": "starter",
+  "type": "State Park",
+  "visitYears": [],
+  "summary_text": "A unique oceanfront state park where you can camp between the Atlantic Ocean and Rehoboth Bay, with easy beach access, fishing, boating, and nearby coastal towns.",
+  "address": "39415 Inlet Road, Rehoboth Beach, DE 19971",
+  "website": "https://destateparks.com/Beaches/DelawareSeashore",
+  "reservations": "https://delawarestateparks.reserveamerica.com/",
+  "parkmap": "",
+  "latitude": 38.6169,
+  "longitude": -75.0678,
+  "amenities": {
+    "electric": "50/30",
+    "waterAtSite": "All Sites",
+    "potableFill": "Yes",
+    "sewer": "Some Sites",
+    "dumpStation": "Yes",
+    "bathhouse": "Yes",
+    "laundryFacilities": "Yes",
+    "cellService": "Good",
+    "wifi": "No",
+    "tvCable": "No",
+    "petsWelcome": "Yes (Seasonal Restrictions on Beaches)",
+    "dogPark": "No",
+    "campStore": "Camp Store",
+    "propaneRefill": "No",
+    "playground": "Yes",
+    "swimmingBeach": "Atlantic Ocean",
+    "swimmingPool": "No",
+    "otherAmenities": [
+      "Fishing Pier",
+      "Boat Launch",
+      "Nature Center",
+      "Fish Cleaning Station"
+    ]
+  },
+  "siteFeatures": {
+    "level": "Mostly level paved and gravel sites.",
+    "dirt": "Tent Sites",
+    "gravel": "Some Sites",
+    "paved": "Many Sites",
+    "patio": "No",
+    "shade": "Limited",
+    "fireRing": "Yes",
+    "picnicTable": "Yes",
+    "grill": "Attached to Fire Ring",
+    "otherNotes": [
+      "Walking distance to the beach from many campsites.",
+      "Open campground with little tree cover.",
+      "Excellent Starlink reception due to unobstructed sky.",
+      "Expect windy conditions near the coast."
+    ]
+  },
+  "activities": {
+    "waterfront": "Atlantic Ocean and Rehoboth Bay",
+    "boatingLaunch": "On-site",
+    "fishing": "Excellent",
+    "hiking": "Nature Trails",
+    "biking": "Junction & Breakwater Trail Nearby",
+    "gameRoom": "No",
+    "otherActivities": [
+      "Swimming",
+      "Surf Fishing",
+      "Kayaking",
+      "Paddleboarding",
+      "Wildlife Viewing",
+      "Bird Watching"
+    ]
+  },
+  "nearby": {
+    "shopping": [
+      "Rehoboth Beach",
+      "Tanger Outlets",
+      "Grocery Stores"
+    ],
+    "food": [
+      "Fresh Seafood",
+      "Boardwalk Restaurants",
+      "Ice Cream Shops"
+    ],
+    "nearbyAttractions": [
+      "Rehoboth Beach",
+      "Bethany Beach",
+      "Indian River Inlet",
+      "Cape Henlopen State Park",
+      "Junction & Breakwater Trail",
+      "Tanger Outlets"
+    ],
+    "emergencyMedicalDistance": "Approximately 15 minutes"
+  },
+  "favoriteSites": [],
+  "photoGallery": [],
+  "reviews": []
+}
