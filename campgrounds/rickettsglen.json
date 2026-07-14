@@ -1,0 +1,103 @@
+{
+  "id": "ricketts-glen-state-park",
+  "name": "Ricketts Glen State Park",
+  "state": "Pennsylvania",
+  "state_code": "PA",
+  "status": "starter",
+  "type": "State Park",
+  "visitYears": [
+    2026
+  ],
+  "summary_text": "One of Pennsylvania's most spectacular state parks, featuring a beautiful wooded campground, 22 named waterfalls, Lake Jean, and miles of hiking through old-growth forest.",
+  "address": "695 State Route 487, Benton, PA 17814",
+  "website": "https://www.pa.gov/agencies/dcnr/recreation/where-to-go/state-parks/find-a-park/ricketts-glen-state-park.html",
+  "reservations": "https://pennsylvaniastateparks.reserveamerica.com/",
+  "parkmap": "",
+  "latitude": 41.3383,
+  "longitude": -76.2794,
+  "amenities": {
+    "electric": "Available at Most Sites",
+    "waterAtSite": "Nearby Hydrants",
+    "potableFill": "Yes",
+    "sewer": "No",
+    "dumpStation": "Yes",
+    "bathhouse": "Yes",
+    "laundryFacilities": "No",
+    "cellService": "VERY Limited",
+    "wifi": "No",
+    "tvCable": "No",
+    "petsWelcome": "Yes",
+    "dogPark": "No",
+    "campStore": "Camp Store",
+    "propaneRefill": "No",
+    "playground": "Yes",
+    "swimmingBeach": "Lake Jean Beach",
+    "swimmingPool": "No",
+    "otherAmenities": [
+      "Boat Rentals",
+      "Visitor Center",
+      "Picnic Areas",
+      "Amphitheater"
+    ]
+  },
+  "siteFeatures": {
+    "level": "Mostly level wooded sites with some requiring minor leveling.",
+    "dirt": "Tent Sites",
+    "gravel": "Most Sites",
+    "paved": "Roads",
+    "patio": "No",
+    "shade": "Heavy",
+    "fireRing": "Yes",
+    "picnicTable": "Yes",
+    "grill": "Attached to Fire Ring",
+    "otherNotes": [
+      "Beautiful mature forest throughout the campground.",
+      "No cell service throughout most of the park.",
+"Heavy tree cover makes Starlink difficult or impossible at many sites.",
+"Download maps before arriving.",
+      "Sites are generally well spaced with a secluded feel.",
+      "The famous Falls Trail is just a short drive from the campground."
+    ]
+  },
+  "activities": {
+    "waterfront": "Lake Jean",
+    "boatingLaunch": "Lake Jean",
+    "fishing": "Lake Jean",
+    "hiking": "Over 26 Miles of Trails Including the Famous Falls Trail",
+    "biking": "Park Roads",
+    "gameRoom": "No",
+    "otherActivities": [
+      "Waterfall Photography",
+      "Swimming",
+      "Kayaking",
+      "Canoeing",
+      "Wildlife Viewing",
+      "Bird Watching"
+    ]
+  },
+  "nearby": {
+    "shopping": [
+      "Benton",
+      "Bloomsburg",
+      "Small Grocery Stores"
+    ],
+    "food": [
+      "Local Restaurants",
+      "Ice Cream Shops",
+      "Family Diners"
+    ],
+    "nearbyAttractions": [
+      "Falls Trail",
+      "22 Named Waterfalls",
+      "Lake Jean",
+      "Worlds End State Park",
+      "Susquehanna River",
+      "Bloomsburg",
+      "Covered Bridges of Columbia County"
+    ],
+    "emergencyMedicalDistance": "Approximately 25 minutes"
+  },
+  "favoriteSites": [],
+  "photoGallery": [],
+  "reviews": []
+}
