@@ -1,0 +1,103 @@
+{
+  "id": "bethpage-camp-resort",
+  "name": "Bethpage Camp-Resort",
+  "state": "Virginia",
+  "state_code": "VA",
+  "status": "starter",
+  "type": "RV Resort",
+  "visitYears": [],
+  "summary_text": "A family-friendly RV resort on Virginia's Northern Neck featuring spacious campsites, resort-style amenities, and easy access to the Chesapeake Bay, local wineries, and historic small towns.",
+  "address": "679 Brown's Lane, Urbanna, VA 23175",
+  "website": "https://www.bethpagecamp.com/",
+  "reservations": "https://www.bethpagecamp.com/",
+  "parkmap": "",
+  "latitude": 37.6762,
+  "longitude": -76.6065,
+  "amenities": {
+    "electric": "50/30",
+    "waterAtSite": "All Sites",
+    "potableFill": "Yes",
+    "sewer": "Full-Hookup Sites Available",
+    "dumpStation": "Yes",
+    "bathhouse": "Yes",
+    "laundryFacilities": "Yes",
+    "cellService": "Good",
+    "wifi": "Yes",
+    "tvCable": "No",
+    "petsWelcome": "Yes",
+    "dogPark": "Yes",
+    "campStore": "Camp Store",
+    "propaneRefill": "Yes",
+    "playground": "Multiple Playgrounds",
+    "swimmingBeach": "Lake Beach",
+    "swimmingPool": "Resort Pool",
+    "otherAmenities": [
+      "Splash Pad",
+      "Mini-Golf",
+      "Fishing Lake",
+      "Jumping Pillow",
+      "Arcade",
+      "Basketball Court",
+      "Pickleball Courts",
+      "Golf Cart Rentals"
+    ]
+  },
+  "siteFeatures": {
+    "level": "Mostly level sites with a mix of pull-through and back-in options.",
+    "dirt": "Tent Sites",
+    "gravel": "Many Sites",
+    "paved": "Premium Sites",
+    "patio": "Premium Patio Sites",
+    "shade": "Moderate",
+    "fireRing": "Yes",
+    "picnicTable": "Yes",
+    "grill": "Attached to Fire Ring",
+    "otherNotes": [
+      "Large campground with several camping loops.",
+      "Premium sites offer patios and additional outdoor living space.",
+      "Most roads are wide and easy to navigate.",
+      "Starlink performance varies depending on tree cover."
+    ]
+  },
+  "activities": {
+    "waterfront": "Fishing Lake",
+    "boatingLaunch": "Lake Access",
+    "fishing": "On-site",
+    "hiking": "Walking Trails",
+    "biking": "Campground Roads",
+    "gameRoom": "Arcade",
+    "otherActivities": [
+      "Swimming",
+      "Mini-Golf",
+      "Splash Pad",
+      "Jumping Pillow",
+      "Pickleball",
+      "Basketball",
+      "Planned Family Activities"
+    ]
+  },
+  "nearby": {
+    "shopping": [
+      "Urbanna",
+      "Gloucester",
+      "Local Grocery Stores"
+    ],
+    "food": [
+      "Seafood Restaurants",
+      "Local Restaurants",
+      "Ice Cream Shops"
+    ],
+    "nearbyAttractions": [
+      "Historic Urbanna",
+      "Chesapeake Bay",
+      "Deltaville Maritime Museum",
+      "Middlesex County Museum",
+      "Local Wineries",
+      "York River State Park"
+    ],
+    "emergencyMedicalDistance": "Approximately 20 minutes"
+  },
+  "favoriteSites": [],
+  "photoGallery": [],
+  "reviews": []
+}
