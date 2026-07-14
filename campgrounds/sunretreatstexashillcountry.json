@@ -4,16 +4,101 @@
   "state": "Texas",
   "state_code": "TX",
   "status": "starter",
+  "type": "RV Resort",
   "visitYears": [
     2026
   ],
-  "summary_text": "A New Braunfels RV resort in the Texas Hill Country with full-hookup sites and family-friendly amenities.",
+  "summary_text": "A modern RV resort in New Braunfels offering spacious full-hookup sites, resort amenities, and a convenient location for exploring the Texas Hill Country, Gruene, and San Antonio.",
   "address": "131 Rueckle Road, New Braunfels, TX 78130",
   "website": "https://www.sunoutdoors.com/texas/sun-retreats-texas-hill-country",
   "reservations": "https://www.sunoutdoors.com/texas/sun-retreats-texas-hill-country",
   "parkmap": "",
   "latitude": 29.6867,
   "longitude": -98.1265,
+  "amenities": {
+    "electric": "50/30",
+    "waterAtSite": "All Sites",
+    "potableFill": "Yes",
+    "sewer": "All Sites",
+    "dumpStation": "No",
+    "bathhouse": "Yes",
+    "laundryFacilities": "Yes",
+    "cellService": "Excellent",
+    "wifi": "Yes",
+    "tvCable": "No",
+    "petsWelcome": "Yes",
+    "dogPark": "Yes",
+    "campStore": "Camp Store",
+    "propaneRefill": "Yes",
+    "playground": "Yes",
+    "swimmingBeach": "No",
+    "swimmingPool": "Resort Pool",
+    "otherAmenities": [
+      "Clubhouse",
+      "Fitness Center",
+      "Pickleball Courts",
+      "Basketball Court",
+      "Golf Cart Rentals",
+      "Community Fire Pit"
+    ]
+  },
+  "siteFeatures": {
+    "level": "Large, mostly level concrete sites.",
+    "dirt": "No",
+    "gravel": "No",
+    "paved": "Concrete Pads and Roads",
+    "patio": "Many Sites",
+    "shade": "Limited",
+    "fireRing": "No",
+    "picnicTable": "Yes",
+    "grill": "No",
+    "otherNotes": [
+      "Wide interior roads make maneuvering large RVs easy.",
+      "Most sites offer generous spacing.",
+      "Minimal tree cover provides excellent Starlink reception.",
+      "Ideal overnight or extended-stay location for exploring the Hill Country."
+    ]
+  },
+  "activities": {
+    "waterfront": "No",
+    "boatingLaunch": "Nearby",
+    "fishing": "Nearby",
+    "hiking": "Nearby",
+    "biking": "Campground Roads and Nearby Trails",
+    "gameRoom": "Yes",
+    "otherActivities": [
+      "Swimming",
+      "Pickleball",
+      "Basketball",
+      "Fitness Center",
+      "Planned Resort Activities"
+    ]
+  },
+  "nearby": {
+    "shopping": [
+      "HEB",
+      "Target",
+      "Walmart",
+      "Outlet Malls"
+    ],
+    "food": [
+      "Gruene Restaurants",
+      "Local BBQ",
+      "Fast Food",
+      "Texas Wineries and Breweries"
+    ],
+    "nearbyAttractions": [
+      "Historic Gruene",
+      "Gruene Hall",
+      "Schlitterbahn Waterpark",
+      "Comal River",
+      "Guadalupe River",
+      "Natural Bridge Caverns",
+      "Natural Bridge Wildlife Ranch",
+      "Downtown New Braunfels"
+    ],
+    "emergencyMedicalDistance": "Approximately 10 minutes"
+  },
   "favoriteSites": [],
   "photoGallery": [],
   "reviews": []
