@@ -1,0 +1,134 @@
+{
+  "id": "candy-hill-campground",
+  "name": "Candy Hill Campground",
+  "state": "Virginia",
+  "state_code": "VA",
+  "status": "starter",
+  "type": "Campground",
+  "visitYears": [],
+  "visitCount": 0,
+  "summary_text": "A convenient full-service campground in Winchester, Virginia, offering spacious RV sites, family amenities, and an excellent overnight stop just minutes from Interstate 81 and historic downtown Winchester.",
+  "address": "1035 East Side Highway, Winchester, VA 22602",
+  "website": "https://www.candyhill.com/",
+  "reservations": "https://www.candyhill.com/",
+  "parkmap": "",
+  "latitude": 39.1494,
+  "longitude": -78.1549,
+  "amenities": {
+    "electric": "50/30/20",
+    "waterAtSite": "All Sites",
+    "potableFill": "Yes",
+    "sewer": "Full-Hookup Sites",
+    "dumpStation": "Yes",
+    "bathhouse": "Yes",
+    "laundryFacilities": "Yes",
+    "cellService": "Excellent",
+    "wifi": "Yes",
+    "tvCable": "Yes",
+    "petsWelcome": "Yes",
+    "dogPark": "Dog Park",
+    "campStore": "Camp Store",
+    "propaneRefill": "Yes",
+    "playground": "Yes",
+    "swimmingBeach": "No",
+    "swimmingPool": "Outdoor Pool",
+    "otherAmenities": [
+      "Jumping Pillow",
+      "Mini-Golf",
+      "Basketball",
+      "Horseshoes",
+      "Game Room",
+      "Gem Mining"
+    ]
+  },
+  "siteFeatures": {
+    "level": "Mostly level sites with pull-through and back-in options.",
+    "dirt": "Tent Sites",
+    "gravel": "Some Sites",
+    "paved": "Many Sites",
+    "patio": "Premium Sites",
+    "shade": "Moderate",
+    "fireRing": "Some Sites",
+    "picnicTable": "Yes",
+    "grill": "Some Sites",
+    "otherNotes": [
+      "Easy access from Interstate 81.",
+      "Large sites accommodate big rigs.",
+      "Excellent overnight stop while traveling through the Shenandoah Valley."
+    ]
+  },
+  "starlink": {
+    "rating": "Good",
+    "notes": "Most sites have a fairly open view of the sky, although mature trees may obstruct some locations."
+  },
+  "activities": {
+    "waterfront": "No",
+    "boatingLaunch": "No",
+    "fishing": "No",
+    "hiking": "Nearby",
+    "biking": "Campground Roads",
+    "gameRoom": "Yes",
+    "otherActivities": [
+      "Swimming",
+      "Mini-Golf",
+      "Jumping Pillow",
+      "Basketball",
+      "Gem Mining"
+    ]
+  },
+  "nearby": {
+    "shopping": [
+      "Walmart",
+      "Target",
+      "Costco",
+      "Winchester Shopping Centers"
+    ],
+    "food": [
+      "Numerous Restaurants",
+      "Fast Food",
+      "Local Breweries"
+    ],
+    "nearbyAttractions": [
+      "Historic Downtown Winchester",
+      "Museum of the Shenandoah Valley",
+      "Shenandoah National Park",
+      "Skyline Drive",
+      "Apple Blossom Trail"
+    ]
+  },
+  "petNotes": {
+    "walkingAreas": "Wide campground roads and grassy areas provide plenty of room for dog walks.",
+    "dogPark": "Dedicated dog park available.",
+    "dogFriendlyTrails": "Nearby parks and walking trails allow leashed pets.",
+    "petRestrictions": "Pets must remain leashed outside the dog park.",
+    "hazards": "Hot pavement during the summer and occasional ticks in grassy areas.",
+    "overallPetRating": "Excellent",
+    "notes": "A convenient stop for travelers with dogs thanks to the dedicated dog park and easy walking areas."
+  },
+  "emergencyServices": {
+    "hospital": {
+      "name": "Valley Health Winchester Medical Center",
+      "address": "1840 Amherst Street, Winchester, VA 22601",
+      "distance": "Approximately 10 minutes"
+    },
+    "veterinarian": {
+      "name": "Apple Valley Animal Hospital",
+      "address": "1043 Millwood Pike, Winchester, VA 22602",
+      "distance": "Approximately 5 minutes"
+    },
+    "emergencyVeterinarian": {
+      "name": "Veterinary Emergency Critical Care",
+      "address": "165 Fort Collier Road, Winchester, VA 22603",
+      "distance": "Approximately 10 minutes"
+    }
+  },
+  "tripTips": [
+    "A great overnight stop when traveling along Interstate 81.",
+    "Historic downtown Winchester is well worth exploring.",
+    "Book ahead during the Shenandoah Apple Blossom Festival.",
+    "Stock up on groceries before heading deeper into the Shenandoah Valley."
+  ],
+  "favoriteSites": [],
+  "photoGallery": [],
+  "reviews": []
+}
