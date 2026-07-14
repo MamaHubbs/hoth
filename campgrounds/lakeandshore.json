@@ -1,0 +1,143 @@
+{
+  "id": "lake-shore-rv-resort",
+  "name": "Lake & Shore RV Resort",
+  "state": "New Jersey",
+  "state_code": "NJ",
+  "status": "starter",
+  "type": "RV Resort",
+  "visitYears": [],
+  "summary_text": "A large, family-focused RV resort near the Jersey Shore featuring wooded campsites, a swimming lake, water park, pool, boating, fishing, and easy access to Ocean City, Cape May, and Atlantic City.",
+  "address": "515 Corson Tavern Road, Ocean View, NJ 08230",
+  "website": "https://thousandtrails.com/new-jersey/lake-shore-rv-resort",
+  "reservations": "https://thousandtrails.com/new-jersey/lake-shore-rv-resort",
+  "parkmap": "",
+  "latitude": 39.1952349,
+  "longitude": -74.7310182,
+  "amenities": {
+    "electric": "50/30",
+    "waterAtSite": "Available at RV Sites",
+    "potableFill": "Yes",
+    "sewer": "Full-Hookup Sites Available",
+    "dumpStation": "Yes",
+    "bathhouse": "Yes",
+    "laundryFacilities": "Yes",
+    "cellService": "Good",
+    "wifi": "Available for a Fee",
+    "tvCable": "Available for a Fee",
+    "petsWelcome": "Yes",
+    "dogPark": "Yes",
+    "campStore": "Groceries, RV Supplies, Firewood and Ice",
+    "propaneRefill": "Yes",
+    "playground": "Yes",
+    "swimmingBeach": "Lake Swimming Area",
+    "swimmingPool": "Outdoor Pool",
+    "otherAmenities": [
+      "Water Park",
+      "Hot Tub",
+      "Mini-Golf",
+      "Recreation Hall",
+      "Snack Bar",
+      "Pavilion",
+      "Cabin Rentals"
+    ]
+  },
+  "siteFeatures": {
+    "level": "Varies by site",
+    "dirt": "Some Sites",
+    "gravel": "Many Sites",
+    "paved": "Campground Roads",
+    "patio": "Varies by Site",
+    "shade": "Moderate to Heavy",
+    "fireRing": "Yes",
+    "picnicTable": "Yes",
+    "grill": "Available at Sites",
+    "otherNotes": [
+      "The resort contains a large number of seasonal campsites.",
+      "Transient campsites are more limited than the overall resort size may suggest.",
+      "Wooded sites provide good shade but conditions vary throughout the property.",
+      "Review individual site dimensions carefully when reserving a larger RV."
+    ]
+  },
+  "starlink": {
+    "rating": "Varies by Site",
+    "notes": "Open sites may provide usable reception, while heavily wooded sites may have significant obstructions."
+  },
+  "activities": {
+    "waterfront": "On-site Lake",
+    "boatingLaunch": "Lake Access for Small Non-Motorized Boats",
+    "fishing": "On-site Lake",
+    "hiking": "Nature Trails",
+    "biking": "Campground Roads",
+    "gameRoom": "Recreation Hall and Game Room",
+    "otherActivities": [
+      "Swimming",
+      "Water Park",
+      "Kayaking",
+      "Canoeing",
+      "Mini-Golf",
+      "Pickleball",
+      "Basketball",
+      "Horseshoes",
+      "Planned Family Activities"
+    ]
+  },
+  "nearby": {
+    "shopping": [
+      "Grocery Stores",
+      "Pharmacy",
+      "Shopping in Ocean City",
+      "Walmart"
+    ],
+    "food": [
+      "Jersey Shore Restaurants",
+      "Seafood",
+      "Boardwalk Food",
+      "Fast Food"
+    ],
+    "nearbyAttractions": [
+      "Ocean City",
+      "Sea Isle City",
+      "Cape May",
+      "Cape May County Park and Zoo",
+      "Atlantic City",
+      "Corson's Inlet State Park",
+      "Jersey Shore Beaches"
+    ]
+  },
+  "petNotes": {
+    "walkingAreas": "Wooded campground roads and internal walking areas provide several options for walking dogs.",
+    "dogPark": "A designated dog park is available.",
+    "dogFriendlyTrails": "Leashed pets can use campground walking areas and permitted nearby trails.",
+    "petRestrictions": "Pets must remain leashed outside the dog park. Beach restrictions vary by municipality and season.",
+    "hazards": "Check pets for ticks after walking through wooded or grassy areas. Hot pavement and sand can also be a concern during summer.",
+    "overallPetRating": "Good",
+    "notes": "The shaded campground is generally comfortable for pets, but confirm seasonal beach rules before taking dogs to the shore."
+  },
+  "emergencyServices": {
+    "hospital": {
+      "name": "Cooper University Hospital Cape Regional",
+      "address": "2 Stone Harbor Boulevard, Cape May Court House, NJ 08210",
+      "distance": "Approximately 15 minutes"
+    },
+    "veterinarian": {
+      "name": "Shore Veterinarians - Seaville",
+      "address": "73 Hope Corson Road, Ocean View, NJ 08230",
+      "distance": "Approximately 5 minutes"
+    },
+    "emergencyVeterinarian": {
+      "name": "Ocean View Veterinary Hospital",
+      "address": "2033 US-9 North, Cape May Court House, NJ 08210",
+      "distance": "Approximately 15 minutes"
+    }
+  },
+  "tripTips": [
+    "Book early because many campsites are occupied by seasonal campers.",
+    "Confirm whether Wi-Fi and cable charges are included with your reservation.",
+    "Bring bicycles or a golf cart alternative because the resort is large.",
+    "Check seasonal pet rules before planning a beach day with your dog.",
+    "Plan at least one day for Ocean City or Cape May."
+  ],
+  "favoriteSites": [],
+  "photoGallery": [],
+  "reviews": []
+}
