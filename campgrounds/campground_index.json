@@ -364,16 +364,16 @@
   "visitCount": 1
 },
 {
-  "id": "lake-charles-east-iowa-koa-journey",
-  "name": "Lake Charles East / Iowa KOA Journey",
+  "id": "lake-charles-rv-resort",
+  "name": "Lake Charles RV Resort",
   "state": "Louisiana",
   "state_code": "LA",
   "latitude": 30.243,
   "longitude": -92.953,
-  "filename": "lakecharleskoa",
-  "visitYears": [20],
+  "filename": "lakecharlesrvresort",
+  "visitYears": [2026],
   "visitCount": 1
-},
+}
     {
   "id": "candy-hill-campground",
   "name": "Candy Hill Campground",
@@ -441,16 +441,16 @@
   "visitCount": 1
 },
 {
-  "id": "masseys-landing",
-  "name": "Massey's Landing",
+  "id": "sun-outdoors-rehoboth-bay",
+  "name": "Sun Outdoors Rehoboth Bay",
   "state": "Delaware",
   "state_code": "DE",
-  "latitude": 38.6248,
-  "longitude": -75.1662,
-  "filename": "masseyslanding",
-  "visitYears": [20],
+  "latitude": 38.62534,
+  "longitude": -75.103807,
+  "filename": "sunoutdoorsrehobothbay",
+  "visitYears": [2024, 2025],
   "visitCount": 2
-},
+}
 {
   "id": "gettysburg-battlefield-koa-holiday",
   "name": "Gettysburg / Battlefield KOA Holiday",
@@ -472,6 +472,28 @@
   "filename": "arbuckle",
   "visitYears": [2021],
   "visitCount": 1
+},
+    {
+  "id": "douthat-state-park",
+  "name": "Douthat State Park",
+  "state": "Virginia",
+  "state_code": "VA",
+  "latitude": 37.8947,
+  "longitude": -79.8059,
+  "filename": "douthat",
+  "visitYears": [2026],
+  "visitCount": 1
+},
+    {
+  "id": "frances-slocum-state-park",
+  "name": "Frances Slocum State Park",
+  "state": "Pennsylvania",
+  "state_code": "PA",
+  "latitude": 41.3478,
+  "longitude": -75.8786,
+  "filename": "francesslocum",
+  "visitYears": [2024, 2025],
+  "visitCount": 2
 }
   ]
 }
