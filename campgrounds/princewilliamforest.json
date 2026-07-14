@@ -1,0 +1,97 @@
+{
+  "id": "prince-william-forest-rv-campground",
+  "name": "Prince William Forest RV Campground",
+  "state": "Virginia",
+  "state_code": "VA",
+  "status": "starter",
+  "type": "Private Campground",
+  "visitYears": [
+    2026
+  ],
+  "summary_text": "A quiet wooded campground adjacent to Prince William Forest Park offering full-hookup RV sites and an excellent basecamp for exploring Northern Virginia, Washington, D.C., and one of the East Coast's largest protected forests.",
+  "address": "16058 Dumfries Road, Dumfries, VA 22025",
+  "website": "https://www.princewilliamforestrvcampground.com/",
+  "reservations": "https://www.princewilliamforestrvcampground.com/",
+  "parkmap": "",
+  "latitude": 38.6466,
+  "longitude": -77.3816,
+  "amenities": {
+    "electric": "50/30",
+    "waterAtSite": "All Sites",
+    "potableFill": "Yes",
+    "sewer": "All Sites",
+    "dumpStation": "No",
+    "bathhouse": "Yes",
+    "laundryFacilities": "Yes",
+    "cellService": "Good",
+    "wifi": "Yes",
+    "tvCable": "No",
+    "petsWelcome": "Yes",
+    "dogPark": "Dog Run",
+    "campStore": "Camp Store",
+    "propaneRefill": "Yes",
+    "playground": "Yes",
+    "swimmingBeach": "No",
+    "swimmingPool": "Outdoor Pool",
+    "otherAmenities": [
+      "Clubhouse",
+      "Pavilion",
+      "Basketball Court"
+    ]
+  },
+  "siteFeatures": {
+    "level": "Mostly level sites with pull-through and back-in options.",
+    "dirt": "No",
+    "gravel": "Some Sites",
+    "paved": "Many Sites",
+    "patio": "Some Sites",
+    "shade": "Moderate",
+    "fireRing": "Yes",
+    "picnicTable": "Yes",
+    "grill": "Attached to Fire Ring",
+    "otherNotes": [
+      "Easy access for large RVs.",
+      "Tree cover varies throughout the campground.",
+      "Starlink performance varies depending on site location.",
+      "Excellent location just outside Prince William Forest Park."
+    ]
+  },
+  "activities": {
+    "waterfront": "No",
+    "boatingLaunch": "Nearby",
+    "fishing": "Nearby",
+    "hiking": "Prince William Forest Park",
+    "biking": "Campground Roads and National Park Trails",
+    "gameRoom": "No",
+    "otherActivities": [
+      "Swimming",
+      "Basketball",
+      "Wildlife Viewing"
+    ]
+  },
+  "nearby": {
+    "shopping": [
+      "Costco",
+      "Grocery Stores",
+      "Target",
+      "Walmart"
+    ],
+    "food": [
+      "Fast Food",
+      "Local Restaurants",
+      "National Chains"
+    ],
+    "nearbyAttractions": [
+      "Prince William Forest Park",
+      "National Museum of the Marine Corps",
+      "Quantico",
+      "Occoquan Bay National Wildlife Refuge",
+      "Historic Occoquan",
+      "Washington, D.C."
+    ],
+    "emergencyMedicalDistance": "Approximately 10 minutes"
+  },
+  "favoriteSites": [],
+  "photoGallery": [],
+  "reviews": []
+}
