@@ -1,0 +1,128 @@
+{
+  "id": "arbuckle-rv-resort",
+  "name": "Arbuckle RV Resort",
+  "state": "Oklahoma",
+  "state_code": "OK",
+  "status": "starter",
+  "type": "RV Resort",
+  "visitYears": [
+    2026
+  ],
+  "visitCount": 1,
+  "summary_text": "A modern RV resort in Davis, Oklahoma, offering spacious full-hookup sites and an excellent basecamp for exploring Turner Falls Park, the Chickasaw National Recreation Area, and the Arbuckle Mountains.",
+  "address": "35 Fairlawn Drive, Davis, OK 73030",
+  "website": "https://arbucklerv.com/",
+  "reservations": "https://arbucklerv.com/",
+  "parkmap": "",
+  "latitude": 34.5042,
+  "longitude": -97.1199,
+  "amenities": {
+    "electric": "50/30",
+    "waterAtSite": "All Sites",
+    "potableFill": "Yes",
+    "sewer": "Full Hookup",
+    "dumpStation": "No",
+    "bathhouse": "Yes",
+    "laundryFacilities": "Yes",
+    "cellService": "Excellent",
+    "wifi": "Available",
+    "tvCable": "No",
+    "petsWelcome": "Yes",
+    "dogPark": "Yes",
+    "campStore": "Office with Basic Supplies",
+    "propaneRefill": "No",
+    "playground": "No",
+    "swimmingBeach": "No",
+    "swimmingPool": "Outdoor Pool",
+    "otherAmenities": [
+      "Clubhouse",
+      "Fitness Center",
+      "Pickleball Courts"
+    ]
+  },
+  "siteFeatures": {
+    "level": "Large, level concrete pull-through and back-in sites.",
+    "dirt": "No",
+    "gravel": "No",
+    "paved": "Roads and Sites",
+    "patio": "Concrete Pad",
+    "shade": "Very Limited",
+    "fireRing": "No",
+    "picnicTable": "Yes",
+    "grill": "No",
+    "otherNotes": [
+      "Wide roads make maneuvering easy.",
+      "A newer resort with spacious sites.",
+      "Open skies provide excellent views."
+    ]
+  },
+  "starlink": {
+    "rating": "Excellent",
+    "notes": "Very open skies with virtually no tree obstructions."
+  },
+  "activities": {
+    "waterfront": "No",
+    "boatingLaunch": "Nearby",
+    "fishing": "Nearby",
+    "hiking": "Nearby",
+    "biking": "Campground Roads",
+    "gameRoom": "Clubhouse",
+    "otherActivities": [
+      "Swimming",
+      "Pickleball",
+      "Fitness Center"
+    ]
+  },
+  "nearby": {
+    "shopping": [
+      "Walmart",
+      "Local Grocery",
+      "Pharmacy"
+    ],
+    "food": [
+      "Local Restaurants",
+      "Fast Food"
+    ],
+    "nearbyAttractions": [
+      "Turner Falls Park",
+      "Chickasaw National Recreation Area",
+      "Arbuckle Mountains",
+      "Lake of the Arbuckles"
+    ]
+  },
+  "petNotes": {
+    "walkingAreas": "Wide roads and grassy areas provide plenty of room for walking dogs.",
+    "dogPark": "Large fenced dog park.",
+    "dogFriendlyTrails": "Nearby trails in Chickasaw National Recreation Area allow leashed pets in many areas.",
+    "petRestrictions": "Pets must remain leashed outside the dog park.",
+    "hazards": "Limited shade and hot pavement during the summer.",
+    "overallPetRating": "Excellent",
+    "notes": "A very pet-friendly resort with excellent walking space and a dedicated dog park."
+  },
+  "emergencyServices": {
+    "hospital": {
+      "name": "Arbuckle Memorial Hospital",
+      "address": "201 Walnut Street, Sulphur, OK 73086",
+      "distance": "Approximately 15 minutes"
+    },
+    "veterinarian": {
+      "name": "Arbuckle Veterinary Clinic",
+      "address": "1610 West Broadway Avenue, Sulphur, OK 73086",
+      "distance": "Approximately 15 minutes"
+    },
+    "emergencyVeterinarian": {
+      "name": "Oklahoma Veterinary Specialists",
+      "address": "1501 North Santa Fe Avenue, Edmond, OK 73003",
+      "distance": "Approximately 1 hour 30 minutes"
+    }
+  },
+  "tripTips": [
+    "Visit Turner Falls early in the day before the crowds arrive.",
+    "Spend time exploring Chickasaw National Recreation Area.",
+    "Bring bicycles to explore the nearby area.",
+    "Reserve a pull-through site if you're staying only one night."
+  ],
+  "favoriteSites": [],
+  "photoGallery": [],
+  "reviews": []
+}
