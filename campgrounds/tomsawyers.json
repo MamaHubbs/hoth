@@ -1,0 +1,133 @@
+{
+  "id": "tom-sawyers-rv-park",
+  "name": "Tom Sawyer's RV Park",
+  "state": "Arkansas",
+  "state_code": "AR",
+  "status": "starter",
+  "type": "RV Park",
+  "visitYears": [
+    2021
+  ],
+  "visitCount": 1,
+  "summary_text": "A unique riverfront RV park on the banks of the Mississippi River where nearly every campsite overlooks one of America's greatest waterways.",
+  "address": "4375 US Highway 49, West Memphis, AR 72301",
+  "website": "https://www.tomsawyersrvpark.com/",
+  "reservations": "https://www.tomsawyersrvpark.com/",
+  "parkmap": "",
+  "latitude": 35.1533,
+  "longitude": -90.1765,
+  "amenities": {
+    "electric": "50/30",
+    "waterAtSite": "All Sites",
+    "potableFill": "Yes",
+    "sewer": "Full-Hookup Sites",
+    "dumpStation": "No",
+    "bathhouse": "Yes",
+    "laundryFacilities": "Yes",
+    "cellService": "Excellent",
+    "wifi": "Available",
+    "tvCable": "No",
+    "petsWelcome": "Yes",
+    "dogPark": "No",
+    "campStore": "Office with Basic Supplies",
+    "propaneRefill": "No",
+    "playground": "No",
+    "swimmingBeach": "No",
+    "swimmingPool": "No",
+    "otherAmenities": [
+      "Riverfront Sites",
+      "Fishing",
+      "Boat Ramp Nearby"
+    ]
+  },
+  "siteFeatures": {
+    "level": "Mostly level gravel sites.",
+    "dirt": "No",
+    "gravel": "All Sites",
+    "paved": "Roads",
+    "patio": "No",
+    "shade": "Minimal",
+    "fireRing": "No",
+    "picnicTable": "Yes",
+    "grill": "No",
+    "otherNotes": [
+      "Many sites back directly up to the Mississippi River.",
+      "Large barges regularly travel past the campground.",
+      "Excellent for watching river traffic.",
+      "Easy access for larger RVs."
+    ]
+  },
+  "starlink": {
+    "rating": "Excellent",
+    "notes": "Open skies with virtually no tree obstructions."
+  },
+  "activities": {
+    "waterfront": "Mississippi River",
+    "boatingLaunch": "Nearby",
+    "fishing": "River Fishing",
+    "hiking": "No",
+    "biking": "Campground Roads",
+    "gameRoom": "No",
+    "otherActivities": [
+      "Watching River Barges",
+      "Photography",
+      "Bird Watching"
+    ]
+  },
+  "nearby": {
+    "shopping": [
+      "Walmart",
+      "Bass Pro Shops at the Pyramid",
+      "Downtown Memphis"
+    ],
+    "food": [
+      "Memphis Barbecue",
+      "Local Restaurants",
+      "Fast Food"
+    ],
+    "nearbyAttractions": [
+      "Beale Street",
+      "Graceland",
+      "National Civil Rights Museum",
+      "Bass Pro Shops Pyramid",
+      "Downtown Memphis"
+    ]
+  },
+  "petNotes": {
+    "walkingAreas": "Wide open grassy areas along the river provide excellent places to walk dogs.",
+    "dogPark": "No dedicated dog park.",
+    "dogFriendlyTrails": "Campground roads and riverfront areas.",
+    "petRestrictions": "Pets must remain leashed.",
+    "hazards": "Steep riverbank in some areas. Watch pets near the Mississippi River.",
+    "overallPetRating": "Excellent",
+    "notes": "The open riverfront makes for beautiful dog walks, but keep pets away from the riverbank."
+  },
+  "emergencyServices": {
+    "hospital": {
+      "name": "Baptist Memorial Hospital - Memphis",
+      "address": "6019 Walnut Grove Road, Memphis, TN 38120",
+      "distance": "Approximately 20 minutes"
+    },
+    "veterinarian": {
+      "name": "Eastgate Animal Clinic",
+      "address": "1020 Ingram Boulevard, West Memphis, AR 72301",
+      "distance": "Approximately 10 minutes"
+    },
+    "emergencyVeterinarian": {
+      "name": "Memphis Veterinary Specialists",
+      "address": "555 Trinity Creek Cove, Cordova, TN 38018",
+      "distance": "Approximately 30 minutes"
+    }
+  },
+  "tripTips": [
+  "Reserve a riverfront site—it's the reason to stay here.",
+  "Plan time to simply sit outside and watch the barges travel up and down the Mississippi River.",
+  "If you're traveling with kids reading Tom Sawyer or Huckleberry Finn, this is a fun stop that brings those stories to life.",
+        "Visit Memphis while you're here.",
+    "Bring a camera for sunrise and sunset over the Mississippi River.",
+  "A perfect overnight stop when crossing the Mississippi."
+  ],
+  "favoriteSites": [],
+  "photoGallery": [],
+  "reviews": []
+}
