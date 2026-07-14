@@ -13,8 +13,8 @@
   "website": "https://koa.com/campgrounds/houghton/",
   "reservations": "https://koa.com/campgrounds/houghton/",
   "parkmap": "",
-  "latitude": 42.4225,
-  "longitude": -78.1562,
+      "latitude": 42.4414,
+      "longitude": -78.1682,
   "amenities": {
     "electric": "50/30",
     "waterAtSite": "All Sites",
