@@ -1,10 +1,14 @@
 {
-  "id": "newport-news-park-11-2025",
+  "id": "newport-news-park",
   "name": "Newport News Park Campground",
   "state": "Virginia",
   "state_code": "VA",
   "status": "complete",
-  "summary_text": "Nature Meets Convenience — Wooded privacy, water views, and endless places to explore nearby.",
+  "type": "Regional Park",
+  "visitYears": [
+    2025
+  ],
+  "summary_text": "A peaceful, wooded campground in Newport News Park offering waterfront campsites, miles of trails, and easy access to Colonial Williamsburg, Yorktown, Hampton Roads, and Virginia Beach.",
   "address": "13564 Jefferson Ave, Newport News, VA 23603",
   "website": "https://www.visitnewportnews.com/stay/camping/",
   "reservations": "https://online.rezexpert.com/book?business_code=300026",
@@ -12,50 +16,93 @@
   "latitude": 37.188648927782964,
   "longitude": -76.55836548941465,
   "amenities": {
-    "electric": "Yes",
-    "waterAtSite": "Yes",
-    "potableFill": true,
+    "electric": "30/20",
+    "waterAtSite": "All Sites",
+    "potableFill": "Yes",
     "sewer": "No",
-    "dumpStation": true,
-    "bathhouse": true,
-    "laundryFacilities": true,
-    "cellService": "Fair",
-    "wifi": false,
-    "tvCable": false,
-    "petsWelcome": true,
-    "dogPark": false,
-    "campStore": true,
-    "propaneRefill": false,
-    "playground": false,
-    "swimmingPool": false,
-    "otherAmenities": ["N/A"]
+    "dumpStation": "Yes",
+    "bathhouse": "Yes",
+    "laundryFacilities": "Yes",
+    "cellService": "Good",
+    "wifi": "No",
+    "tvCable": "No",
+    "petsWelcome": "Yes",
+    "dogPark": "No",
+    "campStore": "Yes",
+    "propaneRefill": "No",
+    "playground": "No",
+    "swimmingBeach": "No",
+    "swimmingPool": "No",
+    "otherAmenities": [
+      "Discovery Nature Center",
+      "Floral Gardens",
+      "Archery Range",
+      "Model Airplane Flying Field",
+      "Disc Golf Course",
+      "Public Golf Course"
+    ]
   },
   "siteFeatures": {
-    "level": "Level-ish but plan to bring some blocks and extra boards to build up as needed.",
-    "dirt": ["Some"],
-    "gravel": ["Some"],
-    "paved": ["Some"],
-    "patio": false,
-    "shade": true,
-    "fireRing": true,
-    "picnicTable": true,
-    "grill": ["As part of the fire ring"],
-    "otherNotes": ["All of the sites are very well shaded so using Starlink may be a challenge. Cell phone service was strong enough for video conferencing."]
+    "level": "Mostly level, although leveling blocks are recommended for many sites.",
+    "dirt": "Some Sites",
+    "gravel": "Some Sites",
+    "paved": "Some Sites",
+    "patio": "No",
+    "shade": "Heavy",
+    "fireRing": "Yes",
+    "picnicTable": "Yes",
+    "grill": "Attached to Fire Ring",
+    "otherNotes": [
+      "Many sites overlook the reservoir.",
+      "Dense tree cover limits Starlink reception.",
+      "Cell service was strong enough for video conferencing.",
+      "Sites are well spaced and offer excellent privacy."
+    ]
   },
   "activities": {
-    "boatingLaunch": true,
-    "fishing": true,
-    "hiking": "Nice walking trails throughout the park.",
-    "biking": true,
-    "gameRoom": false,
-    "otherActivities": ["Disc Golf, Public Golf Course, Archery, 30 acre aeromodel flying field, Discovery Nature Center, Floral Gardens, Celebration of Lights drive-through Christmas lights in Dec" ]
+    "waterfront": "Lee Hall Reservoir",
+    "boatingLaunch": "On-site",
+    "fishing": "Lee Hall Reservoir",
+    "hiking": "Miles of Park Trails",
+    "biking": "Park Roads and Multi-use Trails",
+    "gameRoom": "No",
+    "otherActivities": [
+      "Disc Golf",
+      "Golf",
+      "Archery",
+      "Model Airplane Flying Field",
+      "Nature Center",
+      "Bird Watching",
+      "Celebration in Lights (Seasonal)"
+    ]
   },
   "nearby": {
-    "shopping": ["Within 15 minutes there are large shopping centers with stores such as Walmart, Target, Best Buy, Bass Pro Shops, etc."],
-    "food": ["Several grocery stores within a 5-10 minute drive, plus local restaurants. There are also a few local brewing companies to visit."],
-    "emergencyMedicalDistance": "10 minutes"
+    "shopping": [
+      "Bass Pro Shops",
+      "Best Buy",
+      "Target",
+      "Walmart"
+    ],
+    "food": [
+      "Grocery Stores",
+      "Local Breweries",
+      "Local Restaurants"
+    ],
+    "nearbyAttractions": [
+      "Colonial Williamsburg",
+      "Jamestown Settlement",
+      "Yorktown Battlefield",
+      "Grandview Nature Preserve",
+      "Fort Monroe National Monument",
+      "Virginia Living Museum",
+      "Virginia Beach",
+      "Norfolk"
+    ],
+    "emergencyMedicalDistance": "Approximately 10 minutes"
   },
-  "favoriteSites": ["B46"],
+  "favoriteSites": [
+    "B46"
+  ],
   "photoGallery": [
     {
       "url": "https://mamahubbs.github.io/hoth/image/nnp01.JPG",
@@ -63,15 +110,15 @@
     },
     {
       "url": "https://mamahubbs.github.io/hoth/image/nnp02.JPG",
-      "caption": "Camp ambiance"
+      "caption": "Camp Ambiance"
     },
     {
       "url": "https://mamahubbs.github.io/hoth/image/nnp03.JPG",
-      "caption": "Water view from my site"
+      "caption": "Water View from Site B46"
     },
     {
       "url": "https://mamahubbs.github.io/hoth/image/nnp04.JPG",
-      "caption": "Sunset over the reservoir"
+      "caption": "Sunset over Lee Hall Reservoir"
     }
   ],
   "reviews": [
@@ -80,8 +127,8 @@
       "visitDate": "November 2025",
       "reviewDate": "11-24-2025",
       "starRating": 4,
-      "text": "This is my second stay at Newport News Park Campground, a lovely city-run campground tucked into a beautifully wooded setting. The atmosphere is peaceful and natural, with many sites sitting along a small reservoir—having the water right outside my site made for a wonderfully relaxing stay. I loved being able to sit and look out at the water, walk my dog along the quiet loops, and explore the nearby hiking and biking trails.<br><br>  The campground store near the entrance is small but has the essentials. The sites are nicely spread out, giving you a real sense of privacy, and while the facilities are a bit dated, they’re fully functional and have everything you need.<br><br> One of my favorite discoveries on this trip was Grandview Nature Preserve, about a 30-minute drive away — an incredible spot for a shoreline walk and enjoying the coastal scenery. The campground’s location is also fantastic for exploring the region. You’re close to Colonial Williamsburg, Yorktown Battlefield, Jamestown Settlement, Fort Monroe, Hampton, Norfolk, and even Virginia Beach for a day trip. Norfolk itself has plenty of museums and activities, plus summer whale-watching and fishing tours if you’re looking for something extra memorable. There are also several local breweries in the area if you enjoy checking out the craft beer scene, along with shopping, restaurants, and other nature preserves. <br><br> Cons: The main downside is noise. The campground is close to I-64, so road noise is noticeable throughout the day, though after a while, you start to tune it out. There’s also a train that occasionally comes through and blows its whistle. <br><br> Overall: This is an amazing area to explore — from its deep historical roots to its family-friendly activities and natural beauty. Newport News Park Campground is an excellent launching point for all of it, and despite the road noise, I thoroughly enjoyed my stay and would happily return again.",
-      "youtubeVideoUrl": "N/A"
+      "text": "This is my second stay at Newport News Park Campground, a lovely city-run campground tucked into a beautifully wooded setting. The atmosphere is peaceful and natural, with many sites sitting along Lee Hall Reservoir. Having the water right outside my campsite made for an incredibly relaxing stay. I loved sitting by the water, walking my dog along the quiet campground loops, and exploring the nearby hiking and biking trails.<br><br>The campground store near the entrance is small but has the essentials. Campsites are nicely spaced, providing plenty of privacy, and while the bathhouses are somewhat dated, they are clean, functional, and have everything needed for a comfortable stay.<br><br>One of my favorite discoveries during this visit was Grandview Nature Preserve, about 30 minutes away, which offers a beautiful shoreline walk and outstanding coastal scenery. Newport News Park also makes an excellent basecamp for exploring Colonial Williamsburg, Jamestown Settlement, Yorktown Battlefield, Fort Monroe National Monument, Hampton, Norfolk, and Virginia Beach. Norfolk offers excellent museums, waterfront attractions, and seasonal whale watching and fishing charters. The area also has several great local breweries, restaurants, shopping centers, and additional parks to explore.<br><br>The biggest drawback is transportation noise. Interstate 64 is close enough that highway traffic is noticeable throughout much of the day, and an occasional passing train can be heard. Fortunately, both become easier to tune out after a while.<br><br>Overall, Newport News Park Campground is an outstanding campground in one of Virginia's best regions for sightseeing. The combination of wooded campsites, reservoir views, outdoor recreation, and proximity to so many historic attractions makes it one of my favorite places to stay on the Virginia Peninsula.",
+      "youtubeVideoUrl": ""
     }
   ]
 }
