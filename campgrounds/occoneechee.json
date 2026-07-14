@@ -4,16 +4,96 @@
   "state": "Virginia",
   "state_code": "VA",
   "status": "starter",
+  "type": "State Park",
   "visitYears": [
     2025
   ],
-  "summary_text": "A Virginia State Park on Buggs Island Lake offering camping, trails, lake access, and a marina near Clarksville.",
+  "summary_text": "A scenic Virginia State Park overlooking John H. Kerr Reservoir (Buggs Island Lake), offering wooded campsites, lake access, hiking trails, boating, and beautiful sunsets near Clarksville.",
   "address": "1192 Occoneechee Park Road, Clarksville, VA 23927",
   "website": "https://www.dcr.virginia.gov/state-parks/occoneechee",
   "reservations": "https://reservevaparks.com/Web/",
   "parkmap": "",
   "latitude": 36.6219,
   "longitude": -78.5239,
+  "amenities": {
+    "electric": "50/30",
+    "waterAtSite": "All Sites",
+    "potableFill": "Yes",
+    "sewer": "No",
+    "dumpStation": "Yes",
+    "bathhouse": "Yes",
+    "laundryFacilities": "Yes",
+    "cellService": "Good",
+    "wifi": "No",
+    "tvCable": "No",
+    "petsWelcome": "Yes",
+    "dogPark": "No",
+    "campStore": "Visitor Center Gift Shop",
+    "propaneRefill": "No",
+    "playground": "Yes",
+    "swimmingBeach": "Small Swimming Beach",
+    "swimmingPool": "No",
+    "otherAmenities": [
+      "Visitor Center",
+      "Marina",
+      "Boat Rentals",
+      "Fishing Pier",
+      "Picnic Shelters"
+    ]
+  },
+  "siteFeatures": {
+    "level": "Mostly level sites with a few requiring minor leveling.",
+    "dirt": "No",
+    "gravel": "Most Sites",
+    "paved": "Roads",
+    "patio": "No",
+    "shade": "Heavy",
+    "fireRing": "Yes",
+    "picnicTable": "Yes",
+    "grill": "Attached to Fire Ring",
+    "otherNotes": [
+      "Many campsites are surrounded by mature hardwood trees.",
+      "Several sites offer seasonal lake views.",
+      "Heavy tree cover makes Starlink challenging in many campsites.",
+      "Campground roads are easy to navigate for most RVs."
+    ]
+  },
+  "activities": {
+    "waterfront": "John H. Kerr Reservoir (Buggs Island Lake)",
+    "boatingLaunch": "On-site Marina and Boat Ramp",
+    "fishing": "Excellent Lake Fishing",
+    "hiking": "Occoneechee State Park Trail System",
+    "biking": "Campground Roads",
+    "gameRoom": "No",
+    "otherActivities": [
+      "Swimming",
+      "Kayaking",
+      "Canoeing",
+      "Boat Rentals",
+      "Wildlife Viewing",
+      "Bird Watching"
+    ]
+  },
+  "nearby": {
+    "shopping": [
+      "Clarksville Grocery Stores",
+      "Dollar General",
+      "Pharmacy"
+    ],
+    "food": [
+      "Fast Food",
+      "Local Restaurants"
+    ],
+    "nearbyAttractions": [
+      "Downtown Clarksville",
+      "John H. Kerr Dam",
+      "Longwood Park Campground",
+      "Rudd's Creek Campground",
+      "Buggs Island Lake",
+      "Prestwould Plantation"
+    ],
+    "emergencyMedicalDistance": "Approximately 10 minutes"
+  },
   "favoriteSites": [],
   "photoGallery": [],
   "reviews": []
