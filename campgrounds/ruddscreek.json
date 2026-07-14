@@ -4,10 +4,11 @@
   "state": "Virginia",
   "state_code": "VA",
   "status": "complete",
+  "type": "COE Campground",
   "visitYears": [
     2023
   ],
-  "summary_text": "A wooded, lakeside U.S. Army Corps of Engineers campground on John H. Kerr Reservoir offering water-and-electric campsites, swimming, fishing, and convenient boat access near Boydton, Virginia.",
+  "summary_text": "A peaceful U.S. Army Corps of Engineers campground on John H. Kerr Reservoir featuring spacious wooded campsites, excellent fishing, boating, and a relaxing lakeside setting near Boydton, Virginia.",
   "address": "16064 Highway 58, Boydton, VA 23917",
   "website": "https://www.recreation.gov/camping/campgrounds/233610",
   "reservations": "https://www.recreation.gov/camping/campgrounds/233610",
@@ -15,73 +16,80 @@
   "latitude": 36.6358,
   "longitude": -78.5447,
   "amenities": {
-    "electric": "Available at Most Sites",
-    "waterAtSite": "Available at Electric Sites",
-    "potableFill": true,
-    "sewer": false,
-    "dumpStation": true,
-    "bathhouse": true,
-    "laundryFacilities": false,
+    "electric": "50/30",
+    "waterAtSite": "Electric Sites",
+    "potableFill": "Yes",
+    "sewer": "No",
+    "dumpStation": "Yes",
+    "bathhouse": "Yes",
+    "laundryFacilities": "No",
     "cellService": "Varies",
-    "wifi": false,
-    "tvCable": false,
-    "petsWelcome": true,
-    "dogPark": false,
-    "campStore": false,
-    "propaneRefill": false,
-    "playground": true,
-    "swimmingPool": false,
+    "wifi": "No",
+    "tvCable": "No",
+    "petsWelcome": "Yes",
+    "dogPark": "No",
+    "campStore": "No",
+    "propaneRefill": "No",
+    "playground": "Yes",
+    "swimmingBeach": "Designated Swimming Beach",
+    "swimmingPool": "No",
     "otherAmenities": [
-      "Designated Swimming Beach",
+      "Boat Ramp",
+      "Courtesy Dock",
       "Amphitheater",
-      "Picnic Shelter",
-      "Courtesy Dock"
+      "Picnic Shelter"
     ]
   },
   "siteFeatures": {
     "level": "Varies by site",
-    "dirt": false,
-    "gravel": [
-      "All Sites"
-    ],
-    "paved": false,
-    "patio": false,
-    "shade": true,
-    "fireRing": true,
-    "picnicTable": true,
-    "grill": [
-      "Available at Campsites"
-    ],
+    "dirt": "No",
+    "gravel": "All Sites",
+    "paved": "Roads",
+    "patio": "No",
+    "shade": "Heavy",
+    "fireRing": "Yes",
+    "picnicTable": "Yes",
+    "grill": "Attached to Fire Ring",
     "otherNotes": [
-      "Camping equipment must fit within the timber-defined campsite perimeter",
-      "Many campsites are located on or near the lake"
+      "Camping equipment must fit within the timber-defined campsite perimeter.",
+      "Many campsites are located on or near the shoreline.",
+      "Heavy tree cover limits Starlink reception throughout much of the campground."
     ]
   },
   "activities": {
-    "boatingLaunch": true,
-    "fishing": true,
-    "hiking": true,
-    "biking": true,
-    "gameRoom": false,
+    "waterfront": "John H. Kerr Reservoir (Buggs Island Lake)",
+    "boatingLaunch": "On-site Boat Ramp",
+    "fishing": "Excellent Lake Fishing",
+    "hiking": "Nature Trails",
+    "biking": "Campground Roads",
+    "gameRoom": "No",
     "otherActivities": [
       "Swimming",
+      "Bird Watching",
       "Wildlife Viewing",
-      "Birding",
-      "Hunting",
-      "Picnicking"
+      "Picnicking",
+      "Hunting (Seasonal)"
     ]
   },
   "nearby": {
     "shopping": [
-      "Grocery Store",
-      "Gas Station",
+      "Clarksville Grocery Stores",
+      "Gas Stations",
       "Pharmacy"
     ],
     "food": [
-      "Restaurants in Boydton",
-      "Restaurants in Clarksville"
+      "Local Restaurants in Boydton",
+      "Local Restaurants in Clarksville"
     ],
-    "emergencyMedicalDistance": "Approximately 25–30 minutes"
+    "nearbyAttractions": [
+      "John H. Kerr Dam",
+      "Occoneechee State Park",
+      "Longwood Park Campground",
+      "Buggs Island Lake",
+      "Downtown Clarksville",
+      "Prestwould Plantation"
+    ],
+    "emergencyMedicalDistance": "Approximately 25 minutes"
   },
   "favoriteSites": [],
   "photoGallery": [],
