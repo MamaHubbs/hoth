@@ -357,16 +357,15 @@
                         .replace(/^-+|-+$/g, '');
                 }
 
-                function renderStars(rating) {
-                    const numericRating = Number(rating);
+           function renderStars(rating) {
+    const numericRating = Number(rating);
 
-                    if (!Number.isFinite(numericRating) || numericRating <= 0) {
-                        return '';
-                    }
+    if (!Number.isFinite(numericRating) || numericRating <= 0) {
+        return '';
+    }
 
-                    const roundedRating = Math.max(1, Math.min(5, Math.round(numericRating)));
-                    return '⭐'.repeat(roundedRating);
-                }
+    return `${numericRating}⭐`;
+}
 
                 sortedCategories.forEach(category => {
                     const categoryId = `category-${slugifyCategory(category)}`;
