@@ -4,16 +4,94 @@
   "state": "Texas",
   "state_code": "TX",
   "status": "starter",
+  "type": "State Park",
   "visitYears": [
     2026
   ],
-  "summary_text": "A rugged West Texas park near the Rio Grande featuring desert camping, canyon scenery, trails, and ancient rock art.",
+  "summary_text": "A rugged West Texas state park on the Rio Grande featuring desert camping, dramatic canyon overlooks, guided rock art tours, hiking trails, and some of the best-preserved prehistoric pictographs in North America.",
   "address": "US Highway 90, Comstock, TX 78837",
   "website": "https://tpwd.texas.gov/state-parks/seminole-canyon",
   "reservations": "https://texasstateparks.reserveamerica.com/",
   "parkmap": "",
   "latitude": 29.7034,
   "longitude": -101.3135,
+  "amenities": {
+    "electric": "50/30",
+    "waterAtSite": "All Sites",
+    "potableFill": "Yes",
+    "sewer": "No",
+    "dumpStation": "Yes",
+    "bathhouse": "Yes",
+    "laundryFacilities": "No",
+    "cellService": "Limited",
+    "wifi": "No",
+    "tvCable": "No",
+    "petsWelcome": "Yes",
+    "dogPark": "No",
+    "campStore": "Visitor Center Gift Shop",
+    "propaneRefill": "No",
+    "playground": "No",
+    "swimmingBeach": "No",
+    "swimmingPool": "No",
+    "otherAmenities": [
+      "Visitor Center",
+      "Museum Exhibits",
+      "Guided Rock Art Tours",
+      "Interpretive Programs"
+    ]
+  },
+  "siteFeatures": {
+    "level": "Mostly level sites with wide spacing between campsites.",
+    "dirt": "No",
+    "gravel": "Most Sites",
+    "paved": "Roads",
+    "patio": "No",
+    "shade": "Limited",
+    "fireRing": "Yes",
+    "picnicTable": "Yes",
+    "grill": "Attached to Fire Ring",
+    "otherNotes": [
+      "Open desert setting with expansive views.",
+      "Excellent Starlink reception due to minimal tree cover.",
+      "Bring plenty of water and prepare for hot daytime temperatures.",
+      "Spectacular dark skies make this an outstanding destination for stargazing."
+    ]
+  },
+  "activities": {
+    "waterfront": "Rio Grande",
+    "boatingLaunch": "Nearby Public Access",
+    "fishing": "Rio Grande",
+    "hiking": "Desert Canyon Trails",
+    "biking": "Campground Roads",
+    "gameRoom": "No",
+    "otherActivities": [
+      "Guided Rock Art Tours",
+      "Bird Watching",
+      "Wildlife Viewing",
+      "Photography",
+      "Stargazing",
+      "Junior Ranger Program"
+    ]
+  },
+  "nearby": {
+    "shopping": [
+      "Limited Services in Comstock",
+      "Fuel Station"
+    ],
+    "food": [
+      "Small Local Restaurants",
+      "Del Rio (Approximately 40 Minutes)"
+    ],
+    "nearbyAttractions": [
+      "Fate Bell Shelter",
+      "Rio Grande",
+      "Seminole Canyon",
+      "Amistad National Recreation Area",
+      "Judge Roy Bean Visitor Center",
+      "Langtry"
+    ],
+    "emergencyMedicalDistance": "Approximately 40 minutes"
+  },
   "favoriteSites": [],
   "photoGallery": [],
   "reviews": []
