@@ -109,6 +109,25 @@
             margin-top: 5px;
             margin-bottom: 0;
         }
+        .campground-category {
+            margin-top: 28px;
+        }
+        .campground-category:first-child {
+            margin-top: 0;
+        }
+        .campground-category h3 {
+            font-family: Arial, sans-serif;
+            color: #133b66;
+            font-size: 1.05em;
+            margin: 0 0 10px;
+            padding: 8px 12px;
+            background: #eaf4ff;
+            border-left: 4px solid #2d7cbc;
+            border-radius: 4px;
+        }
+        .campground-category ul {
+            margin: 0;
+        }
     </style>
 </head>
 <body>
@@ -210,25 +229,109 @@
                     map.setView([39.8283, -98.5795], 4);
                 }
 
-                /* LIST OF CAMPGROUNDS */
-                const list = document.querySelector('#campgroundsList ul');
-                list.innerHTML = '';
+                /* GROUPED, ALPHABETICAL LIST OF CAMPGROUNDS */
+                const listContainer = document.getElementById('campgroundsList');
+                listContainer.innerHTML = '';
 
-                campgroundsInState.forEach(camp => {
-                    const li = document.createElement('li');
-                    const link = document.createElement('a');
-                    link.textContent = camp.name;
-                    link.href = `campground-review-template.html?campground=${camp.filename}`;
-                    // note: no target="_blank" here → also stays in embed
-                    li.appendChild(link);
+                const categoryOrder = [
+                    'State Parks',
+                    'National Parks & Forests',
+                    'Regional & County Parks',
+                    'Corps of Engineers Campgrounds',
+                    'KOA Campgrounds',
+                    'RV Resorts',
+                    'RV Parks & Private Campgrounds',
+                    'Harvest Hosts',
+                    'Family Camp-Resorts',
+                    'Other Campgrounds'
+                ];
 
-                    if (camp.summary_text) {
-                        const p = document.createElement('p');
-                        p.textContent = camp.summary_text;
-                        li.appendChild(p);
+                function deriveCategory(camp) {
+                    if (camp.category) return camp.category;
+
+                    const type = String(camp.type || '').toLowerCase();
+
+                    if (type.includes('state park')) return 'State Parks';
+                    if (type.includes('national park') ||
+                        type.includes('national forest') ||
+                        type.includes('national park service')) {
+                        return 'National Parks & Forests';
+                    }
+                    if (type.includes('regional park') ||
+                        type.includes('county park') ||
+                        type.includes('city park')) {
+                        return 'Regional & County Parks';
+                    }
+                    if (type.includes('coe') ||
+                        type.includes('corps of engineers')) {
+                        return 'Corps of Engineers Campgrounds';
+                    }
+                    if (type.includes('koa')) return 'KOA Campgrounds';
+                    if (type.includes('harvest host')) return 'Harvest Hosts';
+                    if (type.includes('jellystone') ||
+                        type.includes('camp-resort') ||
+                        type.includes('family resort')) {
+                        return 'Family Camp-Resorts';
+                    }
+                    if (type.includes('rv resort') ||
+                        type.includes('luxury rv resort')) {
+                        return 'RV Resorts';
+                    }
+                    if (type.includes('rv park') ||
+                        type.includes('campground')) {
+                        return 'RV Parks & Private Campgrounds';
                     }
 
-                    list.appendChild(li);
+                    return 'Other Campgrounds';
+                }
+
+                const groupedCampgrounds = campgroundsInState.reduce((groups, camp) => {
+                    const category = deriveCategory(camp);
+                    if (!groups[category]) groups[category] = [];
+                    groups[category].push(camp);
+                    return groups;
+                }, {});
+
+                const sortedCategories = Object.keys(groupedCampgrounds).sort((a, b) => {
+                    const aIndex = categoryOrder.indexOf(a);
+                    const bIndex = categoryOrder.indexOf(b);
+
+                    if (aIndex === -1 && bIndex === -1) return a.localeCompare(b);
+                    if (aIndex === -1) return 1;
+                    if (bIndex === -1) return -1;
+                    return aIndex - bIndex;
+                });
+
+                sortedCategories.forEach(category => {
+                    const section = document.createElement('section');
+                    section.className = 'campground-category';
+
+                    const heading = document.createElement('h3');
+                    heading.textContent = category;
+                    section.appendChild(heading);
+
+                    const ul = document.createElement('ul');
+
+                    groupedCampgrounds[category]
+                        .sort((a, b) => a.name.localeCompare(b.name))
+                        .forEach(camp => {
+                            const li = document.createElement('li');
+                            const link = document.createElement('a');
+                            link.textContent = camp.name;
+                            link.href = `campground-review-template.html?campground=${camp.filename}`;
+                            li.appendChild(link);
+
+                            if (camp.summary_text) {
+                                const p = document.createElement('p');
+                                p.textContent = camp.summary_text;
+                                li.appendChild(p);
+                            }
+
+                            ul.appendChild(li);
+                        });
+
+                    section.appendChild(ul);
+                    listContainer.appendChild(section);
                 });
             })
             .catch(err => {
