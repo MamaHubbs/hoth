@@ -1,0 +1,101 @@
+{
+  "id": "fredericksburg-washington-dc-south-koa-holiday",
+  "name": "Fredericksburg / Washington DC South KOA Holiday",
+  "state": "Virginia",
+  "state_code": "VA",
+  "status": "starter",
+  "type": "KOA Holiday",
+  "visitYears": [
+    2018,
+    2024
+  ],
+  "summary_text": "A convenient KOA Holiday in Fredericksburg offering full-hookup RV sites, family-friendly amenities, and easy access to Civil War history, wineries, and Washington, D.C.",
+  "address": "7400 Brookside Lane, Fredericksburg, VA 22408",
+  "website": "https://koa.com/campgrounds/fredericksburg/",
+  "reservations": "https://koa.com/campgrounds/fredericksburg/",
+  "parkmap": "",
+  "latitude": 38.1535,
+  "longitude": -77.4923,
+  "amenities": {
+    "electric": "50/30",
+    "waterAtSite": "All Sites",
+    "potableFill": "Yes",
+    "sewer": "Full-Hookup Sites Available",
+    "dumpStation": "Yes",
+    "bathhouse": "Yes",
+    "laundryFacilities": "Yes",
+    "cellService": "Excellent",
+    "wifi": "Yes",
+    "tvCable": "No",
+    "petsWelcome": "Yes",
+    "dogPark": "KampK9",
+    "campStore": "KOA Camp Store",
+    "propaneRefill": "Yes",
+    "playground": "Yes",
+    "swimmingBeach": "No",
+    "swimmingPool": "Outdoor Pool",
+    "otherAmenities": [
+      "Jumping Pillow",
+      "Arcade",
+      "Basketball Court",
+      "Pavilion",
+      "Bike Rentals"
+    ]
+  },
+  "siteFeatures": {
+    "level": "Mostly level pull-through and back-in sites.",
+    "dirt": "Tent Sites",
+    "gravel": "Many Sites",
+    "paved": "Premium Sites",
+    "patio": "Premium Patio Sites",
+    "shade": "Moderate",
+    "fireRing": "Yes",
+    "picnicTable": "Yes",
+    "grill": "Attached to Fire Ring",
+    "otherNotes": [
+      "Large pull-through sites accommodate big rigs.",
+      "Premium patio sites are available.",
+      "Tree cover varies throughout the campground.",
+      "Excellent overnight stop along Interstate 95."
+    ]
+  },
+  "activities": {
+    "waterfront": "No",
+    "boatingLaunch": "Nearby",
+    "fishing": "Nearby",
+    "hiking": "Nearby Battlefield Trails",
+    "biking": "Campground Roads",
+    "gameRoom": "Arcade",
+    "otherActivities": [
+      "Swimming",
+      "Jumping Pillow",
+      "Basketball",
+      "Planned Family Activities"
+    ]
+  },
+  "nearby": {
+    "shopping": [
+      "Central Park Shopping Center",
+      "Costco",
+      "Target",
+      "Walmart"
+    ],
+    "food": [
+      "Fast Food",
+      "Local Restaurants",
+      "Breweries"
+    ],
+    "nearbyAttractions": [
+      "Fredericksburg & Spotsylvania National Military Park",
+      "Historic Downtown Fredericksburg",
+      "Chatham Manor",
+      "George Washington's Ferry Farm",
+      "A. Smith Bowman Distillery",
+      "Virginia Wineries"
+    ],
+    "emergencyMedicalDistance": "Approximately 10 minutes"
+  },
+  "favoriteSites": [],
+  "photoGallery": [],
+  "reviews": []
+}
