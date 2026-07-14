@@ -1,0 +1,100 @@
+{
+  "id": "williamsport-south-nittany-mountain-koa-holiday",
+  "name": "Williamsport South / Nittany Mountain KOA Holiday",
+  "state": "Pennsylvania",
+  "state_code": "PA",
+  "status": "starter",
+  "type": "KOA Holiday",
+  "visitYears": [
+    2026
+  ],
+  "summary_text": "A peaceful mountainside KOA Holiday with full-hookup RV sites, wooded surroundings, and a convenient location for exploring central Pennsylvania and nearby state parks.",
+  "address": "2751 Millers Bottom Road, New Columbia, PA 17856",
+  "website": "https://koa.com/campgrounds/williamsport/",
+  "reservations": "https://koa.com/campgrounds/williamsport/",
+  "parkmap": "",
+  "latitude": 41.2377,
+  "longitude": -77.0502,
+  "amenities": {
+    "electric": "50/30",
+    "waterAtSite": "All Sites",
+    "potableFill": "Yes",
+    "sewer": "Full-Hookup Sites Available",
+    "dumpStation": "Yes",
+    "bathhouse": "Yes",
+    "laundryFacilities": "Yes",
+    "cellService": "Good",
+    "wifi": "Yes",
+    "tvCable": "No",
+    "petsWelcome": "Yes",
+    "dogPark": "KampK9",
+    "campStore": "KOA Camp Store",
+    "propaneRefill": "Yes",
+    "playground": "Yes",
+    "swimmingBeach": "No",
+    "swimmingPool": "Outdoor Pool",
+    "otherAmenities": [
+      "Jumping Pillow",
+      "Mini-Golf",
+      "Pavilion",
+      "Planned Activities"
+    ]
+  },
+  "siteFeatures": {
+    "level": "Mostly level sites with some gently sloped sites.",
+    "dirt": "Tent Sites",
+    "gravel": "Many Sites",
+    "paved": "Some Premium Sites",
+    "patio": "Premium Patio Sites",
+    "shade": "Moderate to Heavy",
+    "fireRing": "Yes",
+    "picnicTable": "Yes",
+    "grill": "Attached to Fire Ring",
+    "otherNotes": [
+      "Large pull-through sites available.",
+      "Wooded setting provides a quiet campground atmosphere.",
+      "Starlink performance varies depending on tree cover.",
+      "Convenient overnight stop for travelers on Interstate 80 and Route 15."
+    ]
+  },
+  "activities": {
+    "waterfront": "No",
+    "boatingLaunch": "Nearby",
+    "fishing": "Nearby",
+    "hiking": "Nearby State Parks and Forests",
+    "biking": "Campground Roads",
+    "gameRoom": "Yes",
+    "otherActivities": [
+      "Swimming",
+      "Mini-Golf",
+      "Basketball",
+      "Planned Family Activities"
+    ]
+  },
+  "nearby": {
+    "shopping": [
+      "Walmart",
+      "Weis Markets",
+      "Tractor Supply",
+      "Camping Supplies"
+    ],
+    "food": [
+      "Local Restaurants",
+      "Fast Food",
+      "Coffee Shops"
+    ],
+    "nearbyAttractions": [
+      "Little Pine State Park",
+      "Bald Eagle State Forest",
+      "Penn's Cave",
+      "Worlds End State Park",
+      "Susquehanna River",
+      "Williamsport",
+      "Little League World Series Complex"
+    ],
+    "emergencyMedicalDistance": "Approximately 15 minutes"
+  },
+  "favoriteSites": [],
+  "photoGallery": [],
+  "reviews": []
+}
