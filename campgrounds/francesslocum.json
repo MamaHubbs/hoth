@@ -1,1 +1,142 @@
-
+{
+  "id": "frances-slocum-state-park",
+  "name": "Frances Slocum State Park",
+  "state": "Pennsylvania",
+  "state_code": "PA",
+  "status": "complete",
+  "type": "Pennsylvania State Park",
+  "visitYears": [
+    2024,
+    2025
+  ],
+  "visitCount": 2,
+  "summary_text": "A peaceful Pennsylvania State Park centered around a beautiful lake, offering wooded camping, hiking, kayaking, and a relaxing getaway that's perfect for returning again and again.",
+  "address": "567 Mt Olivet Rd, Wyoming, PA 18644",
+  "website": "https://www.pa.gov/agencies/dcnr/recreation/where-to-go/state-parks/find-a-park/frances-slocum-state-park.html",
+  "reservations": "https://pennsylvaniastateparks.reserveamerica.com/",
+  "parkmap": "",
+  "latitude": 41.3478,
+  "longitude": -75.8786,
+  "amenities": {
+    "electric": "30/50 at Select Sites",
+    "waterAtSite": "Most Sites",
+    "potableFill": "Yes",
+    "sewer": "No",
+    "dumpStation": "Yes",
+    "bathhouse": "Yes",
+    "laundryFacilities": "No",
+    "cellService": "Good",
+    "wifi": "No",
+    "tvCable": "No",
+    "petsWelcome": "Yes",
+    "dogPark": "No",
+    "campStore": "Seasonal Camp Store",
+    "propaneRefill": "No",
+    "playground": "Yes",
+    "swimmingBeach": "No",
+    "swimmingPool": "Seasonal Pool",
+    "otherAmenities": [
+      "Boat Rentals",
+      "Fishing Pier",
+      "Nature Center",
+      "Picnic Areas"
+    ]
+  },
+  "siteFeatures": {
+    "level": "Mostly level to gently sloping wooded sites.",
+    "dirt": "Tent Sites",
+    "gravel": "Most Sites",
+    "paved": "Campground Roads",
+    "patio": "No",
+    "shade": "Heavy",
+    "fireRing": "Yes",
+    "picnicTable": "Yes",
+    "grill": "Attached to Fire Ring",
+    "otherNotes": [
+      "Quiet wooded campground.",
+      "Beautiful lake throughout the park.",
+      "Great campground for relaxing weekends."
+    ]
+  },
+  "starlink": {
+    "rating": "Poor to Fair",
+    "notes": "Heavy tree cover may make Starlink unreliable in many campsites."
+  },
+  "activities": {
+    "waterfront": "Frances Slocum Lake",
+    "boatingLaunch": "Yes",
+    "fishing": "Excellent",
+    "hiking": "Excellent",
+    "biking": "Park Roads and Trails",
+    "gameRoom": "No",
+    "otherActivities": [
+      "Kayaking",
+      "Paddleboarding",
+      "Swimming Pool",
+      "Wildlife Viewing",
+      "Birding"
+    ]
+  },
+  "nearby": {
+    "shopping": [
+      "Wilkes-Barre",
+      "Target",
+      "Walmart",
+      "Grocery Stores"
+    ],
+    "food": [
+      "Local Restaurants",
+      "Chain Restaurants"
+    ],
+    "nearbyAttractions": [
+      "Frances Slocum Lake",
+      "Seven Tubs Nature Area",
+      "Wilkes-Barre",
+      "Mohegan Pennsylvania"
+    ]
+  },
+  "petNotes": {
+    "walkingAreas": "Excellent wooded roads and trails.",
+    "dogPark": "No",
+    "dogFriendlyTrails": "Most trails allow leashed dogs.",
+    "petRestrictions": "Pets must remain leashed.",
+    "hazards": "Ticks and wildlife are common.",
+    "overallPetRating": "Excellent",
+    "notes": "A wonderful park for camping with dogs thanks to the quiet setting and miles of walking opportunities."
+  },
+  "emergencyServices": {
+    "hospital": {
+      "name": "Wilkes-Barre General Hospital",
+      "address": "575 N River St, Wilkes-Barre, PA 18764",
+      "distance": "Approximately 20 minutes"
+    },
+    "veterinarian": {
+      "name": "Back Mountain Veterinary Hospital",
+      "address": "105 W Center Hill Rd, Dallas, PA 18612",
+      "distance": "Approximately 20 minutes"
+    },
+    "emergencyVeterinarian": {
+      "name": "Northeast Veterinary Referral Hospital",
+      "address": "335 Morgan Hwy, Plains, PA 18705",
+      "distance": "Approximately 20 minutes"
+    }
+  },
+  "tripTips": [
+    "Bring a kayak or paddleboard to enjoy the lake.",
+    "Spend time hiking the wooded trails.",
+    "This is an excellent choice for a quiet, relaxing weekend.",
+    "Great basecamp if you're visiting friends or family in the Wilkes-Barre area."
+  ],
+  "favoriteSites": [],
+  "photoGallery": [],
+  "reviews": [
+    {
+      "reviewId": "frances-slocum-review-2025-01-01-01",
+      "visitDate": "2024 & 2025",
+      "reviewDate": "01-01-2025",
+      "starRating": 5,
+      "text": "I've stayed at Frances Slocum State Park twice during girls' trips with a close friend who lives about 45 minutes away, and I'd happily return again. The campground is peaceful, quiet, and surrounded by beautiful woods, making it an easy place to slow down and relax. One of my favorite parts of the park is the lake, where we enjoyed kayaking and taking in the scenery. There are plenty of hiking trails to explore, and the overall atmosphere is much calmer than many resort-style campgrounds. If you're looking for a relaxing state park with beautiful scenery and easy outdoor recreation, Frances Slocum is an excellent choice.",
+      "youtubeVideoUrl": ""
+    }
+  ]
+}
