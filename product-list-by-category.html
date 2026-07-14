@@ -247,7 +247,7 @@
             // UPDATED: h1 text now includes the "Reviews" part, as requested previously
             pageHeading.textContent = `${side.charAt(0).toUpperCase() + side.slice(1)} RV: ${decodedCategory} Product Reviews`; 
 
-            const productIndexJsonUrl = getCampgroundJsonUrl('product_index'); 
+           const productIndexJsonUrl = getProductJsonUrl('product_index');
 
             fetch(productIndexJsonUrl)
                 .then(response => {
