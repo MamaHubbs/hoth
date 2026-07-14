@@ -391,9 +391,9 @@ function renderStars(rating) {
                             const link = document.createElement('a');
                             const stars = renderStars(camp.rating);
 
-                            link.textContent = stars
-                                ? `${camp.name} ${stars}`
-                                : camp.name;
+   link.textContent = stars
+    ? `${camp.name} • ${stars}`
+    : camp.name;
 
                             link.href =
                                 `campground-review-template.html?campground=${camp.filename}`;
