@@ -1,0 +1,111 @@
+{
+  "id": "anchor-down-rv-resort",
+  "name": "Anchor Down RV Resort",
+  "state": "Tennessee",
+  "state_code": "TN",
+  "status": "starter",
+  "type": "Luxury RV Resort",
+  "visitYears": [
+    2026
+  ],
+  "summary_text": "A premier luxury RV resort on Douglas Lake offering spacious lakefront sites, upscale amenities, and spectacular Smoky Mountain views just minutes from Pigeon Forge and Gatlinburg.",
+  "address": "1703 Highway 139, Dandridge, TN 37725",
+  "website": "https://anchordownrvresort.com/",
+  "reservations": "https://anchordownrvresort.com/",
+  "parkmap": "",
+  "latitude": 35.8705,
+  "longitude": -83.7544,
+  "amenities": {
+    "electric": "50/30",
+    "waterAtSite": "All Sites",
+    "potableFill": "Yes",
+    "sewer": "All Sites",
+    "dumpStation": "No",
+    "bathhouse": "Luxury Bathhouses",
+    "laundryFacilities": "Yes",
+    "cellService": "Excellent",
+    "wifi": "Yes",
+    "tvCable": "No",
+    "petsWelcome": "Yes",
+    "dogPark": "Yes",
+    "campStore": "Camp Store",
+    "propaneRefill": "Yes",
+    "playground": "Yes",
+    "swimmingBeach": "Lake Access",
+    "swimmingPool": "Resort Pool",
+    "otherAmenities": [
+      "Hot Tub",
+      "Splash Pad",
+      "Fitness Center",
+      "Community Fire Pit",
+      "Basketball Court",
+      "Pickleball Court",
+      "Boat Ramp",
+      "Boat Docks",
+      "Golf Cart Rentals"
+    ]
+  },
+  "siteFeatures": {
+    "level": "Large, level concrete sites throughout the resort.",
+    "dirt": "No",
+    "gravel": "No",
+    "paved": "Concrete Pads and Roads",
+    "patio": "Many Sites",
+    "shade": "Limited",
+    "fireRing": "Yes",
+    "picnicTable": "Yes",
+    "grill": "No",
+    "otherNotes": [
+      "Many premium sites offer direct views of Douglas Lake.",
+      "Wide roads easily accommodate large motorhomes and fifth wheels.",
+      "Minimal tree cover provides excellent Starlink reception.",
+      "One of the highest-end RV resorts in the Smoky Mountain region."
+    ]
+  },
+  "activities": {
+    "waterfront": "Douglas Lake",
+    "boatingLaunch": "On-site",
+    "fishing": "Douglas Lake",
+    "hiking": "Nearby Great Smoky Mountains National Park",
+    "biking": "Campground Roads",
+    "gameRoom": "No",
+    "otherActivities": [
+      "Swimming",
+      "Kayaking",
+      "Paddleboarding",
+      "Boating",
+      "Pickleball",
+      "Basketball",
+      "Fishing",
+      "Wildlife Viewing"
+    ]
+  },
+  "nearby": {
+    "shopping": [
+      "Walmart",
+      "Publix",
+      "Kroger",
+      "Bass Pro Shops",
+      "Tanger Outlets"
+    ],
+    "food": [
+      "Local Restaurants",
+      "Pigeon Forge Dining",
+      "Dollywood Area Restaurants"
+    ],
+    "nearbyAttractions": [
+      "Great Smoky Mountains National Park",
+      "Dollywood",
+      "Pigeon Forge",
+      "Gatlinburg",
+      "Douglas Lake",
+      "The Island in Pigeon Forge",
+      "Forbidden Caverns",
+      "Bush's Visitor Center"
+    ],
+    "emergencyMedicalDistance": "Approximately 15 minutes"
+  },
+  "favoriteSites": [],
+  "photoGallery": [],
+  "reviews": []
+}
