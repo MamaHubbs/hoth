@@ -1,0 +1,106 @@
+{
+  "id": "sun-outdoors-myrtle-beach",
+  "name": "Sun Outdoors Myrtle Beach",
+  "state": "South Carolina",
+  "state_code": "SC",
+  "status": "starter",
+  "type": "Luxury RV Resort",
+  "visitYears": [
+    2022
+  ],
+  "visitCount": 1,
+  "summary_text": "A large resort-style RV destination featuring spacious full-hookup sites, multiple pools, family activities, and a convenient location just minutes from Myrtle Beach attractions and the Atlantic Ocean.",
+  "address": "5800 South Kings Highway, Myrtle Beach, SC 29575",
+  "website": "https://www.sunoutdoors.com/south-carolina/sun-outdoors-myrtle-beach",
+  "reservations": "https://www.sunoutdoors.com/south-carolina/sun-outdoors-myrtle-beach",
+  "parkmap": "",
+  "latitude": 33.6288,
+  "longitude": -78.9666,
+  "amenities": {
+    "electric": "50/30",
+    "waterAtSite": "All Sites",
+    "potableFill": "Yes",
+    "sewer": "All Sites",
+    "dumpStation": "No",
+    "bathhouse": "Yes",
+    "laundryFacilities": "Yes",
+    "cellService": "Excellent",
+    "wifi": "Yes",
+    "tvCable": "No",
+    "petsWelcome": "Yes",
+    "dogPark": "Yes",
+    "campStore": "Camp Store",
+    "propaneRefill": "Yes",
+    "playground": "Yes",
+    "swimmingBeach": "No",
+    "swimmingPool": "Multiple Resort Pools",
+    "otherAmenities": [
+      "Splash Pad",
+      "Lazy River",
+      "Mini-Golf",
+      "Arcade",
+      "Fitness Center",
+      "Golf Cart Rentals",
+      "Planned Activities"
+    ]
+  },
+  "siteFeatures": {
+    "level": "Mostly level full-hookup sites with pull-through and back-in options.",
+    "dirt": "No",
+    "gravel": "Some Sites",
+    "paved": "Many Sites",
+    "patio": "Premium Patio Sites",
+    "shade": "Limited to Moderate",
+    "fireRing": "Some Sites",
+    "picnicTable": "Yes",
+    "grill": "No",
+    "otherNotes": [
+      "Large resort with numerous camping sections.",
+      "Easy access for big rigs.",
+      "Open skies provide good Starlink reception in many areas.",
+      "Golf carts are common throughout the resort."
+    ]
+  },
+  "activities": {
+    "waterfront": "No",
+    "boatingLaunch": "Nearby",
+    "fishing": "Nearby",
+    "hiking": "No",
+    "biking": "Campground Roads",
+    "gameRoom": "Arcade",
+    "otherActivities": [
+      "Swimming",
+      "Lazy River",
+      "Mini-Golf",
+      "Planned Activities",
+      "Basketball",
+      "Fitness Center"
+    ]
+  },
+  "nearby": {
+    "shopping": [
+      "Broadway at the Beach",
+      "Coastal Grand Mall",
+      "Target",
+      "Walmart",
+      "Costco"
+    ],
+    "food": [
+      "Myrtle Beach Restaurants",
+      "Seafood",
+      "Fast Food"
+    ],
+    "nearbyAttractions": [
+      "Myrtle Beach State Park",
+      "Broadway at the Beach",
+      "SkyWheel Myrtle Beach",
+      "Brookgreen Gardens",
+      "Murrells Inlet MarshWalk",
+      "The Market Common"
+    ],
+    "emergencyMedicalDistance": "Approximately 10 minutes"
+  },
+  "favoriteSites": [],
+  "photoGallery": [],
+  "reviews": []
+}
