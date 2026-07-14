@@ -570,21 +570,19 @@
         return;
       }
 
-      const jsonUrl = getCampgroundJsonUrl(campgroundFilename);
-      console.log('Loading campground JSON:', jsonUrl);
+      const primaryJsonUrl = getCampgroundJsonUrl(campgroundFilename);
+      const fallbackJsonUrl = `campgrounds/${campgroundFilename}.json`;
 
-      fetch(jsonUrl)
-        .then(response => {
-          if (!response.ok) {
-            throw new Error(`HTTP ${response.status} while loading ${jsonUrl}`);
-          }
-          return response.json();
-        })
-        .then(campground => {
+      console.log('Primary campground JSON URL:', primaryJsonUrl);
+      console.log('Fallback campground JSON URL:', fallbackJsonUrl);
+
+      fetchCampgroundJson([primaryJsonUrl, fallbackJsonUrl])
+        .then(({ campground, loadedUrl }) => {
           if (!campground || typeof campground !== 'object') {
-            throw new Error(`No campground object returned from ${jsonUrl}`);
+            throw new Error(`No campground object returned from ${loadedUrl}`);
           }
 
+          console.log('Loaded campground JSON from:', loadedUrl);
           renderCampground(campground);
           loadingMessage.hidden = true;
           pageContent.hidden = false;
@@ -593,9 +591,32 @@
           console.error('Error fetching campground data:', error);
           showError(
             'The campground JSON could not be loaded.',
-            `${error.message}. Check the filename, folder path, capitalization, and JSON formatting.`
+            `${error.message}. Checked both the existing shared.js path and campgrounds/${campgroundFilename}.json.`
           );
         });
+
+      async function fetchCampgroundJson(urls) {
+        const uniqueUrls = [...new Set(urls.filter(Boolean))];
+        const failures = [];
+
+        for (const url of uniqueUrls) {
+          try {
+            const response = await fetch(url);
+
+            if (!response.ok) {
+              failures.push(`${url} returned HTTP ${response.status}`);
+              continue;
+            }
+
+            const campground = await response.json();
+            return { campground, loadedUrl: url };
+          } catch (error) {
+            failures.push(`${url}: ${error.message}`);
+          }
+        }
+
+        throw new Error(failures.join(' | '));
+      }
 
       function renderCampground(campground) {
         renderHeader(campground);
