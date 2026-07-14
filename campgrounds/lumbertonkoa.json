@@ -1,0 +1,132 @@
+{
+  "id": "lumberton-i95-koa-holiday",
+  "name": "Lumberton / I-95 KOA Holiday",
+  "state": "North Carolina",
+  "state_code": "NC",
+  "status": "starter",
+  "type": "KOA Holiday",
+  "visitYears": [
+    2021
+  ],
+  "visitCount": 1,
+  "summary_text": "A convenient full-hookup KOA Holiday just off Interstate 95 offering spacious sites, a fishing pond, family amenities, and an excellent overnight stop for travelers along the East Coast.",
+  "address": "465 Kenric Road, Lumberton, NC 28360",
+  "website": "https://koa.com/campgrounds/lumberton/",
+  "reservations": "https://koa.com/campgrounds/lumberton/",
+  "parkmap": "https://koa.com/campgrounds/lumberton/site-type-map/",
+  "latitude": 34.6898,
+  "longitude": -79.0339,
+  "amenities": {
+    "electric": "50/30/20",
+    "waterAtSite": "All Sites",
+    "potableFill": "Yes",
+    "sewer": "Full-Hookup Sites",
+    "dumpStation": "Yes",
+    "bathhouse": "Yes",
+    "laundryFacilities": "Yes",
+    "cellService": "Excellent",
+    "wifi": "Yes",
+    "tvCable": "Yes",
+    "petsWelcome": "Yes",
+    "dogPark": "KampK9",
+    "campStore": "Camp Store",
+    "propaneRefill": "Yes",
+    "playground": "Yes",
+    "swimmingBeach": "No",
+    "swimmingPool": "Outdoor Pool",
+    "otherAmenities": [
+      "Fishing Pond",
+      "Jumping Pillow",
+      "Mini-Golf",
+      "Community Pavilion",
+      "Bike Rentals"
+    ]
+  },
+  "siteFeatures": {
+    "level": "Mostly level pull-through and back-in sites.",
+    "dirt": "Tent Sites",
+    "gravel": "Many Sites",
+    "paved": "Roads and Premium Sites",
+    "patio": "Premium Patio Sites",
+    "shade": "Moderate",
+    "fireRing": "Some Sites",
+    "picnicTable": "Yes",
+    "grill": "Some Sites",
+    "otherNotes": [
+      "Very easy access from Interstate 95.",
+      "Large pull-through sites are ideal for overnight travelers.",
+      "Minimal maneuvering required for larger RVs."
+    ]
+  },
+  "starlink": {
+    "rating": "Good",
+    "notes": "Most sites have a reasonably open view of the sky with some trees throughout the campground."
+  },
+  "activities": {
+    "waterfront": "Fishing Pond",
+    "boatingLaunch": "No",
+    "fishing": "Catch-and-Release Pond",
+    "hiking": "Campground Walking Areas",
+    "biking": "Campground Roads",
+    "gameRoom": "No",
+    "otherActivities": [
+      "Swimming",
+      "Mini-Golf",
+      "Fishing",
+      "Bike Riding"
+    ]
+  },
+  "nearby": {
+    "shopping": [
+      "Walmart",
+      "Lowe's",
+      "Grocery Stores",
+      "Pharmacy"
+    ],
+    "food": [
+      "Cracker Barrel",
+      "Fast Food",
+      "Local Restaurants"
+    ],
+    "nearbyAttractions": [
+      "Historic Downtown Lumberton",
+      "Luther Britt Park",
+      "Robeson County History Museum"
+    ]
+  },
+  "petNotes": {
+    "walkingAreas": "Wide campground roads and grassy open areas are good for walking dogs.",
+    "dogPark": "KampK9 available.",
+    "dogFriendlyTrails": "Campground walking areas.",
+    "petRestrictions": "Pets must remain leashed outside the dog park.",
+    "hazards": "Hot summers and mosquitoes are common.",
+    "overallPetRating": "Excellent",
+    "notes": "A very convenient overnight stop when traveling with pets thanks to the KampK9 and easy walking areas."
+  },
+  "emergencyServices": {
+    "hospital": {
+      "name": "UNC Health Southeastern",
+      "address": "300 West 27th Street, Lumberton, NC 28358",
+      "distance": "Approximately 10 minutes"
+    },
+    "veterinarian": {
+      "name": "Lumberton Animal Hospital",
+      "address": "1727 North Roberts Avenue, Lumberton, NC 28358",
+      "distance": "Approximately 10 minutes"
+    },
+    "emergencyVeterinarian": {
+      "name": "Points East Veterinary Specialty Hospital",
+      "address": "4935 Fayetteville Road, Lumberton, NC 28358",
+      "distance": "Approximately 15 minutes"
+    }
+  },
+  "tripTips": [
+    "Excellent overnight stop when traveling Interstate 95.",
+    "Reserve a pull-through site if you're only staying one night.",
+    "Fuel up and stock groceries before getting back on the road.",
+    "Great campground to stretch your legs after a long day of driving."
+  ],
+  "favoriteSites": [],
+  "photoGallery": [],
+  "reviews": []
+}
