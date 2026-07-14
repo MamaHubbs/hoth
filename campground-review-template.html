@@ -1,895 +1,1234 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Campground Review</title>
-    <link href="lightbox2/css/lightbox.min.css" rel="stylesheet" />
-    <style>
-    body {
-        font-family: Helvetica, sans-serif;
-        line-height: 1.4;
-        margin: 20px;
-        background-color: #f4f4f4;
-        color: #333;
-    }
-    .container {
-        max-width: 800px;
-        margin: auto;
-        background: #fff;
-        padding: 30px;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    h1 {
-        font-family: Arial, sans-serif;
-        color: #133b66;
-        text-align: center;
-        margin-bottom: 25px;
-        font-size: 2em;
-    }
-    .overall-rating-general-info {
-        text-align: left;
-        font-size: 1em;
-        margin-bottom: 15px;
-        color: #ff9800;
-        font-weight: bold;
-    }
-    h2 {
-        font-family: Arial, sans-serif;
-        color: #2d7cbc;
-        border-bottom: 1px solid #eee;
-        padding-bottom: 5px;
-        margin-top: 15px;
-        font-size: 1.2em;
-    }
-    h2#siteFeaturesHeading {
-        margin-top: 30px;
-    }
-    p {
-        margin-bottom: 10px;
-    }
-    strong {
-        color: #555;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campground Review</title>
+  <link href="lightbox2/css/lightbox.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #133b66;
+      --blue: #2d7cbc;
+      --blue-dark: #195c8c;
+      --light-blue: #eaf4ff;
+      --lightest-blue: #f5faff;
+      --text: #333;
+      --muted: #666;
+      --border: #e1e7ed;
+      --panel: #f9fbfd;
+      --gold: #ff9800;
+      --danger-bg: #fff1f1;
+      --danger-border: #d9534f;
+      --success-bg: #eef9f1;
+      --shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
 
-    /* Global list reset */
-    ul {
-        list-style-type: none;
-        padding: 0;
+    * {
+      box-sizing: border-box;
     }
-    ul li {
-        margin-bottom: 5px;
-        padding: 8px 12px;
-        border-radius: 4px;
+
+    body {
+      font-family: Helvetica, Arial, sans-serif;
+      line-height: 1.5;
+      margin: 20px;
+      background: #f4f4f4;
+      color: var(--text);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 28px;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      color: var(--navy);
+      text-align: center;
+      margin: 0 0 8px;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.1;
+    }
+
+    h2 {
+      color: var(--blue);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 7px;
+      margin: 0 0 14px;
+      font-size: 1.35rem;
+    }
+
+    h3 {
+      color: var(--navy);
+      margin: 0 0 8px;
+      font-size: 1.05rem;
+    }
+
+    p {
+      margin: 0 0 10px;
     }
 
     a {
-        color: #2d7cbc;
-        text-decoration: none;
+      color: var(--blue);
+      text-decoration: none;
     }
+
     a:hover {
-        text-decoration: underline;
-    }
-    .rating {
-        font-size: 1.2em;
-        font-weight: bold;
-        color: #ff9800;
-    }
-        .map-btn {
-    display: inline-block;
-    margin-right: 10px;
-    margin-top: 6px;
-    padding: 6px 10px;
-    background-color: #2d7cbc;
-    color: #fff !important;
-    border-radius: 4px;
-    font-size: 0.85em;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-}
-
-.map-btn:hover {
-    background-color: #195c8c;
-    text-decoration: none;
-}
-        /* Center the map buttons */
-.map-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 8px;           /* small spacing */
-    margin-top: 10px;
-    flex-wrap: wrap;    /* still allows wrapping on very tiny screens */
-}
-
-.map-buttons a {
-    display: inline-block;
-    padding: 4px 10px;       /* smaller padding */
-    font-size: 0.85em;       /* smaller text size */
-    border-radius: 5px;
-    background-color: #2d7cbc;
-    color: white;
-    text-decoration: none;
-    white-space: nowrap;     /* prevents breaking onto multiple lines */
-}
-
-.map-buttons a:hover {
-    background-color: #1d5c96;
-}
-
-
-    .section-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 15px;
-        margin-bottom: 20px;
-    }
-    .section-grid > div {
-        background-color: #f9f9f9;
-        padding: 10px;
-        border-radius: 5px;
-        border: 1px solid #eee;
-    }
-    .nested-box {
-        background-color: #f9f9f9;
-        padding: 10px;
-        border-radius: 5px;
-        margin-bottom: 15px;
-    }
-    .nested-box:last-child {
-        margin-bottom: 0;
-    }
-    .review-card {
-        background-color: #e6f7ff;
-        padding: 15px;
-        border-left: 5px solid #2196f3;
-        margin-top: 20px;
-        border-radius: 5px;
-    }
-    .review-meta {
-        font-size: 0.9em;
-        color: #666;
-        margin-bottom: 10px;
-    }
-    .video-container {
-        position: relative;
-        width: 100%;
-        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-        height: 0;
-        margin-top: 20px;
-        overflow: hidden;
-        background-color: #000;
-    }
-    .video-container iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border: none;
+      text-decoration: underline;
     }
 
-    .map-container {
-        overflow: hidden;
-        height: 300px;
-        position: relative;
-        margin-top: 15px;
-        border-radius: 5px;
-        border: 1px solid #eee;
-    }
-    .map-container iframe {
-        left: 0;
-        top: 0;
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        border: 0;
-    }
-
-    /* --- Unified Clean Spec List Style --- */
-    #amenitiesList,
-    #activitiesContainer ul,
-    #nearbyEssentialsContainer ul {
-        list-style: none;
-        padding-left: 0;
-        margin: 0;
-    }
-
-    #amenitiesList li,
-    #activitiesContainer ul li,
-    #nearbyEssentialsContainer ul li {
-        padding: 4px 0;
-        border-bottom: 1px solid #eee;
-        border-radius: 0; /* override global rounded look for spec lists */
-    }
-
-    #amenitiesList li:last-child,
-    #activitiesContainer ul li:last-child,
-    #nearbyEssentialsContainer ul li:last-child {
-        border-bottom: none;
-    }
-        /* Nested "Other Activities" list styling */
-#activitiesContainer .nested-activities-list {
-    margin-top: 0.25rem;
-    margin-left: 1.25rem;  /* visual indent */
-    padding-left: 0;       /* no extra padding */
-}
-
-#activitiesContainer .nested-activities-list li {
-    border-bottom: none;   /* no extra dividers inside */
-    padding: 2px 0;
-    font-size: 0.9em;
-    color: #666;
-}
-
-        /* Nested lists under Other Activities + Nearby (Shopping / Food) */
-.nested-activities-list,
-.nested-nearby-list {
-    margin-top: 4px;
-    padding-left: 1.25rem;
-    list-style: disc;
-}
-
-.nested-activities-list li,
-.nested-nearby-list li {
-    padding: 2px 0;
-    border-bottom: none; /* don't draw the spec-line on nested items */
-}
-
-
-    /* === Photo Gallery (portrait-grid-style cards) === */
-    .photo-gallery-grid {
-        /* portrait-grid style */
-        --pg-height: 220px; /* default thumbnail height; adjust if you like */
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* responsive columns */
-        gap: 0.75rem;
-        margin-top: 20px;
-        margin-bottom: 30px;
-    }
-
-    /* equal-height variant (like portrait-grid.equal-heights) */
-    .photo-gallery-grid.equal-heights img {
-        width: 100%;
-        height: var(--pg-height);
-        object-fit: cover;     /* gentle crop to fill the box */
-        display: block;
-        border-radius: 8px;
-        box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-    }
-
-    .photo-gallery-item {
-        background: #fafafa;
-        border: 1px solid #ddd;
-        border-radius: 10px;
-        padding: 0.5rem;
-        text-align: center;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-    }
-
-    /* make sure anchor fills the card width nicely */
-    .photo-gallery-item a {
-        display: block;
-    }
-
-    .photo-gallery-item img {
-        width: 100%;
-        height: auto;          /* final height comes from equal-heights rule when applied */
-        display: block;
-    }
-
-    /* Caption, styled like your portrait-grid figcaption */
-    .photo-gallery-item .caption {
-        margin-top: 0.35rem;
-        font-size: 0.9rem;
-        color: #555;
-        font-style: italic;
-        line-height: 1.3;
-        padding: 0.25rem 0.5rem 0.5rem;
-    }
-
-    /* Slightly tighter gaps on small screens if desired */
-    @media (max-width: 700px) {
-        .photo-gallery-grid {
-            --pg-height: 180px; /* shorter thumbnails on phones */
-            gap: 0.5rem;
-        }
-    }
-
-    .favorite-sites-box {
-        border: 1px solid #2d7cbc;
-        background-color: #e5f2ff;
-        padding: 10px;
-        margin-top: 25px;
-        border-radius: 5px;
-        margin-left: 0;
-        margin-right: 0;
-        padding-top: 5px;
-    }
-    .favorite-sites-box h2 {
-        margin-top: 0;
-        margin-bottom: 0px;
-        border-bottom: none;
-        padding-bottom: 0px;
-        line-height: 1.2;
-    }
-    .favorite-sites-box p {
-        margin-top: 0px;
-        margin-bottom: 0px;
+    strong {
+      color: #4c4c4c;
     }
 
     .navbar {
-        background-color: #133b66;
-        padding: 10px 0;
-        margin-bottom: 20px;
-        border-radius: 5px;
-        text-align: center;
+      background: var(--navy);
+      padding: 11px;
+      margin: 22px 0;
+      border-radius: 7px;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
     }
+
     .navbar a {
-        color: #fff;
-        text-decoration: none;
-        font-family: Arial, sans-serif;
-        font-size: 1.1em;
-        padding: 8px 15px;
-        margin: 0 5px;
-        border-radius: 4px;
-        transition: background-color 0.3s ease;
+      color: #fff;
+      padding: 7px 14px;
+      border-radius: 5px;
+      font-size: 1rem;
     }
+
     .navbar a:hover {
-        background-color: #2d7cbc;
-        text-decoration: none;
+      background: var(--blue);
+      text-decoration: none;
     }
-</style>
 
+    .hero-meta {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .summary {
+      max-width: 850px;
+      margin: 0 auto 10px;
+      color: #4b5560;
+      font-size: 1.05rem;
+    }
+
+    .badge-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 10px;
+      background: var(--light-blue);
+      border: 1px solid #c7def3;
+      color: var(--navy);
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .overall-rating {
+      color: var(--gold);
+      font-weight: 700;
+      margin-top: 8px;
+      font-size: 1rem;
+    }
+
+    .page-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      padding: 18px;
+    }
+
+    .panel.full {
+      margin-bottom: 18px;
+    }
+
+    .info-list,
+    .spec-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .info-list li,
+    .spec-list li {
+      padding: 7px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .info-list li:last-child,
+    .spec-list li:last-child {
+      border-bottom: none;
+    }
+
+    .nested-list {
+      margin: 6px 0 0 18px;
+      padding-left: 16px;
+      list-style: disc;
+    }
+
+    .nested-list li {
+      border: 0;
+      padding: 2px 0;
+    }
+
+    .map-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin: 12px 0;
+      flex-wrap: wrap;
+    }
+
+    .button-link {
+      display: inline-block;
+      padding: 7px 11px;
+      background: var(--blue);
+      color: #fff !important;
+      border-radius: 5px;
+      font-size: 0.88rem;
+      text-decoration: none;
+    }
+
+    .button-link:hover {
+      background: var(--blue-dark);
+      text-decoration: none;
+    }
+
+    .map-container {
+      overflow: hidden;
+      height: 320px;
+      position: relative;
+      margin-top: 14px;
+      border-radius: 7px;
+      border: 1px solid var(--border);
+      background: #eee;
+    }
+
+    .map-container iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .callout {
+      background: var(--lightest-blue);
+      border: 1px solid #c8def0;
+      border-left: 5px solid var(--blue);
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-bottom: 18px;
+    }
+
+    .starlink-card {
+      background: #f3f7ff;
+      border: 1px solid #d7e2f5;
+    }
+
+    .favorite-sites-box {
+      background: var(--light-blue);
+      border: 1px solid var(--blue);
+      border-radius: 8px;
+      padding: 14px;
+      margin-top: 18px;
+    }
+
+    .favorite-site-group {
+      padding: 10px 0;
+      border-top: 1px solid rgba(45,124,188,0.18);
+    }
+
+    .favorite-site-group:first-of-type {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .site-chip-row {
+      display: flex;
+      gap: 7px;
+      flex-wrap: wrap;
+      margin: 7px 0;
+    }
+
+    .site-chip {
+      display: inline-block;
+      background: #fff;
+      border: 1px solid #b9d4ec;
+      color: var(--navy);
+      border-radius: 999px;
+      padding: 4px 9px;
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
+
+    .emergency-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .emergency-card {
+      border: 1px solid var(--border);
+      background: #fff;
+      border-radius: 8px;
+      padding: 13px;
+    }
+
+    .emergency-card p {
+      margin-bottom: 6px;
+    }
+
+    .trip-tips {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .trip-tips li {
+      margin-bottom: 8px;
+    }
+
+    .photo-gallery-grid {
+      --pg-height: 220px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.8rem;
+      margin: 18px 0 28px;
+    }
+
+    .photo-gallery-item {
+      background: #fafafa;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 0.5rem;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+
+    .photo-gallery-item a {
+      display: block;
+    }
+
+    .photo-gallery-item img {
+      width: 100%;
+      height: var(--pg-height);
+      object-fit: cover;
+      display: block;
+      border-radius: 8px;
+    }
+
+    .caption {
+      margin-top: 0.35rem;
+      font-size: 0.9rem;
+      color: #555;
+      font-style: italic;
+      line-height: 1.3;
+      padding: 0.25rem 0.5rem 0.5rem;
+    }
+
+    .review-card {
+      background: #eaf7ff;
+      padding: 18px;
+      border-left: 5px solid #2196f3;
+      margin-top: 18px;
+      border-radius: 7px;
+    }
+
+    .review-meta {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+      margin-top: 18px;
+      overflow: hidden;
+      background: #000;
+      border-radius: 7px;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .empty-state {
+      color: var(--muted);
+      font-style: italic;
+      margin: 0;
+    }
+
+    .error-box {
+      display: none;
+      background: var(--danger-bg);
+      border: 1px solid #efb7b5;
+      border-left: 5px solid var(--danger-border);
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      color: #7a2421;
+    }
+
+    .loading {
+      text-align: center;
+      color: var(--muted);
+      padding: 15px 0;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    @media (max-width: 820px) {
+      body {
+        margin: 10px;
+      }
+
+      .container {
+        padding: 18px;
+      }
+
+      .page-grid,
+      .emergency-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .map-container {
+        height: 260px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .photo-gallery-grid {
+        --pg-height: 180px;
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <div class="container">
-        <h1 id="campgroundName">Loading Campground Review...</h1>
+  <div class="container">
+    <div id="errorBox" class="error-box"></div>
 
-<div class="navbar">
-    <a id="returnToStateLink" href="#">Return to State List</a>
-    <a href="us-map-landing-page.html">Return to US Map</a>
-</div>
+    <header>
+      <h1 id="campgroundName">Loading Campground Review...</h1>
+      <div class="hero-meta">
+        <p id="summaryText" class="summary"></p>
+        <div id="badgeRow" class="badge-row"></div>
+        <p id="overallStarRating" class="overall-rating"></p>
+      </div>
+    </header>
 
-<div class="section-grid">
-    <!-- LEFT COLUMN: General Info + Map + Favorite Sites -->
-    <div>
-        <div class="nested-box">
-            <h2>General Info</h2>
-            <p id="overallStarRating" class="overall-rating-general-info"></p>
-            <p><strong>Website:</strong> <a id="website" href="#" target="_blank">Visit Campground Website</a></p>
-            <p><strong>Reservations:</strong> <a id="reservations" href="#" target="_blank">Click Here</a></p>
-            <p><strong>Campground Map:</strong> <a id="parkmap" href="#" target="_blank">Click to View</a></p>
-<p><strong>Address:</strong> <span id="address"></span></p>
+    <nav class="navbar">
+      <a id="returnToStateLink" href="#">Return to State List</a>
+      <a href="us-map-landing-page.html">Return to US Map</a>
+    </nav>
 
-<div class="map-buttons">
-    <a id="googleMapsBtn" href="#" target="_blank">Open in Google Maps</a>
-    <a id="appleMapsBtn" href="#" target="_blank">Open in Apple Maps</a>
-</div>
+    <div id="loadingMessage" class="loading">Loading campground details…</div>
 
+    <main id="pageContent" hidden>
+      <section class="page-grid">
+        <div class="panel">
+          <h2>General Info</h2>
+          <ul id="generalInfoList" class="info-list"></ul>
 
-            <div class="map-container">
-                <iframe id="googleMap" frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-            </div>
+          <div class="map-buttons">
+            <a id="googleMapsBtn" class="button-link" href="#" target="_blank" rel="noopener">Open in Google Maps</a>
+            <a id="appleMapsBtn" class="button-link" href="#" target="_blank" rel="noopener">Open in Apple Maps</a>
+          </div>
 
-            <!-- ✅ Favorite Sites moved here, under the map -->
-            <div class="nested-box favorite-sites-box">
-                <h2>Favorite Sites</h2>
-                <p><span id="favoriteSites"></span></p>
-            </div>
+          <div id="mapContainer" class="map-container">
+            <iframe id="googleMap" allowfullscreen aria-hidden="false" tabindex="0"></iframe>
+          </div>
+
+          <div id="favoriteSitesBox" class="favorite-sites-box" hidden>
+            <h2>Favorite Sites</h2>
+            <div id="favoriteSites"></div>
+          </div>
         </div>
-    </div>
 
-    <!-- RIGHT COLUMN: Amenities + Site Features -->
-    <div>
-        <h2 id="amenitiesListHeading">Amenities</h2>
-        <ul id="amenitiesList"></ul>
+        <div class="panel">
+          <h2>Amenities</h2>
+          <ul id="amenitiesList" class="spec-list"></ul>
 
-        <h2 id="siteFeaturesHeading">Site Features</h2>
-        <p id="siteFeatures"></p>
-    </div>
-</div>
+          <div id="siteFeaturesSection" style="margin-top:22px;">
+            <h2>Site Features</h2>
+            <ul id="siteFeaturesList" class="spec-list"></ul>
+          </div>
+        </div>
+      </section>
 
-<div id="activitiesContainer"></div>
-<div id="nearbyEssentialsContainer"></div>
+      <section id="starlinkSection" class="callout starlink-card" hidden>
+        <h2>Starlink & Connectivity</h2>
+        <div id="starlinkContent"></div>
+      </section>
 
+      <section id="activitiesSection" class="panel full" hidden>
+        <h2>Activities</h2>
+        <div id="activitiesGrid" class="page-grid"></div>
+      </section>
 
+      <section id="nearbySection" class="panel full" hidden>
+        <h2>Nearby</h2>
+        <div id="nearbyGrid" class="page-grid"></div>
+      </section>
 
+      <section id="petNotesSection" class="panel full" hidden>
+        <h2>Pet Notes</h2>
+        <ul id="petNotesList" class="spec-list"></ul>
+      </section>
+
+      <section id="emergencyServicesSection" class="panel full" hidden>
+        <h2>Emergency Services</h2>
+        <div id="emergencyServicesGrid" class="emergency-grid"></div>
+      </section>
+
+      <section id="tripTipsSection" class="callout" hidden>
+        <h2>Trip Tips</h2>
+        <ul id="tripTipsList" class="trip-tips"></ul>
+      </section>
+
+      <section>
         <h2>Photo Gallery</h2>
-<div id="photoGalleryContainer" class="photo-gallery-grid equal-heights">
-    <p>No photos available.</p>
-</div>
+        <div id="photoGalleryContainer" class="photo-gallery-grid"></div>
+      </section>
 
-
+      <section>
         <h2>Reviews</h2>
-        <div id="reviewsContainer">
-            <p>No reviews available.</p>
-        </div>
+        <div id="reviewsContainer"></div>
+      </section>
+    </main>
+  </div>
 
-    </div>
+  <script src="lightbox2/js/lightbox-plus-jquery.min.js"></script>
+  <script src="shared.js"></script>
 
-    <script src="lightbox2/js/lightbox-plus-jquery.min.js"></script>
-    <script src="shared.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      if (typeof lightbox !== 'undefined') {
+        lightbox.option({ disableScrolling: true });
+      }
 
- <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // --- Lightbox2 specific configuration ---
-        lightbox.option({
-            'disableScrolling': true
+      const campgroundFilename = getQueryParameter('campground');
+      const errorBox = document.getElementById('errorBox');
+      const loadingMessage = document.getElementById('loadingMessage');
+      const pageContent = document.getElementById('pageContent');
+
+      function showError(message, detail = '') {
+        loadingMessage.hidden = true;
+        pageContent.hidden = false;
+        errorBox.style.display = 'block';
+        errorBox.innerHTML = `
+          <strong>${escapeHtml(message)}</strong>
+          ${detail ? `<div style="margin-top:8px;font-size:.9rem;">${escapeHtml(detail)}</div>` : ''}
+        `;
+        document.getElementById('campgroundName').textContent = 'Failed to load campground review.';
+      }
+
+      if (!campgroundFilename) {
+        showError(
+          'Campground filename not specified.',
+          'Add ?campground=filename to the page URL.'
+        );
+        return;
+      }
+
+      const jsonUrl = getCampgroundJsonUrl(campgroundFilename);
+      console.log('Loading campground JSON:', jsonUrl);
+
+      fetch(jsonUrl)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`HTTP ${response.status} while loading ${jsonUrl}`);
+          }
+          return response.json();
+        })
+        .then(campground => {
+          if (!campground || typeof campground !== 'object') {
+            throw new Error(`No campground object returned from ${jsonUrl}`);
+          }
+
+          renderCampground(campground);
+          loadingMessage.hidden = true;
+          pageContent.hidden = false;
+        })
+        .catch(error => {
+          console.error('Error fetching campground data:', error);
+          showError(
+            'The campground JSON could not be loaded.',
+            `${error.message}. Check the filename, folder path, capitalization, and JSON formatting.`
+          );
         });
 
-        const campgroundFilename = getQueryParameter('campground');
+      function renderCampground(campground) {
+        renderHeader(campground);
+        renderNavigation(campground);
+        renderGeneralInfo(campground);
+        renderMap(campground);
+        renderFavoriteSites(campground.favoriteSites);
+        renderObjectList(
+          document.getElementById('amenitiesList'),
+          campground.amenities,
+          [
+            'electric', 'waterAtSite', 'potableFill', 'sewer', 'dumpStation',
+            'bathhouse', 'laundryFacilities', 'cellService', 'wifi', 'tvCable',
+            'petsWelcome', 'dogPark', 'campStore', 'propaneRefill', 'playground',
+            'swimmingBeach', 'swimmingPool', 'otherAmenities'
+          ]
+        );
+        renderObjectList(
+          document.getElementById('siteFeaturesList'),
+          campground.siteFeatures,
+          [
+            'level', 'dirt', 'gravel', 'paved', 'patio', 'shade',
+            'fireRing', 'picnicTable', 'grill', 'otherNotes'
+          ]
+        );
+        renderStarlink(campground.starlink);
+        renderActivities(campground.activities);
+        renderNearby(campground.nearby);
+        renderPetNotes(campground.petNotes);
+        renderEmergencyServices(campground.emergencyServices);
+        renderTripTips(campground.tripTips);
+        renderPhotos(campground);
+        renderReviews(campground.reviews);
+      }
 
-        if (!campgroundFilename) {
-            document.getElementById('campgroundName').textContent =
-                "Error: Campground filename not specified in URL.";
-            console.error("No 'campground' query parameter found in the URL.");
-            return;
+      function renderHeader(campground) {
+        document.getElementById('campgroundName').textContent =
+          campground.name || 'Campground Review';
+
+        document.getElementById('summaryText').textContent =
+          campground.summary_text || '';
+
+        const badges = [];
+        if (campground.type) badges.push(campground.type);
+
+        if (Array.isArray(campground.visitYears) && campground.visitYears.length) {
+          badges.push(`Visited: ${campground.visitYears.join(', ')}`);
         }
 
-        const jsonUrl = getCampgroundJsonUrl(campgroundFilename);
+        if (campground.visitCount) {
+          badges.push(`${campground.visitCount} visit${campground.visitCount === 1 ? '' : 's'}`);
+        }
 
-        fetch(jsonUrl)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                return response.json();
-            })
-            .then(data => {
-                const campground = data;
+        if (campground.status) {
+          badges.push(capitalize(campground.status));
+        }
 
-                if (!campground) {
-                    document.getElementById('campgroundName').textContent =
-                        `Campground data for filename '${campgroundFilename}' not found.`;
-                    console.error(`Campground data for filename '${campgroundFilename}' could not be loaded.`);
-                    return;
-                }
+        const badgeRow = document.getElementById('badgeRow');
+        badgeRow.innerHTML = '';
+        badges.forEach(text => {
+          const badge = document.createElement('span');
+          badge.className = 'badge';
+          badge.textContent = text;
+          badgeRow.appendChild(badge);
+        });
 
-                // --- NAVIGATION LOGIC ---
-                const stateCode = campground.state_code;
-                const returnToStateLink = document.getElementById('returnToStateLink');
-                if (stateCode) {
-                    returnToStateLink.href = `state-page-template.html?state=${stateCode}`;
-                } else {
-                    returnToStateLink.textContent = "Return to State List (N/A)";
-                    returnToStateLink.style.cursor = "default";
-                    returnToStateLink.removeAttribute('href');
-                }
-                // --- END NAVIGATION LOGIC ---
+        const reviews = Array.isArray(campground.reviews) ? campground.reviews : [];
+        const validRatings = reviews
+          .map(review => Number(review.starRating))
+          .filter(rating => Number.isFinite(rating));
 
-                // Calculate Overall Star Rating dynamically
-                let totalStars = 0;
-                let numberOfReviews = 0;
+        const ratingElement = document.getElementById('overallStarRating');
 
-                if (campground.reviews && campground.reviews.length > 0) {
-                    campground.reviews.forEach(review => {
-                        if (typeof review.starRating === 'number') {
-                            totalStars += review.starRating;
-                            numberOfReviews++;
-                        } else if (typeof review.starRating === 'string') {
-                            const parsedRating = parseInt(review.starRating);
-                            if (!isNaN(parsedRating)) {
-                                totalStars += parsedRating;
-                                numberOfReviews++;
-                            }
-                        }
-                    });
-                }
+        if (validRatings.length) {
+          const average = validRatings.reduce((sum, value) => sum + value, 0) / validRatings.length;
+          ratingElement.textContent =
+            `Overall Rating: ${'⭐'.repeat(Math.round(average))} (${average.toFixed(1)})`;
+        } else {
+          ratingElement.textContent = '';
+        }
+      }
 
-                let overallAverageRating = 0;
-                if (numberOfReviews > 0) {
-                    overallAverageRating = totalStars / numberOfReviews;
-                }
+      function renderNavigation(campground) {
+        const returnToStateLink = document.getElementById('returnToStateLink');
 
-                document.getElementById('overallStarRating').textContent =
-                    "Overall Rating: " +
-                    "⭐".repeat(Math.round(overallAverageRating)) +
-                    ` (${overallAverageRating.toFixed(1)})`;
+        if (campground.state_code) {
+          returnToStateLink.href =
+            `state-page-template.html?state=${encodeURIComponent(campground.state_code)}`;
+        } else {
+          returnToStateLink.textContent = 'Return to State List';
+          returnToStateLink.removeAttribute('href');
+        }
+      }
 
-// ----- General Info -----
-document.getElementById('campgroundName').textContent = campground.name;
+      function renderGeneralInfo(campground) {
+        const list = document.getElementById('generalInfoList');
+        list.innerHTML = '';
 
-// Show plain address text
-const addressSpan = document.getElementById('address');
-addressSpan.textContent = campground.address || "";
+        addLinkedInfo(list, 'Website', campground.website, 'Visit Campground Website');
+        addLinkedInfo(list, 'Reservations', campground.reservations, 'Reserve a Site');
+        addLinkedInfo(list, 'Campground Map', campground.parkmap, 'View Campground Map');
+        addTextInfo(list, 'Address', campground.address);
 
-// Map buttons
-const googleBtn = document.getElementById('googleMapsBtn');
-const appleBtn  = document.getElementById('appleMapsBtn');
+        if (Array.isArray(campground.previousNames) && campground.previousNames.length) {
+          const names = campground.previousNames
+            .map(item => typeof item === 'string' ? item : item.name)
+            .filter(Boolean)
+            .join(', ');
 
-if (campground.latitude && campground.longitude) {
-    const lat = campground.latitude;
-    const lng = campground.longitude;
+          if (names) {
+            addTextInfo(list, 'Previous Name', names);
+          }
+        }
+      }
 
-    // Google Maps → pin at exact coordinates
-    googleBtn.href =
-        `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
+      function renderMap(campground) {
+        const googleBtn = document.getElementById('googleMapsBtn');
+        const appleBtn = document.getElementById('appleMapsBtn');
+        const mapContainer = document.getElementById('mapContainer');
+        const iframe = document.getElementById('googleMap');
 
-    // Apple Maps → SHOW LOCATION ON MAP (pin), not just in "To:" field
-    appleBtn.href =
-        `https://maps.apple.com/?ll=${lat},${lng}&q=${encodeURIComponent(campground.name || 'Campground')}`;
-} else if (campground.address) {
-    // Fallback: use address text
-    const encodedAddr = encodeURIComponent(campground.address);
+        const hasCoordinates =
+          Number.isFinite(Number(campground.latitude)) &&
+          Number.isFinite(Number(campground.longitude));
 
-    googleBtn.href =
-        `https://www.google.com/maps/search/?api=1&query=${encodedAddr}`;
+        if (hasCoordinates) {
+          const lat = Number(campground.latitude);
+          const lng = Number(campground.longitude);
 
-    appleBtn.href =
-        `https://maps.apple.com/?q=${encodedAddr}`;
-} else {
-    // No location info → hide buttons
-    googleBtn.style.display = 'none';
-    appleBtn.style.display  = 'none';
-}
+          googleBtn.href =
+            `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
 
+          appleBtn.href =
+            `https://maps.apple.com/?ll=${lat},${lng}&q=${encodeURIComponent(campground.name || 'Campground')}`;
 
-                // Website
-                document.getElementById('website').href = campground.website;
+          iframe.src =
+            `https://www.openstreetmap.org/export/embed.html?bbox=${lng - 0.005},` +
+            `${lat - 0.002},${lng + 0.005},${lat + 0.002}` +
+            `&marker=${lat},${lng}&layer=mapnik`;
+        } else if (campground.address) {
+          const encoded = encodeURIComponent(campground.address);
 
-                // Populate Reservations Link
-                const reservationsLink = document.getElementById('reservations');
-                if (campground.reservations) {
-                    reservationsLink.href = campground.reservations;
-                    reservationsLink.textContent = "Click Here";
-                } else {
-                    reservationsLink.textContent = "N/A";
-                    reservationsLink.removeAttribute('href');
-                }
+          googleBtn.href =
+            `https://www.google.com/maps/search/?api=1&query=${encoded}`;
 
-                // Park Map Link
-                const parkMapLink = document.getElementById('parkmap');
-                if (campground.parkmap) {
-                    parkMapLink.href = campground.parkmap;
-                    parkMapLink.textContent = "Click to View";
-                } else {
-                    parkMapLink.textContent = "N/A";
-                    parkMapLink.removeAttribute('href');
-                }
+          appleBtn.href =
+            `https://maps.apple.com/?q=${encoded}`;
 
-                // OpenStreetMap Embedding
-                const googleMapIframe = document.getElementById('googleMap');
-                const zoomLevel = 15;
-                googleMapIframe.src =
-                    `https://www.openstreetmap.org/export/embed.html?bbox=${campground.longitude - 0.005},` +
-                    `${campground.latitude - 0.002},${campground.longitude + 0.005},` +
-                    `${campground.latitude + 0.002}&marker=${campground.latitude},` +
-                    `${campground.longitude}&zoom=${zoomLevel}&layer=mapnik`;
+          mapContainer.hidden = true;
+        } else {
+          googleBtn.hidden = true;
+          appleBtn.hidden = true;
+          mapContainer.hidden = true;
+        }
+      }
 
-                // Favorite Sites
-                if (Array.isArray(campground.favoriteSites)) {
-                    document.getElementById('favoriteSites').textContent =
-                        campground.favoriteSites.join(', ');
-                } else {
-                    document.getElementById('favoriteSites').textContent = '';
-                }
+      function renderFavoriteSites(favoriteSites) {
+        const box = document.getElementById('favoriteSitesBox');
+        const container = document.getElementById('favoriteSites');
+        container.innerHTML = '';
 
-                // Amenities - Dynamic Population
-                const amenitiesList = document.getElementById('amenitiesList');
-                amenitiesList.innerHTML = '';
-                const amenities = campground.amenities;
-                if (amenities) {
-                    const amenityOrder = [
-                        "electric", "waterAtSite", "potableFill", "sewer", "dumpStation", "bathhouse",
-                        "laundryFacilities", "cellService", "wifi", "tvCable", "petsWelcome", "dogPark",
-                        "campStore", "propaneRefill", "playground", "swimmingPool", "otherAmenities"
-                    ];
+        if (!Array.isArray(favoriteSites) || favoriteSites.length === 0) {
+          box.hidden = true;
+          return;
+        }
 
-                    amenityOrder.forEach(key => {
-                        if (amenities.hasOwnProperty(key)) {
-                            const li = document.createElement('li');
-                            let value = amenities[key];
-                            let displayKey = key.replace(/([A-Z])/g, ' $1')
-                                                .replace(/^./, str => str.toUpperCase());
+        box.hidden = false;
 
-                            if (typeof value === 'boolean') {
-                                value = value ? "Yes" : "No";
-                            } else if (Array.isArray(value)) {
-                                value = value.join(', ');
-                            }
+        if (favoriteSites.every(item => typeof item === 'string' || typeof item === 'number')) {
+          const chips = document.createElement('div');
+          chips.className = 'site-chip-row';
 
-                            li.innerHTML = `<strong>${displayKey}:</strong> ${value}`;
-                            amenitiesList.appendChild(li);
-                        }
-                    });
-                } else {
-                    amenitiesList.innerHTML =
-                        '<li>No amenities information available.</li>';
-                }
+          favoriteSites.forEach(site => {
+            const chip = document.createElement('span');
+            chip.className = 'site-chip';
+            chip.textContent = site;
+            chips.appendChild(chip);
+          });
 
-                // Site Features - Dynamic Population
-                document.getElementById('siteFeatures').innerHTML = '';
-                const siteFeaturesP = document.createElement('p');
-                const siteFeatures = campground.siteFeatures;
-                if (siteFeatures) {
-                    const featuresArray = [];
+          container.appendChild(chips);
+          return;
+        }
 
-                    const featureKeys = [
-                        "level", "dirt", "gravel", "paved", "patio", "shade", "fireRing",
-                        "picnicTable", "grill", "otherNotes"
-                    ];
+        favoriteSites.forEach(group => {
+          if (!group || typeof group !== 'object') return;
 
-                    featureKeys.forEach(key => {
-                        if (siteFeatures.hasOwnProperty(key) &&
-                            siteFeatures[key] !== null &&
-                            siteFeatures[key] !== undefined) {
-                            let value = siteFeatures[key];
-                            let displayKey = key.replace(/([A-Z])/g, ' $1')
-                                                .replace(/^./, str => str.toUpperCase());
+          const wrapper = document.createElement('div');
+          wrapper.className = 'favorite-site-group';
 
-                            if (typeof value === 'boolean') {
-                                value = value ? "Yes" : "No";
-                            } else if (Array.isArray(value)) {
-                                value = value.join(', ');
-                            }
-                            featuresArray.push(`<strong>${displayKey}:</strong> ${value}`);
-                        }
-                    });
+          if (group.campground) {
+            const heading = document.createElement('h3');
+            heading.textContent = group.campground;
+            wrapper.appendChild(heading);
+          }
 
-                    if (featuresArray.length > 0) {
-                        siteFeaturesP.innerHTML = featuresArray.join('<br>');
-                        document.getElementById('siteFeatures').appendChild(siteFeaturesP);
-                    } else {
-                        document.getElementById('siteFeatures').textContent = 'N/A';
-                    }
-                } else {
-                    document.getElementById('siteFeatures').textContent = 'N/A';
-                }
+          if (Array.isArray(group.sites) && group.sites.length) {
+            const chips = document.createElement('div');
+            chips.className = 'site-chip-row';
 
-                // Activities - Dynamic Population
-                const activitiesContainer = document.getElementById('activitiesContainer');
-                activitiesContainer.innerHTML =
-                    '<h2>Activities</h2><div class="section-grid"><div></div><div></div></div>';
-                const activitiesGridDiv1 = activitiesContainer.querySelector('.section-grid div:first-child');
-                const activitiesGridDiv2 = activitiesContainer.querySelector('.section-grid div:last-child');
+            group.sites.forEach(site => {
+              const chip = document.createElement('span');
+              chip.className = 'site-chip';
+              chip.textContent = site;
+              chips.appendChild(chip);
+            });
 
-                const activities = campground.activities;
-                if (activities) {
-                    const activityOrderLeft = ["waterfront", "fishing", "hiking", "biking"];
-                    const activityOrderRight = ["gameRoom", "otherActivities"];
+            wrapper.appendChild(chips);
+          }
 
-                    // LEFT column list
-                    const ulLeft = document.createElement('ul');
-                    activitiesGridDiv1.appendChild(ulLeft);
+          if (group.notes) {
+            const note = document.createElement('p');
+            note.textContent = group.notes;
+            wrapper.appendChild(note);
+          }
 
-                    activityOrderLeft.forEach(key => {
-                        if (activities.hasOwnProperty(key)) {
-                            const li = document.createElement('li');
-                            let value = activities[key];
-                            let displayKey = key.replace(/([A-Z])/g, ' $1')
-                                                .replace(/^./, str => str.toUpperCase());
+          container.appendChild(wrapper);
+        });
+      }
 
-                            if (typeof value === 'boolean') {
-                                value = value ? "Yes" : "No";
-                            } else if (Array.isArray(value)) {
-                                value = value.join(', ');
-                            }
+      function renderStarlink(starlink) {
+        const section = document.getElementById('starlinkSection');
+        const content = document.getElementById('starlinkContent');
+        content.innerHTML = '';
 
-                            li.innerHTML = `<strong>${displayKey}:</strong> ${value}`;
-                            ulLeft.appendChild(li);
-                        }
-                    });
+        if (!starlink || typeof starlink !== 'object') {
+          section.hidden = true;
+          return;
+        }
 
-                    // RIGHT column list
-                    const ulRight = document.createElement('ul');
-                    activitiesGridDiv2.appendChild(ulRight);
+        const parts = [];
+        if (starlink.rating) parts.push(`<strong>Rating:</strong> ${escapeHtml(starlink.rating)}`);
+        if (starlink.notes) parts.push(`<strong>Notes:</strong> ${escapeHtml(starlink.notes)}`);
 
-                    activityOrderRight.forEach(key => {
-                        if (activities.hasOwnProperty(key)) {
-                            const li = document.createElement('li');
-                            let value = activities[key];
-                            let displayKey = key.replace(/([A-Z])/g, ' $1')
-                                                .replace(/^./, str => str.toUpperCase());
+        if (!parts.length) {
+          section.hidden = true;
+          return;
+        }
 
-                            if (typeof value === 'boolean') {
-                                value = value ? "Yes" : "No";
-                            } else if (Array.isArray(value)) {
-                                value = value.join(', ');
-                            }
+        content.innerHTML = `<p>${parts.join('<br>')}</p>`;
+        section.hidden = false;
+      }
 
-                            if (key === "otherActivities") {
-                                li.innerHTML = `<strong>${displayKey}:</strong>`;
+      function renderActivities(activities) {
+        const section = document.getElementById('activitiesSection');
+        const grid = document.getElementById('activitiesGrid');
+        grid.innerHTML = '';
 
-                                const otherUl = document.createElement('ul');
-                                otherUl.classList.add('nested-activities-list');
+        if (!activities || typeof activities !== 'object') {
+          section.hidden = true;
+          return;
+        }
 
-                                if (Array.isArray(activities.otherActivities)) {
-                                    activities.otherActivities.forEach(item => {
-                                        const otherLi = document.createElement('li');
-                                        otherLi.textContent = item;
-                                        otherUl.appendChild(otherLi);
-                                    });
-                                }
+        const left = createPanelList(
+          activities,
+          ['waterfront', 'boatingLaunch', 'fishing', 'hiking']
+        );
 
-                                li.appendChild(otherUl);
-                            } else {
-                                li.innerHTML = `<strong>${displayKey}:</strong> ${value}`;
-                            }
+        const right = createPanelList(
+          activities,
+          ['biking', 'gameRoom', 'otherActivities']
+        );
 
-                            ulRight.appendChild(li);
-                        }
-                    });
-                } else {
-                    activitiesGridDiv1.innerHTML =
-                        '<p>No activities information available.</p>';
-                    activitiesGridDiv2.innerHTML = '';
-                }
+        grid.append(left, right);
+        section.hidden = false;
+      }
 
-              // Nearby Essentials - Dynamic Population
-const nearbyEssentialsContainer = document.getElementById('nearbyEssentialsContainer');
-nearbyEssentialsContainer.innerHTML =
-    '<h2>Nearby Essentials</h2><div class="section-grid"><div></div><div></div></div>';
+      function renderNearby(nearby) {
+        const section = document.getElementById('nearbySection');
+        const grid = document.getElementById('nearbyGrid');
+        grid.innerHTML = '';
 
-const nearbyGridDiv1 = nearbyEssentialsContainer.querySelector('.section-grid div:first-child');
-const nearbyGridDiv2 = nearbyEssentialsContainer.querySelector('.section-grid div:last-child');
+        if (!nearby || typeof nearby !== 'object') {
+          section.hidden = true;
+          return;
+        }
 
-const nearby = campground.nearby;
-if (nearby) {
-    // LEFT side: Shopping, Food (with nested lists like "Other Activities")
-    const ulLeftNearby = document.createElement('ul');
+        const left = createPanelList(nearby, ['shopping', 'food']);
+        const right = createPanelList(nearby, ['nearbyAttractions', 'emergencyMedicalDistance']);
 
-    // Shopping
-    if (nearby.shopping) {
-        const li = document.createElement('li');
+        grid.append(left, right);
+        section.hidden = false;
+      }
 
-        if (Array.isArray(nearby.shopping)) {
-            // Nested style like Other Activities
-            li.innerHTML = '<strong>Shopping:</strong>';
+      function renderPetNotes(petNotes) {
+        const section = document.getElementById('petNotesSection');
+        const list = document.getElementById('petNotesList');
+
+        if (!petNotes || typeof petNotes !== 'object') {
+          section.hidden = true;
+          return;
+        }
+
+        renderObjectList(
+          list,
+          petNotes,
+          [
+            'walkingAreas', 'dogPark', 'dogFriendlyTrails',
+            'petRestrictions', 'hazards', 'overallPetRating', 'notes'
+          ]
+        );
+
+        section.hidden = list.children.length === 0;
+      }
+
+      function renderEmergencyServices(services) {
+        const section = document.getElementById('emergencyServicesSection');
+        const grid = document.getElementById('emergencyServicesGrid');
+        grid.innerHTML = '';
+
+        if (!services || typeof services !== 'object') {
+          section.hidden = true;
+          return;
+        }
+
+        const order = [
+          ['hospital', 'Hospital'],
+          ['veterinarian', 'Veterinarian'],
+          ['emergencyVeterinarian', 'Emergency Veterinarian']
+        ];
+
+        order.forEach(([key, label]) => {
+          const item = services[key];
+          if (!item || typeof item !== 'object') return;
+
+          const card = document.createElement('div');
+          card.className = 'emergency-card';
+
+          const heading = document.createElement('h3');
+          heading.textContent = label;
+          card.appendChild(heading);
+
+          if (item.name) {
+            const name = document.createElement('p');
+            name.innerHTML = `<strong>${escapeHtml(item.name)}</strong>`;
+            card.appendChild(name);
+          }
+
+          if (item.address) {
+            const address = document.createElement('p');
+            address.textContent = item.address;
+            card.appendChild(address);
+
+            const directions = document.createElement('a');
+            directions.className = 'button-link';
+            directions.target = '_blank';
+            directions.rel = 'noopener';
+            directions.href =
+              `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.address)}`;
+            directions.textContent = 'Get Directions';
+            card.appendChild(directions);
+          }
+
+          if (item.distance) {
+            const distance = document.createElement('p');
+            distance.style.marginTop = '8px';
+            distance.innerHTML = `<strong>Distance:</strong> ${escapeHtml(item.distance)}`;
+            card.appendChild(distance);
+          }
+
+          grid.appendChild(card);
+        });
+
+        section.hidden = grid.children.length === 0;
+      }
+
+      function renderTripTips(tips) {
+        const section = document.getElementById('tripTipsSection');
+        const list = document.getElementById('tripTipsList');
+        list.innerHTML = '';
+
+        if (!Array.isArray(tips) || tips.length === 0) {
+          section.hidden = true;
+          return;
+        }
+
+        tips.forEach(tip => {
+          const li = document.createElement('li');
+          li.textContent = tip;
+          list.appendChild(li);
+        });
+
+        section.hidden = false;
+      }
+
+      function renderPhotos(campground) {
+        const container = document.getElementById('photoGalleryContainer');
+        container.innerHTML = '';
+
+        const photos = Array.isArray(campground.photoGallery)
+          ? campground.photoGallery
+          : [];
+
+        if (!photos.length) {
+          container.innerHTML =
+            '<p class="empty-state">No photos available for this campground.</p>';
+          return;
+        }
+
+        const galleryName = `${campground.id || campgroundFilename}-gallery`;
+
+        photos.forEach(photo => {
+          if (!photo || !photo.url) return;
+
+          const item = document.createElement('div');
+          item.className = 'photo-gallery-item';
+
+          const link = document.createElement('a');
+          link.href = photo.url;
+          link.dataset.lightbox = galleryName;
+          link.dataset.title = photo.caption || '';
+
+          const image = document.createElement('img');
+          image.src = photo.url;
+          image.alt = photo.caption || 'Campground photo';
+          image.loading = 'lazy';
+
+          link.appendChild(image);
+          item.appendChild(link);
+
+          if (photo.caption) {
+            const caption = document.createElement('div');
+            caption.className = 'caption';
+            caption.textContent = photo.caption;
+            item.appendChild(caption);
+          }
+
+          container.appendChild(item);
+        });
+      }
+
+      function renderReviews(reviews) {
+        const container = document.getElementById('reviewsContainer');
+        container.innerHTML = '';
+
+        if (!Array.isArray(reviews) || reviews.length === 0) {
+          container.innerHTML =
+            '<p class="empty-state">No reviews available for this campground.</p>';
+          return;
+        }
+
+        reviews.forEach(review => {
+          const card = document.createElement('article');
+          card.className = 'review-card';
+
+          const rating = Number(review.starRating);
+          const stars = Number.isFinite(rating)
+            ? '⭐'.repeat(Math.max(0, Math.round(rating)))
+            : '';
+
+          const meta = document.createElement('p');
+          meta.className = 'review-meta';
+
+          const metaParts = [];
+          if (review.visitDate) metaParts.push(`<strong>Visit Date:</strong> ${escapeHtml(review.visitDate)}`);
+          if (review.reviewDate) metaParts.push(`<strong>Review Date:</strong> ${escapeHtml(review.reviewDate)}`);
+          if (stars) metaParts.push(`<strong>Rating:</strong> ${stars}`);
+
+          meta.innerHTML = metaParts.join(' &nbsp;|&nbsp; ');
+          card.appendChild(meta);
+
+          if (review.text) {
+            const text = document.createElement('div');
+            text.innerHTML = sanitizeReviewHtml(review.text);
+            card.appendChild(text);
+          }
+
+          const videoId = extractYouTubeId(review.youtubeVideoUrl);
+          if (videoId) {
+            const video = document.createElement('div');
+            video.className = 'video-container';
+            video.innerHTML = `
+              <iframe
+                src="https://www.youtube.com/embed/${videoId}"
+                title="Campground review video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+              </iframe>
+            `;
+            card.appendChild(video);
+          }
+
+          container.appendChild(card);
+        });
+      }
+
+      function renderObjectList(list, object, order) {
+        list.innerHTML = '';
+
+        if (!object || typeof object !== 'object') {
+          const li = document.createElement('li');
+          li.textContent = 'No information available.';
+          list.appendChild(li);
+          return;
+        }
+
+        order.forEach(key => {
+          if (!Object.prototype.hasOwnProperty.call(object, key)) return;
+
+          const value = object[key];
+          if (value === null || value === undefined || value === '') return;
+
+          const li = document.createElement('li');
+          const label = humanizeKey(key);
+
+          if (Array.isArray(value)) {
+            li.innerHTML = `<strong>${escapeHtml(label)}:</strong>`;
             const nested = document.createElement('ul');
-            nested.classList.add('nested-nearby-list');
+            nested.className = 'nested-list';
 
-            nearby.shopping.forEach(place => {
-                const innerLi = document.createElement('li');
-                innerLi.textContent = place;
-                nested.appendChild(innerLi);
+            value.forEach(item => {
+              const nestedLi = document.createElement('li');
+              nestedLi.textContent =
+                typeof item === 'object' ? JSON.stringify(item) : item;
+              nested.appendChild(nestedLi);
             });
 
             li.appendChild(nested);
-        } else {
-            // Boolean or string
-            const value =
-                typeof nearby.shopping === 'boolean'
-                    ? (nearby.shopping ? 'Yes' : 'No')
-                    : nearby.shopping;
-            li.innerHTML = `<strong>Shopping:</strong> ${value}`;
-        }
+          } else {
+            li.innerHTML =
+              `<strong>${escapeHtml(label)}:</strong> ${escapeHtml(formatValue(value))}`;
+          }
 
-        ulLeftNearby.appendChild(li);
-    }
+          list.appendChild(li);
+        });
+      }
 
-    // Food
-    if (nearby.food) {
-        const li = document.createElement('li');
+      function createPanelList(object, keys) {
+        const panel = document.createElement('div');
+        panel.className = 'panel';
 
-        if (Array.isArray(nearby.food)) {
-            // Nested style like Other Activities
-            li.innerHTML = '<strong>Food:</strong>';
-            const nested = document.createElement('ul');
-            nested.classList.add('nested-nearby-list');
+        const list = document.createElement('ul');
+        list.className = 'spec-list';
 
-            nearby.food.forEach(place => {
-                const innerLi = document.createElement('li');
-                innerLi.textContent = place;
-                nested.appendChild(innerLi);
-            });
+        renderObjectList(list, object, keys);
+        panel.appendChild(list);
 
-            li.appendChild(nested);
-        } else {
-            // Boolean or string
-            const value =
-                typeof nearby.food === 'boolean'
-                    ? (nearby.food ? 'Yes' : 'No')
-                    : nearby.food;
-            li.innerHTML = `<strong>Food:</strong> ${value}`;
-        }
+        return panel;
+      }
 
-        ulLeftNearby.appendChild(li);
-    }
+      function addTextInfo(list, label, value) {
+        if (!value) return;
 
-    nearbyGridDiv1.appendChild(ulLeftNearby);
-
-    // RIGHT side: Emergency Medical
-    const ulRightNearby = document.createElement('ul');
-    if (nearby.emergencyMedicalDistance) {
         const li = document.createElement('li');
         li.innerHTML =
-            `<strong>Nearest Emergency Medical:</strong> ${nearby.emergencyMedicalDistance}`;
-        ulRightNearby.appendChild(li);
-    }
-    nearbyGridDiv2.appendChild(ulRightNearby);
+          `<strong>${escapeHtml(label)}:</strong> ${escapeHtml(value)}`;
+        list.appendChild(li);
+      }
 
-} else {
-    nearbyEssentialsContainer.innerHTML +=
-        '<p>No nearby essentials information available.</p>';
-}
+      function addLinkedInfo(list, label, url, linkText) {
+        if (!url || String(url).trim().toLowerCase() === 'n/a') return;
 
+        const li = document.createElement('li');
+        const strong = document.createElement('strong');
+        strong.textContent = `${label}: `;
 
-                // Photo Gallery - Adjusted for Lightbox
-                const photoGalleryContainer = document.getElementById('photoGalleryContainer');
-                photoGalleryContainer.innerHTML = '';
-                if (campground.photoGallery && campground.photoGallery.length > 0) {
-                    const galleryName = `${campground.id}-gallery`;
+        const link = document.createElement('a');
+        link.href = url;
+        link.target = '_blank';
+        link.rel = 'noopener';
+        link.textContent = linkText;
 
-                    campground.photoGallery.forEach(photo => {
-                        const photoItem = document.createElement('div');
-                        photoItem.className = 'photo-gallery-item';
+        li.append(strong, link);
+        list.appendChild(li);
+      }
 
-                        photoItem.innerHTML = `
-                            <a href="${photo.url}"
-                               data-lightbox="${galleryName}"
-                               data-title="${photo.caption || ''}"
-                               class="lightbox-trigger">
-                                <img src="${photo.url}" alt="${photo.caption || 'Campground Photo'}">
-                            </a>
-                            ${photo.caption ? `<div class="caption">${photo.caption}</div>` : ''}
-                        `;
-                        photoGalleryContainer.appendChild(photoItem);
-                    });
+      function formatValue(value) {
+        if (typeof value === 'boolean') {
+          return value ? 'Yes' : 'No';
+        }
 
-                } else {
-                    photoGalleryContainer.innerHTML =
-                        '<p>No photos available for this campground.</p>';
-                }
+        if (typeof value === 'object') {
+          return JSON.stringify(value);
+        }
 
-                // Reviews
-                const reviewsContainer = document.getElementById('reviewsContainer');
-                reviewsContainer.innerHTML = '';
-                if (campground.reviews && campground.reviews.length > 0) {
-                    campground.reviews.forEach(review => {
-                        const reviewCard = document.createElement('div');
-                        reviewCard.className = 'review-card';
-                        reviewCard.innerHTML = `
-                            <p class="review-meta">
-                                <strong>Visit Date:</strong> ${review.visitDate} |
-                                <strong>Review Date:</strong> ${review.reviewDate} |
-                                <strong>Rating:</strong> ${"⭐".repeat(parseInt(review.starRating))}
-                            </p>
-                            <p>${review.text}</p>
-                        `;
+        return String(value);
+      }
 
-                        // YOUTUBE VIDEO LOGIC
-                        if (review.youtubeVideoUrl &&
-                            review.youtubeVideoUrl.trim() !== "" &&
-                            review.youtubeVideoUrl.trim().toLowerCase() !== "n/a") {
+      function humanizeKey(key) {
+        const overrides = {
+          tvCable: 'TV Cable',
+          wifi: 'Wi-Fi',
+          potableFill: 'Potable Water Fill',
+          waterAtSite: 'Water at Site',
+          fireRing: 'Fire Ring',
+          picnicTable: 'Picnic Table',
+          boatingLaunch: 'Boat Launch',
+          gameRoom: 'Game Room',
+          otherAmenities: 'Other Amenities',
+          otherActivities: 'Other Activities',
+          nearbyAttractions: 'Nearby Attractions',
+          dogFriendlyTrails: 'Dog-Friendly Trails',
+          overallPetRating: 'Overall Pet Rating'
+        };
 
-                            const youtubeRegex =
-                                /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/;
-                            const match = review.youtubeVideoUrl.match(youtubeRegex);
+        if (overrides[key]) return overrides[key];
 
-                            if (match && match[1]) {
-                                const videoId = match[1];
-                                const embedUrl = `https://www.youtube.com/embed/${videoId}`;
+        return key
+          .replace(/([A-Z])/g, ' $1')
+          .replace(/^./, character => character.toUpperCase());
+      }
 
-                                const videoContainer = document.createElement('div');
-                                videoContainer.className = 'video-container';
-                                videoContainer.innerHTML =
-                                    `<iframe src="${embedUrl}" frameborder="0"
-                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                             referrerpolicy="strict-origin-when-cross-origin"
-                                             allowfullscreen></iframe>`;
-                                reviewCard.appendChild(videoContainer);
-                            } else {
-                                console.warn(
-                                    `Skipping video for invalid YouTube URL format (non-empty/non-N/A): ${review.youtubeVideoUrl}`
-                                );
-                            }
-                        }
-                        reviewsContainer.appendChild(reviewCard);
-                    });
-                } else {
-                    reviewsContainer.innerHTML =
-                        '<p>No reviews available for this campground.</p>';
-                }
+      function capitalize(value) {
+        const text = String(value);
+        return text.charAt(0).toUpperCase() + text.slice(1);
+      }
 
-            })
-            .catch(error => {
-                console.error('Error fetching campground data:', error);
-                document.getElementById('campgroundName').textContent =
-                    "Failed to load campground review.";
-            });
+      function extractYouTubeId(url) {
+        if (!url || String(url).trim().toLowerCase() === 'n/a') return null;
+
+        const value = String(url).trim();
+        const match = value.match(
+          /(?:youtube\.com\/(?:[^/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?/\s]{11})/
+        );
+
+        return match ? match[1] : null;
+      }
+
+      function sanitizeReviewHtml(value) {
+        return String(value)
+          .replace(/<(?!br\s*\/?)[^>]+>/gi, '')
+          .replace(/\n/g, '<br>');
+      }
+
+      function escapeHtml(value) {
+        return String(value)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#039;');
+      }
     });
-</script>
-
+  </script>
 </body>
 </html>
