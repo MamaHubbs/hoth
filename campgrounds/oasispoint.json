@@ -1,0 +1,105 @@
+{
+  "id": "oasis-point-rv-resort",
+  "name": "Oasis Point RV Resort",
+  "state": "Kentucky",
+  "state_code": "KY",
+  "status": "starter",
+  "type": "Luxury RV Resort",
+  "visitYears": [
+    2026
+  ],
+  "summary_text": "A luxury waterfront RV resort on Kentucky Lake featuring spacious full-hookup sites, beautiful lake views, resort amenities, and easy access to Land Between the Lakes National Recreation Area.",
+  "address": "1205 State Route 93 South, Eddyville, KY 42038",
+  "website": "https://oasispointrvresort.com/",
+  "reservations": "https://oasispointrvresort.com/",
+  "parkmap": "",
+  "latitude": 36.8625,
+  "longitude": -88.0933,
+  "amenities": {
+    "electric": "50/30",
+    "waterAtSite": "All Sites",
+    "potableFill": "Yes",
+    "sewer": "All Sites",
+    "dumpStation": "No",
+    "bathhouse": "Luxury Bathhouses",
+    "laundryFacilities": "Yes",
+    "cellService": "Excellent",
+    "wifi": "Yes",
+    "tvCable": "No",
+    "petsWelcome": "Yes",
+    "dogPark": "Yes",
+    "campStore": "Camp Store",
+    "propaneRefill": "Yes",
+    "playground": "Yes",
+    "swimmingBeach": "Lake Access",
+    "swimmingPool": "Resort Pool",
+    "otherAmenities": [
+      "Clubhouse",
+      "Fitness Center",
+      "Pickleball Courts",
+      "Community Fire Pit",
+      "Golf Cart Rentals",
+      "Boat Ramp",
+      "Boat Slips"
+    ]
+  },
+  "siteFeatures": {
+    "level": "Large, mostly level concrete sites with generous spacing.",
+    "dirt": "No",
+    "gravel": "No",
+    "paved": "Concrete Pads and Roads",
+    "patio": "Many Sites",
+    "shade": "Limited",
+    "fireRing": "Yes",
+    "picnicTable": "Yes",
+    "grill": "No",
+    "otherNotes": [
+      "Many premium sites offer beautiful views of Kentucky Lake.",
+      "Wide roads make maneuvering easy for large RVs.",
+      "Minimal tree cover provides excellent Starlink reception.",
+      "Excellent destination for boating and fishing."
+    ]
+  },
+  "activities": {
+    "waterfront": "Kentucky Lake",
+    "boatingLaunch": "On-site",
+    "fishing": "Kentucky Lake",
+    "hiking": "Nearby Land Between the Lakes",
+    "biking": "Campground Roads",
+    "gameRoom": "No",
+    "otherActivities": [
+      "Swimming",
+      "Boating",
+      "Kayaking",
+      "Paddleboarding",
+      "Fishing",
+      "Pickleball",
+      "Wildlife Viewing"
+    ]
+  },
+  "nearby": {
+    "shopping": [
+      "Walmart",
+      "Grocery Stores",
+      "Marinas",
+      "Outdoor Outfitters"
+    ],
+    "food": [
+      "Lakefront Restaurants",
+      "Local Restaurants",
+      "Fast Food"
+    ],
+    "nearbyAttractions": [
+      "Land Between the Lakes National Recreation Area",
+      "Kentucky Lake",
+      "The Homeplace 1850s Working Farm",
+      "Elk & Bison Prairie",
+      "Kentucky Dam",
+      "Patti's 1880's Settlement"
+    ],
+    "emergencyMedicalDistance": "Approximately 15 minutes"
+  },
+  "favoriteSites": [],
+  "photoGallery": [],
+  "reviews": []
+}
