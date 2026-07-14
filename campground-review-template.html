@@ -670,10 +670,6 @@
           badges.push(`${campground.visitCount} visit${campground.visitCount === 1 ? '' : 's'}`);
         }
 
-        if (campground.status) {
-          badges.push(capitalize(campground.status));
-        }
-
         const badgeRow = document.getElementById('badgeRow');
         badgeRow.innerHTML = '';
         badges.forEach(text => {
