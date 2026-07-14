@@ -1,0 +1,103 @@
+{
+  "id": "outer-banks-west-currituck-sound-koa-holiday",
+  "name": "Outer Banks West / Currituck Sound KOA Holiday",
+  "state": "North Carolina",
+  "state_code": "NC",
+  "status": "starter",
+  "type": "KOA Holiday",
+  "visitYears": [
+    2020
+  ],
+  "summary_text": "A waterfront KOA Holiday on the Currituck Sound offering full-hookup RV sites, beautiful sunsets, resort-style amenities, and convenient access to the Outer Banks without staying on the barrier islands.",
+  "address": "1631 Waterlily Road, Coinjock, NC 27923",
+  "website": "https://koa.com/campgrounds/outer-banks-west/",
+  "reservations": "https://koa.com/campgrounds/outer-banks-west/",
+  "parkmap": "",
+  "latitude": 36.3664,
+  "longitude": -75.9374,
+  "amenities": {
+    "electric": "50/30",
+    "waterAtSite": "All Sites",
+    "potableFill": "Yes",
+    "sewer": "Full-Hookup Sites Available",
+    "dumpStation": "Yes",
+    "bathhouse": "Yes",
+    "laundryFacilities": "Yes",
+    "cellService": "Good",
+    "wifi": "Yes",
+    "tvCable": "No",
+    "petsWelcome": "Yes",
+    "dogPark": "KampK9",
+    "campStore": "KOA Camp Store",
+    "propaneRefill": "Yes",
+    "playground": "Yes",
+    "swimmingBeach": "No",
+    "swimmingPool": "Outdoor Pool",
+    "otherAmenities": [
+      "Fishing Pier",
+      "Boat Ramp",
+      "Kayak Launch",
+      "Community Pavilion",
+      "Jumping Pillow",
+      "Bike Rentals"
+    ]
+  },
+  "siteFeatures": {
+    "level": "Mostly level sites with pull-through and back-in options.",
+    "dirt": "Tent Sites",
+    "gravel": "Many Sites",
+    "paved": "Premium Sites",
+    "patio": "Premium Patio Sites",
+    "shade": "Limited",
+    "fireRing": "Yes",
+    "picnicTable": "Yes",
+    "grill": "Attached to Fire Ring",
+    "otherNotes": [
+      "Several premium sites overlook the Currituck Sound.",
+      "Wide roads are easy to navigate with larger RVs.",
+      "Open skies provide excellent Starlink reception.",
+      "Beautiful sunsets over the sound are a campground highlight."
+    ]
+  },
+  "activities": {
+    "waterfront": "Currituck Sound",
+    "boatingLaunch": "On-site",
+    "fishing": "On-site Fishing Pier",
+    "hiking": "Nearby",
+    "biking": "Campground Roads",
+    "gameRoom": "No",
+    "otherActivities": [
+      "Kayaking",
+      "Paddleboarding",
+      "Swimming",
+      "Crabbing",
+      "Bird Watching",
+      "Sunset Viewing"
+    ]
+  },
+  "nearby": {
+    "shopping": [
+      "Food Lion",
+      "Walmart",
+      "Local Beach Shops"
+    ],
+    "food": [
+      "Coinjock Marina Restaurant",
+      "Outer Banks Seafood Restaurants",
+      "Local BBQ"
+    ],
+    "nearbyAttractions": [
+      "Currituck Beach Lighthouse",
+      "Corolla",
+      "Wild Corolla Horses",
+      "Duck",
+      "Kitty Hawk",
+      "Wright Brothers National Memorial",
+      "Jockey's Ridge State Park"
+    ],
+    "emergencyMedicalDistance": "Approximately 20 minutes"
+  },
+  "favoriteSites": [],
+  "photoGallery": [],
+  "reviews": []
+}
