@@ -15,7 +15,8 @@
         2025,
         2026
       ],
-      "visitCount": 4
+      "visitCount": 4,
+      "rating": 4
     },
     {
       "id": "dallas-northeast-campground-rv-park",
@@ -30,7 +31,8 @@
       "visitYears": [
         20
       ],
-      "visitCount": 1
+      "visitCount": 1,
+      "rating": 3
     },
     {
       "id": "blue-quartz-winery",
@@ -45,7 +47,8 @@
       "visitYears": [
         2025
       ],
-      "visitCount": 2
+      "visitCount": 2,
+      "rating": 4
     },
     {
       "id": "newport-news-park",
@@ -61,7 +64,8 @@
         20,
         2026
       ],
-      "visitCount": 2
+      "visitCount": 2,
+      "rating": 4
     },
     {
       "id": "rudds-creek-campground",
@@ -77,7 +81,8 @@
         2023,
         2025
       ],
-      "visitCount": 2
+      "visitCount": 2,
+      "rating": 4
     },
     {
       "id": "occoneechee-state-park",
@@ -92,7 +97,8 @@
       "visitYears": [
         20
       ],
-      "visitCount": 1
+      "visitCount": 1,
+      "rating": 4
     },
     {
       "id": "longwood-park-campground",
@@ -107,7 +113,8 @@
       "visitYears": [
         20
       ],
-      "visitCount": 2
+      "visitCount": 2,
+      "rating": 4
     },
     {
       "id": "westmoreland-state-park",
@@ -122,7 +129,8 @@
       "visitYears": [
         20
       ],
-      "visitCount": 3
+      "visitCount": 3,
+      "rating": 5
     },
     {
       "id": "first-landing-state-park",
@@ -145,7 +153,8 @@
         2025,
         2026
       ],
-      "visitCount": 10
+      "visitCount": 10,
+      "rating": 5
     },
     {
       "id": "seminole-canyon-state-park-historic-site",
@@ -160,7 +169,8 @@
       "visitYears": [
         20
       ],
-      "visitCount": 1
+      "visitCount": 1,
+      "rating": 4
     },
     {
       "id": "sun-outdoors-lake-travis",
@@ -175,7 +185,8 @@
       "visitYears": [
         20
       ],
-      "visitCount": 1
+      "visitCount": 1,
+      "rating": 3
     },
     {
       "id": "sun-retreats-texas-hill-country",
@@ -190,7 +201,8 @@
       "visitYears": [
         20
       ],
-      "visitCount": 1
+      "visitCount": 1,
+      "rating": 3
     },
     {
       "id": "small-country-campground",
@@ -205,7 +217,8 @@
       "visitYears": [
         20
       ],
-      "visitCount": 2
+      "visitCount": 2,
+      "rating": 4
     },
     {
       "id": "jellystone-park-natural-bridge",
@@ -220,7 +233,8 @@
       "visitYears": [
         20
       ],
-      "visitCount": 1
+      "visitCount": 1,
+      "rating": 3
     },
     {
       "id": "big-bend-station-rv-park",
@@ -235,7 +249,8 @@
       "visitYears": [
         20
       ],
-      "visitCount": 1
+      "visitCount": 1,
+      "rating": 4
     },
     {
       "id": "ballards-rv-park",
@@ -250,7 +265,8 @@
       "visitYears": [
         20
       ],
-      "visitCount": 1
+      "visitCount": 1,
+      "rating": 3
     },
     {
       "id": "harpers-ferry-koa-holiday",
@@ -265,7 +281,8 @@
       "visitYears": [
         20
       ],
-      "visitCount": 2
+      "visitCount": 2,
+      "rating": 4
     },
     {
       "id": "prince-william-forest-rv-campground",
@@ -280,7 +297,8 @@
       "visitYears": [
         20
       ],
-      "visitCount": 1
+      "visitCount": 1,
+      "rating": 4
     },
     {
       "id": "fredericksburg-washington-dc-south-koa-holiday",
@@ -296,7 +314,8 @@
         2018,
         2024
       ],
-      "visitCount": 2
+      "visitCount": 2,
+      "rating": 3
     },
     {
       "id": "houghton-letchworth-koa-holiday",
@@ -326,7 +345,8 @@
       "visitYears": [
         20
       ],
-      "visitCount": 1
+      "visitCount": 1,
+      "rating": 3
     },
     {
       "id": "ricketts-glen-state-park",
@@ -341,7 +361,8 @@
       "visitYears": [
         20
       ],
-      "visitCount": 1
+      "visitCount": 1,
+      "rating": 5
     },
     {
       "id": "anchor-down-rv-resort",
@@ -356,7 +377,8 @@
       "visitYears": [
         20
       ],
-      "visitCount": 2
+      "visitCount": 2,
+      "rating": 4
     },
     {
       "id": "oasis-point-rv-resort",
@@ -371,7 +393,8 @@
       "visitYears": [
         20
       ],
-      "visitCount": 1
+      "visitCount": 1,
+      "rating": 4
     },
     {
       "id": "outer-banks-west-currituck-sound-koa-holiday",
@@ -386,7 +409,8 @@
       "visitYears": [
         20
       ],
-      "visitCount": 1
+      "visitCount": 1,
+      "rating": 4
     },
     {
       "id": "madison-vines-rv-resort-cottages",
@@ -401,7 +425,8 @@
       "visitYears": [
         20
       ],
-      "visitCount": 1
+      "visitCount": 1,
+      "rating": 4
     },
     {
       "id": "bethpage-camp-resort",
@@ -416,7 +441,8 @@
       "visitYears": [
         20
       ],
-      "visitCount": 2
+      "visitCount": 2,
+      "rating": 4
     },
     {
       "id": "greys-point-camp",
@@ -446,7 +472,8 @@
       "visitYears": [
         20
       ],
-      "visitCount": 1
+      "visitCount": 1,
+      "rating": 5
     },
     {
       "id": "myrtle-beach-state-park",
@@ -461,7 +488,8 @@
       "visitYears": [
         20
       ],
-      "visitCount": 3
+      "visitCount": 3,
+      "rating": 5
     },
     {
       "id": "sun-outdoors-myrtle-beach",
@@ -476,7 +504,8 @@
       "visitYears": [
         20
       ],
-      "visitCount": 1
+      "visitCount": 1,
+      "rating": 3
     },
     {
       "id": "lake-shore-rv-resort",
@@ -521,7 +550,8 @@
       "visitYears": [
         2026
       ],
-      "visitCount": 1
+      "visitCount": 1,
+      "rating": 4
     },
     {
       "id": "candy-hill-campground",
@@ -536,7 +566,8 @@
       "visitYears": [
         20
       ],
-      "visitCount": 1
+      "visitCount": 1,
+      "rating": 3
     },
     {
       "id": "fontainebleau-state-park",
@@ -551,7 +582,8 @@
       "visitYears": [
         20
       ],
-      "visitCount": 1
+      "visitCount": 1,
+      "rating": 4
     },
     {
       "id": "lumberton-i95-koa-journey",
@@ -566,7 +598,8 @@
       "visitYears": [
         20
       ],
-      "visitCount": 1
+      "visitCount": 1,
+      "rating": 3
     },
     {
       "id": "jacksonville-north-st-marys-koa-holiday",
@@ -627,7 +660,8 @@
         2024,
         2025
       ],
-      "visitCount": 2
+      "visitCount": 2,
+      "rating": 4
     },
     {
       "id": "gettysburg-battlefield-koa-holiday",
@@ -642,7 +676,8 @@
       "visitYears": [
         20
       ],
-      "visitCount": 1
+      "visitCount": 1,
+      "rating": 4
     },
     {
       "id": "arbuckle-rv-resort",
@@ -657,7 +692,8 @@
       "visitYears": [
         2021
       ],
-      "visitCount": 1
+      "visitCount": 1,
+      "rating": 4
     },
     {
       "id": "douthat-state-park",
@@ -672,7 +708,8 @@
       "visitYears": [
         2026
       ],
-      "visitCount": 1
+      "visitCount": 1,
+      "rating": 5
     },
     {
       "id": "frances-slocum-state-park",
@@ -688,7 +725,8 @@
         2024,
         2025
       ],
-      "visitCount": 2
+      "visitCount": 2,
+      "rating": 4
     }
   ]
 }
