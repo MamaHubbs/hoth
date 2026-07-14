@@ -1,0 +1,136 @@
+{
+  "id": "fontainebleau-state-park",
+  "name": "Fontainebleau State Park",
+  "state": "Louisiana",
+  "state_code": "LA",
+  "status": "starter",
+  "type": "State Park",
+  "visitYears": [
+    2021
+  ],
+  "visitCount": 1,
+  "summary_text": "A beautiful Louisiana State Park on the north shore of Lake Pontchartrain offering shaded campsites, waterfront scenery, historic ruins, and easy access to New Orleans.",
+  "address": "62883 Highway 1089, Mandeville, LA 70448",
+  "website": "https://www.lastateparks.com/parks-preserves/fontainebleau-state-park",
+  "reservations": "https://reservations.gooutdoorslouisiana.com/",
+  "parkmap": "",
+  "latitude": 30.3585,
+  "longitude": -90.0382,
+  "amenities": {
+    "electric": "50/30",
+    "waterAtSite": "All Sites",
+    "potableFill": "Yes",
+    "sewer": "Some Sites",
+    "dumpStation": "Yes",
+    "bathhouse": "Yes",
+    "laundryFacilities": "No",
+    "cellService": "Good",
+    "wifi": "No",
+    "tvCable": "No",
+    "petsWelcome": "Yes",
+    "dogPark": "No",
+    "campStore": "Park Store",
+    "propaneRefill": "No",
+    "playground": "Yes",
+    "swimmingBeach": "Lake Pontchartrain Beach",
+    "swimmingPool": "No",
+    "otherAmenities": [
+      "Fishing Pier",
+      "Historic Sugar Mill Ruins",
+      "Nature Center",
+      "Picnic Areas"
+    ]
+  },
+  "siteFeatures": {
+    "level": "Mostly level paved campsites beneath mature trees.",
+    "dirt": "Tent Sites",
+    "gravel": "No",
+    "paved": "Roads and Campsites",
+    "patio": "No",
+    "shade": "Heavy",
+    "fireRing": "Yes",
+    "picnicTable": "Yes",
+    "grill": "Attached to Fire Ring",
+    "otherNotes": [
+      "Large mature trees provide abundant shade.",
+      "Several campsites are within walking distance of Lake Pontchartrain.",
+      "A peaceful setting despite being close to New Orleans."
+    ]
+  },
+  "starlink": {
+    "rating": "Poor",
+    "notes": "Heavy tree cover throughout the campground makes Starlink difficult."
+  },
+  "activities": {
+    "waterfront": "Lake Pontchartrain",
+    "boatingLaunch": "Nearby",
+    "fishing": "Pier and Shore Fishing",
+    "hiking": "Nature Trails",
+    "biking": "Excellent Paved Trails",
+    "gameRoom": "No",
+    "otherActivities": [
+      "Swimming",
+      "Wildlife Viewing",
+      "Bird Watching",
+      "Photography",
+      "Historic Site Tours"
+    ]
+  },
+  "nearby": {
+    "shopping": [
+      "Mandeville",
+      "Covington",
+      "Walmart",
+      "Target"
+    ],
+    "food": [
+      "New Orleans Cuisine",
+      "Seafood",
+      "Local Restaurants"
+    ],
+    "nearbyAttractions": [
+      "Lake Pontchartrain",
+      "Historic Sugar Mill Ruins",
+      "New Orleans",
+      "French Quarter",
+      "Causeway Bridge",
+      "Abita Brewing Company"
+    ]
+  },
+  "petNotes": {
+    "walkingAreas": "Excellent paved roads and shaded trails make this a wonderful park for walking dogs.",
+    "dogPark": "No dedicated dog park.",
+    "dogFriendlyTrails": "Leashed pets are allowed on most park trails.",
+    "petRestrictions": "Pets must remain leashed at all times.",
+    "hazards": "Mosquitoes can be heavy, especially during warmer months. Watch for snakes in natural areas.",
+    "overallPetRating": "Excellent",
+    "notes": "The shaded campground and miles of paved walking areas make this one of the better state parks for traveling with dogs."
+  },
+  "emergencyServices": {
+    "hospital": {
+      "name": "Lakeview Regional Medical Center",
+      "address": "95 Judge Tanner Blvd, Covington, LA 70433",
+      "distance": "Approximately 15 minutes"
+    },
+    "veterinarian": {
+      "name": "Mandeville Animal Hospital",
+      "address": "419 Girod Street, Mandeville, LA 70448",
+      "distance": "Approximately 10 minutes"
+    },
+    "emergencyVeterinarian": {
+      "name": "MedVet Mandeville",
+      "address": "13130 Louisiana 1085, Covington, LA 70433",
+      "distance": "Approximately 20 minutes"
+    }
+  },
+  "tripTips": [
+    "Visit the historic sugar mill ruins—they're one of the park's highlights.",
+    "Walk or bike along the Lake Pontchartrain shoreline.",
+    "Bring bug spray during warmer months.",
+    "This makes an excellent basecamp for a day trip into New Orleans.",
+    "Reserve early during spring and fall weekends."
+  ],
+  "favoriteSites": [],
+  "photoGallery": [],
+  "reviews": []
+}
