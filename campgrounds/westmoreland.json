@@ -4,14 +4,96 @@
   "state": "Virginia",
   "state_code": "VA",
   "status": "starter",
+  "type": "State Park",
   "visitYears": [],
-  "summary_text": "A historic Virginia State Park on the Potomac River known for wooded camping, trails, water access, and fossil hunting.",
+  "summary_text": "A scenic Virginia State Park overlooking the Potomac River, featuring wooded campsites, dramatic river views, hiking trails, boating, swimming, and one of Virginia's best fossil-hunting beaches.",
   "address": "145 Cliff Road, Montross, VA 22520",
   "website": "https://www.dcr.virginia.gov/state-parks/westmoreland",
   "reservations": "https://reservevaparks.com/Web/",
   "parkmap": "",
   "latitude": 38.1612,
   "longitude": -76.8659,
+  "amenities": {
+    "electric": "50/30",
+    "waterAtSite": "All Sites",
+    "potableFill": "Yes",
+    "sewer": "No",
+    "dumpStation": "Yes",
+    "bathhouse": "Yes",
+    "laundryFacilities": "Yes",
+    "cellService": "Fair",
+    "wifi": "No",
+    "tvCable": "No",
+    "petsWelcome": "Yes",
+    "dogPark": "No",
+    "campStore": "Visitor Center Gift Shop",
+    "propaneRefill": "No",
+    "playground": "Yes",
+    "swimmingBeach": "Potomac River Beach",
+    "swimmingPool": "No",
+    "otherAmenities": [
+      "Boat Ramp",
+      "Fishing Pier",
+      "Visitor Center",
+      "Picnic Shelters",
+      "Horse Trails"
+    ]
+  },
+  "siteFeatures": {
+    "level": "Mostly level sites with some requiring minor leveling.",
+    "dirt": "No",
+    "gravel": "Most Sites",
+    "paved": "Roads",
+    "patio": "No",
+    "shade": "Heavy",
+    "fireRing": "Yes",
+    "picnicTable": "Yes",
+    "grill": "Attached to Fire Ring",
+    "otherNotes": [
+      "Most campsites are surrounded by mature hardwood forest.",
+      "Heavy tree cover limits Starlink reception.",
+      "Several campsites are within walking distance of the Potomac River.",
+      "Campground roads are easy to navigate for most RVs."
+    ]
+  },
+  "activities": {
+    "waterfront": "Potomac River",
+    "boatingLaunch": "On-site Boat Ramp",
+    "fishing": "Potomac River",
+    "hiking": "More than 6 Miles of Trails",
+    "biking": "Campground Roads",
+    "gameRoom": "No",
+    "otherActivities": [
+      "Swimming",
+      "Fossil Hunting",
+      "Kayaking",
+      "Canoeing",
+      "Bird Watching",
+      "Horseback Riding",
+      "Wildlife Viewing"
+    ]
+  },
+  "nearby": {
+    "shopping": [
+      "Montross Grocery Stores",
+      "Dollar General",
+      "Pharmacy"
+    ],
+    "food": [
+      "Local Restaurants",
+      "Seafood",
+      "Fast Food"
+    ],
+    "nearbyAttractions": [
+      "Fossil Beach",
+      "George Washington Birthplace National Monument",
+      "Stratford Hall",
+      "Westmoreland Berry Farm",
+      "Montross",
+      "Colonial Beach"
+    ],
+    "emergencyMedicalDistance": "Approximately 15 minutes"
+  },
   "favoriteSites": [],
   "photoGallery": [],
   "reviews": []
