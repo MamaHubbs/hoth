@@ -1,1 +1,138 @@
 
+{
+  "id": "gettysburg-battlefield-koa-holiday",
+  "name": "Gettysburg / Battlefield KOA Holiday",
+  "state": "Pennsylvania",
+  "state_code": "PA",
+  "status": "starter",
+  "type": "KOA Holiday",
+  "visitYears": [
+    2024
+  ],
+  "visitCount": 1,
+  "summary_text": "A wooded KOA Holiday just minutes from Gettysburg National Military Park offering full-hookup RV sites, family amenities, and an ideal basecamp for exploring one of America's most historic battlefields.",
+  "address": "20 Knox Road, Gettysburg, PA 17325",
+  "website": "https://koa.com/campgrounds/gettysburg/",
+  "reservations": "https://koa.com/campgrounds/gettysburg/",
+  "parkmap": "",
+  "latitude": 39.7897,
+  "longitude": -77.1608,
+  "amenities": {
+    "electric": "50/30/20",
+    "waterAtSite": "All Sites",
+    "potableFill": "Yes",
+    "sewer": "Full-Hookup Sites",
+    "dumpStation": "Yes",
+    "bathhouse": "Yes",
+    "laundryFacilities": "Yes",
+    "cellService": "Good",
+    "wifi": "Yes",
+    "tvCable": "No",
+    "petsWelcome": "Yes",
+    "dogPark": "KampK9",
+    "campStore": "Camp Store",
+    "propaneRefill": "Yes",
+    "playground": "Yes",
+    "swimmingBeach": "No",
+    "swimmingPool": "Outdoor Pool",
+    "otherAmenities": [
+      "Jumping Pillow",
+      "Mini-Golf",
+      "Gem Mining",
+      "Basketball",
+      "Planned Activities"
+    ]
+  },
+  "siteFeatures": {
+    "level": "Mostly level wooded sites with pull-through and back-in options.",
+    "dirt": "Tent Sites",
+    "gravel": "Many RV Sites",
+    "paved": "Roads",
+    "patio": "Premium Patio Sites",
+    "shade": "Moderate to Heavy",
+    "fireRing": "Yes",
+    "picnicTable": "Yes",
+    "grill": "Attached to Fire Ring",
+    "otherNotes": [
+      "Mature trees provide a peaceful campground atmosphere.",
+      "Located only a few minutes from Gettysburg National Military Park.",
+      "Easy access for larger RVs."
+    ]
+  },
+  "starlink": {
+    "rating": "Fair",
+    "notes": "Tree cover varies throughout the campground. Some sites have good openings while others are more obstructed."
+  },
+  "activities": {
+    "waterfront": "No",
+    "boatingLaunch": "No",
+    "fishing": "Nearby",
+    "hiking": "Campground Nature Trail",
+    "biking": "Campground Roads",
+    "gameRoom": "No",
+    "otherActivities": [
+      "Swimming",
+      "Mini-Golf",
+      "Basketball",
+      "Gem Mining",
+      "Nature Trail"
+    ]
+  },
+  "nearby": {
+    "shopping": [
+      "Downtown Gettysburg",
+      "Walmart",
+      "Grocery Stores",
+      "Pharmacy"
+    ],
+    "food": [
+      "Historic Gettysburg Restaurants",
+      "Breweries",
+      "Fast Food"
+    ],
+    "nearbyAttractions": [
+      "Gettysburg National Military Park",
+      "Gettysburg Museum & Visitor Center",
+      "Little Round Top",
+      "Devil's Den",
+      "Eisenhower National Historic Site",
+      "Gettysburg Ghost Tours"
+    ]
+  },
+  "petNotes": {
+    "walkingAreas": "Quiet campground roads and wooded areas make for enjoyable dog walks.",
+    "dogPark": "KampK9 available.",
+    "dogFriendlyTrails": "Many trails throughout Gettysburg National Military Park allow leashed pets.",
+    "petRestrictions": "Pets must remain leashed.",
+    "hazards": "Ticks are common in wooded areas—check pets after hiking.",
+    "overallPetRating": "Excellent",
+    "notes": "Gettysburg is a wonderful destination for traveling with dogs thanks to the many pet-friendly outdoor historic areas."
+  },
+  "emergencyServices": {
+    "hospital": {
+      "name": "WellSpan Gettysburg Hospital",
+      "address": "147 Gettys Street, Gettysburg, PA 17325",
+      "distance": "Approximately 10 minutes"
+    },
+    "veterinarian": {
+      "name": "Gettysburg Animal Hospital",
+      "address": "996 Old Harrisburg Road, Gettysburg, PA 17325",
+      "distance": "Approximately 10 minutes"
+    },
+    "emergencyVeterinarian": {
+      "name": "CARE Veterinary Center",
+      "address": "1080 West Patrick Street, Frederick, MD 21703",
+      "distance": "Approximately 45 minutes"
+    }
+  },
+  "tripTips": [
+    "Spend at least a full day exploring Gettysburg National Military Park.",
+    "Arrive early if you want to tour the battlefield before the crowds.",
+    "Bring bicycles if you'd like another way to explore portions of the battlefield.",
+    "Check pets carefully for ticks after hiking.",
+    "Reserve early during summer and anniversary events."
+  ],
+  "favoriteSites": [],
+  "photoGallery": [],
+  "reviews": []
+}
