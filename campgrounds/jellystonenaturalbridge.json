@@ -4,14 +4,106 @@
   "state": "Virginia",
   "state_code": "VA",
   "status": "starter",
+  "type": "RV Resort",
   "visitYears": [],
-  "summary_text": "A family-focused campground near Natural Bridge, Virginia, with themed activities, cabins, RV sites, and outdoor recreation.",
+  "summary_text": "A lively, family-focused RV resort on the James River near Natural Bridge, with full-hookup sites, cabins, a pool, sandy swimming beach, water attractions, mini-golf, fishing, and a packed schedule of themed activities.",
   "address": "16 Recreation Lane, Natural Bridge Station, VA 24579",
-  "website": "https://www.campnbr.com/",
-  "reservations": "https://www.campnbr.com/",
-  "parkmap": "",
+  "website": "https://www.campjellystone.com/virginia/jellystone-park-natural-bridge",
+  "reservations": "https://www.campjellystone.com/virginia/jellystone-park-natural-bridge",
+  "parkmap": "https://assets.milestoneinternet.com/camp-jellystone-llc/vajnb-392732-76/jellystone-natural-bridge-jnb-guest-guide-2026-print021026.pdf",
   "latitude": 37.6268,
   "longitude": -79.5077,
+  "amenities": {
+    "electric": "50/30/20",
+    "waterAtSite": "All RV Sites",
+    "potableFill": "Yes",
+    "sewer": "Full-Hookup Sites Available",
+    "dumpStation": "Yes",
+    "bathhouse": "Yes",
+    "laundryFacilities": "Yes",
+    "cellService": "Varies",
+    "wifi": "Available Throughout the Resort",
+    "tvCable": "Varies by Site",
+    "petsWelcome": "Yes",
+    "dogPark": "Large Pet Area",
+    "campStore": "Ranger Station with Groceries, Camping Supplies and Souvenirs",
+    "propaneRefill": "Yes",
+    "playground": "Yes",
+    "swimmingBeach": "Sandy Beach on the Swimming Lake",
+    "swimmingPool": "Large Outdoor Pool",
+    "otherAmenities": [
+      "Cartoon Café",
+      "Golf Cart Rentals",
+      "ATM",
+      "Water Slides",
+      "Splashground",
+      "Cabins and Glamping Accommodations"
+    ]
+  },
+  "siteFeatures": {
+    "level": "Generally level, with a mix of gravel and concrete-pad sites",
+    "dirt": "Tent Sites",
+    "gravel": "Many RV Sites",
+    "paved": "Concrete Pads on Premium Sites",
+    "patio": "Some Premium Sites",
+    "shade": "Varies by Site",
+    "fireRing": "Yes",
+    "picnicTable": "Yes",
+    "grill": "Varies by Site",
+    "otherNotes": [
+      "Back-in, pull-through, buddy and waterfront RV sites are available.",
+      "Full-hookup and water-and-electric sites are offered.",
+      "Some premium sites are located along the James River.",
+      "Site conditions and shade vary considerably across the large resort.",
+      "Review the park map and individual site details before booking a large RV."
+    ]
+  },
+  "activities": {
+    "waterfront": "James River, Fishing Lake and Swimming Lake",
+    "boatingLaunch": "River Access for Canoeing, Kayaking and Tubing",
+    "fishing": "Fishing Lake, Elk Creek and James River",
+    "hiking": "Nearby Trails and National Forest Access",
+    "biking": "Campground Roads",
+    "gameRoom": "Arcade Alley",
+    "otherActivities": [
+      "Swimming",
+      "Water Slides",
+      "Splashground",
+      "Mini-Golf",
+      "Jumping Pillow",
+      "Wagon Rides",
+      "Basketball",
+      "Cornhole",
+      "Outdoor Movies",
+      "Foam Parties",
+      "Character Visits",
+      "Themed Weekends",
+      "Planned Crafts and Games"
+    ]
+  },
+  "nearby": {
+    "shopping": [
+      "Camp Store",
+      "Grocery Stores in Lexington",
+      "Pharmacy",
+      "Walmart"
+    ],
+    "food": [
+      "Cartoon Café",
+      "Fast Food",
+      "Local Restaurants in Lexington and Natural Bridge"
+    ],
+    "nearbyAttractions": [
+      "Natural Bridge State Park",
+      "Natural Bridge Caverns",
+      "Virginia Safari Park",
+      "Jefferson National Forest",
+      "Appalachian Trail",
+      "Historic Lexington",
+      "Blue Ridge Parkway"
+    ],
+    "emergencyMedicalDistance": "Approximately 20 minutes"
+  },
   "favoriteSites": [],
   "photoGallery": [],
   "reviews": []
