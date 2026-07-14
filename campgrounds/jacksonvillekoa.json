@@ -1,0 +1,134 @@
+{
+  "id": "jacksonville-north-st-marys-koa-holiday",
+  "name": "Jacksonville North / St. Marys KOA Holiday",
+  "state": "Georgia",
+  "state_code": "GA",
+  "status": "starter",
+  "type": "KOA Holiday",
+  "visitYears": [
+    2021
+  ],
+  "visitCount": 1,
+  "summary_text": "A peaceful KOA Holiday just north of Jacksonville, Florida, offering spacious full-hookup sites, a small fishing lake, and an excellent overnight stop with convenient access to Cumberland Island, St. Marys, and Jacksonville.",
+  "address": "106 Kingfish Lane, Kingsland, GA 31548",
+  "website": "https://koa.com/campgrounds/jacksonville-north/",
+  "reservations": "https://koa.com/campgrounds/jacksonville-north/",
+  "parkmap": "https://koa.com/campgrounds/jacksonville-north/site-type-map/",
+  "latitude": 30.8507,
+  "longitude": -81.7154,
+  "amenities": {
+    "electric": "50/30/20",
+    "waterAtSite": "All Sites",
+    "potableFill": "Yes",
+    "sewer": "Full-Hookup Sites",
+    "dumpStation": "Yes",
+    "bathhouse": "Yes",
+    "laundryFacilities": "Yes",
+    "cellService": "Excellent",
+    "wifi": "Yes",
+    "tvCable": "No",
+    "petsWelcome": "Yes",
+    "dogPark": "KampK9",
+    "campStore": "Camp Store",
+    "propaneRefill": "Yes",
+    "playground": "Yes",
+    "swimmingBeach": "No",
+    "swimmingPool": "Outdoor Pool",
+    "otherAmenities": [
+      "Fishing Pond",
+      "Community Pavilion",
+      "Jumping Pillow",
+      "Bike Rentals"
+    ]
+  },
+  "siteFeatures": {
+    "level": "Mostly level pull-through and back-in sites.",
+    "dirt": "Tent Sites",
+    "gravel": "Many Sites",
+    "paved": "Roads and Premium Sites",
+    "patio": "Premium Patio Sites",
+    "shade": "Moderate",
+    "fireRing": "Some Sites",
+    "picnicTable": "Yes",
+    "grill": "Some Sites",
+    "otherNotes": [
+      "Easy access from Interstate 95.",
+      "Large pull-through sites are ideal for overnight travelers.",
+      "Quiet atmosphere despite its convenient location."
+    ]
+  },
+  "starlink": {
+    "rating": "Good",
+    "notes": "Most sites have a fairly open southern sky with only moderate tree cover."
+  },
+  "activities": {
+    "waterfront": "Fishing Pond",
+    "boatingLaunch": "No",
+    "fishing": "Catch-and-Release Pond",
+    "hiking": "Walking Areas",
+    "biking": "Campground Roads",
+    "gameRoom": "No",
+    "otherActivities": [
+      "Swimming",
+      "Fishing",
+      "Jumping Pillow",
+      "Bike Riding"
+    ]
+  },
+  "nearby": {
+    "shopping": [
+      "Walmart",
+      "Publix",
+      "Target",
+      "Pharmacy"
+    ],
+    "food": [
+      "Local Seafood",
+      "Fast Food",
+      "Restaurants in Kingsland"
+    ],
+    "nearbyAttractions": [
+      "Historic St. Marys",
+      "Cumberland Island National Seashore",
+      "Crooked River State Park",
+      "Kings Bay Naval Submarine Base",
+      "Jacksonville, Florida"
+    ]
+  },
+  "petNotes": {
+    "walkingAreas": "Wide campground roads and open grassy areas provide easy dog walking.",
+    "dogPark": "KampK9 available.",
+    "dogFriendlyTrails": "Nearby Crooked River State Park offers additional pet-friendly trails.",
+    "petRestrictions": "Pets must remain leashed outside the dog park.",
+    "hazards": "Mosquitoes can be heavy during warm weather. Be alert for snakes in natural areas.",
+    "overallPetRating": "Excellent",
+    "notes": "A comfortable overnight stop with plenty of room to exercise dogs before getting back on the road."
+  },
+  "emergencyServices": {
+    "hospital": {
+      "name": "Southeast Georgia Health System - Camden Campus",
+      "address": "2000 Dan Proctor Drive, St. Marys, GA 31558",
+      "distance": "Approximately 10 minutes"
+    },
+    "veterinarian": {
+      "name": "Camden Veterinary Hospital",
+      "address": "1501 Georgia Highway 40 East, Kingsland, GA 31548",
+      "distance": "Approximately 10 minutes"
+    },
+    "emergencyVeterinarian": {
+      "name": "Capital Veterinary Specialists - Jacksonville",
+      "address": "3001 Hartley Road, Jacksonville, FL 32257",
+      "distance": "Approximately 45 minutes"
+    }
+  },
+  "tripTips": [
+    "A great overnight stop along Interstate 95.",
+    "If time allows, spend a few hours exploring historic St. Marys.",
+    "Take the ferry to Cumberland Island if you're staying more than one night.",
+    "Fuel up before getting back on I-95.",
+    "Bring bug spray during warmer months."
+  ],
+  "favoriteSites": [],
+  "photoGallery": [],
+  "reviews": []
+}
