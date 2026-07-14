@@ -1,10 +1,14 @@
 {
-  "id": "pohick-bay-regional-park-06-2025",
+  "id": "pohick-bay-regional-park",
   "name": "Pohick Bay Regional Park",
   "state": "Virginia",
   "state_code": "VA",
   "status": "complete",
-  "summary_text": "Pohick Bay Regional Park offers family-friendly camping with easy access to water activities and historical sites near Washington, D.C.",
+  "type": "Regional Park",
+  "visitYears": [
+    2025
+  ],
+  "summary_text": "A wooded, family-friendly regional park on Pohick Bay offering campsites, boating, fishing, trails, playgrounds, mini-golf, and easy access to historic attractions near Washington, D.C.",
   "address": "6501 Pohick Bay Dr, Lorton, VA 22079",
   "website": "https://www.novaparks.com/cabins-camping/camping/camping-family-0",
   "reservations": "https://www.reserveamerica.com/explore/pohick-bay-regional-park-lorton/NOVA/1020012/overview",
@@ -14,48 +18,86 @@
   "amenities": {
     "electric": "50/30/20",
     "waterAtSite": "Many Sites",
-    "potableFill": true,
+    "potableFill": "Yes",
     "sewer": "Some Sites",
-    "dumpStation": true,
-    "bathhouse": true,
-    "laundryFacilities": true,
+    "dumpStation": "Yes",
+    "bathhouse": "Yes",
+    "laundryFacilities": "Yes",
     "cellService": "Fair",
-    "wifi": false,
-    "tvCable": false,
-    "petsWelcome": true,
-    "dogPark": false,
-    "campStore": true,
-    "propaneRefill": false,
-    "playground": true,
-    "swimmingPool": false,
-    "otherAmenities": ["N/A"]
+    "wifi": "No",
+    "tvCable": "No",
+    "petsWelcome": "Yes",
+    "dogPark": "No",
+    "campStore": "Yes",
+    "propaneRefill": "No",
+    "playground": "Yes",
+    "swimmingBeach": "No",
+    "swimmingPool": "Pirate's Cove Waterpark",
+    "otherAmenities": [
+      "Marina",
+      "Mini-Golf",
+      "Disc Golf",
+      "Pirate's Cove Waterpark"
+    ]
   },
   "siteFeatures": {
-    "level": "Many sites, some are on a grade so be prepared with leveling blocks",
-    "dirt": ["Most"],
-    "gravel": ["Some"],
-    "paved": false,
-    "patio": false,
-    "shade": true,
-    "fireRing": true,
-    "picnicTable": true,
-    "grill": ["Attached to Fire Ring"],
-    "otherNotes": ["Lots of tree cover makes use of Starlink difficult"]
+    "level": "Many sites are level, but some are on a grade and may require leveling blocks.",
+    "dirt": "Most Sites",
+    "gravel": "Some Sites",
+    "paved": "No",
+    "patio": "No",
+    "shade": "Heavy",
+    "fireRing": "Yes",
+    "picnicTable": "Yes",
+    "grill": "Attached to Fire Ring",
+    "otherNotes": [
+      "Many campsites are heavily wooded.",
+      "Some sites are close together.",
+      "Dense tree cover can make Starlink reception difficult.",
+      "Larger RVs should review campsite dimensions and site photos before reserving."
+    ]
   },
   "activities": {
-    "boatingLaunch": true,
-    "fishing": true,
-    "hiking": true,
-    "biking": true,
-    "gameRoom": false,
-    "otherActivities": ["Mini-Golf", "Disc Golf", "Waterpark"]
+    "waterfront": "Pohick Bay",
+    "boatingLaunch": "On-site Marina and Boat Launch",
+    "fishing": "Pohick Bay",
+    "hiking": "On-site Trails",
+    "biking": "Campground Roads and Park Trails",
+    "gameRoom": "No",
+    "otherActivities": [
+      "Mini-Golf",
+      "Disc Golf",
+      "Pirate's Cove Waterpark",
+      "Kayaking",
+      "Canoeing",
+      "Wildlife Viewing"
+    ]
   },
   "nearby": {
-    "shopping": ["Grocery Store", "Pharmacy"],
-    "food": ["Restaurants"],
-    "emergencyMedicalDistance": "15 minutes"
+    "shopping": [
+      "Grocery Stores",
+      "Pharmacy",
+      "Target",
+      "Walmart"
+    ],
+    "food": [
+      "Fast Food",
+      "Local Restaurants"
+    ],
+    "nearbyAttractions": [
+      "George Mason's Gunston Hall",
+      "Mason Neck State Park",
+      "Occoquan Regional Park",
+      "Historic Occoquan",
+      "George Washington's Mount Vernon",
+      "Washington, D.C."
+    ],
+    "emergencyMedicalDistance": "Approximately 15 minutes"
   },
-  "favoriteSites": ["40", "50"],
+  "favoriteSites": [
+    "40",
+    "50"
+  ],
   "photoGallery": [
     {
       "url": "https://mamahubbs.github.io/hoth/image/pohicksite50.JPG",
@@ -72,7 +114,7 @@
       "visitDate": "June 2025",
       "reviewDate": "06-29-2025",
       "starRating": 4,
-      "text": "Pohick Bay Regional Park is a clean, family-friendly campground just 40 minutes from Washington, D.C., offering wooded campsites, hiking trails, and access to a marina. Highlights include the Pirate’s Cove waterpark, playgrounds, and friendly staff. Some campsites can be uneven or close together, but overall, it's a great spot for families and outdoor lovers looking for a convenient escape.",
+      "text": "Pohick Bay Regional Park is a clean, family-friendly campground just 40 minutes from Washington, D.C., offering wooded campsites, hiking trails, and access to a marina. Highlights include Pirate's Cove Waterpark, playgrounds, and friendly staff. Some campsites can be uneven or close together, but overall, it is a great spot for families and outdoor lovers looking for a convenient escape.",
       "youtubeVideoUrl": "https://www.youtube.com/embed/10_B0CbGo4s?si=H9Aib9nWheYhycES"
     }
   ]
