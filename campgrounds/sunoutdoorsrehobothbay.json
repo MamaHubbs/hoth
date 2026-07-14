@@ -1,1 +1,155 @@
-
+{
+  "id": "sun-outdoors-rehoboth-bay",
+  "name": "Sun Outdoors Rehoboth Bay",
+  "previousNames": [
+    {
+      "name": "Massey's Landing",
+      "notes": "Name when we visited in 2024 and 2025."
+    }
+  ],
+  "state": "Delaware",
+  "state_code": "DE",
+  "status": "starter",
+  "type": "Luxury RV Resort",
+  "visitYears": [
+    2024,
+    2025
+  ],
+  "summary_text": "A lively waterfront RV resort on Rehoboth Bay with full-hookup sites, private beach access, pools, a swim-up bar, kayaking, paddleboarding, and easy access to Delaware's coastal towns.",
+  "address": "20628 Long Beach Drive, Millsboro, DE 19966",
+  "website": "https://www.sunoutdoors.com/delaware/sun-outdoors-rehoboth-bay",
+  "reservations": "https://www.sunoutdoors.com/delaware/sun-outdoors-rehoboth-bay",
+  "parkmap": "",
+  "latitude": 38.62534,
+  "longitude": -75.103807,
+  "amenities": {
+    "electric": "50/30",
+    "waterAtSite": "All RV Sites",
+    "potableFill": "Yes",
+    "sewer": "Full-Hookup Sites Available",
+    "dumpStation": "Yes",
+    "bathhouse": "Yes",
+    "laundryFacilities": "Yes",
+    "cellService": "Good",
+    "wifi": "Available",
+    "tvCable": "Available",
+    "petsWelcome": "Yes",
+    "dogPark": "Yes",
+    "campStore": "Camp Store with Coffee and Ice Cream Shop",
+    "propaneRefill": "Yes",
+    "playground": "Yes",
+    "swimmingBeach": "Private Beach on Rehoboth Bay",
+    "swimmingPool": "Family Pool and Adult-Only Area with Swim-Up Bar",
+    "otherAmenities": [
+      "Swim-Up Bar",
+      "On-Site Dining",
+      "Marina",
+      "Boat Slips",
+      "Golf Cart Rentals",
+      "Kayak and Paddleboard Rentals",
+      "Cottages",
+      "Safari Tents"
+    ]
+  },
+  "siteFeatures": {
+    "level": "Mostly level RV sites with waterfront and interior options.",
+    "dirt": "No",
+    "gravel": "Many Sites",
+    "paved": "Some Roads and Premium Sites",
+    "patio": "Some Premium Sites",
+    "shade": "Limited to Moderate",
+    "fireRing": "Yes",
+    "picnicTable": "Yes",
+    "grill": "Varies by Site",
+    "otherNotes": [
+      "Waterfront sites offer beautiful views of Rehoboth Bay.",
+      "The resort can feel crowded during busy weekends and organized events.",
+      "Golf carts are common throughout the property.",
+      "This is a social, activity-focused resort rather than a quiet campground.",
+      "We stayed during a Grand Design owners rally."
+    ]
+  },
+  "starlink": {
+    "rating": "Varies by Site",
+    "notes": "Open waterfront and interior sites may provide good reception, while trees and neighboring RVs can create obstructions."
+  },
+  "activities": {
+    "waterfront": "Rehoboth Bay",
+    "boatingLaunch": "On-site Marina and Boat Launch",
+    "fishing": "Rehoboth Bay",
+    "hiking": "Nearby Coastal Parks and Trails",
+    "biking": "Campground Roads and Nearby Coastal Trails",
+    "gameRoom": "Yes",
+    "otherActivities": [
+      "Swimming",
+      "Kayaking",
+      "Paddleboarding",
+      "Boating",
+      "Beach Relaxing",
+      "Planned Resort Activities",
+      "Poolside Dining",
+      "Sunset Viewing"
+    ]
+  },
+  "nearby": {
+    "shopping": [
+      "Grocery Stores",
+      "Pharmacy",
+      "Tanger Outlets",
+      "Target",
+      "Walmart"
+    ],
+    "food": [
+      "On-Site Dining",
+      "Seafood Restaurants",
+      "Local Restaurants",
+      "Rehoboth Beach Dining"
+    ],
+    "nearbyAttractions": [
+      "Rehoboth Beach",
+      "Lewes",
+      "Cape Henlopen State Park",
+      "Delaware Seashore State Park",
+      "Indian River Inlet",
+      "Tanger Outlets",
+      "Delaware Coastal Towns"
+    ]
+  },
+  "petNotes": {
+    "walkingAreas": "Campground roads and waterfront areas provide several options for leashed dog walks.",
+    "dogPark": "A fenced dog park is available.",
+    "dogFriendlyTrails": "Leashed pets can use campground walking areas and permitted nearby coastal trails.",
+    "petRestrictions": "Pets must remain leashed outside the dog park. Beach access rules vary by location and season.",
+    "hazards": "Watch for heat, hot pavement, ticks, mosquitoes and sharp shells near the shoreline.",
+    "overallPetRating": "Good",
+    "notes": "The dog park and waterfront walking areas make this a convenient resort for traveling with pets."
+  },
+  "emergencyServices": {
+    "hospital": {
+      "name": "Beebe Healthcare",
+      "address": "424 Savannah Road, Lewes, DE 19958",
+      "distance": "Approximately 25 minutes"
+    },
+    "veterinarian": {
+      "name": "Peninsula Veterinary Services",
+      "address": "32038 Long Neck Road, Millsboro, DE 19966",
+      "distance": "Approximately 10 minutes"
+    },
+    "emergencyVeterinarian": {
+      "name": "Pets ER",
+      "address": "402 Punkin Court, Salisbury, MD 21804",
+      "distance": "Approximately 45–55 minutes"
+    }
+  },
+  "tripTips": [
+    "Reserve a waterfront site if possible—the bay views and sunsets are a major part of the experience.",
+    "This resort is best for travelers who enjoy pools, activities, golf carts and a social atmosphere.",
+    "The adult-only pool area and swim-up bar are great places to relax.",
+    "Bring kayaks or paddleboards to take advantage of direct access to Rehoboth Bay.",
+    "Expect the resort to feel crowded during rallies, holidays and peak summer weekends.",
+    "Check seasonal beach rules before bringing pets to nearby coastal areas."
+  ],
+  "favoriteSites": [],
+  "photoGallery": [],
+  "reviews": []
+}
