@@ -1,1 +1,191 @@
-
+{
+  "id": "douthat-state-park",
+  "name": "Douthat State Park",
+  "state": "Virginia",
+  "state_code": "VA",
+  "status": "complete",
+  "type": "Virginia State Park",
+  "visitYears": [
+    2026
+  ],
+  "visitCount": 1,
+  "summary_text": "One of Virginia's premier mountain state parks featuring a scenic lake, peaceful forested campgrounds, outstanding hiking and mountain biking, kayaking, and easy access to some of western Virginia's best outdoor adventures.",
+  "address": "14239 Douthat State Park Road, Millboro, VA 24460",
+  "website": "https://www.dcr.virginia.gov/state-parks/douthat",
+  "reservations": "https://reservevaparks.com/Web/",
+  "parkmap": "",
+  "latitude": 37.8947,
+  "longitude": -79.8059,
+  "amenities": {
+    "electric": "30/50 at Most RV Sites",
+    "waterAtSite": "Most Sites",
+    "potableFill": "Yes",
+    "sewer": "No",
+    "dumpStation": "Yes",
+    "bathhouse": "Yes",
+    "laundryFacilities": "Yes",
+    "cellService": "Limited",
+    "wifi": "No",
+    "tvCable": "No",
+    "petsWelcome": "Yes",
+    "dogPark": "No",
+    "campStore": "Camp Store",
+    "propaneRefill": "No",
+    "playground": "Yes",
+    "swimmingBeach": "Yes",
+    "swimmingPool": "No",
+    "otherAmenities": [
+      "Marina",
+      "Boat Rentals",
+      "Kayak Rentals",
+      "Fishing Pier",
+      "Visitor Center",
+      "Seasonal Restaurant"
+    ]
+  },
+  "siteFeatures": {
+    "level": "Varies by site. Some are nearly level while others require significant leveling.",
+    "dirt": "Tent Sites",
+    "gravel": "Most Sites",
+    "paved": "Campground Roads",
+    "patio": "No",
+    "shade": "Heavy",
+    "fireRing": "Yes",
+    "picnicTable": "Yes",
+    "grill": "Attached to Fire Ring",
+    "otherNotes": [
+      "White Oak Campground offers some of the park's most private RV sites.",
+      "Site 29 was spacious and private.",
+      "The dense forest creates a peaceful mountain camping experience.",
+      "Mountain roads leading to the park are paved but winding."
+    ]
+  },
+  "starlink": {
+    "rating": "Poor to Fair",
+    "notes": "Heavy tree cover throughout the campground makes Starlink challenging. General web browsing and streaming worked reasonably well, but Zoom calls frequently froze even using a Gen 4 dish mounted on a telescoping pole."
+  },
+  "activities": {
+    "waterfront": "Douthat Lake",
+    "boatingLaunch": "Yes",
+    "fishing": "Excellent",
+    "hiking": "Outstanding",
+    "biking": "Excellent Mountain Biking",
+    "gameRoom": "No",
+    "otherActivities": [
+      "Kayaking",
+      "Paddleboarding",
+      "Swimming",
+      "Wildlife Viewing",
+      "Photography",
+      "Scenic Drives"
+    ]
+  },
+  "nearby": {
+    "shopping": [
+      "Clifton Forge",
+      "Covington"
+    ],
+    "food": [
+      "Seasonal Park Restaurant",
+      "Local Restaurants in Clifton Forge",
+      "Local Restaurants in Covington"
+    ],
+    "nearbyAttractions": [
+      "Jackson River Scenic Trail",
+      "Falling Spring Falls",
+      "Historic Humpback Bridge",
+      "Lake Moomaw",
+      "George Washington National Forest",
+      "Warm Springs",
+      "The Omni Homestead Resort"
+    ]
+  },
+  "petNotes": {
+    "walkingAreas": "Outstanding. Miles of campground roads, hiking trails and lakeside areas provide endless opportunities to explore with your dog.",
+    "dogPark": "No",
+    "dogFriendlyTrails": "Most park trails allow leashed dogs.",
+    "petRestrictions": "Pets must remain on a leash.",
+    "hazards": "Ticks, bears, snakes and steep terrain are all possible in this mountain environment.",
+    "overallPetRating": "Excellent",
+    "notes": "One of my favorite Virginia State Parks for camping with dogs thanks to the cool mountain climate, beautiful scenery and miles of pet-friendly trails."
+  },
+  "emergencyServices": {
+    "hospital": {
+      "name": "LewisGale Hospital Alleghany",
+      "address": "1 AAR Lane, Low Moor, VA 24457",
+      "distance": "Approximately 25 minutes"
+    },
+    "veterinarian": {
+      "name": "Alleghany Veterinary Hospital",
+      "address": "1105 South Craig Avenue, Covington, VA 24426",
+      "distance": "Approximately 25 minutes"
+    },
+    "emergencyVeterinarian": {
+      "name": "Emergency Veterinary Services of Roanoke",
+      "address": "3731 Franklin Road SW, Roanoke, VA 24014",
+      "distance": "Approximately 1 hour 20 minutes"
+    }
+  },
+  "tripTips": [
+    "Stay in the White Oak Campground if possible\u2014it's my favorite section of the park.",
+    "Bring a kayak or rent one to explore Douthat Lake.",
+    "Ride the Jackson River Scenic Trail if you have bicycles or an e-bike.",
+    "Don't miss Falling Spring Falls and Historic Humpback Bridge while you're in the area.",
+    "Expect limited cell service and challenging Starlink performance because of the dense forest.",
+    "Bring leveling blocks since campsite grades vary throughout the campground.",
+    "Plan extra time\u2014you'll likely wish you had stayed longer."
+  ],
+  "favoriteSites": [
+    {
+      "campground": "Beaver Dam",
+      "sites": [
+        "3",
+        "14"
+      ],
+      "notes": "Great overall sites with a nice balance of privacy and convenience."
+    },
+    {
+      "campground": "Lakeside",
+      "sites": [
+        "8",
+        "10",
+        "16",
+        "17"
+      ],
+      "notes": "Excellent lake access and beautiful waterfront views."
+    },
+    {
+      "campground": "White Oak",
+      "sites": [
+        "18",
+        "20",
+        "29",
+        "31"
+      ],
+      "notes": "My favorite campground in the park. These sites offer outstanding privacy, but the dense tree canopy makes Starlink unreliable."
+    },
+    {
+      "campground": "White Oak",
+      "sites": [
+        "5",
+        "6",
+        "7",
+        "21",
+        "27",
+        "28"
+      ],
+      "notes": "The best White Oak sites for Starlink reception thanks to larger openings in the tree canopy."
+    }
+  ],
+  "photoGallery": [],
+  "reviews": [
+    {
+      "reviewId": "douthat-review-2026-07-13-01",
+      "visitDate": "July 2026",
+      "reviewDate": "07-13-2026",
+      "starRating": 5,
+      "text": "Douthat State Park quickly became one of my favorite Virginia State Parks. Nestled in the Allegheny Mountains, the park offers the perfect mix of peaceful camping and outdoor adventure. I stayed in the White Oak Campground (Site 29), which I highly recommend for its larger, more private campsites. During my stay I kayaked on Douthat Lake, explored nearby attractions including Falling Spring Falls, Historic Humpback Bridge, and the Jackson River Scenic Trail, and simply enjoyed relaxing beneath the dense forest canopy. One thing to be aware of is that the heavy tree cover makes Starlink challenging. General internet use was manageable, but Zoom calls frequently froze despite using a Gen 4 dish on a telescoping mast. If you're looking for a campground with reliable internet for remote work, this probably isn't the best choice. If you're looking to disconnect and enjoy the outdoors, however, it's hard to beat. Between the beautiful scenery, peaceful atmosphere, outstanding hiking and biking opportunities, and excellent nearby day trips, I found myself wishing I had planned an even longer stay. If I return\u2014and I definitely will\u2014I'll be booking White Oak again without hesitation.",
+      "youtubeVideoUrl": ""
+    }
+  ]
+}
