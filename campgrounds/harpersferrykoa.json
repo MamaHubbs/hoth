@@ -1,0 +1,103 @@
+{
+  "id": "harpers-ferry-koa-holiday",
+  "name": "Harpers Ferry / Civil War Battlefields KOA Holiday",
+  "state": "West Virginia",
+  "state_code": "WV",
+  "status": "starter",
+  "type": "KOA Holiday",
+  "visitYears": [
+    2026
+  ],
+  "summary_text": "A family-friendly KOA Holiday near Harpers Ferry featuring full-hookup RV sites, cabins, resort amenities, and easy access to Harpers Ferry National Historical Park, Antietam Battlefield, and the surrounding Appalachian region.",
+  "address": "343 Campground Road, Harpers Ferry, WV 25425",
+  "website": "https://koa.com/campgrounds/harpers-ferry/",
+  "reservations": "https://koa.com/campgrounds/harpers-ferry/",
+  "parkmap": "",
+  "latitude": 39.3223,
+  "longitude": -77.7307,
+  "amenities": {
+    "electric": "50/30",
+    "waterAtSite": "All Sites",
+    "potableFill": "Yes",
+    "sewer": "Full-Hookup Sites Available",
+    "dumpStation": "Yes",
+    "bathhouse": "Yes",
+    "laundryFacilities": "Yes",
+    "cellService": "Good",
+    "wifi": "Yes",
+    "tvCable": "No",
+    "petsWelcome": "Yes",
+    "dogPark": "KampK9",
+    "campStore": "KOA Camp Store",
+    "propaneRefill": "Yes",
+    "playground": "Yes",
+    "swimmingBeach": "No",
+    "swimmingPool": "Outdoor Pool",
+    "otherAmenities": [
+      "Jumping Pillow",
+      "Mini-Golf",
+      "Arcade",
+      "Bike Rentals",
+      "Gem Mining",
+      "Pavilion"
+    ]
+  },
+  "siteFeatures": {
+    "level": "Mostly level sites with a mix of pull-through and back-in options.",
+    "dirt": "Tent Sites",
+    "gravel": "Many RV Sites",
+    "paved": "Some Premium Sites",
+    "patio": "Some Premium Sites",
+    "shade": "Moderate",
+    "fireRing": "Yes",
+    "picnicTable": "Yes",
+    "grill": "Attached to Fire Ring",
+    "otherNotes": [
+      "Large pull-through sites accommodate big rigs.",
+      "Premium patio sites are available.",
+      "Tree cover varies throughout the campground.",
+      "Excellent location for exploring Harpers Ferry and nearby Civil War sites."
+    ]
+  },
+  "activities": {
+    "waterfront": "Nearby Potomac and Shenandoah Rivers",
+    "boatingLaunch": "Nearby",
+    "fishing": "Nearby",
+    "hiking": "Nearby National Historical Park Trails",
+    "biking": "Campground Roads and Nearby Trails",
+    "gameRoom": "Arcade",
+    "otherActivities": [
+      "Swimming",
+      "Mini-Golf",
+      "Jumping Pillow",
+      "Gem Mining",
+      "Basketball",
+      "Planned Family Activities"
+    ]
+  },
+  "nearby": {
+    "shopping": [
+      "Grocery Stores",
+      "Pharmacy",
+      "Walmart"
+    ],
+    "food": [
+      "Local Restaurants",
+      "Breweries",
+      "Fast Food"
+    ],
+    "nearbyAttractions": [
+      "Harpers Ferry National Historical Park",
+      "Appalachian Trail",
+      "Maryland Heights Trail",
+      "Jefferson Rock",
+      "Antietam National Battlefield",
+      "River Tubing and Rafting",
+      "Historic Harpers Ferry"
+    ],
+    "emergencyMedicalDistance": "Approximately 15 minutes"
+  },
+  "favoriteSites": [],
+  "photoGallery": [],
+  "reviews": []
+}
