@@ -1,0 +1,99 @@
+{
+  "id": "madison-vines-rv-resort",
+  "name": "Madison Vines RV Resort & Cottages",
+  "state": "Virginia",
+  "state_code": "VA",
+  "status": "starter",
+  "type": "RV Resort",
+  "visitYears": [],
+  "summary_text": "A peaceful RV resort in Virginia wine country featuring spacious full-hookup sites, mountain views, and easy access to local wineries, Shenandoah National Park, and charming small towns.",
+  "address": "1060 Rigby Road, Madison, VA 22727",
+  "website": "https://www.madisonvinesrvresort.com/",
+  "reservations": "https://www.madisonvinesrvresort.com/",
+  "parkmap": "",
+  "latitude": 38.3667,
+  "longitude": -78.3033,
+  "amenities": {
+    "electric": "50/30",
+    "waterAtSite": "All Sites",
+    "potableFill": "Yes",
+    "sewer": "All Sites",
+    "dumpStation": "No",
+    "bathhouse": "Yes",
+    "laundryFacilities": "Yes",
+    "cellService": "Good",
+    "wifi": "Yes",
+    "tvCable": "No",
+    "petsWelcome": "Yes",
+    "dogPark": "Yes",
+    "campStore": "Camp Store",
+    "propaneRefill": "No",
+    "playground": "Yes",
+    "swimmingBeach": "No",
+    "swimmingPool": "Outdoor Pool",
+    "otherAmenities": [
+      "Clubhouse",
+      "Fitness Center",
+      "Fishing Pond",
+      "Walking Trails",
+      "Community Fire Pit"
+    ]
+  },
+  "siteFeatures": {
+    "level": "Large, mostly level full-hookup sites.",
+    "dirt": "No",
+    "gravel": "Some Sites",
+    "paved": "Many Sites",
+    "patio": "Some Sites",
+    "shade": "Moderate",
+    "fireRing": "Yes",
+    "picnicTable": "Yes",
+    "grill": "No",
+    "otherNotes": [
+      "Large sites accommodate big rigs.",
+      "Mountain views from many sites.",
+      "A quiet campground with a relaxing atmosphere.",
+      "Good Starlink performance in many areas."
+    ]
+  },
+  "activities": {
+    "waterfront": "Fishing Pond",
+    "boatingLaunch": "No",
+    "fishing": "Catch and Release Pond",
+    "hiking": "Nearby Shenandoah National Park",
+    "biking": "Campground Roads",
+    "gameRoom": "No",
+    "otherActivities": [
+      "Swimming",
+      "Fishing",
+      "Wine Tasting",
+      "Walking Trails",
+      "Bird Watching"
+    ]
+  },
+  "nearby": {
+    "shopping": [
+      "Madison",
+      "Orange",
+      "Local Markets"
+    ],
+    "food": [
+      "Local Restaurants",
+      "Wineries",
+      "Breweries"
+    ],
+    "nearbyAttractions": [
+      "Shenandoah National Park",
+      "Old Rag Mountain",
+      "Blue Ridge Parkway",
+      "Blue Quartz Winery",
+      "Early Mountain Vineyards",
+      "Grelen Market",
+      "Montpelier"
+    ],
+    "emergencyMedicalDistance": "Approximately 20 minutes"
+  },
+  "favoriteSites": [],
+  "photoGallery": [],
+  "reviews": []
+}
