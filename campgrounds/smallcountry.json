@@ -4,16 +4,104 @@
   "state": "Virginia",
   "state_code": "VA",
   "status": "starter",
+  "type": "Private Campground",
   "visitYears": [
     2018
   ],
-  "summary_text": "A family campground in Louisa County, Virginia, centered around a private lake and convenient to central Virginia attractions.",
+  "summary_text": "A family-friendly private campground in Louisa County centered around a 25-acre lake, with RV and tent sites, cabins, swimming beaches, a pool, mini-golf, fishing, and easy access to central Virginia attractions.",
   "address": "4400 Byrd Mill Road, Louisa, VA 23093",
   "website": "https://smallcountry.com/",
-  "reservations": "https://smallcountry.com/",
-  "parkmap": "",
+  "reservations": "https://www.camplife.com/campground/Small%2BCountry%2BCampground",
+  "parkmap": "https://smallcountry.com/map%2C-rates%2C-%26-policies",
   "latitude": 38.0154,
   "longitude": -78.0154,
+  "amenities": {
+    "electric": "30/50 Amp Sites Available",
+    "waterAtSite": "Available at Many RV Sites",
+    "potableFill": "Yes",
+    "sewer": "Full-Hookup Sites Available",
+    "dumpStation": "Yes",
+    "bathhouse": "Yes",
+    "laundryFacilities": "Yes",
+    "cellService": "Varies",
+    "wifi": "Available",
+    "tvCable": "Varies by Site",
+    "petsWelcome": "Yes",
+    "dogPark": "No",
+    "campStore": "Convenience Store with Camping Supplies and Groceries",
+    "propaneRefill": "Yes",
+    "playground": "Multiple Playgrounds",
+    "swimmingBeach": "Two Sandy Beaches on Beaver Lake",
+    "swimmingPool": "Outdoor Pool",
+    "otherAmenities": [
+      "Cabin Rentals",
+      "Golf Cart Rentals",
+      "Jumping Pillow",
+      "Arcade",
+      "Mini-Golf",
+      "Snack Shack"
+    ]
+  },
+  "siteFeatures": {
+    "level": "Varies by site",
+    "dirt": "Tent Sites",
+    "gravel": "Many RV Sites",
+    "paved": "Some Roads and Sites",
+    "patio": "Varies by Site",
+    "shade": "Varies by Site",
+    "fireRing": "Yes",
+    "picnicTable": "Yes",
+    "grill": "Varies by Site",
+    "otherNotes": [
+      "The campground offers a mix of tent sites, RV sites, cabins, and seasonal sites.",
+      "Some sites are closer to Beaver Lake and the recreation areas.",
+      "Review the campground map and individual site details before reserving a large RV."
+    ]
+  },
+  "activities": {
+    "waterfront": "25-acre Beaver Lake",
+    "boatingLaunch": "Lake Access for Kayaks and Canoes",
+    "fishing": "Largemouth Bass, Bream, Crappie and Catfish",
+    "hiking": "On-site Hiking Trail",
+    "biking": "Campground Roads",
+    "gameRoom": "Arcade with Air Hockey and Pool",
+    "otherActivities": [
+      "Swimming",
+      "Kayaking",
+      "Canoeing",
+      "Mini-Golf",
+      "Jumping Pillow",
+      "Basketball",
+      "Volleyball",
+      "Shuffleboard",
+      "Cornhole",
+      "Horseshoes",
+      "Planned Events"
+    ]
+  },
+  "nearby": {
+    "shopping": [
+      "Grocery Stores in Louisa",
+      "Pharmacy",
+      "Walmart"
+    ],
+    "food": [
+      "Campground Snack Shack",
+      "Fast Food",
+      "Local Restaurants"
+    ],
+    "nearbyAttractions": [
+      "James Madison's Montpelier",
+      "Thomas Jefferson's Monticello",
+      "Historic Downtown Louisa",
+      "Lake Anna State Park",
+      "Kings Dominion",
+      "Charlottesville",
+      "Richmond",
+      "Local Wineries, Breweries and Orchards"
+    ],
+    "emergencyMedicalDistance": "Approximately 20 minutes"
+  },
   "favoriteSites": [],
   "photoGallery": [],
   "reviews": []
