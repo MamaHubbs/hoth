@@ -1,0 +1,99 @@
+{
+  "id": "houghton-letchworth-koa-holiday",
+  "name": "Houghton / Letchworth KOA Holiday",
+  "state": "New York",
+  "state_code": "NY",
+  "status": "starter",
+  "type": "KOA Holiday",
+  "visitYears": [
+    2026
+  ],
+  "summary_text": "A quiet KOA Holiday in western New York offering spacious RV sites and easy access to Letchworth State Park, often called the 'Grand Canyon of the East.'",
+  "address": "7632 Centerville Road, Houghton, NY 14744",
+  "website": "https://koa.com/campgrounds/houghton/",
+  "reservations": "https://koa.com/campgrounds/houghton/",
+  "parkmap": "",
+  "latitude": 42.4225,
+  "longitude": -78.1562,
+  "amenities": {
+    "electric": "50/30",
+    "waterAtSite": "All Sites",
+    "potableFill": "Yes",
+    "sewer": "Full-Hookup Sites Available",
+    "dumpStation": "Yes",
+    "bathhouse": "Yes",
+    "laundryFacilities": "Yes",
+    "cellService": "Good",
+    "wifi": "Yes",
+    "tvCable": "No",
+    "petsWelcome": "Yes",
+    "dogPark": "KampK9",
+    "campStore": "KOA Camp Store",
+    "propaneRefill": "Yes",
+    "playground": "Yes",
+    "swimmingBeach": "No",
+    "swimmingPool": "Outdoor Pool",
+    "otherAmenities": [
+      "Jumping Pillow",
+      "Mini-Golf",
+      "Gem Mining",
+      "Pavilion",
+      "Bike Rentals"
+    ]
+  },
+  "siteFeatures": {
+    "level": "Mostly level pull-through and back-in sites.",
+    "dirt": "Tent Sites",
+    "gravel": "Many Sites",
+    "paved": "Some Premium Sites",
+    "patio": "Premium Patio Sites",
+    "shade": "Moderate",
+    "fireRing": "Yes",
+    "picnicTable": "Yes",
+    "grill": "Attached to Fire Ring",
+    "otherNotes": [
+      "Large pull-through sites accommodate big rigs.",
+      "Premium patio sites are available.",
+      "Quiet rural setting.",
+      "A great basecamp for exploring Letchworth State Park."
+    ]
+  },
+  "activities": {
+    "waterfront": "Nearby Genesee River",
+    "boatingLaunch": "Nearby",
+    "fishing": "Nearby",
+    "hiking": "Nearby Letchworth State Park",
+    "biking": "Campground Roads",
+    "gameRoom": "No",
+    "otherActivities": [
+      "Swimming",
+      "Mini-Golf",
+      "Gem Mining",
+      "Planned Family Activities"
+    ]
+  },
+  "nearby": {
+    "shopping": [
+      "Grocery Store",
+      "Pharmacy",
+      "Walmart"
+    ],
+    "food": [
+      "Local Restaurants",
+      "Fast Food"
+    ],
+    "nearbyAttractions": [
+      "Letchworth State Park",
+      "Middle Falls",
+      "Upper Falls",
+      "Lower Falls",
+      "Genesee River Gorge",
+      "Mount Morris Dam",
+      "Hot Air Balloon Rides"
+    ],
+    "emergencyMedicalDistance": "Approximately 20 minutes"
+  },
+  "favoriteSites": [],
+  "photoGallery": [],
+  "reviews": []
+}
