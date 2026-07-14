@@ -1,0 +1,102 @@
+{
+  "id": "myrtle-beach-state-park",
+  "name": "Myrtle Beach State Park",
+  "state": "South Carolina",
+  "state_code": "SC",
+  "status": "starter",
+  "type": "State Park",
+  "visitYears": [
+    2019,
+    2022
+  ],
+  "visitCount": 2,
+  "summary_text": "A beautiful oceanfront South Carolina State Park offering shaded campsites beneath mature maritime forest with direct access to one of the Grand Strand's best beaches.",
+  "address": "4401 South Kings Highway, Myrtle Beach, SC 29575",
+  "website": "https://southcarolinaparks.com/myrtle-beach",
+  "reservations": "https://southcarolinaparks.com/myrtle-beach",
+  "parkmap": "",
+  "latitude": 33.6558,
+  "longitude": -78.9303,
+  "amenities": {
+    "electric": "50/30",
+    "waterAtSite": "All Sites",
+    "potableFill": "Yes",
+    "sewer": "Most Sites",
+    "dumpStation": "Yes",
+    "bathhouse": "Yes",
+    "laundryFacilities": "Yes",
+    "cellService": "Excellent",
+    "wifi": "Limited",
+    "tvCable": "No",
+    "petsWelcome": "Yes",
+    "dogPark": "No",
+    "campStore": "Camp Store",
+    "propaneRefill": "No",
+    "playground": "Yes",
+    "swimmingBeach": "Atlantic Ocean",
+    "swimmingPool": "No",
+    "otherAmenities": [
+      "Fishing Pier",
+      "Nature Center",
+      "Gift Shop",
+      "Picnic Shelters"
+    ]
+  },
+  "siteFeatures": {
+    "level": "Mostly level paved sites beneath mature trees.",
+    "dirt": "Tent Sites",
+    "gravel": "No",
+    "paved": "Roads and Sites",
+    "patio": "No",
+    "shade": "Heavy",
+    "fireRing": "Yes",
+    "picnicTable": "Yes",
+    "grill": "Attached to Fire Ring",
+    "otherNotes": [
+      "Excellent shade throughout most of the campground.",
+      "A short walk to the beach from nearly every campsite.",
+      "Large trees significantly reduce Starlink performance.",
+      "One of the few oceanfront state park campgrounds on the Grand Strand."
+    ]
+  },
+  "activities": {
+    "waterfront": "Atlantic Ocean",
+    "boatingLaunch": "No",
+    "fishing": "Fishing Pier",
+    "hiking": "Nature Trail",
+    "biking": "Campground Roads",
+    "gameRoom": "No",
+    "otherActivities": [
+      "Swimming",
+      "Beachcombing",
+      "Surf Fishing",
+      "Wildlife Viewing",
+      "Photography"
+    ]
+  },
+  "nearby": {
+    "shopping": [
+      "Broadway at the Beach",
+      "Coastal Grand Mall",
+      "Walmart",
+      "Target"
+    ],
+    "food": [
+      "Seafood Restaurants",
+      "Myrtle Beach Boardwalk",
+      "Local Restaurants"
+    ],
+    "nearbyAttractions": [
+      "Myrtle Beach Boardwalk",
+      "Broadway at the Beach",
+      "Brookgreen Gardens",
+      "Murrells Inlet MarshWalk",
+      "SkyWheel Myrtle Beach",
+      "Huntington Beach State Park"
+    ],
+    "emergencyMedicalDistance": "Approximately 10 minutes"
+  },
+  "favoriteSites": [],
+  "photoGallery": [],
+  "reviews": []
+}
