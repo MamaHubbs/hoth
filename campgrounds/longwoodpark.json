@@ -4,14 +4,91 @@
   "state": "Virginia",
   "state_code": "VA",
   "status": "starter",
+  "type": "COE Campground",
   "visitYears": [],
-  "summary_text": "A wooded lakeside campground on John H. Kerr Reservoir near Clarksville, Virginia.",
+  "summary_text": "A peaceful U.S. Army Corps of Engineers campground on John H. Kerr Reservoir featuring spacious wooded campsites, lake access, fishing, boating, and beautiful sunset views near Clarksville, Virginia.",
   "address": "13502 US Highway 15, Clarksville, VA 23927",
   "website": "https://www.recreation.gov/camping/campgrounds/233545",
   "reservations": "https://www.recreation.gov/camping/campgrounds/233545",
   "parkmap": "",
   "latitude": 36.5488,
   "longitude": -78.5647,
+  "amenities": {
+    "electric": "50/30",
+    "waterAtSite": "Many Sites",
+    "potableFill": "Yes",
+    "sewer": "No",
+    "dumpStation": "Yes",
+    "bathhouse": "Yes",
+    "laundryFacilities": "No",
+    "cellService": "Fair",
+    "wifi": "No",
+    "tvCable": "No",
+    "petsWelcome": "Yes",
+    "dogPark": "No",
+    "campStore": "No",
+    "propaneRefill": "No",
+    "playground": "Yes",
+    "swimmingBeach": "Small Day-Use Beach",
+    "swimmingPool": "No",
+    "otherAmenities": [
+      "Boat Ramp",
+      "Fishing Pier",
+      "Picnic Shelters",
+      "Day Use Area"
+    ]
+  },
+  "siteFeatures": {
+    "level": "Mostly level sites with some gently sloping sites near the shoreline.",
+    "dirt": "No",
+    "gravel": "Most Sites",
+    "paved": "Roads",
+    "patio": "No",
+    "shade": "Heavy",
+    "fireRing": "Yes",
+    "picnicTable": "Yes",
+    "grill": "Attached to Fire Ring",
+    "otherNotes": [
+      "Many campsites are shaded by mature hardwood trees.",
+      "Several sites offer lake views or direct waterfront access.",
+      "Expect limited Starlink reception due to heavy tree cover.",
+      "Roads are easy to navigate for most RVs."
+    ]
+  },
+  "activities": {
+    "waterfront": "John H. Kerr Reservoir (Buggs Island Lake)",
+    "boatingLaunch": "On-site Boat Ramp",
+    "fishing": "Excellent Lake Fishing",
+    "hiking": "Nature Trails and Campground Roads",
+    "biking": "Campground Roads",
+    "gameRoom": "No",
+    "otherActivities": [
+      "Swimming",
+      "Kayaking",
+      "Canoeing",
+      "Wildlife Viewing",
+      "Bird Watching"
+    ]
+  },
+  "nearby": {
+    "shopping": [
+      "Clarksville Grocery Stores",
+      "Dollar General",
+      "Pharmacy"
+    ],
+    "food": [
+      "Local Restaurants",
+      "Fast Food"
+    ],
+    "nearbyAttractions": [
+      "Occoneechee State Park",
+      "John H. Kerr Dam",
+      "Downtown Clarksville",
+      "Buggs Island Lake",
+      "Prestwould Plantation"
+    ],
+    "emergencyMedicalDistance": "Approximately 10 minutes"
+  },
   "favoriteSites": [],
   "photoGallery": [],
   "reviews": []
