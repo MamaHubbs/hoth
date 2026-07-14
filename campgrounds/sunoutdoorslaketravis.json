@@ -4,16 +4,101 @@
   "state": "Texas",
   "state_code": "TX",
   "status": "starter",
+  "type": "RV Resort",
   "visitYears": [
     2026
   ],
-  "summary_text": "An RV resort near Lake Travis and the Austin area with full-hookup sites and resort-style amenities.",
+  "summary_text": "A luxury RV resort near Lake Travis featuring spacious full-hookup sites, multiple pools, a lazy river, pickleball courts, and easy access to Austin and the Texas Hill Country.",
   "address": "5220 Hudson Bend Road, Austin, TX 78734",
   "website": "https://www.sunoutdoors.com/texas/sun-outdoors-lake-travis",
   "reservations": "https://www.sunoutdoors.com/texas/sun-outdoors-lake-travis",
   "parkmap": "",
   "latitude": 30.4148,
   "longitude": -97.9281,
+  "amenities": {
+    "electric": "50/30",
+    "waterAtSite": "All Sites",
+    "potableFill": "Yes",
+    "sewer": "All Sites",
+    "dumpStation": "No",
+    "bathhouse": "Yes",
+    "laundryFacilities": "Yes",
+    "cellService": "Excellent",
+    "wifi": "Yes",
+    "tvCable": "No",
+    "petsWelcome": "Yes",
+    "dogPark": "Yes",
+    "campStore": "Camp Store",
+    "propaneRefill": "Yes",
+    "playground": "Yes",
+    "swimmingBeach": "No",
+    "swimmingPool": "Multiple Resort Pools and Lazy River",
+    "otherAmenities": [
+      "Lazy River",
+      "Hot Tub",
+      "Fitness Center",
+      "Clubhouse",
+      "Pickleball Courts",
+      "Basketball Court",
+      "Golf Cart Rentals"
+    ]
+  },
+  "siteFeatures": {
+    "level": "Large, mostly level concrete sites.",
+    "dirt": "No",
+    "gravel": "No",
+    "paved": "Concrete Pads and Roads",
+    "patio": "Many Sites",
+    "shade": "Limited",
+    "fireRing": "No",
+    "picnicTable": "Yes",
+    "grill": "No",
+    "otherNotes": [
+      "Wide roads make navigation easy for large RVs.",
+      "Most sites are spacious with ample room between neighbors.",
+      "Minimal tree cover provides excellent Starlink reception.",
+      "Many sites are designed for large fifth wheels and motorhomes."
+    ]
+  },
+  "activities": {
+    "waterfront": "Nearby Lake Travis",
+    "boatingLaunch": "Nearby Public Boat Ramp",
+    "fishing": "Nearby Lake Travis",
+    "hiking": "Nearby Lake Travis Trails",
+    "biking": "Campground Roads and Nearby Roads",
+    "gameRoom": "Yes",
+    "otherActivities": [
+      "Swimming",
+      "Lazy River",
+      "Pickleball",
+      "Basketball",
+      "Fitness Center",
+      "Community Activities"
+    ]
+  },
+  "nearby": {
+    "shopping": [
+      "HEB",
+      "Target",
+      "Walmart",
+      "Local Shopping Centers"
+    ],
+    "food": [
+      "Local Restaurants",
+      "Lakefront Restaurants",
+      "Fast Food"
+    ],
+    "nearbyAttractions": [
+      "Lake Travis",
+      "Volente Beach Resort",
+      "Pace Bend Park",
+      "Oasis Texas Brewing Company",
+      "The Oasis on Lake Travis",
+      "Downtown Austin",
+      "Texas Hill Country"
+    ],
+    "emergencyMedicalDistance": "Approximately 15 minutes"
+  },
   "favoriteSites": [],
   "photoGallery": [],
   "reviews": []
