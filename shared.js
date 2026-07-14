@@ -1,9 +1,13 @@
 // shared.js
 
+const DATA_BASE_URL =
+    "https://raw.githubusercontent.com/MamaHubbs/hoth/main";
+
 /**
- * Extracts a specific query parameter from the current URL.
- * @param {string} name The name of the query parameter to extract.
- * @returns {string|null} The value of the parameter, or null if not found.
+ * Extracts a query parameter from the current URL.
+ *
+ * @param {string} name
+ * @returns {string|null}
  */
 function getQueryParameter(name) {
     const urlParams = new URLSearchParams(window.location.search);
@@ -11,31 +15,45 @@ function getQueryParameter(name) {
 }
 
 /**
- * Constructs the full raw GitHub URL for a JSON file based on its filename.
- * It intelligently determines the correct subdirectory based on the filename.
+ * Builds a JSON URL for a specific data folder.
  *
- * @param {string} fileName The base name of the JSON file (e.g., 'campground_index', 'showerhead', '20250629pohick'). Do NOT include '.json' extension.
- * @returns {string} The full raw URL to the JSON file.
+ * @param {string} folder
+ * @param {string} fileName Base filename without .json
+ * @returns {string}
  */
-function getCampgroundJsonUrl(fileName) { // Renamed from getProductJsonUrl/getCampgroundJsonUrl earlier to be more generic for shared usage
-    const username = 'MamaHubbs';
-    const repo = 'hoth';
-    const branch = 'main'; // Your default branch (e.g., 'main' or 'master')
+function getJsonUrl(folder, fileName) {
+    const cleanFolder = String(folder).replace(/^\/|\/$/g, "");
+    const cleanFileName = String(fileName).replace(/\.json$/i, "");
 
-    let subdirectory = ''; // Default to no subdirectory
+    return `${DATA_BASE_URL}/${cleanFolder}/${cleanFileName}.json`;
+}
 
-    // Logic to determine the subdirectory
-    if (fileName === 'campground_index' || fileName.startsWith('20') || fileName.startsWith('pohick-bay')) {
-        // Assume all campground-related JSONs are in 'campgrounds/'
-        // '20' prefix is for old filenames like 20250629pohick.json
-        // 'pohick-bay' prefix is for ID-based filenames like pohick-bay-regional-park-06-2025.json
-        subdirectory = 'campgrounds/';
-    } else if (fileName === 'product_index' || fileName === 'showerhead' || fileName.startsWith('high-pressure') || fileName.startsWith('rv-leveling')) {
-        // Assume all product-related JSONs are in 'products/'
-        subdirectory = 'products/';
-    }
-    // You might need to refine this logic (e.g., use a more explicit mapping if filenames are very varied)
-    // For now, this approach intelligently guesses based on known patterns.
+/**
+ * Returns a campground JSON URL.
+ *
+ * @param {string} fileName
+ * @returns {string}
+ */
+function getCampgroundJsonUrl(fileName) {
+    return getJsonUrl("campgrounds", fileName);
+}
 
-    return `https://raw.githubusercontent.com/${username}/${repo}/${branch}/${subdirectory}${fileName}.json`;
+/**
+ * Returns a product JSON URL.
+ *
+ * @param {string} fileName
+ * @returns {string}
+ */
+function getProductJsonUrl(fileName) {
+    return getJsonUrl("products", fileName);
+}
+
+/**
+ * Returns a blog JSON URL.
+ *
+ * @param {string} fileName
+ * @returns {string}
+ */
+function getBlogJsonUrl(fileName) {
+    return getJsonUrl("blog", fileName);
 }
