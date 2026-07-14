@@ -1,0 +1,151 @@
+{
+  "id": "gulf-shores-pensacola-west-koa-holiday",
+  "name": "Gulf Shores / Pensacola West KOA Holiday",
+  "state": "Alabama",
+  "state_code": "AL",
+  "status": "starter",
+  "type": "KOA Holiday",
+  "visitYears": [
+    2021
+  ],
+  "summary_text": "A bayfront KOA Holiday on Perdido Bay offering waterfront RV sites, a private fishing pier, marina access, a year-round pool and hot tub, and a convenient basecamp for exploring Gulf Shores, Pensacola, and Perdido Key.",
+  "address": "11650 County Road 99, Lillian, AL 36549",
+  "website": "https://koa.com/campgrounds/gulf-shores/",
+  "reservations": "https://koa.com/campgrounds/gulf-shores/reserve/",
+  "parkmap": "https://koa.com/campgrounds/gulf-shores/map/",
+  "latitude": 30.395856,
+  "longitude": -87.454446,
+  "amenities": {
+    "electric": "50/30/20",
+    "waterAtSite": "Available at RV Sites",
+    "potableFill": "Yes",
+    "sewer": "Full-Hookup Sites Available",
+    "dumpStation": "Yes",
+    "bathhouse": "Yes",
+    "laundryFacilities": "Yes",
+    "cellService": "Good",
+    "wifi": "Available",
+    "tvCable": "Varies by Site",
+    "petsWelcome": "Yes",
+    "dogPark": "Partially Covered KampK9",
+    "campStore": "Office with Firewood, Ice and Basic Supplies",
+    "propaneRefill": "Yes",
+    "playground": "Playground with Tetherball Area",
+    "swimmingBeach": "No Designated Swimming Beach",
+    "swimmingPool": "Year-Round Outdoor Pool",
+    "otherAmenities": [
+      "Hot Tub",
+      "Poolside Cabanas",
+      "Clubhouse with Kitchen and Pool Table",
+      "Mini-Golf",
+      "Gaga Ball",
+      "Bike Rentals",
+      "Golf Cart Rentals",
+      "Kayak and Paddleboard Rentals",
+      "Private Fishing Pier",
+      "Marina with Covered and Uncovered Boat Slips",
+      "Event Center"
+    ]
+  },
+  "siteFeatures": {
+    "level": "Mostly level RV sites with back-in, pull-through and waterfront options.",
+    "dirt": "Tent Sites",
+    "gravel": "Many RV Sites",
+    "paved": "Some Premium Sites",
+    "patio": "KOA Patio Sites Available",
+    "shade": "Varies by Site",
+    "fireRing": "Yes",
+    "picnicTable": "Yes",
+    "grill": "Varies by Site",
+    "otherNotes": [
+      "Bayview and waterfront campsites are available.",
+      "Premium sites can accommodate RVs up to approximately 70 feet.",
+      "Tree cover and site spacing vary throughout the campground.",
+      "The campground is in Lillian, Alabama, between Gulf Shores and Pensacola."
+    ]
+  },
+  "starlink": {
+    "rating": "Varies by Site",
+    "notes": "Open bayfront sites should have fewer obstructions, while sites beneath mature trees may experience interruptions."
+  },
+  "activities": {
+    "waterfront": "Perdido Bay",
+    "boatingLaunch": "On-site Marina and Water Access",
+    "fishing": "Private Fishing Pier on Perdido Bay",
+    "hiking": "Nearby Coastal Parks and Trails",
+    "biking": "Campground Roads and Nearby Coastal Trails",
+    "gameRoom": "Clubhouse with Pool Table",
+    "otherActivities": [
+      "Swimming",
+      "Kayaking",
+      "Paddleboarding",
+      "Boating",
+      "Mini-Golf",
+      "Gaga Ball",
+      "Basketball",
+      "Bike Riding",
+      "Sunset Viewing"
+    ]
+  },
+  "nearby": {
+    "shopping": [
+      "Grocery Stores",
+      "Pharmacy",
+      "Walmart",
+      "Shopping in Pensacola and Gulf Shores"
+    ],
+    "food": [
+      "Seafood Restaurants",
+      "Local Restaurants",
+      "Beachfront Dining",
+      "Fast Food"
+    ],
+    "nearbyAttractions": [
+      "Perdido Key",
+      "Gulf Shores",
+      "Pensacola",
+      "Gulf State Park",
+      "Johnson Beach National Seashore",
+      "National Naval Aviation Museum",
+      "Flora-Bama",
+      "Alabama Gulf Coast Beaches"
+    ]
+  },
+  "petNotes": {
+    "walkingAreas": "Campground roads and waterfront areas provide convenient places for leashed walks.",
+    "dogPark": "A partially covered KampK9 dog park is available.",
+    "dogFriendlyTrails": "Leashed pets are allowed in many nearby parks and coastal walking areas, subject to local restrictions.",
+    "petRestrictions": "Pets must remain leashed outside the dog park. Beach access rules vary by location.",
+    "hazards": "Watch for heat, hot pavement, mosquitoes, biting insects, snakes and possible wildlife near the bay.",
+    "overallPetRating": "Good",
+    "notes": "The covered dog-park area is especially helpful during hot Gulf Coast weather. Check beach rules before bringing pets on a day trip."
+  },
+  "emergencyServices": {
+    "hospital": {
+      "name": "Ascension Sacred Heart Pensacola",
+      "address": "5151 North 9th Avenue, Pensacola, FL 32504",
+      "distance": "Approximately 35–45 minutes"
+    },
+    "veterinarian": {
+      "name": "Lillian Veterinary Hospital",
+      "address": "33940 US Highway 98, Lillian, AL 36549",
+      "distance": "Approximately 10 minutes"
+    },
+    "emergencyVeterinarian": {
+      "name": "Veterinary Emergency Referral Center",
+      "address": "4800 North Davis Highway, Pensacola, FL 32503",
+      "distance": "Approximately 35–45 minutes"
+    }
+  },
+  "tripTips": [
+    "Book a bayview site early if waterfront views are important to you.",
+    "Bring insect repellent, especially during warm and humid weather.",
+    "Verify beach pet rules before planning an outing with your dogs.",
+    "Use the campground as a basecamp for both the Alabama Gulf Coast and Pensacola.",
+    "Call emergency veterinary facilities before driving to confirm availability.",
+    "Prepare for possible coastal storms and strong winds."
+  ],
+  "favoriteSites": [],
+  "photoGallery": [],
+  "reviews": []
+}
